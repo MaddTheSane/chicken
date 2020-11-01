@@ -182,15 +182,9 @@
 		DA60309811E03BA600271F8F /* jsimddct.h in Headers */ = {isa = PBXBuildFile; fileRef = DA60305911E03BA600271F8F /* jsimddct.h */; };
 		DA60309A11E03BA600271F8F /* jversion.h in Headers */ = {isa = PBXBuildFile; fileRef = DA60305B11E03BA600271F8F /* jversion.h */; };
 		DA6030B511E03BE600271F8F /* jpeglib.h in Headers */ = {isa = PBXBuildFile; fileRef = DA60305211E03BA600271F8F /* jpeglib.h */; };
-		DA60312111E0401E00271F8F /* jccolmmx.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030E411E0401E00271F8F /* jccolmmx.asm */; };
-		DA60312311E0401E00271F8F /* jccolss2.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030E611E0401E00271F8F /* jccolss2.asm */; };
 		DA60312511E0401E00271F8F /* jcqnt3dn.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030E811E0401E00271F8F /* jcqnt3dn.asm */; };
 		DA60312611E0401E00271F8F /* jcqntmmx.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030E911E0401E00271F8F /* jcqntmmx.asm */; };
 		DA60312C11E0401E00271F8F /* jcsammmx.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030EF11E0401E00271F8F /* jcsammmx.asm */; };
-		DA60313211E0401E00271F8F /* jdcolmmx.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030F511E0401E00271F8F /* jdcolmmx.asm */; };
-		DA60313411E0401E00271F8F /* jdcolss2.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030F711E0401E00271F8F /* jdcolss2.asm */; };
-		DA60313611E0401E00271F8F /* jdmermmx.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030F911E0401E00271F8F /* jdmermmx.asm */; };
-		DA60313811E0401E00271F8F /* jdmerss2.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA6030FB11E0401E00271F8F /* jdmerss2.asm */; };
 		DA60315511E0401E00271F8F /* jsimd_i386.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60311811E0401E00271F8F /* jsimd_i386.c */; };
 		DA60315711E0401E00271F8F /* jsimd.h in Headers */ = {isa = PBXBuildFile; fileRef = DA60311A11E0401E00271F8F /* jsimd.h */; };
 		DA60315911E0401E00271F8F /* jsimdcpu.asm in Sources */ = {isa = PBXBuildFile; fileRef = DA60311C11E0401E00271F8F /* jsimdcpu.asm */; };
@@ -280,7 +274,7 @@
 			outputFiles = (
 				"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.o",
 			);
-			script = "/opt/local/bin/yasm -f macho64 -o ${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.o -M  \"${INPUT_FILE_DIR}/${INPUT_FILE_NAME}\" > \"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.d\"\n/opt/local/bin/yasm -f macho64 -o ${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.o -f macho64 \"${INPUT_FILE_DIR}/${INPUT_FILE_NAME}\"\n";
+			script = "/opt/local/bin/nasm -f macho64 -g -I ${INPUT_FILE_DIR} ${INPUT_FILE_PATH} -MD ${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.d -o ${SCRIPT_OUTPUT_FILE_0}\n\n";
 		};
 /* End PBXBuildRule section */
 
@@ -1357,15 +1351,9 @@
 				55E07957254ED44A00515948 /* jiss2red-64.asm in Sources */,
 				55E0795F254ED46700515948 /* jdmerss2-64.asm in Sources */,
 				55E07955254E9E8500515948 /* jdsamss2-64.asm in Sources */,
-				DA60312111E0401E00271F8F /* jccolmmx.asm in Sources */,
-				DA60312311E0401E00271F8F /* jccolss2.asm in Sources */,
 				DA60312511E0401E00271F8F /* jcqnt3dn.asm in Sources */,
 				DA60312611E0401E00271F8F /* jcqntmmx.asm in Sources */,
 				DA60312C11E0401E00271F8F /* jcsammmx.asm in Sources */,
-				DA60313211E0401E00271F8F /* jdcolmmx.asm in Sources */,
-				DA60313411E0401E00271F8F /* jdcolss2.asm in Sources */,
-				DA60313611E0401E00271F8F /* jdmermmx.asm in Sources */,
-				DA60313811E0401E00271F8F /* jdmerss2.asm in Sources */,
 				55E07967254ED56500515948 /* jdmrgss2-64.asm in Sources */,
 				55E07963254ED47300515948 /* jcqnts2i-64.asm in Sources */,
 				55E07966254ED47D00515948 /* jcclrss2-64.asm in Sources */,
