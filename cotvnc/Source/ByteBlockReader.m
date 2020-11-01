@@ -42,7 +42,6 @@
     if(buffer) {
         free(buffer);
     }
-    [super dealloc];
 }
 
 - (void)setBufferSize:(unsigned)aSize
@@ -71,7 +70,6 @@
                             freeWhenDone: NO];
         bytesRead = size;
         [target performSelector:action withObject:data];
-        [data release];
     } else {
         if (size > capacity) {
             /* We lazy allocate the storage for our buffer because if all of the
@@ -94,7 +92,6 @@
                                                          length:size
                                                    freeWhenDone:NO];
             [target performSelector:action withObject:data];
-            [data release];
         }
     }
     return canConsume;

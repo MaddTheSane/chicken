@@ -76,7 +76,6 @@ static KeyChain* defaultKeyChain = nil;
     if (!ret) {
         string = [[NSString alloc] initWithBytes:p length:length
                 encoding:NSUTF8StringEncoding];
-        [string autorelease];
     }
     if (p)
         SecKeychainItemFreeContent(NULL, p);

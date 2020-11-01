@@ -109,7 +109,7 @@
 		[[NSNotificationCenter defaultCenter] removeObserver:self
 														name:ServerChangeMsg
 													  object:(id)mServer];
-		[(id)mServer autorelease];
+		[(id)mServer release];
 	}
 	
 	mServer = [(id)server retain];

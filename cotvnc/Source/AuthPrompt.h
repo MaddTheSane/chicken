@@ -19,7 +19,7 @@
 
 #import <AppKit/AppKit.h>
 
-@protocol AuthPromptDelegate
+@protocol AuthPromptDelegate <NSObject>
 
 - (void)authCancelled;
 - (void)authPasswordEntered:(NSString *)password;
@@ -29,10 +29,10 @@
 @interface AuthPrompt : NSObject {
     IBOutlet NSPanel        *panel;
     IBOutlet NSTextField    *passwordField;
-    id<AuthPromptDelegate>  delegate;
+    __weak id<AuthPromptDelegate>  delegate;
 }
 
-- (id)initWithDelegate:(id<AuthPromptDelegate>)aDelegate;
+- (instancetype)initWithDelegate:(id<AuthPromptDelegate>)aDelegate;
 
 - (void)runSheetOnWindow:(NSWindow *)window;
 - (void)stopSheet;

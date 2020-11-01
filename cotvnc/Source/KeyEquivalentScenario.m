@@ -30,10 +30,8 @@
 	if ( self = [super init] )
 	{
 		mEquivalentToEntryMapping = [[NSMutableDictionary alloc] init];
-		NSEnumerator *entryEnumerator = [array objectEnumerator];
-		NSDictionary *plistEntry;
 		
-		while ( plistEntry = [entryEnumerator nextObject] )
+		for ( NSDictionary *plistEntry in array )
 		{
 			NSString *characters = [plistEntry objectForKey: @"Characters"];
 			unsigned int modifiers = [[plistEntry objectForKey: @"Modifiers"] unsignedIntValue];
@@ -44,8 +42,6 @@
 				KeyEquivalent *keyEquivalent = [[KeyEquivalent alloc] initWithCharacters: characters modifiers: modifiers];
 				KeyEquivalentEntry *keyEquivalentEntry = [[KeyEquivalentEntry alloc] initWithTitle: title];
 				[mEquivalentToEntryMapping setObject: keyEquivalentEntry forKey: keyEquivalent];
-				[keyEquivalent release];
-				[keyEquivalentEntry release];
 			}
 		}
 	}
@@ -68,12 +64,10 @@
 			volatile BOOL IReallyWantToLoadThisItem = YES;
 			if ( IReallyWantToLoadThisItem )
 			{
-				unsigned int modifiers = [menuItem keyEquivalentModifierMask];
+				NSEventModifierFlags modifiers = [menuItem keyEquivalentModifierMask];
 				KeyEquivalent *equivalent = [[KeyEquivalent alloc] initWithCharacters: characters modifiers: modifiers];
 				KeyEquivalentEntry *entry = [[KeyEquivalentEntry alloc] initWithMenuItem: menuItem];
 				[mEquivalentToEntryMapping setObject: entry forKey: equivalent];
-				[equivalent release];
-				[entry release];
 			}
 		}
 		if ( [menuItem hasSubmenu] )
@@ -91,13 +85,6 @@
         [self loadKeyEquivalentsFromMenu: mainMenu];
     }
     return self;
-}
-
-
-- (void)dealloc
-{
-	[mEquivalentToEntryMapping release];
-	[super dealloc];
 }
 
 
@@ -127,7 +114,7 @@
 	{
 		KeyEquivalentEntry *entry = [mEquivalentToEntryMapping objectForKey: keyEquivalent];
 		NSString *characters = [keyEquivalent characters];
-		NSNumber *modifiers = [NSNumber numberWithUnsignedInt: [keyEquivalent modifiers]];
+		NSNumber *modifiers = @([keyEquivalent modifiers]);
 		NSMenuItem *menuItem = [entry menuItem];
 		NSString *title = [menuItem title];
 		NSDictionary *plistEntry = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -178,10 +165,9 @@
 
 - (void)removeEntry: (KeyEquivalentEntry *)entry
 {
-	NSEnumerator *keyEquivalentEnumerator = [mEquivalentToEntryMapping keyEnumerator];
-	KeyEquivalent *thisKeyEquivalent;
+	NSEnumerator<KeyEquivalent*> *keyEquivalentEnumerator = [mEquivalentToEntryMapping keyEnumerator];
 	
-	while ( thisKeyEquivalent = [keyEquivalentEnumerator nextObject] )
+	for ( KeyEquivalent *thisKeyEquivalent in keyEquivalentEnumerator )
 	{
 		KeyEquivalentEntry *thisEntry = [mEquivalentToEntryMapping objectForKey: thisKeyEquivalent];
 		if ( entry && [entry isEqualToEntry: thisEntry] )

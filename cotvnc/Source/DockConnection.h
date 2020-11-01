@@ -26,7 +26,7 @@
     ConnectionWaiter    *waiter;
 }
 
-- (id)initWithServer:(id<IServerData>)server;
+- (instancetype)initWithServer:(id<IServerData>)server;
 
 - (void)connectionSucceeded:(RFBConnection *)conn;
 - (void)connectionFailed;

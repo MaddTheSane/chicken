@@ -21,6 +21,19 @@
 #import <AppKit/AppKit.h>
 #import "EventFilter.h"
 #import "rfbproto.h"
+#import "ProfileManager.h"
+
+//! Modifier Key Mapping
+//! These values are the values stored in preferences, and must remain in sync
+//! with the order in the ProfileManager pulldowns
+typedef NS_ENUM(int, ModifierKeyIdentifier) {
+	kRemoteAltModifier		= 0,
+	kRemoteMetaModifier		= 1,
+	kRemoteControlModifier	= 2,
+	kRemoteShiftModifier	= 3,
+	kRemoteWindowsModifier	= 4,
+    kRemoteNoModifier       = 5
+};
 
 // Dictionary Keys
 extern NSString *kProfile_PixelFormat_Key;
@@ -53,8 +66,11 @@ extern NSString *kProfile_TapAndClickTimeoutForButton2_Key;
 extern NSString *kProfile_TapAndClickTimeoutForButton3_Key;
 extern NSString *kProfile_IsDefault_Key;
 
-#define ProfileTintChangedMsg @"ProfileTintChangedMsg"
-#define ProfileEncodingsChangedMsg @"ProfileEncodingsChangedMsg"
+extern NSNotificationName const ProfileTintChangedNotification;
+extern NSNotificationName const ProfileEncodingsChangedNotification;
+
+#define ProfileTintChangedMsg ProfileTintChangedNotification
+#define ProfileEncodingsChangedMsg ProfileEncodingsChangedNotification
 
 // Encodings
 #define NUMENCODINGS					8
@@ -71,10 +87,10 @@ struct encoding {
     BOOL isDefault;
     int pixelFormatIndex;
 
-    int commandKeyPreference;
-    int altKeyPreference;
-    int shiftKeyPreference;
-    int controlKeyPreference;
+    ModifierKeyIdentifier commandKeyPreference;
+    ModifierKeyIdentifier altKeyPreference;
+    ModifierKeyIdentifier shiftKeyPreference;
+    ModifierKeyIdentifier controlKeyPreference;
 
     // encodings
     CARD16 numberOfEnabledEncodings;
@@ -82,7 +98,7 @@ struct encoding {
     BOOL enableCopyRect;
     int jpegLevel;
     struct encoding *encodings; // all non-pseudo encodings, even disabled
-    int numEncodings;
+    NSInteger numEncodings;
 
     // emulation
 	EventFilterEmulationScenario _buttonEmulationScenario[2];
@@ -98,22 +114,22 @@ struct encoding {
     NSColor *tintBack;
 }
 
-- (id)init;
-- (id)initWithDictionary:(NSDictionary*)d name: (NSString *)name;
-- (id)initWithProfile: (Profile *)profile andName: (NSString *)aName;
+- (instancetype)init;
+- (instancetype)initWithDictionary:(NSDictionary*)d name: (NSString *)name;
+- (instancetype)initWithProfile: (Profile *)profile andName: (NSString *)aName;
 - (void)makeEnabledEncodings;
 - (NSDictionary *)dictionary;
-- (NSString*)profileName;
-- (BOOL)isDefault;
+@property (readonly, copy) NSString *profileName;
+@property (readonly, getter=isDefault) BOOL isDefault;
 
 - (CARD32)commandKeyCode;
 - (CARD32)altKeyCode;
 - (CARD32)shiftKeyCode;
 - (CARD32)controlKeyCode;
-- (int)commandKeyPreference;
-- (int)altKeyPreference;
-- (int)shiftKeyPreference;
-- (int)controlKeyPreference;
+@property int commandKeyPreference;
+@property int altKeyPreference;
+@property int shiftKeyPreference;
+@property int controlKeyPreference;
 - (int)pixelFormatIndex;
 - (CARD16)numEnabledEncodingsIfViewOnly:(BOOL)viewOnly;
 - (CARD32)encodingAtIndex:(unsigned)index;
@@ -132,9 +148,9 @@ struct encoding {
 - (NSTimeInterval)tapAndClickButtonSpeedForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickTimeoutForButton: (unsigned int)button;
 - (BOOL)interpretModifiersLocally;
-- (int)numEncodings;
-- (NSString *)encodingNameAtIndex: (int)index;
-- (BOOL)encodingEnabledAtIndex: (int)index;
+@property (readonly) NSInteger numEncodings;
+- (NSString *)encodingNameAtIndex: (NSInteger)index;
+- (BOOL)encodingEnabledAtIndex: (NSInteger)index;
 - (NSColor *)tintWhenFront:(BOOL)front;
 
 - (void)setCommandKeyPreference:(int)pref;

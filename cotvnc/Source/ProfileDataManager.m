@@ -11,6 +11,8 @@
 #import "ProfileManager.h"
 #import "PrefController.h"
 
+NSString * const ProfileListChangeMessgageNotification = @"ProfileListChangeMsg";
+
 
 @implementation ProfileDataManager
 
@@ -22,25 +24,15 @@
         mProfileDicts = [[NSMutableDictionary alloc] initWithDictionary:dict];
 
         mProfiles = [[NSMutableDictionary alloc] init];
-		NSString* key;
-		NSEnumerator* keys = [mProfileDicts keyEnumerator];
 
-		while((key = [keys nextObject]) != nil) {
+		for(NSString* key in mProfileDicts) {
 			NSMutableDictionary* d = [mProfileDicts objectForKey:key];
             Profile *p = [[Profile alloc] initWithDictionary:d name:key];
             [mProfiles setObject:p forKey:key];
-            [p release];
 		}
 	}
 	
 	return self;
-}
-
-- (void)dealloc
-{
-	[mProfiles release];
-    [mProfileDicts release];
-	[super dealloc];
 }
 
 + (ProfileDataManager*) sharedInstance
@@ -106,7 +98,7 @@
 	[[PrefController sharedController] setProfileDict: mProfileDicts];
 }
 
-- (int)count
+- (NSInteger)count
 {
 	return [mProfiles count];
 }

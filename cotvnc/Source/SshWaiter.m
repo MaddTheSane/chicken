@@ -38,9 +38,9 @@
     delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind
 {
     if (self = [super init]) {
-        server = [aServer retain];
+        server = aServer;
         delegate = aDelegate;
-        window = [aWind retain];
+        window = aWind;
         currentSock = -1;
 
         tunnel = [[SshTunnel alloc] initWithServer:server delegate:self];
@@ -55,10 +55,10 @@
               window:(NSWindow *)aWind sshTunnel:(SshTunnel *)aTunnel
 {
     if (self = [super init]) {
-        server = [aServer retain];
+        server = aServer;
         delegate = aDelegate;
-        window = [aWind retain];
-        tunnel = [aTunnel retain];
+        window = aWind;
+        tunnel = aTunnel;
 
         [self tunnelEstablishedAtPort:[tunnel localPort]];
     }
@@ -71,10 +71,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
     [tunnel close];
-    [tunnel release];
-    [auth release];
-
-    [super dealloc];
 }
 
 - (void)cancel
@@ -183,10 +179,7 @@
     [delegate connectionSucceeded:conn];
     [tunnel sshTunnelConnected];
 
-    [fh release];
-    [tunnel release];
     tunnel = nil;
-    [conn release];
     currentSock = -1;
 }
 
@@ -218,7 +211,6 @@
 
     if (auth) {
         [auth stopSheet];
-        [auth release];
         auth = nil;
     }
     [self error:header message:err];
@@ -227,7 +219,6 @@
 - (void)tunnelFailed:(NSString *)err
 {
     [tunnelClosedTimer invalidate];
-    [tunnelClosedTimer release];
     tunnelClosedTimer = nil;
 
     [self tunnelledConnFailed:err];
@@ -239,7 +230,6 @@
 
 - (void)authCancelled
 {
-    [auth release];
     auth = nil;
     [tunnel close];
     [delegate connectionFailed];
@@ -247,7 +237,6 @@
 
 - (void)authPasswordEntered:(NSString *)password
 {
-    [auth release];
     auth = nil;
     [tunnel usePassword:password];
     if ([delegate respondsToSelector:@selector(connectionSheetOver)])

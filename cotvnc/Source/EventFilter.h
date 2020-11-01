@@ -92,21 +92,21 @@
  */
  
 
-typedef enum {
+typedef NS_ENUM(NSInteger, EventFilterEmulationScenario) {
 	kNoMouseButtonEmulation, 
 	kClickWhileHoldingModifierEmulation, 
 	kMultiTapModifierEmulation, 
 	kTapModifierAndClickEmulation, 
-} EventFilterEmulationScenario;
+} NS_SWIFT_NAME(EventFilter.EmulationScenario);
 
 
 @interface EventFilter : NSObject {
-	RFBConnection *_connection;
+	__weak RFBConnection *_connection;
 	Profile *_profile;
-	RFBView *_view;
+	__weak RFBView *_view;
 	
 	NSMutableArray *_pendingEvents;
-	unsigned int _queuedModifiers;
+	NSEventModifierFlags _queuedModifiers;
 	BOOL _watchEventForCapsLock;
 	BOOL _viewOnly;
 	
@@ -122,6 +122,8 @@ typedef enum {
 }
 
 // Talking to the server
+@property (nonatomic, weak) RFBConnection *connection;
+@property (weak) RFBView *view;
 - (RFBConnection *)connection;
 - (void)setConnection: (RFBConnection *)connection;
 - (RFBView *)view;
@@ -150,10 +152,10 @@ typedef enum {
 - (void)queueMouseDownEventFromEvent: (NSEvent *)theEvent buttonNumber: (unsigned int)button;
 - (void)queueMouseUpEventFromEvent: (NSEvent *)theEvent buttonNumber: (unsigned int)button;
 - (void)queueKeyEventFromEvent: (NSEvent *)theEvent;
-- (void)queueModifiers:(unsigned int)newState
+- (void)queueModifiers:(NSEventModifierFlags)newState
              timestamp:(NSTimeInterval)timestamp;
-- (void)queueModifierPressed: (unsigned int)modifier timestamp: (NSTimeInterval)timestamp;
-- (void)queueModifierReleased: (unsigned int)modifier timestamp: (NSTimeInterval)timestamp;
+- (void)queueModifierPressed: (NSEventModifierFlags)modifier timestamp: (NSTimeInterval)timestamp;
+- (void)queueModifierReleased: (NSEventModifierFlags)modifier timestamp: (NSTimeInterval)timestamp;
 - (void)pasteString: (NSString *)string;
 
 // Event Processing

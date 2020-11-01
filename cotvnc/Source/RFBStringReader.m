@@ -53,7 +53,6 @@
 
     lengthReader = [[CARD32Reader alloc] initTarget:self action:@selector(setLength:)];
     [connection setReader:lengthReader];
-    [lengthReader release];
 }
 
 - (void)setLength:(NSNumber *)theLength
@@ -69,7 +68,6 @@
     contentReader = [[ByteBlockReader alloc] initTarget:self
                                  action:@selector(setContent:) size:length];
     [connection setReader:contentReader];
-    [contentReader release];
 }
 
 - (void)setContent:(NSData *)content
@@ -77,7 +75,6 @@
     NSString    *str;
     str = [[NSString alloc] initWithData:content encoding:encoding];
     [target performSelector:action withObject:str];
-    [str release];
 }
 
 @end

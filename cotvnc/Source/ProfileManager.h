@@ -17,25 +17,14 @@
  */
 
 #import <AppKit/AppKit.h>
+#import "ProfileManager.h"
 #import "Profile.h"
 
-// Notifications
-extern NSString *ProfileAddDeleteNotification;
-
-// Modifier Key Mapping
-// These values are the values stored in preferences, and must remain in sync
-// with the order in the ProfileManager pulldowns
-typedef enum {
-	kRemoteAltModifier		= 0,
-	kRemoteMetaModifier		= 1,
-	kRemoteControlModifier	= 2,
-	kRemoteShiftModifier	= 3,
-	kRemoteWindowsModifier	= 4,
-    kRemoteNoModifier       = 5
-} ModifierKeyIdentifier;
+//! Notifications
+extern NSString * const ProfileAddDeleteNotification;
 
 	
-@interface ProfileManager : NSWindowController
+@interface ProfileManager : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 {
     IBOutlet NSTableView *mProfileTable;
     IBOutlet NSTextField *mProfileNameField;

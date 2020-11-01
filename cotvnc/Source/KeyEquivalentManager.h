@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AppKit/NSEvent.h>
 @class KeyEquivalentScenario, RFBView;
 
 
@@ -18,10 +19,10 @@ extern NSString *kConnectionFullscreenScenario;
 
 @interface KeyEquivalentManager : NSObject {
     KeyEquivalentScenario *standardKeyEquivalents;
-	NSMutableDictionary *mScenarioDict;		// Scenario -> KeyEquivalentScenario
+	NSMutableDictionary<NSString*,KeyEquivalentScenario*> *mScenarioDict;		// Scenario -> KeyEquivalentScenario
 	NSString *mCurrentScenarioName;
 	KeyEquivalentScenario *mCurrentScenario;
-	RFBView *mKeyRFBView;
+	//__weak RFBView *mKeyRFBView;
 }
 
 // Obtaining An Instance
@@ -37,16 +38,16 @@ extern NSString *kConnectionFullscreenScenario;
 
 // Dealing With The Current Scenario
 - (void)setCurrentScenarioToName: (NSString *)scenario;
-- (NSString *)currentScenarioName;
+@property (readonly, copy) NSString *currentScenarioName;
 
 // Obtaining Scenario Equivalents
 - (KeyEquivalentScenario *)keyEquivalentsForScenarioName: (NSString *)scenario;
 
 // Performing Key Equivalants
-- (BOOL)performEquivalentWithCharacters: (NSString *)characters modifiers: (unsigned int)modifiers;
+- (BOOL)performEquivalentWithCharacters: (NSString *)characters modifiers: (NSEventModifierFlags)modifiers;
 
 // Obtaining the current RFBView
-- (RFBView *)keyRFBView;
+@property (readonly, weak) RFBView *keyRFBView;
 
 - (void)removeEquivalentForWindow:(NSString *)title;
 

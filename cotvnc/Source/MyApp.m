@@ -56,13 +56,12 @@
 			// our view as a keyDown: event.
 			if ( NSKeyDown == eventType )
 			{
-				unsigned int modifiers = [anEvent modifierFlags] & 0xFFFF0000;
+				NSEventModifierFlags modifiers = [anEvent modifierFlags] & 0xFFFF0000;
 				
-				[lastCharacters release];
 				lastCharacters = nil;
 				if ( [keyManager performEquivalentWithCharacters: characters modifiers: modifiers] )
 				{
-					lastCharacters = [characters retain];
+					lastCharacters = characters;
 					RFBConnection *delegate = [rfbView delegate];
 					[[delegate eventFilter] clearAllEmulationStates];
 				}
@@ -76,7 +75,6 @@
 			// already been handled.
 			else if ( lastCharacters && [lastCharacters isEqualToString: characters] )
 			{
-				[lastCharacters release];
 				lastCharacters = nil;
 				return;
 			}

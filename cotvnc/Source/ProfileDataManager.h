@@ -9,7 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 /** This message indicates that the profile list has changed */
-#define ProfileListChangeMsg @"ProfileListChangeMsg"
+extern NSNotificationName const ProfileListChangeMessgageNotification;
+#define ProfileListChangeMsg ProfileListChangeMessgageNotification
 
 @class Profile;
 
@@ -32,7 +33,7 @@
 - (BOOL)profileWithNameExists:(NSString *)name;
 - (void)setProfile:(Profile*) profile forKey:(id) key;
 - (void)removeProfileForKey:(id) key;
-- (int)count;
+@property (readonly) NSInteger count;
 - (void)saveProfile:(Profile *)profile;
 - (NSArray*)sortedKeyArray;
 

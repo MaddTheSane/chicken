@@ -31,33 +31,26 @@
     if (self = [super init]) {
         waiter = [ConnectionWaiter waiterForServer:server delegate:self
                     window:nil];
-        [waiter retain];
     }
 
     return self;
 }
 
-- (void)dealloc
-{
-    [waiter release];
-    [super dealloc];
-}
-
 - (void)connectionSucceeded:(RFBConnection *)conn
 {
 	[[RFBConnectionManager sharedManager] successfulConnection:conn];
-    [[NSApp delegate] removeDockConnection:self];
+    [(AppDelegate*)[NSApp delegate] removeDockConnection:self];
 }
 
 - (void)connectionFailed
 {
-    [[NSApp delegate] removeDockConnection:self];
+    [(AppDelegate*)[NSApp delegate] removeDockConnection:self];
 }
 
 - (void)cancelConnection:(id)sender
 {
     [waiter cancel];
-    [[NSApp delegate] removeDockConnection:self];
+    [(AppDelegate*)[NSApp delegate] removeDockConnection:self];
 }
 
 - (void)addMenuItems:(NSMenu *)dockMenu

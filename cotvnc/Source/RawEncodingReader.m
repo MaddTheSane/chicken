@@ -21,6 +21,7 @@
 #import "RawEncodingReader.h"
 #import "ByteBlockReader.h"
 #import "FrameBufferUpdateReader.h"
+#import "RFBConnection.h"
 
 @implementation RawEncodingReader
 
@@ -30,12 +31,6 @@
 		pixelReader = [[ByteBlockReader alloc] initTarget:self action:@selector(setPixels:)];
 	}
     return self;
-}
-
-- (void)dealloc
-{
-    [pixelReader release];
-    [super dealloc];
 }
 
 - (void)readEncoding

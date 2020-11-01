@@ -35,7 +35,6 @@
     [NSApp beginSheet:panel modalForWindow:window modalDelegate:self
         didEndSelector:@selector(passwordEnteredFor:returnCode:contextInfo:)
         contextInfo:nil];
-    [self retain];
 }
 
 - (void)stopSheet
@@ -55,11 +54,11 @@
     [delegate authCancelled];
 }
 
-- (IBAction)passwordEnteredFor:(NSWindow *)wind returnCode:(int)retCode
+- (IBAction)passwordEnteredFor:(NSWindow *)wind returnCode:(NSModalResponse)retCode
     contextInfo:(void *)info
 {
     [panel orderOut:self];
-    [self autorelease];
+    //[self autorelease];
 }
 
 @end

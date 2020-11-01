@@ -15,6 +15,6 @@
 	KeyEquivalent *mKeyEquivalent;
 }
 
-- (KeyEquivalent *)keyEquivalent;
+@property (readonly, strong) KeyEquivalent *keyEquivalent;
 
 @end

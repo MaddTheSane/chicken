@@ -26,7 +26,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ServerBase (Private)
+@interface ServerBase ()
 
 - (void)profileListUpdate:(NSNotification *)notification;
 
@@ -45,7 +45,7 @@
         _shared = NO;
         _fullscreen = NO;
         _viewOnly = NO;
-        _profile = [[[ProfileDataManager sharedInstance] defaultProfile]retain];
+        _profile = [[ProfileDataManager sharedInstance] defaultProfile];
 
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(profileListUpdate:)
@@ -58,12 +58,7 @@
 
 - (void)dealloc
 {
-	[_host release];
-	[_password release];
-    [_profile release];
-    [_sshHost release];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[super dealloc];
 }
 
 - (bool)doYouSupport: (SUPPORT_TYPE)type
@@ -76,60 +71,20 @@
     return NSLocalizedString(@"RFBUntitledServerName", nil);
 }
 
-- (NSString*)host
-{
-	return _host;
-}
-
-- (NSString*)password
-{
-    return _password;
-}
+@synthesize host=_host;
 
 - (BOOL)rememberPassword
 {
     return NO;
 }
 
-- (int)port
-{
-	return _port;
-}
-
-- (bool)shared
-{
-	return _shared;
-}
-
-- (Profile *)profile
-{
-    return _profile;
-}
-
-- (bool)fullscreen
-{
-	return _fullscreen;
-}
-
-- (bool)viewOnly
-{
-	return _viewOnly;
-}
-
-- (NSString *)sshHost
-{
-    return _sshHost;
-}
-
-- (in_port_t)sshPort
-{
-    return _sshPort;
-}
-
-- (NSString *)sshUser
-{
-    return _sshUser;
-}
+@synthesize port=_port;
+@synthesize shared=_shared;
+@synthesize profile=_profile;
+@synthesize fullscreen=_fullscreen;
+@synthesize viewOnly=_viewOnly;
+@synthesize sshPort=_sshPort;
+@synthesize sshUser=_sshUser;
 
 - (NSString *)sshString
 {
@@ -151,10 +106,9 @@
 
 - (void)setHost: (NSString*)host
 {
-	[_host autorelease];
 	if( nil != host )
 	{
-        _host = [host retain];
+        _host = [host copy];
 	}
 	else
 	{
@@ -209,41 +163,11 @@
         return NO;
 }
 
-- (void)setPassword: (NSString*)password
-{
-    [_password autorelease];
-    _password = [password retain];
-}
+@synthesize password=_password;
 
 - (void)setDisplay: (int)display
 {
     _port = display + PORT_BASE;
-}
-
-- (void)setShared: (bool)shared
-{
-	_shared = shared;
-}
-
-- (void)setPort: (int)port
-{
-	_port = port;
-}
-
-- (void)setFullscreen: (bool)fullscreen
-{
-	_fullscreen =  fullscreen;
-}
-
-- (void)setViewOnly: (bool)viewOnly
-{
-	_viewOnly = viewOnly;
-}
-
-- (void)setProfile: (Profile *)profile
-{
-    [_profile autorelease];
-    _profile = [profile retain];
 }
 
 - (void)setProfileName: (NSString*)profileName
@@ -253,23 +177,15 @@
 	
     if (prof)
 	{
-		[_profile autorelease];
-		_profile = [prof retain];
+		_profile = [prof copy];
 	}
 }
 
-- (void)setSshHost:(NSString *)sshHost
-{
-    [_sshHost autorelease];
-    _sshHost = [sshHost retain];
-}
+@synthesize sshHost=_sshHost;
 
 - (void)setSshString:(NSString *)str
 {
     NSRange sep;
-
-    [_sshHost release];
-    [_sshUser release];
 
     if (str == nil) {
         _sshHost = nil;
@@ -280,7 +196,7 @@
 
     sep = [str rangeOfString:@"@"];
     if (sep.location != NSNotFound) {
-        _sshUser = [[str substringToIndex:sep.location] retain];
+        _sshUser = [str substringToIndex:sep.location];
         str = [str substringFromIndex:sep.location + 1];
     } else
         _sshUser = nil;
@@ -292,20 +208,17 @@
     } else
         _sshPort = 0;
 
-    _sshHost = [str retain];
+    _sshHost = [str copy];
 }
 
 - (void)setSshTunnel:(BOOL)enable
 {
     if (!enable) {
-        [_sshHost release];
-        [_sshUser release];
-
         _sshHost = nil;
         _sshUser = nil;
         _sshPort = 0;
     } else if (_sshHost == nil) {
-        _sshHost = [_host retain];
+        _sshHost = _host;
     }
 }
 

@@ -95,13 +95,8 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     [self savePrefs];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    [fileHandles release];
     [closeTimer invalidate];
-    [closeTimer release];
     [resetErrorTimer invalidate];
-    [resetErrorTimer release];
-	
-	[super dealloc];
 }
 
 - (void)windowDidLoad
@@ -222,7 +217,7 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
         
     [handle acceptConnectionInBackgroundAndNotify];
 
-    return [handle autorelease];
+    return handle;
 }
 
 - (void)stopListeningForNdx:(int)ndx
@@ -234,7 +229,7 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
         name:NSFileHandleConnectionAcceptedNotification
         object:listeningSockets[ndx]];
     
-    [listeningSockets[ndx] release]; listeningSockets[ndx] = nil;
+	listeningSockets[ndx] = nil;
 }
 
 - (BOOL)startListenerOnPort:(int)port withProfile:(Profile*)profile localOnly:(BOOL)local;
@@ -251,7 +246,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     listenAddress.sin_port = htons(port);
     listeningSockets[0] = [self listenAtAddress: (struct sockaddr *)&listenAddress
                                        ofLength:sizeof(listenAddress)];
-    [listeningSockets[0] retain];
     if (!listeningSockets[0])
         return NO;
 
@@ -261,13 +255,12 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     listenAddress6.sin6_port = htons(port);
     listeningSockets[1] = [self listenAtAddress:(struct sockaddr *)&listenAddress6
                                        ofLength:sizeof(listenAddress6)];
-    [listeningSockets[1] retain];
     if (!listeningSockets[1]) {
         [self stopListeningForNdx: 0];
         return NO;
     }
 
-    listeningProfile = [profile retain];
+    listeningProfile = profile;
 
     [self updateUI];
     [self setStatus: NSLocalizedString(@"listenRunning", nil)];
@@ -284,7 +277,7 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
             [self stopListeningForNdx: i];
     }
 
-    [listeningProfile release]; listeningProfile = nil;
+	listeningProfile = nil;
     
     [self updateUI];
     [self setStatus: NSLocalizedString(@"listenStopped", nil)];
@@ -295,7 +288,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     [statusText setStringValue:str];
 
     [resetErrorTimer invalidate];
-    [resetErrorTimer release];
     resetErrorTimer = nil;
 }
 
@@ -354,7 +346,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
         resetErrorTimer = [NSTimer scheduledTimerWithTimeInterval:3*60
                                 target:self selector:@selector(clearError:)
                                 userInfo:nil repeats:NO];
-        [resetErrorTimer retain];
         return;
     }
 
@@ -362,7 +353,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     [server setFullscreen: [NSApp isActive] && [fullscreen state]];
     [server setProfile:listeningProfile];
     [cm createConnectionWithFileHandle:fh server:server];
-    [server release];
 
     [self stopListener];
     if (closeTimer == nil && [fileHandles count] > 0) {
@@ -372,7 +362,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
         closeTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
                                 selector:@selector(closeLingering:)
                                 userInfo:nil repeats:NO];
-        [closeTimer retain];
     }
 }
 
@@ -386,7 +375,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     [fileHandles removeAllObjects];
 
     [closeTimer invalidate];
-    [closeTimer release];
     closeTimer = nil;
 }
 
@@ -411,7 +399,7 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
 
     if (![self isWindowLoaded]) return;
     
-    [portText setIntValue:
+    [portText setIntegerValue:
         [user integerForKey: kPrefs_ListenerPort_Key]];
     [localOnlyBtn setState:
         [user boolForKey: kPrefs_ListenerLocal_Key] ? NSOnState : NSOffState];
@@ -462,7 +450,7 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
 // Loads the list of profiles into the popup
 - (void)loadProfileIntoView
 {
-    NSString* lastProfile = [[profilePopup titleOfSelectedItem] retain];
+    NSString* lastProfile = [[profilePopup titleOfSelectedItem] copy];
 
 	[profilePopup removeAllItems];
 	[profilePopup addItemsWithTitles:
@@ -471,7 +459,6 @@ NSString *kPrefs_ListenerFullscreen_Key = @"ListenerFullscreen";
     [profilePopup addItemWithTitle:NSLocalizedString(@"EditProfiles", nil)];
 	
 	[self setProfilePopupToProfile: lastProfile];
-    [lastProfile release];
 }
 
 - (IBAction)showProfileManager:(id)sender

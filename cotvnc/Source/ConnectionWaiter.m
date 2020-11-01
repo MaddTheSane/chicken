@@ -26,9 +26,9 @@
 #import <poll.h>
 #import <unistd.h>
 
-@interface ConnectionWaiter(Private)
+@interface ConnectionWaiter()
 
-- (void)errorDidEnd:(NSWindow *)sheet returnCode:(int)returnCode
+- (void)errorDidEnd:(NSWindow *)sheet returnCode:(NSModalResponse)returnCode
         contextInfo:(void *)info;
 
 @end
@@ -43,35 +43,25 @@
 
     cw = [aServer sshHost] ? [SshWaiter alloc] : [ConnectionWaiter alloc];
     cw = [cw initWithServer:aServer delegate:aDelegate window:aWind];
-    return [cw autorelease];
+    return cw;
 }
 
 - (id)initWithServer:(id<IServerData>)aServer
     delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWindow
 {
     if (self = [super init]) {
-        server = [aServer retain];
+        server = aServer;
         host = nil;
         port = 0;
         lock = [[NSLock alloc] init];
         currentSock = -1;
-        window = [aWindow retain];
+        window = aWindow;
 
         delegate = aDelegate;
 
         [server resolveWithDelegate: self];
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [server release];
-    [host release];
-    [lock release];
-    [window release];
-    [errorStr release];
-    [super dealloc];
 }
 
 - (void)serverResolvedWithHost: (NSString *)aHost port: (int)aPort
@@ -87,16 +77,9 @@
     [self error:@"Could not resolve" message:@""];
 }
 
-- (id<IServerData>)server
-{
-    return server;
-}
+@synthesize server;
 
-- (void)setErrorStr:(NSString *)str
-{
-    [errorStr autorelease];
-    errorStr = [str retain];
-}
+@synthesize errorStr;
 
 /* Cancels the connection attempt. This prevents any future messages to the
  * delegate. */
@@ -109,7 +92,6 @@
         currentSock = -1;
     }
     [lock unlock];
-    [window release];
     window = nil;
 }
 
@@ -122,7 +104,7 @@
     NSString        *cause = @"unknown";
     int             causeErr = 0;
     NSString        *errMsg = nil;
-    NSAutoreleasePool   *pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
     NSString    *portStr = [NSString stringWithFormat:@"%d", port];
 
     memset(&hints, 0, sizeof(hints));
@@ -134,13 +116,12 @@
     hints.ai_protocol = IPPROTO_TCP;
 
     error = getaddrinfo([host UTF8String], [portStr UTF8String], &hints, &res0);
-    [pool release];
-
+	}
+	
     if (error) {
         NSNumber    *errnum = [[NSNumber alloc] initWithInt: error];
         [self performSelectorOnMainThread: @selector(lookupFailed:)
                                withObject: errnum waitUntilDone: NO];
-        [errnum release];
 
         return;
     }
@@ -192,14 +173,14 @@
 
     freeaddrinfo(res0);
     // exhausted all possible addresses -> failure
-    pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
     if (errMsg == nil) {
         errMsg = [NSString stringWithFormat:@"%s: %@", strerror(causeErr),
                                         cause];
     }
     [self performSelectorOnMainThread: @selector(connectionFailed:)
                            withObject: errMsg waitUntilDone: NO];
-    [pool release];
+	}
 }
 
 - (void)waitForDataOn:(int)sock
@@ -236,8 +217,6 @@
         theConnection = [[RFBConnection alloc] initWithFileHandle:fh
                 server:server];
         [delegate connectionSucceeded: theConnection];
-        [fh release];
-        [theConnection release];
         currentSock = -1;
     }
 }
@@ -301,13 +280,13 @@
                 @selector(errorDidEnd:returnCode:contextInfo:), NULL, NULL,
                 @"%@", message);
     else {
-        int ret;
+        NSInteger ret;
         ret = NSRunAlertPanel(theAction, message, ok, NULL, NULL, NULL);
         [self errorDidEnd:nil returnCode:ret contextInfo:nil];
     }
 }
 
-- (void)errorDidEnd:(NSWindow *)sheet returnCode:(int)returnCode
+- (void)errorDidEnd:(NSWindow *)sheet returnCode:(NSModalResponse)returnCode
         contextInfo:(void *)info
 {
     [delegate connectionFailed];

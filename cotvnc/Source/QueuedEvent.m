@@ -19,7 +19,7 @@
 {
 	NSParameterAssert( buttonNumber >= 1 && buttonNumber <= 3 );
 	
-	QueuedEvent *event = [[[[self class] alloc] init] autorelease];
+	QueuedEvent *event = [[[self class] alloc] init];
 	event->_eventType = (QueuedEventType) ((buttonNumber-1) * 2);
 	event->_location = location;
 	event->_timestamp = timestamp;
@@ -34,7 +34,7 @@
 {
 	NSParameterAssert( buttonNumber >= 1 && buttonNumber <= 3 );
 	
-	QueuedEvent *event = [[[[self class] alloc] init] autorelease];
+	QueuedEvent *event = [[[self class] alloc] init];
 	event->_eventType = (QueuedEventType) ((buttonNumber-1) * 2 + 1);
 	event->_location = location;
 	event->_timestamp = timestamp;
@@ -46,7 +46,7 @@
 + (QueuedEvent *)keyDownEventWithCharacter: (unichar)character
 								 timestamp: (NSTimeInterval)timestamp
 {
-	QueuedEvent *event = [[[[self class] alloc] init] autorelease];
+	QueuedEvent *event = [[[self class] alloc] init];
 	event->_eventType = kQueuedKeyDownEvent;
 	event->_character = character;
 	event->_timestamp = timestamp;
@@ -58,7 +58,7 @@
 + (QueuedEvent *)keyUpEventWithCharacter: (unichar)character
 							   timestamp: (NSTimeInterval)timestamp
 {
-	QueuedEvent *event = [[[[self class] alloc] init] autorelease];
+	QueuedEvent *event = [[[self class] alloc] init];
 	event->_eventType = kQueuedKeyUpEvent;
 	event->_character = character;
 	event->_timestamp = timestamp;
@@ -70,7 +70,7 @@
 + (QueuedEvent *)modifierDownEventWithCharacter: (unsigned int)modifier
 									  timestamp: (NSTimeInterval)timestamp
 {
-	QueuedEvent *event = [[[[self class] alloc] init] autorelease];
+	QueuedEvent *event = [[[self class] alloc] init];
 	event->_eventType = kQueuedModifierDownEvent;
 	event->_modifier = modifier;
 	event->_timestamp = timestamp;
@@ -82,7 +82,7 @@
 + (QueuedEvent *)modifierUpEventWithCharacter: (unsigned int)modifier
 									timestamp: (NSTimeInterval)timestamp
 {
-	QueuedEvent *event = [[[[self class] alloc] init] autorelease];
+	QueuedEvent *event = [[[self class] alloc] init];
 	event->_eventType = kQueuedModifierUpEvent;
 	event->_modifier = modifier;
 	event->_timestamp = timestamp;
@@ -95,20 +95,11 @@
 #pragma mark Event Attributes
 
 
-- (QueuedEventType)type
-{  return _eventType;  }
-
-- (NSPoint)locationInWindow
-{  return _location;  }
-
-- (NSTimeInterval)timestamp
-{  return _timestamp;  }
-
-- (unichar)character
-{  return _character;  }
-
-- (unsigned int)modifier
-{  return _modifier;  }
+@synthesize type=_eventType;
+@synthesize locationInWindow=_location;
+@synthesize timestamp=_timestamp;
+@synthesize character=_character;
+@synthesize modifier=_modifier;
 
 
 #pragma mark -

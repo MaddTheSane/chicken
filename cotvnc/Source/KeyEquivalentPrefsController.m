@@ -46,9 +46,6 @@ static KeyEquivalentPrefsController *sharedController = nil;
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
-	[mSelectedScenario release];
-	[mTextView release];
-	[super dealloc];
 }
 
 
@@ -77,12 +74,10 @@ static KeyEquivalentPrefsController *sharedController = nil;
 - (NSSet *)getAllExpandedNames
 {
     NSMutableSet    *expanded = [[NSMutableSet alloc] init];
-    NSEnumerator    *en = [mSelectedScenario objectEnumerator];
-    NSDictionary    *obj;
 
-    while ((obj = [en nextObject]) != nil)
+    for (NSDictionary *obj in mSelectedScenario)
         [self getExpandedNames:expanded from:obj];
-    return [expanded autorelease];
+    return [expanded copy];
 }
 
 /* Recursive function for expanding all menus whose name is in expanded. */
@@ -129,8 +124,7 @@ static KeyEquivalentPrefsController *sharedController = nil;
 	NSMutableArray *newArray = [NSMutableArray array];
 	NSMenu *mainMenu = [NSApp mainMenu];
 	[self addEntriesInMenu: mainMenu toArray: newArray withScenario: scenario];
-	[mSelectedScenario release];
-	mSelectedScenario = [newArray retain];
+	mSelectedScenario = newArray;
 	[mOutlineView reloadData];
 }
 
@@ -338,10 +332,9 @@ static KeyEquivalentPrefsController *sharedController = nil;
 	scenario = [keyEquivalentManager keyEquivalentsForScenarioName: selectedScenarioName];
 	entry = [selectedItem objectForKey: @"entry"];
 	if ( ! entry )
-		entry = [[[KeyEquivalentEntry alloc] initWithMenuItem: [selectedItem objectForKey: @"menuItem"]] autorelease];
+		entry = [[KeyEquivalentEntry alloc] initWithMenuItem: [selectedItem objectForKey: @"menuItem"]];
 	else
 	{
-		[[entry retain] autorelease];
 		[scenario removeEntry: entry];
 	}
 	if (keyEquivalent)
@@ -354,7 +347,7 @@ static KeyEquivalentPrefsController *sharedController = nil;
 	if (keyEquivalent)
 		keyEquivalentDisplayString = [keyEquivalent userString];
 	else
-		keyEquivalentDisplayString = [[[NSAttributedString alloc] initWithString: @""] autorelease];
+		keyEquivalentDisplayString = [[NSAttributedString alloc] initWithString: @""];
 	[(NSMutableDictionary *)selectedItem setObject: keyEquivalentDisplayString forKey: @"keyEquivalent"];
 	[(NSMutableDictionary *)selectedItem setObject: entry forKey: @"entry"];
 	[mOutlineView reloadItem: selectedItem];

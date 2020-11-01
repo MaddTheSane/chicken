@@ -11,7 +11,7 @@
 
 
 @interface KeyEquivalentScenario : NSObject {
-	NSMutableDictionary *mEquivalentToEntryMapping; // KeyEquivalent => KeyEquivalentEntry
+	NSMutableDictionary<KeyEquivalent*,KeyEquivalentEntry*> *mEquivalentToEntryMapping; // KeyEquivalent => KeyEquivalentEntry
 	BOOL mIsActive;
 }
 

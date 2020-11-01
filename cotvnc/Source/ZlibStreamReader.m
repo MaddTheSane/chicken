@@ -32,7 +32,6 @@
         int result = inflateInit(&stream);
         if (result != Z_OK) {
             [self zlibError:result tag:@"InflateInit"];
-            [self dealloc];
             return nil;
         }
     }
@@ -44,7 +43,6 @@
     if (buffer)
         free(buffer);
     inflateEnd(&stream);
-    [super dealloc];
 }
 
 /* Sets the number of compressed bytes to read, and the maximum size that the
@@ -110,7 +108,6 @@
                                 length:capacity - stream.avail_out
                                 freeWhenDone:NO];
         [target performSelector:action withObject:data];
-        [data release];
     }
     return consume;
 }

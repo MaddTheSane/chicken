@@ -26,7 +26,6 @@
     RFBStringReader *nameReader;
 }
 
-- (void)dealloc;
 - (void)readEncoding;
 - (void)nameRead:(NSString *)newName;
 

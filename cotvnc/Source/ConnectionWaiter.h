@@ -42,13 +42,15 @@
 
 @end
 
-/* This class allows the asynchronous connection to servers. Upon
+/*!
+ * This class allows the asynchronous connection to servers. Upon
  * initialization, it begins connection to the server in another thread. When
  * the connection succeeds it sends connectionSucceeded: to its delegate.
  *
  * Note that it maintains a retain for the connecting thread. Thus, the
  * initializing object need not even maintain a pointer to the ConnectionWaiter
- * instance. */
+ * instance.
+ */
 @interface ConnectionWaiter : NSObject <ServerDelegate> {
         // variables used for initializing RFBConnection
     id<IServerData>     server;
@@ -56,28 +58,31 @@
     in_port_t           port;
     Profile             *profile;
 
-    NSLock              *lock; // protects currentSock and delegate
-    int                 currentSock; // socket for current connect() attempt
-                                     // when current sock is non-negative, then
-                                     // cancel is responsible for closing
-                                     // currentSock during cancellation
-    NSWindow            *window; // for displaying error panels
+    NSLock              *lock; //!< protects currentSock and delegate
+	
+	//! socket for current connect() attempt
+	//! when current sock is non-negative, then
+	//! cancel is responsible for closing
+	//! currentSock during cancellation
+    int                 currentSock;
+	
+    NSWindow            *window; //!< for displaying error panels
 
-    id<ConnectionWaiterDelegate>    delegate;
-    NSString            *errorStr; // error header, if not the default
+    __weak id<ConnectionWaiterDelegate>    delegate;
+    NSString            *errorStr; //!< error header, if not the default
 };
 
-+ (ConnectionWaiter *)waiterForServer:(id<IServerData>)aServer
++ (__kindof ConnectionWaiter *)waiterForServer:(id<IServerData>)aServer
                              delegate:(id<ConnectionWaiterDelegate>)aDelegate
                                window:(NSWindow *)aWind;
 - (id)initWithServer:(id<IServerData>)aServer
     delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind;
-- (void)dealloc;
 
 - (void)serverResolvedWithHost: (NSString *)host port: (int)port;
 - (void)serverDidNotResolve;
 
-- (id<IServerData>)server;
+@property (readonly, strong) id<IServerData> server;
+@property (copy) NSString *errorStr;
 - (void)setErrorStr:(NSString *)str;
 
 - (void)cancel;

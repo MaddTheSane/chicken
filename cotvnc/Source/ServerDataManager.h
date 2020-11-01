@@ -42,8 +42,8 @@
 #endif
 {
 	
-	NSMutableDictionary* mServers;
-	NSMutableDictionary* mGroups;
+	NSMutableDictionary<NSString*,id<IServerData>>* mServers;
+	NSMutableDictionary<NSString*,NSMutableDictionary<NSString*,id<IServerData>>*>* mGroups;
 	NSMutableDictionary* mRendezvousNameToServer;
 	
 	bool mPostMessages;
@@ -55,13 +55,14 @@
 	bool mUsingRendezvous;
 }
 
-#define ServerListChangeMsg @"ServerListChangeMsg"
+extern NSNotificationName const ServerListChangeDidChangeNotification;
+#define ServerListChangeMsg ServerListChangeDidChangeNotification
 
 /**
  *  Accessor method to fetch the singleton instance for this class. Use this method
  *  instead of creating an instance of your own.
  *  @return Shared singleton instance of the ServerDataManager class. */
-+ (ServerDataManager*) sharedInstance;
+@property (class, readonly) ServerDataManager *sharedInstance;
 
 /**
  *  Saves the current server settings.
@@ -78,11 +79,11 @@
  */
 - (bool)getUseRendezvous;
 
-/*
+/*!
  *  Provides the number of servers managed by ServerDataManager.
  *  @return The number of servers.
  */
-- (unsigned) serverCount;
+@property (readonly) NSInteger serverCount;
 
 - (unsigned)saveableCount;
 
@@ -92,19 +93,19 @@
  */
 //- (NSEnumerator*) getServerEnumerator;
 
-- (NSArray *)sortedServerNames;
+- (NSArray<NSString*> *)sortedServerNames;
 
 /*
  *  Provides the number of groups managed by ServerDataManager.
  *  @return The number of groups.
  */
-- (unsigned) groupCount;
+@property (readonly) NSInteger groupCount;
 
 	/*
  *  Allows access to the names of all the groups servers managed by ServerDataManager.
  *  @return The enumerator that can be used to enumerate through all group names. 
  */
-- (NSEnumerator*) getGroupNameEnumerator;
+- (NSEnumerator<NSString*>*) getGroupNameEnumerator;
 
 /*
  *  Allows access to all the servers in a particular group.

@@ -22,11 +22,13 @@ typedef enum {
 	kQueuedModifierUpEvent, 
 } QueuedEventType;
 
-/* An event queue is maintained in order to emulate mouse clicks by multi-event
+/*!
+ * An event queue is maintained in order to emulate mouse clicks by multi-event
  * sequences. This represents an event in that queue. It is an essentially a
  * distillation from the NSEvent of the parts which will be relevant for RFB.
  * Note that a single NSEvent can produce multiple QueuedEvent instances, such
- * as releasing multiple modifier keys at once. */
+ * as releasing multiple modifier keys at once.
+ */
 @interface QueuedEvent : NSObject {
 	QueuedEventType _eventType;
 	NSPoint _location; // location in RFBView's coordinates
@@ -52,10 +54,10 @@ typedef enum {
 							   timestamp: (NSTimeInterval)timestamp;
 
 // Event Attributes
-- (QueuedEventType)type;
-- (NSPoint)locationInWindow;
-- (NSTimeInterval)timestamp;
-- (unichar)character;
-- (unsigned int)modifier;
+@property (readonly) QueuedEventType type;
+@property (readonly) NSPoint locationInWindow;
+@property (readonly) NSTimeInterval timestamp;
+@property (readonly) unichar character;
+@property (readonly) unsigned int modifier;
 
 @end

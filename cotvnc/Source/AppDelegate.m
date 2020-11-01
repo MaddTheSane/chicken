@@ -124,16 +124,13 @@
 	[[NSWorkspace sharedWorkspace] openFile: path];
 }
 
-- (NSMenuItem *)getFullScreenMenuItem
-{
-    return fullScreenMenuItem;
-}
+@synthesize fullScreenMenuItem;
 
 /* Dock menu-related selectors */
 
 - (NSMenu *)applicationDockMenu:(NSApplication *)sender
 {
-	NSMenu              *dockMenu = [[[NSMenu alloc] init] autorelease];
+	NSMenu              *dockMenu = [[NSMenu alloc] init];
     ServerDataManager   *serverManager = [ServerDataManager sharedInstance];
 	NSEnumerator        *enumerator;
 	NSString            *s;
@@ -169,7 +166,6 @@
 
     conn = [[DockConnection alloc] initWithServer:[sender representedObject]];
     [dockConnections addObject:conn];
-    [conn release];
 }
 
 - (void)addDockConnection:(DockConnection *)conn
@@ -182,7 +178,7 @@
     /* This selector is called by the object conn itself. We want to make sure
      * that the object continues to exist, even though we're about to remove it
      * from our array. */
-    [[conn retain] autorelease];
+    //[[conn retain] autorelease];
     [dockConnections removeObject:conn];
 }
 

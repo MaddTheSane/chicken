@@ -20,9 +20,9 @@
 @class EventFilter, RFBConnection, Profile;
 
 
-@interface RFBView : NSView
+@interface RFBView : NSView <NSDraggingDestination>
 {
-    RFBConnection   *_delegate;
+    __weak RFBConnection   *_delegate;
     EventFilter     *_eventFilter;
     NSCursor        *_modifierCursor;
     NSCursor        *_serverCursor; // cursor sent by server, if any
@@ -32,8 +32,7 @@
 }
 
 - (void)setFrameBuffer:(id)aBuffer;
-- (void)setDelegate:(RFBConnection *)delegate;
-- (RFBConnection *)delegate;
+@property (nonatomic, weak) RFBConnection *delegate;
 - (void)drawRect:(NSRect)aRect;
 
 - (void)setCursorTo: (NSString *)name;
@@ -41,9 +40,9 @@
 - (void)setTint: (NSColor *)aTint;
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender;
-- (unsigned int)draggingEntered:(id <NSDraggingInfo>)sender;
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender;
 - (void)draggingExited:(id <NSDraggingInfo>)sender;
-- (unsigned int)draggingUpdated:(id <NSDraggingInfo>)sender;
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender;
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender;
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender;
 

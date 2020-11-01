@@ -74,17 +74,17 @@ enum {
     if ((self = [super init]) == nil)
         return nil;
 
-    connection = [aConnection retain];
-    server_ = [[connection server] retain];
-    host = [[server_ host] retain];
-    sshTunnel = [[connection sshTunnel] retain];
+    connection = aConnection;
+    server_ = [connection server];
+    host = [server_ host];
+    sshTunnel = [connection sshTunnel];
 
     _isFullscreen = NO; // jason added for fullscreen display
 
     [NSBundle loadNibNamed:@"RFBConnection.nib" owner:self];
     [rfbView registerForDraggedTypes:[NSArray arrayWithObjects:NSStringPboardType, NSFilenamesPboardType, nil]];
 
-    password = [[connection password] retain];
+    password = [[connection password] copy];
 
     _reconnectWaiter = nil;
     _reconnectSheetTimer = nil;
@@ -123,28 +123,17 @@ enum {
     }
 
     [connection closeConnection];
-    [connection release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-	[titleString release];
-	[(id)server_ release];
-	[host release];
-    [password release];
     [sshTunnel close];
-    [sshTunnel release];
-	[realDisplayName release];
     [_reconnectSheetTimer invalidate];
-    [_reconnectSheetTimer release];
     [_reconnectWaiter cancel];
-    [_reconnectWaiter release];
 
 	[newTitlePanel orderOut:self];
 	[optionPanel orderOut:self];
 	
 	[window close];
     [windowedWindow close];
-    [_connectionStartDate release];
-    [super dealloc];
 }
 
 - (BOOL)viewOnly
@@ -162,9 +151,9 @@ enum {
                                                       window:window
                                                    sshTunnel:sshTunnel];
     } else {
-        _reconnectWaiter = [[ConnectionWaiter waiterForServer:server_
+        _reconnectWaiter = [ConnectionWaiter waiterForServer:server_
                                                      delegate:self
-                                                       window:window] retain];
+                                                       window:window];
     }
     NSString *templ = NSLocalizedString(@"NoReconnection", nil);
     NSString *err = [NSString stringWithFormat:templ, host];
@@ -174,9 +163,9 @@ enum {
 
 - (void)startTimerForReconnectSheet
 {
-    _reconnectSheetTimer = [[NSTimer scheduledTimerWithTimeInterval:0.5
+    _reconnectSheetTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
             target:self selector:@selector(createReconnectSheet:)
-            userInfo:nil repeats:NO] retain];
+            userInfo:nil repeats:NO];
 }
 
 - (void)connectionTerminatedSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
@@ -198,7 +187,6 @@ enum {
 - (void)connectionProblem
 {
     [connection closeConnection];
-    [connection release];
     connection = nil;
 }
 
@@ -300,8 +288,7 @@ enum {
 /* User entered new password */
 - (IBAction)reconnectWithNewPassword:(id)sender
 {
-    [password release];
-    password = [[passwordField stringValue] retain];
+    password = [[passwordField stringValue] copy];
     if ([rememberNewPassword state])
         [server_ setPassword: password];
     if ([server_ respondsToSelector:@selector(setRememberPassword:)]) {
@@ -343,7 +330,6 @@ enum {
 
     // Force ourselves to use a new SSH tunnel
     [sshTunnel close];
-    [sshTunnel release];
     sshTunnel = nil;
 
     [self beginReconnect];
@@ -452,20 +438,19 @@ enum {
 
 - (void)setNewTitle:(id)sender
 {
-    [titleString release];
-    titleString = [[newTitleField stringValue] retain];
+    titleString = [[newTitleField stringValue] copy];
 
     [[RFBConnectionManager sharedManager] setDisplayNameTranslation:titleString forName:realDisplayName forHost:host];
     [window setTitle:titleString];
     [newTitlePanel orderOut:self];
 }
 
+@synthesize displayName=realDisplayName;
+
 - (void)setDisplayName:(NSString*)aName
 {
-	[realDisplayName release];
-    realDisplayName = [aName retain];
-    [titleString release];
-    titleString = [[[RFBConnectionManager sharedManager] translateDisplayName:realDisplayName forHost:host] retain];
+    realDisplayName = [aName copy];
+    titleString = [[[RFBConnectionManager sharedManager] translateDisplayName:realDisplayName forHost:host] copy];
     [window setTitle:titleString];
 }
 
@@ -685,7 +670,7 @@ enum {
 - (IBAction)makeConnectionWindowed: (id)sender {
 	_isFullscreen = NO;
 	[self removeFullscreenTrackingRects];
-	[scrollView retain];
+	__strong id a2 = scrollView;
 	[scrollView removeFromSuperview];
 	[window setDelegate: nil];
 	[window close];
@@ -696,8 +681,7 @@ enum {
     windowedWindow = nil;
     [window orderFront:nil];
 	[window setDelegate: self];
-	[window setContentView: scrollView];
-	[scrollView release];
+	[window setContentView: a2];
 	[self _maxSizeForWindowSize: [[window contentView] frame].size];
 	[window setTitle:titleString];
 	[window makeFirstResponder: rfbView];
@@ -730,7 +714,7 @@ enum {
 		windowLevel = CGShieldingWindowLevel();
 		screenRect = [[NSScreen mainScreen] frame];
 	
-		[scrollView retain];
+		__strong id stuff2 = scrollView;
 		[scrollView removeFromSuperview];
         [[KeyEquivalentManager defaultManager]
                 removeEquivalentForWindow:[window title]];
@@ -742,8 +726,7 @@ enum {
 											defer:NO
 											screen:[NSScreen mainScreen]];
 		[window setDelegate: self];
-		[window setContentView: scrollView];
-		[scrollView release];
+		[window setContentView: stuff2];
 		[window setLevel:windowLevel];
 		_isFullscreen = YES;
 		[self _maxSizeForWindowSize: screenRect.size];
@@ -793,7 +776,7 @@ enum {
             // Use the default KeyEquivalentManager to get the key equivalents
             // for the fullscreen scenario
         scen = [[KeyEquivalentManager defaultManager] keyEquivalentsForScenarioName: kConnectionFullscreenScenario]; 
-        menuItem = [[[NSApplication sharedApplication] delegate] getFullScreenMenuItem];
+        menuItem = [(AppDelegate*)[[NSApplication sharedApplication] delegate] getFullScreenMenuItem];
         
         if (scen && menuItem) {
             KeyEquivalent *keyEquiv = [scen keyEquivalentForMenuItem: menuItem];
@@ -824,7 +807,6 @@ enum {
         [alert beginSheetModalForWindow:window modalDelegate:self
                          didEndSelector:@selector(connectionWillGoFullscreen:returnCode:contextInfo:)
                             contextInfo:NULL];
-        [alert release];
 	} else {
 		[self connectionWillGoFullscreen:nil returnCode:NSAlertFirstButtonReturn contextInfo:nil]; 
 	}
@@ -837,13 +819,13 @@ enum {
 
 - (void)installFullscreenTrackingRects {
 	NSRect scrollRect = [scrollView bounds];
-	const float minX = NSMinX(scrollRect);
-	const float minY = NSMinY(scrollRect);
-	const float maxX = NSMaxX(scrollRect);
-	const float maxY = NSMaxY(scrollRect);
-	const float width = NSWidth(scrollRect);
-	const float height = NSHeight(scrollRect);
-	float scrollWidth = [NSScroller scrollerWidth];
+	const CGFloat minX = NSMinX(scrollRect);
+	const CGFloat minY = NSMinY(scrollRect);
+	const CGFloat maxX = NSMaxX(scrollRect);
+	const CGFloat maxY = NSMaxY(scrollRect);
+	const CGFloat width = NSWidth(scrollRect);
+	const CGFloat height = NSHeight(scrollRect);
+	CGFloat scrollWidth = [NSScroller scrollerWidth];
 	NSRect aRect;
 
 	if ( ! [[PrefController sharedController] fullscreenHasScrollbars] )
@@ -947,15 +929,14 @@ enum {
 - (void)beginFullscreenScrolling {
     if (_autoscrollTimer)
         return;
-	_autoscrollTimer = [[NSTimer scheduledTimerWithTimeInterval: kAutoscrollInterval
+	_autoscrollTimer = [NSTimer scheduledTimerWithTimeInterval: kAutoscrollInterval
 											target: self
 										  selector: @selector(scrollFullscreenView:)
-										  userInfo: nil repeats: YES] retain];
+										  userInfo: nil repeats: YES];
 }
 
 - (void)endFullscreenScrolling {
 	[_autoscrollTimer invalidate];
-	[_autoscrollTimer release];
 	_autoscrollTimer = nil;
 }
 
@@ -986,14 +967,12 @@ enum {
            contextInfo:nil];
     [_reconnectIndicator startAnimation:self];
 
-    [_reconnectSheetTimer release];
     _reconnectSheetTimer = nil;
 }
 
 - (void)reconnectCancelled:(id)sender
 {
     [_reconnectWaiter cancel];
-    [_reconnectWaiter release];
     _reconnectWaiter = nil;
     [NSApp endSheet:_reconnectPanel];
     [self endSession];
@@ -1009,7 +988,6 @@ enum {
 {
     [NSApp endSheet:_reconnectPanel];
     [_reconnectSheetTimer invalidate];
-    [_reconnectSheetTimer release];
     _reconnectSheetTimer = nil;
 }
 
@@ -1029,24 +1007,21 @@ enum {
 {
     [NSApp endSheet:_reconnectPanel];
     [_reconnectSheetTimer invalidate];
-    [_reconnectSheetTimer release];
     _reconnectSheetTimer = nil;
 
     if (_isFullscreen)
         [self makeConnectionWindowed:self];
 
-    connection = [newConnection retain];
+    connection = newConnection;
     [connection setSession:self];
     [connection setRfbView:rfbView];
     [connection setPassword:password];
     [connection installMouseMovedTrackingRect];
     if (sshTunnel == nil)
-        sshTunnel = [[connection sshTunnel] retain];
+        sshTunnel = [connection sshTunnel];
 
-    [_connectionStartDate release];
     _connectionStartDate = [[NSDate alloc] init];
 
-    [_reconnectWaiter release];
     _reconnectWaiter = nil;
 }
 

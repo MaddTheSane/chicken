@@ -88,6 +88,7 @@ ConnectionWaiterDelegate>
 - (BOOL)viewOnly;
 
 - (void)setSize:(NSSize)size;
+@property (copy, nonatomic) NSString *displayName;
 - (void)setDisplayName:(NSString *)aName;
 - (void)setupWindow;
 - (void)frameBufferUpdateComplete;

@@ -21,6 +21,7 @@
 #import "SetColorMapEntriesReader.h"
 #import "ByteBlockReader.h"
 #import "RFBProtocol.h"
+#import "RFBConnection.h"
 
 @implementation SetColorMapEntriesReader
 
@@ -34,13 +35,6 @@
 		colorReader = [[ByteBlockReader alloc] initTarget:self action:@selector(setColors:)];
 	}
     return self;
-}
-
-- (void)dealloc
-{
-    [headerReader release];
-    [colorReader release];
-    [super dealloc];
 }
 
 - (void)readMessage

@@ -46,19 +46,19 @@ typedef enum
 
 - (bool)doYouSupport: (SUPPORT_TYPE)type;
 
-- (NSString*)name;
-- (NSString*)host;
-- (NSString*)password;
-- (bool)rememberPassword;
-- (int)port;
-- (bool)shared;
-- (bool)fullscreen;
-- (bool)viewOnly;
-- (Profile *)profile;
+@property (readonly, copy) NSString *name;
+@property (readwrite, nonatomic, copy) NSString *host;
+@property (readwrite, copy) NSString *password;
+@property (readonly, nonatomic) bool rememberPassword;
+@property (readwrite) int port;
+@property (readwrite) bool shared;
+@property (readwrite) bool fullscreen;
+@property (readwrite) bool viewOnly;
+@property (readwrite, strong) Profile *profile;
 - (bool)addToServerListOnConnect;
-- (NSString *)sshHost;
-- (in_port_t)sshPort;
-- (NSString *)sshUser;
+@property (readonly, copy) NSString *sshHost;
+@property (readonly) in_port_t sshPort;
+@property (readonly, copy) NSString *sshUser;
 - (void)resolveWithDelegate: (id <ServerDelegate>)delegate;
 
 - (void)setHost: (NSString*)host;

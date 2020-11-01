@@ -49,7 +49,6 @@ static int const kPrefsVersion = 0x00000002;
     profiles = [NSDictionary dictionaryWithObject: [defaultProfile dictionary]
                                            forKey:profileName];
     [defaultDict setObject: profiles forKey: kPrefs_ConnectionProfiles_Key];
-    [defaultProfile release];
 	
 	[defaults registerDefaults: defaultDict];
 }

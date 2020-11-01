@@ -51,7 +51,7 @@
 {
     if( self = [super init] )
 	{
-        _name = [host retain];
+        _name = [host copy];
         [self setHost: host];
         _rememberPassword =       [[prefDict objectForKey:RFB_REMEMBER] boolValue];
 		[self setDisplay:         [[prefDict objectForKey:RFB_DISPLAY] intValue]];
@@ -68,28 +68,21 @@
 - (id)initWithName: (NSString *)name andDictionary:(NSDictionary *)dict
 {
     if (self = [super initFromDictionary:dict]) {
-        [_name autorelease];
-        _name = [name retain];
-        [_host release];
-        _host = [[dict objectForKey:@"host"] retain];
+        _name = [name copy];
+        _host = [[dict objectForKey:@"host"] copy];
         _port = [[dict objectForKey:@"port"] intValue];
     }
     return self;
 }
 
-- (void)dealloc
-{
-	[super dealloc];
-}
-
 + (id<IServerData>)createWithHost:(NSString*)hostName preferenceDictionary:(NSDictionary*)prefDict;
 {
-	return [[[ServerFromPrefs alloc] initWithHost:hostName preferenceDictionary:prefDict] autorelease];
+	return [[ServerFromPrefs alloc] initWithHost:hostName preferenceDictionary:prefDict];
 }
 
 + (id<IServerData>)createWithName:(NSString*)name
 {
-	ServerFromPrefs* newServer = [[[ServerFromPrefs alloc] init] autorelease];
+	ServerFromPrefs* newServer = [[ServerFromPrefs alloc] init];
 	[newServer setName:name];
 	
 	return newServer;
@@ -97,14 +90,14 @@
 
 - (id)initWithCoder:(NSCoder *)coder
 {
-	[self autorelease];
+	//[self autorelease];
 	NSParameterAssert( [coder allowsKeyedCoding] );
-	[self retain];
+	//[self retain];
 	
 	if( self = [super init] )
 	{
         BOOL    havePort; // port's been specified in hostAndPort
-        _name =                  [[coder decodeObjectForKey:RFB_NAME] retain];
+        _name =                  [[coder decodeObjectForKey:RFB_NAME] copy];
         NSString *host =          [coder decodeObjectForKey:RFB_HOST];
 		havePort = [self setHostAndPort:[coder decodeObjectForKey:RFB_HOSTANDPORT]];
         [self setHost: host];

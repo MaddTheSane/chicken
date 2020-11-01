@@ -102,7 +102,7 @@
 		7F7A945205E71B5C00E20416 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F2D5A703B3C93B01150DB1 /* debug.m */; };
 		7F7A945305E71B5C00E20416 /* KeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F48D75040EDD2200BD55BA /* KeyChain.m */; };
 		7F7A945405E71B5C00E20416 /* ServerFromPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6DF6805C31AF50028A970 /* ServerFromPrefs.m */; };
-		7F7A945605E71B5C00E20416 /* ServerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F088F2505E1D81100336456 /* ServerDataManager.m */; };
+		7F7A945605E71B5C00E20416 /* ServerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F088F2505E1D81100336456 /* ServerDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7F7A945905E71B5C00E20416 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		7F7A945A05E71B5C00E20416 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B8B7E9036275D101000105 /* libz.dylib */; };
 		7F7A945B05E71B5C00E20416 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F48D78040EDD5100BD55BA /* Carbon.framework */; };
@@ -115,7 +115,7 @@
 		7FB6A8D1068AB5E3005E5E49 /* ServerFromRendezvous.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FC6DF6D05C31B0D0028A970 /* ServerFromRendezvous.h */; };
 		7FB6A8D2068AB5E7005E5E49 /* ServerFromRendezvous.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6DF6E05C31B0D0028A970 /* ServerFromRendezvous.m */; };
 		7FBB0A6A05F5BC9700F716C4 /* ServerDataViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBB0A6605F5BC9700F716C4 /* ServerDataViewController.h */; };
-		7FBB0A6B05F5BC9700F716C4 /* ServerDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB0A6705F5BC9700F716C4 /* ServerDataViewController.m */; };
+		7FBB0A6B05F5BC9700F716C4 /* ServerDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB0A6705F5BC9700F716C4 /* ServerDataViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7FD35C1A06CC583A00648090 /* ProfileDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD35C1806CC583A00648090 /* ProfileDataManager.h */; };
 		7FD35C1B06CC583A00648090 /* ProfileDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD35C1906CC583A00648090 /* ProfileDataManager.m */; };
 		7FFA8FEB062BA6330008D381 /* ServerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FFA8FE9062BA6330008D381 /* ServerBase.h */; };
@@ -1523,6 +1523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
@@ -1554,6 +1555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;

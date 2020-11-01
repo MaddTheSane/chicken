@@ -41,35 +41,42 @@
     NSString  *_sshUser;
 }
 
-- (id)init;
-- (void)dealloc;
+- (instancetype)init;
 
 - (bool)doYouSupport: (SUPPORT_TYPE)type;
 
+@property (readonly, copy) NSString *name;
 - (NSString*)name;
-- (NSString*)host;
+@property (nonatomic, copy) NSString *host;
 - (NSString*)password;
 - (BOOL)rememberPassword;
-- (int)port;
-- (bool)shared;
+@property (readwrite) int port;
+@property (readwrite) bool shared;
 - (bool)fullscreen;
 - (bool)viewOnly;
 - (Profile *)profile;
 - (bool)addToServerListOnConnect;
 
+@property (readwrite, copy) NSString *sshHost;
 - (NSString *)sshHost;
+@property (readonly) in_port_t sshPort;
 - (in_port_t)sshPort;
+@property (readonly, copy) NSString *sshUser;
 - (NSString *)sshUser;
 - (NSString *)sshString;
 
 - (void)setHost: (NSString*)host;
 - (BOOL)setHostAndPort: (NSString*)host;
+@property (readwrite, copy) NSString *password;
 - (void)setPassword: (NSString*)password;
 - (void)setDisplay: (int)display;
 - (void)setShared: (bool)shared;
 - (void)setPort: (int)port;
+@property (readwrite) bool fullscreen;
 - (void)setFullscreen: (bool)fullscreen;
+@property (readwrite) bool viewOnly;
 - (void)setViewOnly: (bool)viewOnly;
+@property (readwrite, strong) Profile *profile;
 - (void)setProfile: (Profile *)profile;
 - (void)setProfileName: (NSString *)profileName;
 - (void)setSshHost:(NSString *)sshHost;

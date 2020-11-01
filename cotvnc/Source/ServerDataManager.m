@@ -25,6 +25,7 @@
 #import "ServerFromRendezvous.h"
 #import <AppKit/AppKit.h>
 
+NSNotificationName const ServerListChangeDidChangeNotification = @"ServerListChangeMsg";
 #define RFB_PREFS_LOCATION  @"Library/Preferences/cotvnc.prefs"
 #define RFB_SERVER_LIST     @"ServerList"
 #define RFB_GROUP_LIST		@"GroupList"
@@ -294,7 +295,7 @@ static ServerDataManager* gInstance = nil;
 	[defaults setObject:servers forKey:RFB_SAVED_RENDEZVOUS_SERVERS];
 }
 
-- (unsigned) serverCount
+- (NSInteger) serverCount
 {
 	return [mServers count];
 }
@@ -329,7 +330,7 @@ static ServerDataManager* gInstance = nil;
     return [names autorelease];
 }
 
-- (unsigned) groupCount
+- (NSInteger) groupCount
 {
 	return [mGroups count];
 }
@@ -360,13 +361,12 @@ static ServerDataManager* gInstance = nil;
 
 - (void)removeServer:(id<IServerData>)server
 {	
-	NSString* name;
-	NSEnumerator* groupKeys = [mGroups keyEnumerator];
+	NSEnumerator<NSString*>* groupKeys = [mGroups keyEnumerator];
 
     // deletes keychain password, if there is one
     [server setRememberPassword:NO];
 	
-	while( name = [groupKeys nextObject] )
+	for( NSString *name in groupKeys )
 	{
 		[[mGroups objectForKey:name] removeObjectForKey:[server name]];
 	}
@@ -426,7 +426,7 @@ static ServerDataManager* gInstance = nil;
 
 - (void)validateNameChange:(NSMutableString *)name forServer:(id<IServerData>)server;
 {
-	[(NSObject *)server retain];
+	[server retain];
 
 	BOOL insertServer = NO;
 	NSMutableArray *groupsWithServer = [[[NSMutableArray alloc] init] autorelease];
@@ -442,11 +442,10 @@ static ServerDataManager* gInstance = nil;
 	// the server needs to be removed before being added.
 	if( server == [mServers objectForKey:[server name]] )
 	{
-		NSString* groupName;
 		NSEnumerator* groupKeys = [mGroups keyEnumerator];
-		while( groupName = [groupKeys nextObject] )
+		for( NSString* groupName in groupKeys )
 		{
-			NSMutableDictionary *group = [mGroups objectForKey:groupName];
+			NSMutableDictionary<NSString*,id<IServerData>> *group = [mGroups objectForKey:groupName];
 			if( nil != [group objectForKey:[server name]] )
 			{
 				[group removeObjectForKey:[server name]];
@@ -479,7 +478,7 @@ static ServerDataManager* gInstance = nil;
 		[mServers setObject:server forKey:name];
 	}
 		
-	[(NSObject *)server release];
+	[server release];
 }
 
 - (void)useRendezvous:(bool)use

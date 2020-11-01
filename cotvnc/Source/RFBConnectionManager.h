@@ -25,13 +25,13 @@
 @protocol IServerData;
 
 
-@interface RFBConnectionManager : NSWindowController
+@interface RFBConnectionManager : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 {
 	IBOutlet NSTableView *serverList;
 	IBOutlet NSTableView *groupList;
 	IBOutlet NSBox *serverDataBoxLocal;
-	IBOutlet NSBox *serverListBox;
-	IBOutlet NSBox *serverGroupBox;
+	NSBox *serverListBox;
+	NSBox *serverGroupBox;
 	IBOutlet NSSplitView *splitView;
     IBOutlet NSButton *serverDeleteBtn;
     IBOutlet NSButton *serverAddBtn;
@@ -47,6 +47,10 @@
 }
 
 + (id)sharedManager;
+
+@property (strong) IBOutlet NSBox *serverListBox;
+@property (strong) IBOutlet NSBox *serverGroupBox;
+
 
 - (void)wakeup;
 - (BOOL)runFromCommandLine;
@@ -87,7 +91,6 @@
 - (void)setFrontWindowUpdateInterval: (NSTimeInterval)interval;
 - (void)setOtherWindowUpdateInterval: (NSTimeInterval)interval;
 
-- (BOOL)launchedByURL;
-- (void)setLaunchedByURL:(bool)launchedByURL;
+@property BOOL launchedByURL;
 
 @end

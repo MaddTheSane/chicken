@@ -44,7 +44,7 @@ static inline unsigned int
 ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 {  return 1 << (buttonNumber-1);  }
 
-@interface EventFilter (Private)
+@interface EventFilter ()
 
 - (void)_synthesizeRemainingKeyUpEvents;
 - (void)_sendKeyEvent:(QueuedEvent *)event;
@@ -58,7 +58,6 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 - (void)_resetMultiTapTimer: (NSTimer *)timer
 {
 	[_multiTapTimer invalidate];
-	[_multiTapTimer release];
 	_multiTapTimer = nil;
 	if ( timer )
 	{
@@ -72,7 +71,6 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 - (void)_resetTapModifierAndClick: (NSTimer *)timer
 {
 	[_tapAndClickTimer invalidate];
-	[_tapAndClickTimer release];
 	_tapAndClickTimer = nil;
 	[_view setCursorTo: nil];
 	if ( timer ) {
@@ -91,7 +89,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	{
 		_watchEventForCapsLock = NO;
 		NSEvent *currentEvent = [NSApp currentEvent];
-		unsigned int modifierFlags = [currentEvent modifierFlags];
+		NSEventModifierFlags modifierFlags = [currentEvent modifierFlags];
 		if ( (NSAlphaShiftKeyMask & modifierFlags) != (NSAlphaShiftKeyMask & _pressedModifiers) )
 			[self flagsChanged: currentEvent];
 	}
@@ -115,23 +113,16 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 - (void)dealloc
 {
     [_multiTapTimer invalidate];
-    [_multiTapTimer release];
     [_tapAndClickTimer invalidate];
-    [_tapAndClickTimer release];
 
-	[_pendingEvents release];
-	[_pressedKeys release];
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
-	[super dealloc];
 }
 
 
 #pragma mark -
 #pragma mark Talking to the server
 
-
-- (RFBConnection *)connection
-{  return _connection;  }
+@synthesize connection=_connection;
 
 - (void)setConnection: (RFBConnection *)connection
 {
@@ -141,12 +132,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 }
 
 
-- (RFBView *)view
-{  return _view;  }
-
-
-- (void)setView: (RFBView *)view
-{  _view = view;  }
+@synthesize view=_view;
 
 
 #pragma mark -
@@ -242,7 +228,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	[self _updateCapsLockStateIfNecessary];
 
 	NSString *characters = [theEvent characters];
-	unsigned int modifiers = [theEvent modifierFlags];
+	NSEventModifierFlags modifiers = [theEvent modifierFlags];
 	if ( [[KeyEquivalentManager defaultManager] performEquivalentWithCharacters: characters modifiers: modifiers] )
 	{
 		[self discardAllPendingQueueEntries];
@@ -333,8 +319,8 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
     NSString *characters;
     unsigned int length;
 	unsigned int i;
-    unsigned int oldModifiers = 0;
-    unsigned int modifiers = [theEvent modifierFlags];
+    NSEventModifierFlags oldModifiers = 0;
+    NSEventModifierFlags modifiers = [theEvent modifierFlags];
 
     /* If shift is down, the OS does the capitalization on
      * charactersIgnoringModifiers, but if caps lock is down, it doesn't. */
@@ -414,12 +400,12 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 /* Queues a change in the modifier state. Note that unlike the preceeding
  * queue... messages, this does not write the connection buffer. */
-- (void)queueModifiers:(unsigned int)newState
+- (void)queueModifiers:(NSEventModifierFlags)newState
              timestamp:(NSTimeInterval)timestamp
 {
-    unsigned int pressed = newState & ~_queuedModifiers;
-    unsigned int released = ~newState & _queuedModifiers;
-    unsigned int masks[] = {NSShiftKeyMask, NSControlKeyMask,
+    NSEventModifierFlags pressed = newState & ~_queuedModifiers;
+    NSEventModifierFlags released = ~newState & _queuedModifiers;
+    NSEventModifierFlags masks[] = {NSShiftKeyMask, NSControlKeyMask,
                             NSAlternateKeyMask, NSCommandKeyMask,
                             NSAlphaShiftKeyMask, NSNumericPadKeyMask,
                             NSHelpKeyMask};
@@ -435,7 +421,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
     }
 }
 
-- (void)queueModifierPressed: (unsigned int)modifier timestamp: (NSTimeInterval)timestamp
+- (void)queueModifierPressed: (NSEventModifierFlags)modifier timestamp: (NSTimeInterval)timestamp
 {
 	QueuedEvent *event = [QueuedEvent modifierDownEventWithCharacter: modifier
 													  timestamp: timestamp];
@@ -444,7 +430,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 }
 
 
-- (void)queueModifierReleased: (unsigned int)modifier timestamp: (NSTimeInterval)timestamp
+- (void)queueModifierReleased: (NSEventModifierFlags)modifier timestamp: (NSTimeInterval)timestamp
 {
     if ( kClickWhileHoldingModifierEmulation == [_profile button2EmulationScenario]
 		 && _clickWhileHoldingModifierStillDown[0] 
@@ -469,7 +455,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 - (void)pasteString: (NSString *)string
 {
 	[self _updateCapsLockStateIfNecessary];
-	int index, strLength = [string length];
+	NSInteger index, strLength = [string length];
 	NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     unsigned oldModifiers = _pressedModifiers;
 	BOOL shiftKeyDown = NO;
@@ -566,7 +552,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	unsigned int eventsToDelay = eventsToDelay3 > eventsToDelay2 ? eventsToDelay3 : eventsToDelay2;
 	if ( eventsToDelay )
 	{
-		unsigned int pendingEvents = [_pendingEvents count];
+		NSUInteger pendingEvents = [_pendingEvents count];
 		if ( eventsToDelay < pendingEvents )
 		{
 			NSRange range = NSMakeRange( 0, pendingEvents - eventsToDelay );
@@ -682,7 +668,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 - (void)sendPendingQueueEntriesInRange: (NSRange)range
 {
-	unsigned int i, last = NSMaxRange(range);
+	NSUInteger i, last = NSMaxRange(range);
 	
 	for ( i = range.location; i < last; ++i )
 	{
@@ -749,7 +735,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 - (unsigned int)handleClickWhileHoldingForButton: (unsigned int)button
 {
-	int eventCount = [_pendingEvents count];
+	NSInteger eventCount = [_pendingEvents count];
     unsigned    cwhModifier = [_profile clickWhileHoldingModifierForButton:button];
 	if ( eventCount > 2 )
 		return 0;
@@ -767,7 +753,6 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 			
 			if ( kQueuedMouse1DownEvent == [event2 type] )
 			{
-				[[event2 retain] autorelease];
 				[self discardAllPendingQueueEntries];
 				[self _queueEmulatedMouseDownForButton: button basedOnEvent: event2];
 				_clickWhileHoldingModifierStillDown[buttonIndex] = YES;
@@ -789,7 +774,6 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 		else if ( YES == _clickWhileHoldingModifierStillDown[buttonIndex] 
 				  && kQueuedMouse1DownEvent == [event type] )
 		{
-			[[event retain] autorelease];
 			[self discardAllPendingQueueEntries];
 			[self _queueEmulatedMouseDownForButton: button basedOnEvent: event];
 			return 0;
@@ -843,7 +827,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	
 	if ( validEvents && (validEvents % 2 == 0) )
 	{
-		_multiTapTimer = [[NSTimer scheduledTimerWithTimeInterval: [_profile multiTapDelayForButton:button] target: self selector: @selector(_resetMultiTapTimer:) userInfo: nil repeats: NO] retain];
+		_multiTapTimer = [NSTimer scheduledTimerWithTimeInterval: [_profile multiTapDelayForButton:button] target: self selector: @selector(_resetMultiTapTimer:) userInfo: nil repeats: NO];
 //		NSLog(@"starting multi-tap timer");
 	}
 	
@@ -853,7 +837,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 - (unsigned int)handleTapModifierAndClickForButton: (unsigned int)button
 {
-	int eventIndex, eventCount = [_pendingEvents count];
+	NSInteger eventIndex, eventCount = [_pendingEvents count];
 	NSTimeInterval time1 = 0, time2;
     unsigned    emulModifier = [_profile tapAndClickModifierForButton:button];
 	
@@ -880,7 +864,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 			if ( ! _tapAndClickTimer )
 			{
-                _tapAndClickTimer = [[NSTimer scheduledTimerWithTimeInterval: [_profile tapAndClickTimeoutForButton:button] target: self selector: @selector(_resetTapModifierAndClick:) userInfo: nil repeats: NO] retain];
+                _tapAndClickTimer = [NSTimer scheduledTimerWithTimeInterval: [_profile tapAndClickTimeoutForButton:button] target: self selector: @selector(_resetTapModifierAndClick:) userInfo: nil repeats: NO];
 				[_view setCursorTo: (button == 2) ? @"rfbCursor2" : @"rfbCursor3"];
 			}
 		}
@@ -896,7 +880,6 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 				return 0;
 			}
 			
-			[[event retain] autorelease];
 			[self discardAllPendingQueueEntries];
 			[self _queueEmulatedMouseDownForButton: button basedOnEvent: event];
 			[self _resetTapModifierAndClick: nil];

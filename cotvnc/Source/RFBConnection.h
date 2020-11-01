@@ -51,7 +51,7 @@
 
 @interface RFBConnection : NSObject
 {
-    Session     *session;
+    __weak Session     *session;
     IBOutlet RFBView *rfbView;
     FrameBuffer *frameBuffer;
     NSFileHandle    *socketHandler;
@@ -86,17 +86,17 @@
     int             lastBufferedIsMouseMovement;
 }
 
-- (id)initWithFileHandle:(NSFileHandle*)file server:(id<IServerData>)server;
-
-- (void)dealloc;
+- (instancetype)initWithFileHandle:(NSFileHandle*)file server:(id<IServerData>)server;
 
 - (void)closeConnection;
-- (id<IServerData>)server;
+@property (readonly, strong) id<IServerData> server;
 
 - (void)setRfbView:(RFBView *)view;
+@property (weak) Session *session;
 - (void)setSession:(Session *)aSession;
-- (void)setPassword:(NSString *)password;
-- (void)setSshTunnel:(SshTunnel *)tunnel;
+@property (nonatomic, copy) NSString *password;
+@property (strong) SshTunnel *sshTunnel;
+@property (nonatomic, strong) ByteReader *reader;
 - (void)setReader:(ByteReader*)aReader;
 
 - (BOOL)pasteFromPasteboard:(NSPasteboard*)pb;
@@ -125,20 +125,19 @@
 - (void)sendKey:(unichar)key pressed:(BOOL)pressed;
 - (void)sendModifier:(unsigned int)m pressed:(BOOL)pressed;
 - (void)sendKeyCode:(CARD32)key pressed:(BOOL)pressed;
-- (void)writeBytes:(unsigned char*)bytes length:(unsigned int)length;
-- (void)writeBufferedBytes:(unsigned char*)bytes length:(unsigned int)length;
+- (void)writeBytes:(unsigned char*)bytes length:(size_t)length;
+- (void)writeBufferedBytes:(unsigned char*)bytes length:(size_t)length;
 - (void)writeRFBString:(NSString *)aString;
 - (void)writeBuffer;
 
-- (Profile*)profile;
+@property (readonly, strong) Profile *profile;
 - (int) protocolMajorVersion;
 - (int) protocolMinorVersion;
 - (NSString*)password;
 - (BOOL)connectShared;
-- (BOOL)viewOnly;
-- (EventFilter *)eventFilter;
+@property (readonly) BOOL viewOnly;
+@property (readonly, strong) EventFilter *eventFilter;
 - (Session *)session;
-- (SshTunnel *)sshTunnel;
 
 - (void)viewFrameDidChange:(NSNotification *)aNotification;
 - (NSString *)statisticsString;

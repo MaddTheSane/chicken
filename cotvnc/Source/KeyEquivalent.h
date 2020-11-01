@@ -6,19 +6,19 @@
 //  Copyright (c) 2004 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 /* Encapsulates key press with modifiers. This is mapped to a menu event by
  * KeyEquivalentScenario. */
 @interface KeyEquivalent : NSObject <NSCopying> {
 	NSString *mCharacters;
-	unsigned int mModifiers;
+	NSEventModifierFlags mModifiers;
 }
 
-- (id)initWithCharacters: (NSString *)characters modifiers: (unsigned int)modifiers;
+- (id)initWithCharacters: (NSString *)characters modifiers: (NSEventModifierFlags)modifiers;
 - (BOOL)isEqualToKeyEquivalent: (KeyEquivalent *)anObject;
 - (NSString *)characters;
-- (unsigned int)modifiers;
+@property (readonly) NSEventModifierFlags modifiers;
 - (NSAttributedString *)userString;
 - (NSString *)string;
 

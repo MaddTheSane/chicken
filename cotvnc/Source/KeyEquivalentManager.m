@@ -169,9 +169,6 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
-	[mScenarioDict release];
-	[mCurrentScenarioName release];
-	[super dealloc];
 }
 
 
@@ -217,16 +214,12 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
         forEquivalent:[standardKeyEquivalents
                                         keyEquivalentForMenuItem:fullscreen]];
 
-    [mScenarioDict release];
     mScenarioDict = [[NSMutableDictionary alloc] init];
-    [mScenarioDict setObject:[[standardKeyEquivalents copy] autorelease]
+    [mScenarioDict setObject:[standardKeyEquivalents copy]
                       forKey:kNonConnectionWindowFrontmostScenario];
     [mScenarioDict setObject:minimal forKey:kConnectionWindowFrontmostScenario];
-    [mScenarioDict setObject:[[minimal copy] autorelease]
+    [mScenarioDict setObject:[minimal copy]
                       forKey:kConnectionFullscreenScenario];
-
-    [entry release];
-    [minimal release];
 }
 
 
@@ -274,7 +267,6 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
 	{
 		KeyEquivalentScenario *scenario = [[KeyEquivalentScenario alloc] initWithPropertyList: [propertyList objectForKey: scenarioName]];
 		[mScenarioDict setObject: scenario forKey: scenarioName];
-		[scenario release];
 	}
 }
 
@@ -290,13 +282,13 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
 	mCurrentScenario = [mScenarioDict objectForKey: scenario];
 	[self makeAllScenariosInactive];
 	[mCurrentScenario makeActive: YES];
-	[mCurrentScenarioName release];
-	mCurrentScenarioName = [scenario retain];
+	[self willChangeValueForKey:@"currentScenarioName"];
+	mCurrentScenarioName = scenario;
+	[self didChangeValueForKey:@"currentScenarioName"];
 }
 
 
-- (NSString *)currentScenarioName
-{  return mCurrentScenarioName;  }
+@synthesize currentScenarioName=mCurrentScenarioName;
 
 
 #pragma mark -
@@ -311,11 +303,10 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
 #pragma mark Performing Key Equivalants
 
 
-- (BOOL)performEquivalentWithCharacters: (NSString *)characters modifiers: (unsigned int)modifiers
+- (BOOL)performEquivalentWithCharacters: (NSString *)characters modifiers: (NSEventModifierFlags)modifiers
 {
 	KeyEquivalent *keyEquivalent = [[KeyEquivalent alloc] initWithCharacters: characters modifiers: modifiers];
 	NSMenuItem *menuItem = [mCurrentScenario menuItemForKeyEquivalent: keyEquivalent];
-	[keyEquivalent release];
 	if ( menuItem )
 	{
 		[NSApp sendAction: [menuItem action] to: [menuItem target] from: menuItem];
@@ -329,8 +320,7 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
 #pragma mark Performing Key Equivalants
 
 
-- (RFBView *)keyRFBView
-{  return mKeyRFBView;  }
+@synthesize keyRFBView=mKeyRFBView;
 
 
 - (void)removeEquivalentForWindow:(NSString *)title
@@ -340,9 +330,9 @@ NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
     KeyEquivalentScenario   *scen;
     
     entry = [[KeyEquivalentEntry alloc] initWithTitle: title];
-    while (scen = [e nextObject])
+	for (scen in e) {
         [scen removeEntry: entry];
-    [entry release];
+	}
     [[KeyEquivalentPrefsController sharedController] menusChanged];
 }
 

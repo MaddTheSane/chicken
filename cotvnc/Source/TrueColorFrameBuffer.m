@@ -53,7 +53,6 @@ typedef	unsigned int			FBColor;
 {
     free(pixels);
     free(scratchpad);
-    [super dealloc];
 }
 
 + (void)getPixelFormat:(rfbPixelFormat*)aFormat

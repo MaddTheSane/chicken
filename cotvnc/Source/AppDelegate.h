@@ -10,10 +10,10 @@
 
 @class DockConnection;
 
-@interface AppDelegate : NSObject {
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
 	IBOutlet NSMenuItem *mRendezvousMenuItem;
 	IBOutlet NSTextField *mInfoVersionNumber;
-    IBOutlet NSMenuItem *fullScreenMenuItem;
+    __unsafe_unretained NSMenuItem *fullScreenMenuItem;
 	
     NSMutableArray      *dockConnections;
 }
@@ -26,6 +26,7 @@
 - (IBAction)showProfileManager: (id)sender;
 - (IBAction)showHelp: (id)sender;
 
+@property (unsafe_unretained, getter=getFullScreenMenuItem) IBOutlet NSMenuItem *fullScreenMenuItem;
 - (NSMenuItem *)getFullScreenMenuItem;
 
 - (NSMenu *)applicationDockMenu:(NSApplication *)sender;

@@ -27,6 +27,9 @@
 #define XK_MISCELLANY
 #include "keysymdef.h"
 
+NSNotificationName const ProfileTintChangedNotification = @"ProfileTintChangedMsg";
+NSNotificationName const ProfileEncodingsChangedNotification = @"ProfileEncodingsChangedMsg";
+
 #define INTERPRET_LOCALLY_PREFERENCE 6
 
 // --- Dictionary Keys --- //
@@ -125,7 +128,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     if (self = [super init]) {
         int     i;
 
-        name = [aName retain];
+        name = [aName copy];
 
         if (info) {
             NSArray* enc;
@@ -229,16 +232,14 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 
         obj = [info objectForKey: kProfile_TintBack_Key];
         if (obj)
-            tintBack = [[NSKeyedUnarchiver unarchiveObjectWithData:obj]
-                                retain];
+            tintBack = [NSKeyedUnarchiver unarchiveObjectWithData:obj];
         if (tintBack == nil)
-            tintBack = [[NSColor clearColor] retain];
+            tintBack = [NSColor clearColor] ;
 
         if ((obj = [info objectForKey:kProfile_TintFront_Key]) != nil)
-            tintFront = [[NSKeyedUnarchiver unarchiveObjectWithData:obj]
-                                retain];
+            tintFront = [NSKeyedUnarchiver unarchiveObjectWithData:obj];
         if (tintFront == nil)
-            tintFront = [tintBack retain];
+            tintFront = tintBack;
 	}
     return self;
 }
@@ -249,7 +250,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     if (self = [super init]) {
         int     i;
 
-        name = [aName retain];
+        name = [aName copy];
         isDefault = NO;
         pixelFormatIndex = profile->pixelFormatIndex;
 
@@ -276,21 +277,17 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
             _tapAndClickTimeout[i] = profile->_tapAndClickTimeout[i];
         }
 
-        tintFront = [profile->tintFront retain];
-        tintBack = [profile->tintBack retain];
+        tintFront = profile->tintFront;
+        tintBack = profile->tintBack;
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [name release];
     free(encodings);
     if (enabledEncodings)
         free(enabledEncodings);
-    [tintFront release];
-    [tintBack release];
-    [super dealloc];
 }
 
 #define NUM_INTERACTIVE_PSEUDOS 2
@@ -345,13 +342,13 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
                  forKey:kProfile_IsDefault_Key];
 
     // modifier keys
-    [dict setObject:[NSNumber numberWithInt:commandKeyPreference]
+    [dict setObject:@(commandKeyPreference)
              forKey:kProfile_LocalCommandModifier_Key];
-    [dict setObject:[NSNumber numberWithInt:altKeyPreference]
+    [dict setObject:@(altKeyPreference)
              forKey:kProfile_LocalAltModifier_Key];
-    [dict setObject:[NSNumber numberWithInt:shiftKeyPreference]
+    [dict setObject:@(shiftKeyPreference)
              forKey:kProfile_LocalShiftModifier_Key];
-    [dict setObject:[NSNumber numberWithInt:controlKeyPreference]
+    [dict setObject:@(controlKeyPreference)
              forKey:kProfile_LocalControlModifier_Key];
 
     // encodings
@@ -367,10 +364,8 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
         [e setObject:[NSNumber numberWithBool:encodings[i].enabled]
               forKey:kProfile_EncodingEnabled_Key];
         [enc addObject:e];
-        [e release];
     }
     [dict setObject:enc forKey:kProfile_Encodings_Key];
-    [enc release];
     
     // mouse emulation
     [dict setObject:[NSNumber numberWithInt:_buttonEmulationScenario[0]]
@@ -413,19 +408,11 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     [dict setObject:[NSKeyedArchiver archivedDataWithRootObject:tintBack]
              forKey:kProfile_TintBack_Key];
 
-    return [dict autorelease];
+    return [dict copy];
 }
 
-
-- (NSString*)profileName
-{
-    return name;
-}
-
-- (BOOL)isDefault
-{
-    return isDefault;
-}
+@synthesize profileName=name;
+@synthesize isDefault=isDefault;
 
 - (CARD32)modifierCodeForPreference: (int)pref
 {
@@ -623,12 +610,9 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 	return altKeyPreference == INTERPRET_LOCALLY_PREFERENCE; //_interpretModifiersLocally;
 }
 
-- (int)numEncodings
-{
-    return numEncodings;
-}
+@synthesize numEncodings;
 
-- (NSString *)encodingNameAtIndex: (int)index
+- (NSString *)encodingNameAtIndex: (NSInteger)index
 {
     CARD32  encoding = encodings[index].encoding;
 
@@ -638,7 +622,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
         return @"";
 }
 
-- (BOOL)encodingEnabledAtIndex: (int)index
+- (BOOL)encodingEnabledAtIndex: (NSInteger)index
 {
     return encodings[index].enabled;
 }
@@ -770,11 +754,9 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 - (void)setTint:(NSColor *)aTint whenFront:(BOOL)front
 {
     if (front) {
-        [tintFront autorelease];
-        tintFront = [aTint retain];
+        tintFront = aTint;
     } else {
-        [tintBack autorelease];
-        tintBack = [aTint retain];
+        tintBack = aTint;
     }
     [[NSNotificationCenter defaultCenter]
         postNotificationName:ProfileTintChangedMsg object:self];

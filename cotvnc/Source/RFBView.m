@@ -23,14 +23,6 @@
 #import "Profile.h"
 //#import "RectangleList.h"
 
-#if MAC_OS_X_VERSION_MAX_ALLOWED < 1050
-#if __LP64__
-typedef long NSInteger;
-#else
-typedef int NSInteger;
-#endif
-#endif
-
 @implementation RFBView
 
 /* One-time initializer to read the cursors into memory. */
@@ -43,15 +35,12 @@ typedef int NSInteger;
 		NSDictionary *entries = [NSDictionary dictionaryWithContentsOfFile: [mainBundle pathForResource: @"cursors" ofType: @"plist"]];
 		NSParameterAssert( entries != nil );
 		sMapping = [[NSMutableDictionary alloc] init];
-		NSEnumerator *cursorNameEnumerator = [entries keyEnumerator];
-		NSDictionary *cursorName;
 		
-		while ( cursorName = [cursorNameEnumerator nextObject] )
+		for (NSString *cursorName in entries )
 		{
 			NSDictionary *cursorEntry = [entries objectForKey: cursorName];
 			NSString *localPath = [cursorEntry objectForKey: @"localPath"];
-			NSString *path = [mainBundle pathForResource: localPath ofType: nil];
-			NSImage *image = [[NSImage alloc] initWithContentsOfFile: path];
+			NSImage *image = [NSImage imageNamed:localPath];
 			
 			int hotspotX = [[cursorEntry objectForKey: @"hotspotX"] intValue];
 			int hotspotY = [[cursorEntry objectForKey: @"hotspotY"] intValue];
@@ -59,8 +48,6 @@ typedef int NSInteger;
 			
 			NSCursor *cursor = [[NSCursor alloc] initWithImage: image hotSpot: hotspot];
 			[(NSMutableDictionary *)sMapping setObject: cursor forKey: cursorName];
-            [cursor release];
-            [image release];
 		}
 	}
 	
@@ -81,35 +68,28 @@ typedef int NSInteger;
 {
     NSRect f = [self frame];
     
-    [fbuf release];
-    fbuf = [aBuffer retain];
+    fbuf = aBuffer;
     f.size = [aBuffer size];
     [self setFrame:f];
 }
 
 - (void)dealloc
 {
-    [fbuf release];
-    [_serverCursor release];
-    [_modifierCursor release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super dealloc];
 }
 
 - (void)setCursorTo: (NSString *)name
 {
-    [_modifierCursor release];
 	if (name == nil)
         _modifierCursor = nil;
     else
-        _modifierCursor = [[[self class] _cursorForName: name] retain];
+        _modifierCursor = [[self class] _cursorForName: name];
     [[self window] invalidateCursorRectsForView: self];
 }
 
 - (void)setServerCursorTo: (NSCursor *)aCursor
 {
-    [_serverCursor release];
-    _serverCursor = [aCursor retain];
+    _serverCursor = aCursor;
     if (!_modifierCursor)
         [[self window] invalidateCursorRectsForView: self];
 }
@@ -117,8 +97,7 @@ typedef int NSInteger;
 - (void)setTint: (NSColor *)aTint
 {
     if (![tint isEqual:aTint]) {
-        [tint release];
-        tint = [aTint retain];
+        tint = aTint;
         drawTint = [tint alphaComponent] != 0.0;
         [self setNeedsDisplay:YES];
     }
@@ -133,10 +112,7 @@ typedef int NSInteger;
 	[[NSNotificationCenter defaultCenter] addObserver: _delegate selector: @selector(viewFrameDidChange:) name: NSViewFrameDidChangeNotification object: self];
 }
 
-- (RFBConnection *)delegate
-{
-	return _delegate;
-}
+@synthesize delegate=_delegate;
 
 - (void)drawRect:(NSRect)destRect
 {
@@ -232,14 +208,14 @@ typedef int NSInteger;
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender {}
 
-- (unsigned int)draggingEntered:(id <NSDraggingInfo>)sender
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
 {
     return NSDragOperationGeneric;
 }
 
 - (void)draggingExited:(id <NSDraggingInfo>)sender {}
 
-- (unsigned int)draggingUpdated:(id <NSDraggingInfo>)sender
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender
 {
     return NSDragOperationGeneric;
 }

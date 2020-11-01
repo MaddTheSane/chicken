@@ -51,9 +51,9 @@
 #define BUFFER_SIZE 2048
 #define READ_BUF_SIZE (1024*1024)
 
-@interface RFBConnection (Private)
+@interface RFBConnection ()
 
-- (void)sendStringToServersClipboard:(const char *)cStr length:(unsigned)len;
+- (void)sendStringToServersClipboard:(const char *)cStr length:(size_t)len;
 
 @end
 
@@ -72,12 +72,12 @@
     if (self = [super init]) {
         ByteBlockReader *versionReader;
 
-        _profile = [[server profile] retain];
+        _profile = [server profile];
 
         currentReader = nil;
 
-        server_ = [(id)server retain];
-        password = [[server password] retain];
+        server_ = server;
+        password = [[server password] copy];
         
         _eventFilter = [[EventFilter alloc] init];
         [_eventFilter setConnection: self];
@@ -85,9 +85,8 @@
         versionReader = [[ByteBlockReader alloc] initTarget:self action:@selector(setServerVersion:)];
         [versionReader setBufferSize: 12];
         [self setReader:versionReader];
-        [versionReader release];
 
-        socketHandler = [file retain];
+        socketHandler = file;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readData:) 	name:NSFileHandleDataAvailableNotification object:socketHandler];
         [socketHandler waitForDataInBackgroundAndNotify];
 
@@ -129,29 +128,14 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    [_frameUpdateTimer release];
     [socketHandler closeFile]; // release is not sufficient because the
                                // asynchronous reading seems to keep a retain
-	[socketHandler release];
-    [sshTunnel release];
-    [currentReader release];
-	[_eventFilter release];
-	[handshaker release];
-    [server_ release];
-    [password release];
-	[rfbProtocol release];
-	[frameBuffer release];
-    [lastMouseMovement release];
-    [_lastUpdateRequestDate release];
     free(writeBuffer);
-
-    [super dealloc];
 }
 
 - (void)closeConnection
 {
     [_frameUpdateTimer invalidate];
-    [_frameUpdateTimer release];
     _frameUpdateTimer = nil;
     [self removeMouseMovedTrackingRect];
     [rfbView setDelegate:nil];
@@ -167,34 +151,17 @@
         [rfbView setFrameBuffer:frameBuffer];
 }
 
-- (void)setSession:(Session *)aSession
-{
-    session = aSession;
-}
-
+@synthesize password;
 - (void)setPassword:(NSString *)aPassword
 {
-    [password release];
-    password = [aPassword retain];
+    password = [aPassword copy];
     
     [handshaker gotPassword];
 }
 
-- (void)setSshTunnel:(SshTunnel *)tunnel
-{
-    [sshTunnel autorelease];
-    sshTunnel = [tunnel retain];
-}
+@synthesize server=server_;
 
-- (id<IServerData>)server
-{
-    return server_;
-}
-
-- (Profile*)profile
-{
-    return _profile;
-}
+@synthesize profile=_profile;
 
 - (int) protocolMajorVersion {
 	return MIN(rfbProtocolMajorVersion, serverMajorVersion);
@@ -207,10 +174,10 @@
         return MIN(rfbProtocolMinorVersion, serverMinorVersion);
 }
 
+@synthesize reader=currentReader;
 - (void)setReader:(ByteReader*)aReader
 {
-    [currentReader release];
-    currentReader = [aReader retain];
+    currentReader = aReader;
     [aReader resetReader];
 }
 
@@ -263,7 +230,6 @@
 {
     id frameBufferClass;
 
-	[frameBuffer release];
     frameBufferClass = [[PrefController sharedController] defaultFrameBufferClass];
     frameBuffer = [[frameBufferClass alloc] initWithSize:aSize andFormat:pixf];
 	[frameBuffer setServerMajorVersion: serverMajorVersion minorVersion: serverMinorVersion];
@@ -279,7 +245,6 @@
 /* Handshaking has been completed */
 - (void)start:(ServerInitMessage*)info
 {
-    [rfbProtocol release];
     rfbProtocol = [[RFBProtocol alloc] initWithConnection:self serverInfo:info];
 
     [self sizeDisplay:[info size] withPixelFormat:[info pixelFormatData]];
@@ -291,13 +256,7 @@
     [self requestUpdate:[rfbView bounds] incremental:NO];
     [rfbProtocol setFrameBuffer:frameBuffer];
 
-    [handshaker release];
     handshaker = nil;
-}
-
-- (NSString*)password
-{
-    return password;
 }
 
 - (BOOL)connectShared
@@ -349,12 +308,11 @@
 - (void)readData:(NSNotification*)aNotification
 {
     unsigned char   *buf = malloc(READ_BUF_SIZE);
-	NSAutoreleasePool *pool;
     NSDate          *startTime = [NSDate date];
 
-    [[self retain] autorelease];
-    pool = [[NSAutoreleasePool alloc] init]; // if we process slower than our requests, we don't autorelease until we get a break, which could be never.
+    //[[self retain] autorelease];
 
+	@autoreleasepool {
     do {
         unsigned char   *bytes = buf;
         unsigned        consumed;
@@ -368,7 +326,6 @@
         if(length <= 0) {	// server closed socket
             NSString *reason = NSLocalizedString( @"ServerClosed", nil );
             [self terminateConnection:reason];
-            [pool release];
             free(buf);
             return;
         }
@@ -378,7 +335,6 @@
 
             if (consumed == 0) {
                 [self terminateConnection: NSLocalizedString(@"ProtocolError", nil)];
-                [pool release];
                 return;
             }
 
@@ -387,7 +343,6 @@
             if (isReceivingUpdate)
                 bytesReceived += consumed;
             if (currentReader == nil) {
-                [pool release];
                 free(buf);
                 return;
             }
@@ -395,7 +350,7 @@
     } while (-[startTime timeIntervalSinceNow] < 0.05);
 
     [socketHandler waitForDataInBackgroundAndNotify];
-	[pool release];
+	}
     free(buf);
 }
 
@@ -403,7 +358,7 @@
 - (void)queueUpdateRequest {
     if (_frameBufferUpdateSeconds > 0.0) {
         if (_frameUpdateTimer == nil) {
-            _frameUpdateTimer = [[NSTimer scheduledTimerWithTimeInterval: _frameBufferUpdateSeconds target: self selector: @selector(requestFrameBufferUpdate:) userInfo: nil repeats: NO] retain];
+            _frameUpdateTimer = [NSTimer scheduledTimerWithTimeInterval: _frameBufferUpdateSeconds target: self selector: @selector(requestFrameBufferUpdate:) userInfo: nil repeats: NO];
         }
     } else {
         NSTimeInterval delay;
@@ -427,7 +382,6 @@
 /* Send incremental update request for whole framebuffer */
 - (void)requestFrameBufferUpdate:(id)sender {
 	[_frameUpdateTimer invalidate];
-	[_frameUpdateTimer release];
 	_frameUpdateTimer = nil;
 
     [self requestUpdate:[rfbView bounds] incremental:YES];
@@ -446,7 +400,6 @@
     msg.h = frame.size.height; msg.h = htons(msg.h);
     [self writeBytes:(unsigned char*)&msg length:sz_rfbFramebufferUpdateRequestMsg];
 
-    [_lastUpdateRequestDate release];
     _lastUpdateRequestDate = [[NSDate alloc] init];
 }
 
@@ -486,7 +439,6 @@
     msg->x = htons((CARD16) thePoint.x);
     msg->y = htons((CARD16) (b.size.height - thePoint.y));
 
-    [lastMouseMovement release];
     lastMouseMovement = [[NSDate alloc] init];
 }
 
@@ -690,16 +642,16 @@
                           NSLocalizedString(@"Cancel", nil), nil,
                           [rfbView window], self,
                           @selector(pasteConfirmation:returnCode:contextInfo:),
-                          nil, [str retain], /* This retain is balanced by the
+						  nil, (void*)CFBridgingRetain(str), /* This retain is balanced by the
                                               * release in pasteConfirmation: */
                           NSLocalizedString(@"PasteConversionBody", nil));
     } else
         [self sendStringToServersClipboard:cStr length:strlen(cStr)];
 }
 
-- (void)sendStringToServersClipboard:(const char *)cStr length:(unsigned)len
+- (void)sendStringToServersClipboard:(const char *)cStr length:(size_t)len
 {
-    unsigned int            msgSz = sizeof(rfbClientCutTextMsg) + len;
+    size_t            msgSz = sizeof(rfbClientCutTextMsg) + len;
     rfbClientCutTextMsg     *msg = malloc(msgSz);
 
     if (msg == NULL) {
@@ -714,33 +666,24 @@
     free(msg);
 }
 
-- (void)pasteConfirmation:(NSWindow *)sheet returnCode:(int)code
-              contextInfo:(NSString *)str
+- (void)pasteConfirmation:(NSWindow *)sheet returnCode:(NSModalResponse)code
+              contextInfo:(void *)var
 {
+	NSString *str = CFBridgingRelease(var);
     if (code == NSAlertDefaultReturn) {
         NSData  *data = [str dataUsingEncoding:NSISOLatin1StringEncoding
                           allowLossyConversion:YES];
         [self sendStringToServersClipboard:[data bytes] length:[data length]];
     }
-    [str release]; // balances retain in sendPasteboardToServer:
 }
 
-- (EventFilter *)eventFilter
-{  return _eventFilter;  }
+@synthesize eventFilter=_eventFilter;
+@synthesize session;
+@synthesize sshTunnel;
 
-- (Session *)session
+- (void)reallyWriteBytes:(unsigned char*)bytes length:(size_t)length
 {
-    return session;
-}
-
-- (SshTunnel *)sshTunnel
-{
-    return sshTunnel;
-}
-
-- (void)reallyWriteBytes:(unsigned char*)bytes length:(unsigned int)length
-{
-    int result;
+    ssize_t result;
     int written = 0;
 
     do {
@@ -765,7 +708,7 @@
     } while(length > 0);
 }
 
-- (void)writeBytes:(unsigned char *)bytes length:(unsigned int)length
+- (void)writeBytes:(unsigned char *)bytes length:(size_t)length
 {
     if (bufferLen > 0) {
         [self writeBufferedBytes:bytes length:length];
@@ -776,7 +719,7 @@
 
 /* Writes the bytes to a buffer. Note that the buffering reduces context
  * switches to the kernel and network traffic. */
-- (void)writeBufferedBytes:(unsigned char *)bytes length:(unsigned int)length
+- (void)writeBufferedBytes:(unsigned char *)bytes length:(size_t)length
 {
     if (bufferLen + length > BUFFER_SIZE) {
         [self writeBuffer];

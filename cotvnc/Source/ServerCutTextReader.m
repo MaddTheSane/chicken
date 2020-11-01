@@ -39,13 +39,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [dummyReader release];
-    [textReader release];
-    [super dealloc];
-}
-
 - (void)readMessage
 {
     [connection setReader:dummyReader];

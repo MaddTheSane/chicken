@@ -23,7 +23,7 @@
 
 
 // --- Notifications --- //
-NSString *ProfileAddDeleteNotification = @"ProfileAddedOrDeleted";
+NSString * const ProfileAddDeleteNotification = @"ProfileAddedOrDeleted";
 
 static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry";
 
@@ -116,7 +116,6 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
     Profile *newProfile = [[Profile alloc] initWithProfile:current
                                                    andName:newName];
     [profiles setProfile:newProfile forKey: newName];
-    [newProfile release];
 	
 	[mProfileTable reloadData];
     [self _selectProfileNamed: newName];
@@ -136,14 +135,14 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
     [[NSNotificationCenter defaultCenter] postNotificationName:ProfileAddDeleteNotification
                                                         object:self];
 
-	int selectedRow = [mProfileTable selectedRow];
+	NSInteger selectedRow = [mProfileTable selectedRow];
 	[self _selectProfileAtIndex: selectedRow];
 }
 
 
 - (void)formDidChange:(id)sender
 {
-	int tag, value;
+	NSInteger tag, value;
 	
     Profile* profile = [self _currentProfile];
 	
@@ -192,7 +191,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
 - (IBAction)toggleSelectedEncodingEnabled: (id)sender
 {
     Profile *profile = [self _currentProfile];
-    int selectedIndex = [mEncodingTableView selectedRow];
+    NSInteger selectedIndex = [mEncodingTableView selectedRow];
     NSParameterAssert ( selectedIndex >= 0 && selectedIndex < NUMENCODINGS );
     
     BOOL wasEnabled = [profile encodingEnabledAtIndex:selectedIndex];
@@ -239,7 +238,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
 #pragma mark NSTableView Data Source
 
 
-- (int)numberOfRowsInTableView:(NSTableView *)aTableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
 	if ( mEncodingTableView == aTableView )
 	{
@@ -251,7 +250,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
 
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn
-            row:(int)rowIndex
+            row:(NSInteger)rowIndex
 {
 	if ( mEncodingTableView == aTableView )
 	{
@@ -276,7 +275,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
 {
 	if ( mProfileTable == [aNotification object] )
 	{
-		int selectedRow = [mProfileTable selectedRow];
+		NSInteger selectedRow = [mProfileTable selectedRow];
 		NSString *profileName = [[self _sortedProfileNames] objectAtIndex: selectedRow];
 		
         [mProfileNameField setStringValue: profileName];
@@ -286,7 +285,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
 }
 
 
-- (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)operation
+- (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation
 {
 	if ( mEncodingTableView == tableView )
 	{
@@ -305,7 +304,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
 }
 
 
-- (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(int)row dropOperation:(NSTableViewDropOperation)operation
+- (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
 	if ( mEncodingTableView == tableView )
 	{
@@ -337,7 +336,6 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
                                               length:sizeof(int)];
 		[pboard declareTypes: [NSArray arrayWithObject: kProfileDragEntry] owner: nil];
 		[pboard setData: data forType: kProfileDragEntry];
-        [data release];
 		
 		mEncodingDragRow = rowIndex;
 		

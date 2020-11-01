@@ -40,16 +40,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [connFailedReader release];
-    [challengeReader release];
-    [authResultReader release];
-    [serverInitReader release];
-    [vncAuthChallenge release];
-    [super dealloc];
-}
-
 - (void)handshake
 {
     char clientData[sz_rfbProtocolVersionMsg + 1];
@@ -63,13 +53,11 @@
 
 		authCountReader = [[CARD8Reader alloc] initTarget:self action:@selector(setAuthCount:)];
 		[connection setReader:authCountReader];
-        [authCountReader release];
     } else {
         CARD32Reader    *authTypeReader;
 
 		authTypeReader = [[CARD32Reader alloc] initTarget:self action:@selector(setAuthType:)];
 		[connection setReader:authTypeReader];
-        [authTypeReader release];
     }
 }
 
@@ -78,7 +66,6 @@
     unsigned char shared = [connection connectShared] ? 1 : 0;
 
     [connection writeBytes:&shared length:1];
-    [serverInitReader release];
     serverInitReader = [[RFBServerInitReader alloc] initWithConnection: connection andHandshaker: self];
     [serverInitReader readServerInit];
 }
@@ -92,7 +79,6 @@
         ByteBlockReader *authTypeArrayReader;
 		authTypeArrayReader = [[ByteBlockReader alloc] initTarget:self action:@selector(setAuthArray:) size:[authCount intValue]];
 		[connection setReader:authTypeArrayReader];
-        [authTypeArrayReader release];
 	}
 }
 
@@ -175,10 +161,9 @@
 
     if ([connection password] == nil) {
         [connection promptForPassword];
-        [vncAuthChallenge autorelease];
         /* Note that theChallenge uses strictly temporary memory, so we can't
          * just retain, we have to copy. */
-        vncAuthChallenge = [[NSData dataWithData:theChallenge] retain];
+        vncAuthChallenge = [NSData dataWithData:theChallenge];
         return;
     }
 
@@ -193,7 +178,6 @@
 {
     if (vncAuthChallenge) {
         [self challenge:vncAuthChallenge];
-        [vncAuthChallenge release];
         vncAuthChallenge = nil;
     }
 }

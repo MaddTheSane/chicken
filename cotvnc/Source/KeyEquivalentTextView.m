@@ -12,22 +12,13 @@
 
 @implementation KeyEquivalentTextView
 
-- (KeyEquivalent *)keyEquivalent
-{  return mKeyEquivalent;  }
-
-
-- (void)dealloc
-{
-	[mKeyEquivalent release];
-	[super dealloc];
-}
+@synthesize keyEquivalent=mKeyEquivalent;
 
 
 - (void)interpretKeyEvents:(NSArray *)eventArray
 {
-	[mKeyEquivalent autorelease];
 	NSString *characters = @"";
-	unsigned int modifiers = 0;
+	NSEventModifierFlags modifiers = 0;
 	NSEnumerator *eventEnumerator = [eventArray objectEnumerator];
 	NSEvent *theEvent;
 	while (theEvent = [eventEnumerator nextObject])
@@ -46,9 +37,8 @@
 
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent
 {
-	[mKeyEquivalent autorelease];
 	NSString *characters = [theEvent charactersIgnoringModifiers];
-	unsigned int modifiers = [theEvent modifierFlags];
+	NSEventModifierFlags modifiers = [theEvent modifierFlags];
 	modifiers &= 0xFFFF0000;
 	mKeyEquivalent = [[KeyEquivalent alloc] initWithCharacters: characters modifiers: modifiers];
 	[[NSNotificationCenter defaultCenter] postNotificationName: NSTextDidChangeNotification object: self];

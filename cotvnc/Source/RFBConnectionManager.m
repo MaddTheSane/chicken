@@ -38,6 +38,8 @@
 static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 
 @implementation RFBConnectionManager
+@synthesize serverGroupBox;
+@synthesize serverListBox;
 
 + (id)sharedManager
 { 
@@ -73,8 +75,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 - (void)reloadServerArray
 {
     ServerDataManager   *manager = [ServerDataManager sharedInstance];
-    [mOrderedServerNames release];
-    mOrderedServerNames = [[manager sortedServerNames] retain];
+    mOrderedServerNames = [manager sortedServerNames];
 }
 
 - (void)wakeup
@@ -96,7 +97,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
     [[ProfileManager sharedManager] wakeup];
     
 	NSBox *serverCtrlerBox = [mServerCtrler box];
-	[serverCtrlerBox retain];
 	[serverCtrlerBox removeFromSuperview];
     [mServerCtrler setSuperController: self];
 	
@@ -109,7 +109,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 	[serverDataBoxLocal setBorderType:NSNoBorder];
     [serverDataBoxLocal setFrameSize: newSize];
 	[serverDataBoxLocal setContentView:serverCtrlerBox];
-	[serverCtrlerBox release];
 	
     // resize our window if necessary
     NSWindow *window = [serverDataBoxLocal window];
@@ -122,13 +121,12 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
     [window setFrame: newFrame display: NO];
     [contentView setAutoresizesSubviews: didAutoresize];
 
-    [serverListBox retain];
+	id tmpBox = serverListBox;
 	[serverListBox removeFromSuperview];
-	[serverListBox setBorderType:NSNoBorder];
-	[splitView addSubview:serverListBox];
+	[tmpBox setBorderType:NSNoBorder];
+	[splitView addSubview:tmpBox];
 	// we now own serverListBox and are responsible for releasing it
 	
-	[serverGroupBox retain];
 	[serverGroupBox removeFromSuperview];
 	[serverGroupBox setBorderType:NSNoBorder];
 	// we now own serverGroupBox and are responsible for releasing it
@@ -144,10 +142,10 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 {
     NSProcessInfo *procInfo = [NSProcessInfo processInfo];
     NSArray *args = [procInfo arguments];
-    int i, argCount = [args count];
+    NSInteger i, argCount = [args count];
     NSString *arg;
 	
-	ServerStandAlone* cmdlineServer = [[[ServerStandAlone alloc] init] autorelease];
+	ServerStandAlone* cmdlineServer = [[ServerStandAlone alloc] init];
     id<IServerData> savedServ = nil;
     BOOL listen = NO;
 	
@@ -239,7 +237,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 
             conn = [[CommandLineConnection alloc] initWithServer:server];
             [(AppDelegate *)[NSApp delegate] addDockConnection:conn];
-            [conn release];
         }
         return YES;
 	}
@@ -295,7 +292,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 {
 	ServerDataViewController* viewCtrlr = [[ServerDataViewController alloc] initWithReleaseOnCloseOrConnect];
 	
-	ServerStandAlone* server = [[[ServerStandAlone alloc] init] autorelease];
+	ServerStandAlone* server = [[ServerStandAlone alloc] init];
 	
 	[viewCtrlr setServer:server];
 	[[viewCtrlr window] makeKeyAndOrderFront:self];
@@ -335,7 +332,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 		{
             NSIndexSet  *set = [[NSIndexSet alloc] initWithIndex: index];
 			[serverList selectRowIndexes: set byExtendingSelection: NO];
-            [set release];
 
             if (lockedSelection >= 0)
                 lockedSelection = index;
@@ -401,15 +397,15 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
     PrefController* prefController = [PrefController sharedController];
     NSMutableDictionary* hostDictionaryList, *hostDictionary, *names;
 
-    hostDictionaryList = [[[prefController hostInfo] mutableCopy] autorelease];
+    hostDictionaryList = [[prefController hostInfo] mutableCopy];
     if(hostDictionaryList == nil) {
         hostDictionaryList = [NSMutableDictionary dictionary];
     }
-    hostDictionary = [[[hostDictionaryList objectForKey:aHost] mutableCopy] autorelease];
+    hostDictionary = [[hostDictionaryList objectForKey:aHost] mutableCopy];
     if(hostDictionary == nil) {
         hostDictionary = [NSMutableDictionary dictionary];
     }
-    names = [[[hostDictionary objectForKey:@"NameTranslations"] mutableCopy] autorelease];
+    names = [[hostDictionary objectForKey:@"NameTranslations"] mutableCopy];
     if(names == nil) {
         names = [NSMutableDictionary dictionary];
     }
@@ -421,9 +417,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 
 - (void)removeConnection:(id)aConnection
 {
-    [aConnection retain];
     [sessions removeObject:aConnection];
-    [aConnection autorelease];
 	if ( 0 == [sessions count] ) {
         if ( mRunningFromCommandLine ) 
             [NSApp terminate:self];
@@ -441,7 +435,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
     theConnection = [[RFBConnection alloc] initWithFileHandle:file server:server];
     if(theConnection) {
         [self successfulConnection:theConnection];
-        [theConnection release];
         return YES;
     }
     else {
@@ -455,7 +448,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 {
     Session *sess = [[Session alloc] initWithConnection:theConnection];
     [sessions addObject:sess];
-    [sess release];
 }
 
 - (IBAction)addServer:(id)sender
@@ -508,7 +500,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 	}
 }
 
-- (int)numberOfRowsInTableView:(NSTableView *)aTableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
 	if( serverList == aTableView )
 	{
@@ -522,7 +514,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 	return 0;
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
 	if( serverList == aTableView )
 	{
@@ -537,7 +529,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 	return NULL;	
 }
 
-- (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)tableColumn row:(int)row
+- (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     if (lockedSelection != -1)
         return NO;
@@ -556,7 +548,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 	return NO;	
 }
 
-- (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(int)row
+- (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)row
 {
     // prevent the user from changing the selection during a connection attempt
     return lockedSelection == -1 || lockedSelection == row;
@@ -571,7 +563,7 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
     [self selectServerByName: [server name]];
 }
 
-- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(int)row
+- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
 	if( serverList == aTableView )
 	{
@@ -609,12 +601,11 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 
 - (void)serverListDidChange:(NSNotification*)notification
 {
-    NSString    *name = [[self selectedServerName] retain];
+    NSString    *name = [self selectedServerName];
 	[self reloadServerArray];
 	[serverList reloadData];
     if (![self selectServerByName:name])
         [self selectedHostChanged];
-    [name release];
 }
 
 - (void)useRendezvous:(BOOL)useRendezvous
@@ -668,14 +659,6 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 	}
 }
 
-- (BOOL)launchedByURL
-{
-	return mLaunchedByURL;
-}
-
-- (void)setLaunchedByURL:(bool)launchedByURL
-{
-	mLaunchedByURL = launchedByURL;
-}
+@synthesize launchedByURL=mLaunchedByURL;
 
 @end

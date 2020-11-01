@@ -34,9 +34,8 @@
 }
 
 - (void)setFixed:(NSData*)data;
-- (void)setName:(NSString*)aName;
-- (NSString*)name;
-- (NSSize)size;
+@property (copy) NSString *name;
+@property (readonly) NSSize size;
 - (rfbPixelFormat *)pixelFormatData;
 
 @end
