@@ -13,6 +13,8 @@
  * x86_64 architecture.
  */
 
+#ifdef __x86_64__
+
 #define JPEG_INTERNALS
 #include "../jinclude.h"
 #include "../jpeglib.h"
@@ -679,3 +681,4 @@ jsimd_idct_float (j_decompress_ptr cinfo, jpeg_component_info * compptr,
                         output_buf, output_col);
 }
 
+#endif
