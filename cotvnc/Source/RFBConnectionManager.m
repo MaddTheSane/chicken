@@ -610,9 +610,9 @@ static NSString *kPrefs_LastHost_Key = @"RFBLastHost";
 
 - (void)useRendezvous:(BOOL)useRendezvous
 {
-	[[ServerDataManager sharedInstance] useRendezvous: useRendezvous];
+	[[ServerDataManager sharedInstance] setUseRendezvous: useRendezvous];
 	
-	NSParameterAssert( [[ServerDataManager sharedInstance] getUseRendezvous] == useRendezvous );
+	NSParameterAssert( [[ServerDataManager sharedInstance] useRendezvous] == useRendezvous );
 }
 
 - (void)displayGroups:(bool)display

@@ -178,7 +178,7 @@ static ServerDataManager* gInstance = nil;
 			[gInstance createServerByName:NSLocalizedString(@"RFBDefaultServerName", nil)];
 		}
         
-        [gInstance useRendezvous:[[PrefController sharedController] usesRendezvous]];
+        [gInstance setUseRendezvous:[[PrefController sharedController] usesRendezvous]];
 	}
 	
 	return gInstance;
@@ -481,7 +481,7 @@ static ServerDataManager* gInstance = nil;
 	[server release];
 }
 
-- (void)useRendezvous:(bool)use
+- (void)setUseRendezvous:(bool)use
 {
 	if( use != mUsingRendezvous )
 	{
@@ -527,10 +527,7 @@ static ServerDataManager* gInstance = nil;
 	}
 }
 
-- (bool)getUseRendezvous
-{
-	return mUsingRendezvous;
-}
+@synthesize useRendezvous=mUsingRendezvous;
 
 // Sent when browsing begins
 - (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)browser

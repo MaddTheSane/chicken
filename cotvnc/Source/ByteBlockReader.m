@@ -44,15 +44,7 @@
     }
 }
 
-- (void)setBufferSize:(unsigned)aSize
-{
-    size = aSize;
-}
-
-- (unsigned)bufferSize
-{
-    return size;
-}
+@synthesize bufferSize=size;
 
 - (void)resetReader
 {

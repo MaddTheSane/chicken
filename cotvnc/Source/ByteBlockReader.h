@@ -31,7 +31,6 @@
 
 - (id)initTarget:(id)aTarget action:(SEL)anAction;
 - (id)initTarget:(id)aTarget action:(SEL)anAction size:(unsigned)aSize;
-- (void)setBufferSize:(unsigned)aSize;
-- (unsigned)bufferSize;
+@property (nonatomic) unsigned bufferSize;
 
 @end

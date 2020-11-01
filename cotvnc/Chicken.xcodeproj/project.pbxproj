@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		55E0790F254E7A1300515948 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E0790E254E7A1300515948 /* Media.xcassets */; };
+		55E07971254F78EB00515948 /* CotVNC.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55E07970254F78EB00515948 /* CotVNC.sdef */; };
 		7F7A93E505E71B5C00E20416 /* ByteBlockReader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5DC719B033DB4A801A8010C /* ByteBlockReader.h */; };
 		7F7A93E605E71B5C00E20416 /* ByteReader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5DC719D033DB4A801A8010C /* ByteReader.h */; };
 		7F7A93E705E71B5C00E20416 /* CARD16Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5DC719F033DB4A801A8010C /* CARD16Reader.h */; };
@@ -285,6 +286,7 @@
 		55E0790C254E793A00515948 /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/RFBConnection.nib; sourceTree = "<group>"; };
 		55E0790D254E793A00515948 /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/ServerDisplay.nib; sourceTree = "<group>"; };
 		55E0790E254E7A1300515948 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		55E07970254F78EB00515948 /* CotVNC.sdef */ = {isa = PBXFileReference; lastKnownFileType = file; name = CotVNC.sdef; path = Resources/CotVNC.sdef; sourceTree = SOURCE_ROOT; };
 		7F088F2405E1D81100336456 /* ServerDataManager.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServerDataManager.h; sourceTree = "<group>"; };
 		7F088F2505E1D81100336456 /* ServerDataManager.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ServerDataManager.m; sourceTree = "<group>"; };
 		7F088F2805E1DA4800336456 /* URLHandlerCommand.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = URLHandlerCommand.h; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 		7FB3EA1D0804E77F003757C9 /* AppleScript Processing */ = {
 			isa = PBXGroup;
 			children = (
+				55E07970254F78EB00515948 /* CotVNC.sdef */,
 				7FF0C9A305CDBDCE008E39DD /* CotVNC.scriptSuite */,
 				7FF0C9A705CDC9A0008E39DD /* CotVNC.scriptTerminology */,
 				7F088F2805E1DA4800336456 /* URLHandlerCommand.h */,
@@ -1057,6 +1060,7 @@
 				E291FAD5088161DA0061216E /* cursors.plist in Resources */,
 				DAFB492212944331008C6FC4 /* dsa_pub.pem in Resources */,
 				DAD6DEEA12DCF4A3001FD9D6 /* AuthPrompt.nib in Resources */,
+				55E07971254F78EB00515948 /* CotVNC.sdef in Resources */,
 				DAC8077E12FEC38400C4ADB6 /* ssh-helper.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

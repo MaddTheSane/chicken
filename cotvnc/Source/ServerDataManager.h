@@ -32,8 +32,8 @@
  *  the servers as their specific class type since those classes may change in ways
  *  incompatible to your code (including adding new server classes), but the protocol
  *  should not.
- *  <BR><BR>
- *  This is a singleton class. Always access the class through the sharedInstance
+ *
+ *  This is a singleton class. Always access the class through the @c sharedInstance
  *  function. Do not create an instance yourself.
  */
 @interface ServerDataManager : NSObject
@@ -48,7 +48,7 @@
 	
 	bool mPostMessages;
 	
-	// Keeps track of search status
+	/// Keeps track of search status
 	NSNetServiceBrowser *mServiceBrowser_VNC;
 	NSNetServiceBrowser *mServiceBrowser_RFB;
 	BOOL mSearching;
@@ -70,16 +70,11 @@ extern NSNotificationName const ServerListChangeDidChangeNotification;
 - (void)save;
 
 /**
- *  Sets whether or not rendezvous server searching should be on
+ *  Gets/Sets whether or not rendezvous server searching should be on
  */
-- (void)useRendezvous:(bool)use;
+@property (nonatomic) bool useRendezvous;
 
 /**
- * @return Whether or not rendezvous server searching is on
- */
-- (bool)getUseRendezvous;
-
-/*!
  *  Provides the number of servers managed by ServerDataManager.
  *  @return The number of servers.
  */
@@ -95,25 +90,25 @@ extern NSNotificationName const ServerListChangeDidChangeNotification;
 
 - (NSArray<NSString*> *)sortedServerNames;
 
-/*
+/**
  *  Provides the number of groups managed by ServerDataManager.
  *  @return The number of groups.
  */
 @property (readonly) NSInteger groupCount;
 
-	/*
+/**
  *  Allows access to the names of all the groups servers managed by ServerDataManager.
  *  @return The enumerator that can be used to enumerate through all group names. 
  */
 - (NSEnumerator<NSString*>*) getGroupNameEnumerator;
 
-/*
+/**
  *  Allows access to all the servers in a particular group.
  *  @return The enumerator that can be used to enumerate through all servers in a group. 
  */
 - (NSEnumerator*) getServerEnumeratorForGroupName:(NSString*)group;
 
-/*
+/**
  *  Retrieves a server by its name. The retrieval process is case sensative.
  *  @param name The name of the server you want to retrieve.
  *  @return The server whose name matches the requested one or nil if the server
@@ -121,13 +116,13 @@ extern NSNotificationName const ServerListChangeDidChangeNotification;
  */
 - (id<IServerData>)getServerWithName:(NSString*)name;
 
-/*
+/**
  *  Deletes the specified server
  *  @param server The server to be deleted.
  */
 - (void)removeServer:(id<IServerData>)server;
 
-/*
+/**
  *  Adds a new server to the server list. The name passed in becomes the name of the
  *  server unless that name is already in use. If the name is in use, an underscore
  *  followed by a number will be added to the name so that it is unique.
@@ -136,7 +131,7 @@ extern NSNotificationName const ServerListChangeDidChangeNotification;
  */
 - (ServerFromPrefs *)createServerByName:(NSString*)name;
 
-/*
+/**
  *  Adds an existing server to the server list. A new server will be created in the
  *  ServerDataManager. If the server's name is in use, an underscore followed by a number
  *  will be added to the name in the new instance of the server so that it is unique.
