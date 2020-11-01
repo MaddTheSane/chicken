@@ -45,7 +45,7 @@
     IBOutlet NSButton *useSshTunnel;
     IBOutlet NSTextField *sshHost;
 
-	IBOutlet NSBox *box;
+	NSBox *box;
 	IBOutlet NSButton *connectBtn;
 	
 	IBOutlet NSProgressIndicator *connectIndicator;
@@ -61,10 +61,9 @@
     RFBConnectionManager *superController;
 }
 
-- (id)initWithReleaseOnCloseOrConnect;
+- (instancetype)initWithReleaseOnCloseOrConnect;
 
-- (void)setServer:(id<IServerData>)server;
-- (id<IServerData>)server;
+@property (nonatomic, retain) id<IServerData> server;
 
 - (IBAction)passwordChanged:(id)sender;
 - (IBAction)rememberPwdChanged:(id)sender;
@@ -74,7 +73,6 @@
 - (IBAction)viewOnlyChanged:(id)sender;
 - (IBAction)useSshTunnelChanged:(id)sender;
 - (IBAction)sshHostChanged:(id)sender;
-- (IBAction)connectToServer:(id)sender;
 - (IBAction)addServerChanged:(id)sender;
 
 - (IBAction)showProfileManager:(id)sender;
@@ -88,7 +86,7 @@
 
 - (void)disableControls;
 
-- (NSBox*)box;
+@property (assign) IBOutlet NSBox *box;
 
 - (void)updateView:(id)notification;
 - (void)updateProfileView:(id)notification;

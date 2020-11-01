@@ -368,9 +368,9 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     [dict setObject:enc forKey:kProfile_Encodings_Key];
     
     // mouse emulation
-    [dict setObject:[NSNumber numberWithInt:_buttonEmulationScenario[0]]
+    [dict setObject:@(_buttonEmulationScenario[0])
              forKey:kProfile_Button2EmulationScenario_Key];
-    [dict setObject:[NSNumber numberWithInt:_buttonEmulationScenario[1]]
+    [dict setObject:@(_buttonEmulationScenario[1])
              forKey:kProfile_Button3EmulationScenario_Key];
     [dict setObject:[NSNumber numberWithUnsignedInt:_clickWhileHoldingModifier[0]]
              forKey:kProfile_ClickWhileHoldingModifierForButton2_Key];
@@ -447,30 +447,11 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     return [self modifierCodeForPreference:controlKeyPreference];
 }
 
-- (int)commandKeyPreference
-{
-    return commandKeyPreference;
-}
-
-- (int)altKeyPreference
-{
-    return altKeyPreference;
-}
-
-- (int)shiftKeyPreference
-{
-    return shiftKeyPreference;
-}
-
-- (int)controlKeyPreference
-{
-    return controlKeyPreference;
-}
-
-- (int)pixelFormatIndex
-{
-    return pixelFormatIndex;
-}
+@synthesize commandKeyPreference;
+@synthesize altKeyPreference;
+@synthesize shiftKeyPreference;
+@synthesize controlKeyPreference;
+@synthesize pixelFormatIndex;
 
 - (CARD16)numEnabledEncodingsIfViewOnly:(BOOL)viewOnly
 {
@@ -485,20 +466,14 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     return enabledEncodings[index];
 }
 
-- (BOOL)enableCopyRect
-{
-    return enableCopyRect;
-}
+@synthesize enableCopyRect;
 
 - (BOOL)enableJpegEncoding
 {
     return jpegLevel >= 0;
 }
 
-- (int)jpegLevel
-{
-    return jpegLevel;
-}
+@synthesize jpegLevel;
 
 - (BOOL)useServerNativeFormat
 {
@@ -630,31 +605,6 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 - (NSColor *)tintWhenFront:(BOOL)front
 {
     return front ? tintFront : tintBack;
-}
-
-- (void)setCommandKeyPreference:(int)pref
-{
-    commandKeyPreference = pref;
-}
-
-- (void)setAltKeyPreference:(int)pref
-{
-    altKeyPreference = pref;
-}
-
-- (void)setShiftKeyPreference:(int)pref
-{
-    shiftKeyPreference = pref;
-}
-
-- (void)setControlKeyPreference:(int)pref
-{
-    controlKeyPreference = pref;
-}
-
-- (void)setPixelFormatIndex:(int)index
-{
-    pixelFormatIndex = index;
 }
 
 - (void)setEmulationScenario:(EventFilterEmulationScenario)scenario

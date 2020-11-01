@@ -35,7 +35,7 @@ typedef enum
 
 @class Profile;
 
-@protocol ServerDelegate
+@protocol ServerDelegate <NSObject>
 
 - (void)serverResolvedWithHost: (NSString *)host port: (int)port;
 - (void)serverDidNotResolve;

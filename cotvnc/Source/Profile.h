@@ -122,24 +122,24 @@ struct encoding {
 @property (readonly, copy) NSString *profileName;
 @property (readonly, getter=isDefault) BOOL isDefault;
 
-- (CARD32)commandKeyCode;
-- (CARD32)altKeyCode;
-- (CARD32)shiftKeyCode;
-- (CARD32)controlKeyCode;
-@property int commandKeyPreference;
-@property int altKeyPreference;
-@property int shiftKeyPreference;
-@property int controlKeyPreference;
-- (int)pixelFormatIndex;
+@property (readonly) CARD32 commandKeyCode;
+@property (readonly) CARD32 altKeyCode;
+@property (readonly) CARD32 shiftKeyCode;
+@property (readonly) CARD32 controlKeyCode;
+@property ModifierKeyIdentifier commandKeyPreference;
+@property ModifierKeyIdentifier altKeyPreference;
+@property ModifierKeyIdentifier shiftKeyPreference;
+@property ModifierKeyIdentifier controlKeyPreference;
+@property int pixelFormatIndex;
 - (CARD16)numEnabledEncodingsIfViewOnly:(BOOL)viewOnly;
 - (CARD32)encodingAtIndex:(unsigned)index;
-- (BOOL)enableCopyRect;
-- (BOOL)enableJpegEncoding;
-- (int)jpegLevel;
-- (BOOL)useServerNativeFormat;
+@property (readonly) BOOL enableCopyRect;
+@property (readonly) BOOL enableJpegEncoding;
+@property (nonatomic) int jpegLevel;
+@property (readonly) BOOL useServerNativeFormat;
 - (void)getPixelFormat:(rfbPixelFormat*)format;
-- (EventFilterEmulationScenario)button2EmulationScenario;
-- (EventFilterEmulationScenario)button3EmulationScenario;
+@property (readonly) EventFilterEmulationScenario button2EmulationScenario;
+@property (readonly) EventFilterEmulationScenario button3EmulationScenario;
 - (unsigned int)clickWhileHoldingModifierForButton: (unsigned int)button;
 - (unsigned int)multiTapModifierForButton: (unsigned int)button;
 - (NSTimeInterval)multiTapDelayForButton: (unsigned int)button;
@@ -147,17 +147,12 @@ struct encoding {
 - (unsigned int)tapAndClickModifierForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickButtonSpeedForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickTimeoutForButton: (unsigned int)button;
-- (BOOL)interpretModifiersLocally;
+@property (readonly) BOOL interpretModifiersLocally;
 @property (readonly) NSInteger numEncodings;
 - (NSString *)encodingNameAtIndex: (NSInteger)index;
 - (BOOL)encodingEnabledAtIndex: (NSInteger)index;
 - (NSColor *)tintWhenFront:(BOOL)front;
 
-- (void)setCommandKeyPreference:(int)pref;
-- (void)setAltKeyPreference:(int)pref;
-- (void)setShiftKeyPreference:(int)pref;
-- (void)setControlKeyPreference:(int)pref;
-- (void)setPixelFormatIndex:(int)index;
 - (void)setEmulationScenario:(EventFilterEmulationScenario)scenario
                    forButton:(unsigned)button;
 - (void)setClickWhileHoldingModifier:(unsigned)modifier

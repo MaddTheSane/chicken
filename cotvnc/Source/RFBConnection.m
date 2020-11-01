@@ -415,7 +415,7 @@
 
         pos.y = size.height - pos.y;
         pos = [rfbView convertPoint:pos toView:nil];
-        pos = [window convertBaseToScreen:pos];
+        pos = [window convertPointToScreen:pos];
         if (!NSPointInRect(pos, [window frame]))
             return;
         screenCoords.x = pos.x;
@@ -809,7 +809,7 @@ static NSString* byteString(double d)
 - (void)installMouseMovedTrackingRect
 {
     NSWindow *window = [rfbView window];
-	NSPoint mousePoint = [rfbView convertPoint: [window convertScreenToBase: [NSEvent mouseLocation]] fromView: nil];
+	NSPoint mousePoint = [rfbView convertPoint: [window convertPointFromScreen: [NSEvent mouseLocation]] fromView: nil];
 	BOOL mouseInVisibleRect = [rfbView mouse: mousePoint inRect: [rfbView visibleRect]];
 
     if (_mouseMovedTrackingTag)

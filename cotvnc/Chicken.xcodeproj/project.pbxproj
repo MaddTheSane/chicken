@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -232,24 +232,6 @@
 		E2F3AD7106D5E11D005EB917 /* NSObject_Chicken.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F3AD6F06D5E11D005EB917 /* NSObject_Chicken.h */; };
 		E2F3AD7206D5E11D005EB917 /* NSObject_Chicken.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F3AD7006D5E11D005EB917 /* NSObject_Chicken.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildRule section */
-		55E07922254E91A000515948 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			dependencyFile = "${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.d";
-			filePatterns = "*.yasm";
-			fileType = sourcecode.nasm;
-			inputFiles = (
-			);
-			isEditable = 1;
-			name = "Nasm Code";
-			outputFiles = (
-				"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.o",
-			);
-			script = "/opt/local/bin/nasm -f macho64 -g -I ${INPUT_FILE_DIR} ${INPUT_FILE_PATH} -MD ${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/${INPUT_FILE_BASE}.d -o ${SCRIPT_OUTPUT_FILE_0}\n\n";
-		};
-/* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DA36490A1293A27900FB8272 /* CopyFiles */ = {
@@ -1016,7 +998,6 @@
 				1A6258971DBAA6AA008CD537 /* ShellScript */,
 			);
 			buildRules = (
-				55E07922254E91A000515948 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);

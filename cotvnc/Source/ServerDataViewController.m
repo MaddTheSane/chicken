@@ -278,10 +278,7 @@
     superController = aSuperController;
 }
 
-- (id<IServerData>)server
-{
-	return mServer;
-}
+@synthesize server=mServer;
 
 /* Updates the display description after the user has changed the current port.
  */
@@ -452,10 +449,7 @@
     [[ProfileManager sharedManager] showWindowWithProfile:name];
 }
 
-- (NSBox*)box
-{
-	return box;
-}
+@synthesize box;
 
 - (IBAction)connectToServer:(id)sender
 {

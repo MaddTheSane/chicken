@@ -54,9 +54,8 @@ NSString * const ProfileListChangeMessgageNotification = @"ProfileListChangeMsg"
 - (NSString *)defaultProfileName
 {
 	NSEnumerator *profileNameEnumerator = [mProfiles keyEnumerator];
-	NSString *profileName;
 	
-	while ( profileName = [profileNameEnumerator nextObject] )
+	for ( NSString *profileName in profileNameEnumerator )
 	{
 		Profile *profile = [mProfiles objectForKey: profileName];
 		if ( [profile isDefault] )

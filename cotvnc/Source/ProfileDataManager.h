@@ -17,7 +17,7 @@ extern NSNotificationName const ProfileListChangeMessgageNotification;
 @interface ProfileDataManager : NSObject {
 
 @private
-	NSMutableDictionary *mProfiles;
+	NSMutableDictionary<NSString*,Profile*> *mProfiles;
     NSMutableDictionary *mProfileDicts;
 }
 
@@ -25,7 +25,7 @@ extern NSNotificationName const ProfileListChangeMessgageNotification;
  *  Accessor method to fetch the singleton instance for this class. Use this method
  *  instead of creating an instance of your own.
  *  @return Shared singleton instance of the ProfileDataManager class. */
-+ (ProfileDataManager*) sharedInstance;
+@property (class, readonly) ProfileDataManager *sharedInstance NS_SWIFT_NAME(shared);
 
 - (Profile *)defaultProfile;
 - (NSString *)defaultProfileName;
