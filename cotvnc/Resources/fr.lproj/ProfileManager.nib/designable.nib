@@ -712,7 +712,7 @@
                                         <scrollView fixedFrame="YES" horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="167">
                                             <rect key="frame" x="46" y="87" width="248" height="146"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                            <clipView key="contentView" ambiguous="YES" id="E91-Ub-ZXs">
+                                            <clipView key="contentView" ambiguous="YES" id="zXq-sU-vay">
                                                 <rect key="frame" x="1" y="25" width="246" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -811,7 +811,7 @@
                             <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="160">
                                 <rect key="frame" x="20" y="95" width="150" height="222"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <clipView key="contentView" ambiguous="YES" id="22A-4i-0J2">
+                                <clipView key="contentView" ambiguous="YES" id="60T-2M-CPQ">
                                     <rect key="frame" x="1" y="0.0" width="148" height="221"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -859,7 +859,7 @@
                             <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="164">
                                 <rect key="frame" x="39" y="38" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="square" title="-" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="554">
+                                <buttonCell key="cell" type="square" title="-" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" id="554">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="label"/>
                                     <string key="keyEquivalent"></string>
@@ -872,7 +872,7 @@
                             <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="158">
                                 <rect key="frame" x="20" y="38" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="553">
+                                <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" id="553">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="label"/>
                                 </buttonCell>
@@ -905,8 +905,4 @@
             <point key="canvasLocation" x="139" y="148"/>
         </window>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
-    </resources>
 </document>

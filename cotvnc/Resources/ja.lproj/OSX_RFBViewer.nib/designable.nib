@@ -300,7 +300,6 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="139" y="154"/>
         </menu>
         <window title="Chicken について" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="about" animationBehavior="default" id="232" userLabel="Info" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
@@ -395,6 +394,7 @@ source code and support available at http://chicken.sourceforge.net</string>
                     </textField>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="139" y="147"/>
         </window>
         <customObject id="1367" userLabel="AppDelegate" customClass="AppDelegate">
             <connections>

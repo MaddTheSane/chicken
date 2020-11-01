@@ -34,7 +34,7 @@
                     <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5">
                         <rect key="frame" x="196" y="20" width="377" height="323"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <view key="contentView" ambiguous="YES" id="4nB-Sc-M8T">
+                        <view key="contentView" ambiguous="YES" id="U93-0j-zkT">
                             <rect key="frame" x="1" y="1" width="375" height="321"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
@@ -63,14 +63,14 @@
                     <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                         <rect key="frame" x="206" y="20" width="166" height="267"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" ambiguous="YES" id="3pd-jb-Qfu">
+                        <view key="contentView" ambiguous="YES" id="Nu5-l8-ztG">
                             <rect key="frame" x="1" y="1" width="164" height="265"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26">
                                     <rect key="frame" x="1" y="29" width="161" height="232"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <clipView key="contentView" ambiguous="YES" id="SET-56-9pE">
+                                    <clipView key="contentView" ambiguous="YES" id="OEV-YX-CwR">
                                         <rect key="frame" x="1" y="25" width="159" height="206"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
@@ -144,14 +144,14 @@
                     <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                         <rect key="frame" x="20" y="20" width="166" height="267"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" ambiguous="YES" id="pVa-5u-qmP">
+                        <view key="contentView" ambiguous="YES" id="pTp-jr-URr">
                             <rect key="frame" x="1" y="1" width="164" height="265"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11">
                                     <rect key="frame" x="1" y="29" width="161" height="232"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <clipView key="contentView" ambiguous="YES" id="uwc-CJ-QPu">
+                                    <clipView key="contentView" ambiguous="YES" id="iNw-do-btW">
                                         <rect key="frame" x="1" y="25" width="159" height="206"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>

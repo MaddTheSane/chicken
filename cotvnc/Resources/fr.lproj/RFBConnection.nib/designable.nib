@@ -41,7 +41,7 @@
                     <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8">
                         <rect key="frame" x="0.0" y="0.0" width="454" height="385"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <clipView key="contentView" ambiguous="YES" id="ltO-nV-fzW">
+                        <clipView key="contentView" ambiguous="YES" id="yAO-BQ-OQM">
                             <rect key="frame" x="0.0" y="0.0" width="454" height="385"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -141,7 +141,7 @@ DQ
                     <box fixedFrame="YES" title="Informations serveur" translatesAutoresizingMaskIntoConstraints="NO" id="32">
                         <rect key="frame" x="17" y="132" width="254" height="165"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="fdy-IS-Ndo">
+                        <view key="contentView" id="yID-2G-NTC">
                             <rect key="frame" x="3" y="3" width="248" height="147"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -171,7 +171,7 @@ Protocol Parameters
                     <box fixedFrame="YES" title="Statistiques" translatesAutoresizingMaskIntoConstraints="NO" id="53">
                         <rect key="frame" x="17" y="16" width="254" height="112"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="prK-zJ-Q0Q">
+                        <view key="contentView" id="cuf-Q5-5Ol">
                             <rect key="frame" x="3" y="3" width="248" height="94"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>

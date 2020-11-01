@@ -5,7 +5,7 @@
 // Servers
 "RFBDefaultServerName" = "New Server";
 "RFBUntitledServerName" = "Untitled Server";
-"Connecting..." = "Connecting...";
+"Connecting..." = "Connecting…";
 "Connect" = "Connect";
 "DisplayIsPort" = "Display %d is port %d";
 "PortIsDisplay" = "Port %d is display %d";

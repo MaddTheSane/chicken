@@ -42,7 +42,7 @@
                     <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                         <rect key="frame" x="8" y="27" width="377" height="323"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" ambiguous="YES" id="vCY-jq-cAL">
+                        <view key="contentView" ambiguous="YES" id="aXa-xX-1bi">
                             <rect key="frame" x="1" y="1" width="375" height="321"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>

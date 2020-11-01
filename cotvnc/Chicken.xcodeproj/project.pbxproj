@@ -120,6 +120,8 @@
 		7FFA8FEB062BA6330008D381 /* ServerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FFA8FE9062BA6330008D381 /* ServerBase.h */; };
 		7FFA8FEC062BA6330008D381 /* ServerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA8FEA062BA6330008D381 /* ServerBase.m */; };
 		7FFA903D062BA74F0008D381 /* ServerDisplay.nib in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA903B062BA74F0008D381 /* ServerDisplay.nib */; };
+		8A53809B200EA1D8000EE16F /* jconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A538099200EA1D8000EE16F /* jconfig.h */; };
+		8A53809C200EA1D8000EE16F /* jconfigint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A53809A200EA1D8000EE16F /* jconfigint.h */; };
 		DA00481512CCF82E004E2C70 /* ZlibStreamReader.h in Headers */ = {isa = PBXBuildFile; fileRef = DA00481312CCF82E004E2C70 /* ZlibStreamReader.h */; };
 		DA00481612CCF82E004E2C70 /* ZlibStreamReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA00481412CCF82E004E2C70 /* ZlibStreamReader.m */; };
 		DA1FD8C512D5100400632D78 /* PersistentServer.h in Headers */ = {isa = PBXBuildFile; fileRef = DA1FD8C312D5100400632D78 /* PersistentServer.h */; };
@@ -131,8 +133,6 @@
 		DA231DF612BD562100D3AD44 /* Keymap.h in Headers */ = {isa = PBXBuildFile; fileRef = DA231DF512BD562100D3AD44 /* Keymap.h */; };
 		DA335CCF12DA4A6C00C70987 /* Session.h in Headers */ = {isa = PBXBuildFile; fileRef = DA335CCD12DA4A6C00C70987 /* Session.h */; };
 		DA335CD012DA4A6C00C70987 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = DA335CCE12DA4A6C00C70987 /* Session.m */; };
-		DA3648F51293A26800FB8272 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3648F41293A26800FB8272 /* Sparkle.framework */; };
-		DA36490C1293A2AE00FB8272 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA3648F41293A26800FB8272 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DA60307011E03BA600271F8F /* jdapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60303111E03BA600271F8F /* jdapistd.c */; };
 		DA60307111E03BA600271F8F /* jdatadst.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60303211E03BA600271F8F /* jdatadst.c */; };
 		DA60307211E03BA600271F8F /* jdatasrc.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60303311E03BA600271F8F /* jdatasrc.c */; };
@@ -175,7 +175,6 @@
 		DAA91C911234319B000F1CCD /* DesktopNameEncodingReader.h in Headers */ = {isa = PBXBuildFile; fileRef = DAA91C8F1234319B000F1CCD /* DesktopNameEncodingReader.h */; };
 		DAA91C921234319B000F1CCD /* DesktopNameEncodingReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA91C901234319B000F1CCD /* DesktopNameEncodingReader.m */; };
 		DABF107313E3470800558AE1 /* jaricom.c in Sources */ = {isa = PBXBuildFile; fileRef = DAD344B71304648200134E29 /* jaricom.c */; };
-		DABF107A13E3472100558AE1 /* jconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = DA60300F11E03B5400271F8F /* jconfig.h */; };
 		DABF108A13E3473F00558AE1 /* jdapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60301511E03B5400271F8F /* jdapimin.c */; };
 		DABF109113E3475B00558AE1 /* jutils.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60305A11E03BA600271F8F /* jutils.c */; };
 		DABF109613E3476600558AE1 /* jquant2.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60305611E03BA600271F8F /* jquant2.c */; };
@@ -259,7 +258,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DA36490C1293A2AE00FB8272 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +323,16 @@
 		7FF0C9A705CDC9A0008E39DD /* CotVNC.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptTerminology; name = CotVNC.scriptTerminology; path = Resources/CotVNC.scriptTerminology; sourceTree = SOURCE_ROOT; };
 		7FFA8FE9062BA6330008D381 /* ServerBase.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServerBase.h; sourceTree = "<group>"; };
 		7FFA8FEA062BA6330008D381 /* ServerBase.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ServerBase.m; sourceTree = "<group>"; };
+		8A538099200EA1D8000EE16F /* jconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
+		8A53809A200EA1D8000EE16F /* jconfigint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jconfigint.h; sourceTree = "<group>"; };
+		8AC541EB2413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/AuthPrompt.nib; sourceTree = "<group>"; };
+		8AC541EC2413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/ConnectionDialog.nib; sourceTree = "<group>"; };
+		8AC541ED2413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/ListenDialog.nib; sourceTree = "<group>"; };
+		8AC541EE2413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/Preferences.nib; sourceTree = "<group>"; };
+		8AC541EF2413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/ProfileManager.nib; sourceTree = "<group>"; };
+		8AC541F02413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/OSX_RFBViewer.nib; sourceTree = "<group>"; };
+		8AC541F12413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/RFBConnection.nib; sourceTree = "<group>"; };
+		8AC541F22413D92700B6450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/ServerDisplay.nib; sourceTree = "<group>"; };
 		DA00481312CCF82E004E2C70 /* ZlibStreamReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZlibStreamReader.h; sourceTree = "<group>"; };
 		DA00481412CCF82E004E2C70 /* ZlibStreamReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZlibStreamReader.m; sourceTree = "<group>"; };
 		DA1FD8C312D5100400632D78 /* PersistentServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentServer.h; sourceTree = "<group>"; };
@@ -335,9 +343,7 @@
 		DA231DF512BD562100D3AD44 /* Keymap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keymap.h; sourceTree = "<group>"; };
 		DA335CCD12DA4A6C00C70987 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		DA335CCE12DA4A6C00C70987 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
-		DA3648F41293A26800FB8272 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		DA60300E11E03B5400271F8F /* jcomapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcomapi.c; sourceTree = "<group>"; };
-		DA60300F11E03B5400271F8F /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
 		DA60301511E03B5400271F8F /* jdapimin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdapimin.c; sourceTree = "<group>"; };
 		DA60303111E03BA600271F8F /* jdapistd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdapistd.c; sourceTree = "<group>"; };
 		DA60303211E03BA600271F8F /* jdatadst.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdatadst.c; sourceTree = "<group>"; };
@@ -530,7 +536,6 @@
 				7F7A945905E71B5C00E20416 /* Cocoa.framework in Frameworks */,
 				7F7A945A05E71B5C00E20416 /* libz.dylib in Frameworks */,
 				7F7A945B05E71B5C00E20416 /* Carbon.framework in Frameworks */,
-				DA3648F51293A26800FB8272 /* Sparkle.framework in Frameworks */,
 				DA1FDD9212D6B1A000632D78 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,7 +547,6 @@
 			isa = PBXGroup;
 			children = (
 				DA1FDD9112D6B1A000632D78 /* Security.framework */,
-				DA3648F41293A26800FB8272 /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				E2F48D78040EDD5100BD55BA /* Carbon.framework */,
 				F5B8B7E9036275D101000105 /* libz.dylib */,
@@ -561,6 +565,8 @@
 		29B97314FDCFA39411CA2CEA /* Chicken of the VNC */ = {
 			isa = PBXGroup;
 			children = (
+				8A538099200EA1D8000EE16F /* jconfig.h */,
+				8A53809A200EA1D8000EE16F /* jconfigint.h */,
 				F5DC718B033DB45F01A8010C /* Documentation */,
 				F5DC7198033DB4A801A8010C /* Source */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -735,7 +741,6 @@
 				DA60305A11E03BA600271F8F /* jutils.c */,
 				DA60305B11E03BA600271F8F /* jversion.h */,
 				DA60300E11E03B5400271F8F /* jcomapi.c */,
-				DA60300F11E03B5400271F8F /* jconfig.h */,
 				DA60301511E03B5400271F8F /* jdapimin.c */,
 			);
 			path = "libjpeg-turbo";
@@ -899,6 +904,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A53809B200EA1D8000EE16F /* jconfig.h in Headers */,
+				8A53809C200EA1D8000EE16F /* jconfigint.h in Headers */,
 				7F7A93E505E71B5C00E20416 /* ByteBlockReader.h in Headers */,
 				7F7A93E605E71B5C00E20416 /* ByteReader.h in Headers */,
 				7F7A93E705E71B5C00E20416 /* CARD16Reader.h in Headers */,
@@ -989,7 +996,6 @@
 				DAD6DEFE12DCF583001FD9D6 /* SshTunnel.h in Headers */,
 				DA78379912DE159800F1893E /* SshWaiter.h in Headers */,
 				DAD344BF1304648200134E29 /* jpegcomp.h in Headers */,
-				DABF107A13E3472100558AE1 /* jconfig.h in Headers */,
 				DAA856D116B8717100A40AB5 /* DockConnection.h in Headers */,
 				DA22199916BC615600410C5A /* CommandLineConnection.h in Headers */,
 			);
@@ -1032,6 +1038,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				Base,
 				en,
 				fr,
 				de,
@@ -1213,6 +1220,7 @@
 		7FFA903B062BA74F0008D381 /* ServerDisplay.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541F22413D92700B6450B /* Base */,
 				55E078F2254E792B00515948 /* en */,
 				55E078FB254E793000515948 /* fr */,
 				55E07904254E793700515948 /* it */,
@@ -1224,6 +1232,7 @@
 		DAD6DEE812DCF4A3001FD9D6 /* AuthPrompt.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541EB2413D92700B6450B /* Base */,
 				55E078E9254E792B00515948 /* en */,
 			);
 			name = AuthPrompt.nib;
@@ -1243,6 +1252,7 @@
 		E2B083F70763AAC200CE24C1 /* ListenDialog.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541ED2413D92700B6450B /* Base */,
 				55E078EC254E792B00515948 /* en */,
 				55E078F5254E793000515948 /* fr */,
 				55E078FE254E793700515948 /* it */,
@@ -1254,6 +1264,7 @@
 		E2F3A33E06D44E0E005EB917 /* Preferences.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541EE2413D92700B6450B /* Base */,
 				55E078EF254E792B00515948 /* en */,
 				55E078F8254E793000515948 /* fr */,
 				55E07901254E793700515948 /* it */,
@@ -1265,6 +1276,7 @@
 		E2F3A7E606D4A687005EB917 /* ConnectionDialog.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541EC2413D92700B6450B /* Base */,
 				55E078EA254E792B00515948 /* en */,
 				55E078F3254E793000515948 /* fr */,
 				55E078FC254E793700515948 /* it */,
@@ -1276,6 +1288,7 @@
 		E2F3A99C06D4BFD8005EB917 /* ProfileManager.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541EF2413D92700B6450B /* Base */,
 				55E078F0254E792B00515948 /* en */,
 				55E078F9254E793000515948 /* fr */,
 				55E07902254E793700515948 /* it */,
@@ -1298,6 +1311,7 @@
 		F5DC7185033DB44301A8010C /* RFBConnection.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541F12413D92700B6450B /* Base */,
 				55E078F1254E792B00515948 /* en */,
 				55E078FA254E793000515948 /* fr */,
 				55E07903254E793700515948 /* it */,
@@ -1309,6 +1323,7 @@
 		F5DC7187033DB44301A8010C /* OSX_RFBViewer.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
+				8AC541F02413D92700B6450B /* Base */,
 				55E078EE254E792B00515948 /* en */,
 				55E078F7254E793000515948 /* fr */,
 				55E07900254E793700515948 /* it */,

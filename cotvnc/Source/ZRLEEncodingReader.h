@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZlibEncodingreader.h"
+#import "ZlibEncodingReader.h"
 
 @interface ZRLEEncodingReader : ZlibEncodingReader
 {

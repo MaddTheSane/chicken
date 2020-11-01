@@ -714,7 +714,7 @@ usando una bassa risoluzione/numero di colori.</string>
                                         <scrollView fixedFrame="YES" horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="167">
                                             <rect key="frame" x="46" y="91" width="248" height="146"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                            <clipView key="contentView" ambiguous="YES" id="I5q-uZ-y2m">
+                                            <clipView key="contentView" ambiguous="YES" id="GcT-06-ie0">
                                                 <rect key="frame" x="1" y="25" width="246" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -815,7 +815,7 @@ Vista i rettangoli per abilitare/disabilitare singole codifiche.</string>
                             <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="160">
                                 <rect key="frame" x="20" y="109" width="150" height="208"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <clipView key="contentView" ambiguous="YES" id="9bB-IW-ZJz">
+                                <clipView key="contentView" ambiguous="YES" id="Hhi-5q-la1">
                                     <rect key="frame" x="1" y="0.0" width="148" height="207"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
