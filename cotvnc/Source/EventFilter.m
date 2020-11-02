@@ -186,7 +186,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
         return;
 
 	[self sendAllPendingQueueEntriesNow];
-    NSPoint	p = [_view convertPoint: [[_view window] convertScreenToBase: [NSEvent mouseLocation]] 
+    NSPoint	p = [_view convertPoint: [[_view window] convertPointFromScreen: [NSEvent mouseLocation]]
 						  fromView: nil];
 
     [_connection mouseClickedAt: p buttons: _pressedButtons | addMask];	// 'Mouse button down'
@@ -815,7 +815,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
             if ( validEvents / 2 == [_profile multiTapCountForButton:button] )
 			{
 				[self discardAllPendingQueueEntries];
-				NSPoint	p = [_view convertPoint: [[_view window] convertScreenToBase: [NSEvent mouseLocation]] 
+				NSPoint	p = [_view convertPoint: [[_view window] convertPointFromScreen: [NSEvent mouseLocation]] 
 									  fromView: nil];
 				unsigned int rfbButton = ButtonNumberToRFBButtomMask( button );
 				[_connection mouseClickedAt: p buttons: _pressedButtons | rfbButton];	// 'Mouse button down'
