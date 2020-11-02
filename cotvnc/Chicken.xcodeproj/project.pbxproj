@@ -447,7 +447,7 @@
 		F5DC71A8033DB4A801A8010C /* CopyRectangleEncodingReader.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CopyRectangleEncodingReader.m; sourceTree = "<group>"; };
 		F5DC71A9033DB4A801A8010C /* CoRREEncodingReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CoRREEncodingReader.h; sourceTree = "<group>"; };
 		F5DC71AA033DB4A801A8010C /* CoRREEncodingReader.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CoRREEncodingReader.m; sourceTree = "<group>"; };
-		F5DC71AC033DB4A801A8010C /* d3des.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = d3des.c; sourceTree = "<group>"; };
+		F5DC71AC033DB4A801A8010C /* d3des.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = d3des.c; sourceTree = "<group>"; };
 		F5DC71AD033DB4A801A8010C /* d3des.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = d3des.h; sourceTree = "<group>"; };
 		F5DC71B0033DB4A801A8010C /* EncodingReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EncodingReader.h; sourceTree = "<group>"; };
 		F5DC71B1033DB4A801A8010C /* EncodingReader.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = EncodingReader.m; sourceTree = "<group>"; };

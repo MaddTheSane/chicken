@@ -51,8 +51,8 @@
         if ([fileManager fileExistsAtPath:cotvncPref]
                 && ![fileManager fileExistsAtPath:chickenPref]) {
             BOOL    success;
-            success = [fileManager copyPath:cotvncPref toPath:chickenPref
-                                    handler:nil];
+            success = [fileManager copyItemAtPath:cotvncPref toPath:chickenPref
+                                    error:NULL];
             if (!success) {
                 NSLog(@"Failed to copy %@ to %@", cotvncPref, chickenPref);
             }

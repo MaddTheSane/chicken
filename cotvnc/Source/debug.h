@@ -14,7 +14,7 @@
 #ifdef FULL_DEBUG
 #define FULLDebug NSLog
 #else
-#define FULLDebug DoNothing
+#define FULLDebug(...)
 #endif
 
 void DoNothing(NSString *format, ...);

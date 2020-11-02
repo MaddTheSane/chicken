@@ -392,6 +392,7 @@ source code and support available at http://chicken.sourceforge.net/</string>
                     </textField>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="139" y="147"/>
         </window>
         <customObject id="1367" userLabel="AppDelegate" customClass="AppDelegate">
             <connections>

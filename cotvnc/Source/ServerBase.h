@@ -55,7 +55,7 @@
 - (bool)fullscreen;
 - (bool)viewOnly;
 - (Profile *)profile;
-- (bool)addToServerListOnConnect;
+@property (readonly) bool addToServerListOnConnect;
 
 @property (readwrite, copy) NSString *sshHost;
 - (NSString *)sshHost;

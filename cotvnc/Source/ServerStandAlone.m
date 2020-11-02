@@ -54,14 +54,6 @@
     return NSLocalizedString(@"RFBUntitledServerName", nil);
 }
 
-- (bool)addToServerListOnConnect
-{
-	return mAddToServerListOnConnect;
-}
-
-- (void)setAddToServerListOnConnect: (bool)addToServerListOnConnect
-{
-	mAddToServerListOnConnect = addToServerListOnConnect;
-}
+@synthesize addToServerListOnConnect=mAddToServerListOnConnect;
 
 @end
