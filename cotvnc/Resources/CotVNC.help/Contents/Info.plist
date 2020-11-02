@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleIdentifier</key>
-	<string>{{BUNDLE_IDENTIFIER}}.help</string>
+	<string>net.sourceforge.chicken.help</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>{{APPLICATION_NAME}} Help</string>
+	<string>Chicken Help</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
@@ -23,11 +23,11 @@
 	<key>HPDBookIndexPath</key>
 	<string>search.helpindex</string>
 	<key>HPDBookKBProduct</key>
-	<string>{{BUNDLE_IDENTIFIER}}.help</string>
+	<string>net.sourceforge.chicken.help</string>
 	<key>HPDBookIconPath</key>
 	<string>shared/images/icon.png</string>
 	<key>HPDBookTitle</key>
-	<string>{{APPLICATION_NAME}} Help</string>
+	<string>Chicken Help</string>
 	<key>HPDBookType</key>
 	<string>3</string>
 </dict>
