@@ -275,13 +275,17 @@
         theAction = errorStr;
 
 	NSString *ok = NSLocalizedString( @"Okay", nil );
-    if (window)
-        NSBeginAlertSheet(theAction, ok, nil, nil, window, self,
-                @selector(errorDidEnd:returnCode:contextInfo:), NULL, NULL,
-                @"%@", message);
-    else {
+	NSAlert *alert = [[NSAlert alloc] init];
+	alert.messageText = theAction;
+	alert.informativeText = message;
+	[alert addButtonWithTitle:ok];
+	if (window) {
+		[alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {
+			[self errorDidEnd:nil returnCode:returnCode contextInfo:NULL];
+		}];
+	} else {
         NSInteger ret;
-        ret = NSRunAlertPanel(theAction, message, ok, NULL, NULL, NULL);
+		ret = [alert runModal];;
         [self errorDidEnd:nil returnCode:ret contextInfo:nil];
     }
 }

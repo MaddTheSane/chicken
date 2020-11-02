@@ -95,12 +95,12 @@
     [alert setInformativeText:[NSString stringWithFormat:msg, fingerprint]];
     [alert addButtonWithTitle:NSLocalizedString(@"Connect", nil)];
     [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
-    [alert beginSheetModalForWindow:window modalDelegate:self
-                     didEndSelector:@selector(firstTime:returnCode:contextInfo:)
-                        contextInfo:NULL];
+	[alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {
+		[self firstTime:alert returnCode:returnCode contextInfo:NULL];
+	}];
 }
 
-- (void)firstTime:(NSAlert *)sheet returnCode:(int)retCode
+- (void)firstTime:(NSAlert *)sheet returnCode:(NSModalResponse)retCode
       contextInfo:(void *)info
 {
     BOOL    accept = retCode == NSAlertFirstButtonReturn;

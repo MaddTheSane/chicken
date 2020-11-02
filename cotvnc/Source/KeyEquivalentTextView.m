@@ -26,7 +26,7 @@
 		characters = [characters stringByAppendingString: [theEvent charactersIgnoringModifiers]];
 		modifiers |= [theEvent modifierFlags];
 	}
-	modifiers |= NSCommandKeyMask;
+	modifiers |= NSEventModifierFlagCommand;
 	modifiers &= 0xFFFF0000;
 	mKeyEquivalent = [[KeyEquivalent alloc] initWithCharacters: characters modifiers: modifiers];
 	[super interpretKeyEvents: eventArray];

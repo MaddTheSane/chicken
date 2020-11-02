@@ -506,19 +506,19 @@
     msg.type = rfbKeyEvent;
 	msg.down = pressed;
 	
-    if( NSShiftKeyMask == m )
+	if( NSEventModifierFlagShift == m )
         msg.key = htonl([_profile shiftKeyCode]);
-	else if( NSControlKeyMask == m )
+	else if( NSEventModifierFlagControl == m )
         msg.key = htonl([_profile controlKeyCode]);
-	else if( NSAlternateKeyMask == m )
+	else if( NSEventModifierFlagOption == m )
         msg.key = htonl([_profile altKeyCode]);
-	else if( NSCommandKeyMask == m )
+	else if( NSEventModifierFlagCommand == m )
         msg.key = htonl([_profile commandKeyCode]);
-    else if(NSAlphaShiftKeyMask == m)
+	else if(NSEventModifierFlagCapsLock == m)
         msg.key = htonl(XK_Caps_Lock);
-    else if(NSHelpKeyMask == m)		// this is F1
+	else if(NSEventModifierFlagHelp == m)		// this is F1
         msg.key = htonl(XK_F1);
-	else if (NSNumericPadKeyMask == m) // don't know how to handle, eat it
+	else if (NSEventModifierFlagNumericPad == m) // don't know how to handle, eat it
 		return;
 	
     // XK_VoidSymbol is used for unbound modifier keys

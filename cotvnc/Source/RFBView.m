@@ -136,7 +136,7 @@
         r.origin.y = b.size.height - NSMaxY(r);
         [fbuf drawRect:r at:rects[i].origin];
         if (drawTint)
-            NSRectFillUsingOperation(rects[i], NSCompositeSourceOver);
+			NSRectFillUsingOperation(rects[i], NSCompositingOperationSourceOver);
     }
 }
 

@@ -471,7 +471,7 @@
     [connectBtn setTitle: NSLocalizedString(@"Cancel", nil)];
     [connectBtn setAction: @selector(cancelConnect:)];
     [connectBtn setKeyEquivalent:@"."];
-    [connectBtn setKeyEquivalentModifierMask:NSCommandKeyMask];
+	[connectBtn setKeyEquivalentModifierMask:NSEventModifierFlagCommand];
 
     if( [save state] )
     {

@@ -56,13 +56,13 @@
 		return [[NSAttributedString alloc] initWithString: @""];
 	NSMutableString *string = [NSMutableString string];
 	NSRange foundRange = [mCharacters rangeOfCharacterFromSet: [NSCharacterSet uppercaseLetterCharacterSet]];
-	if (mModifiers & NSShiftKeyMask || foundRange.location != NSNotFound)
+	if (mModifiers & NSEventModifierFlagShift || foundRange.location != NSNotFound)
 		[string appendString: @"⇧"];
-	if (mModifiers & NSControlKeyMask)
+	if (mModifiers & NSEventModifierFlagControl)
 		[string appendString: @"⌃"];
-	if (mModifiers & NSAlternateKeyMask)
+	if (mModifiers & NSEventModifierFlagOption)
 		[string appendString: @"⌥"];
-	if (mModifiers & NSCommandKeyMask)
+	if (mModifiers & NSEventModifierFlagCommand)
 		[string appendString: @"⌘"];
 	
 	NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString: string];

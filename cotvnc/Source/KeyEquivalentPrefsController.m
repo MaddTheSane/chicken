@@ -282,7 +282,7 @@ static KeyEquivalentPrefsController *sharedController = nil;
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item {
 	if ([item objectForKey: @"items"]) {
-		BOOL childrenToo = ([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask) ? YES : NO;
+		BOOL childrenToo = ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagOption) ? YES : NO;
 		if ([mOutlineView isItemExpanded: item])
 			[mOutlineView collapseItem: item collapseChildren: childrenToo];
 		else

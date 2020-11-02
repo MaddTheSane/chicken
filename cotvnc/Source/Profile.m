@@ -99,16 +99,16 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 {
     _buttonEmulationScenario[0] = kNoMouseButtonEmulation;
     _buttonEmulationScenario[1] = kClickWhileHoldingModifierEmulation;
-    _clickWhileHoldingModifier[0] = NSControlKeyMask;
-    _clickWhileHoldingModifier[1] = NSControlKeyMask;
-    _multiTapModifier[0] = NSCommandKeyMask;
-    _multiTapModifier[1] = NSCommandKeyMask;
+	_clickWhileHoldingModifier[0] = NSEventModifierFlagControl;
+	_clickWhileHoldingModifier[1] = NSEventModifierFlagControl;
+	_multiTapModifier[0] = NSEventModifierFlagCommand;
+	_multiTapModifier[1] = NSEventModifierFlagCommand;
     _multiTapDelay[0] = 0.0;
     _multiTapDelay[1] = 0.0;
     _multiTapCount[0] = 2;
     _multiTapCount[1] = 2;
-    _tapAndClickModifier[0] = NSAlternateKeyMask;
-    _tapAndClickModifier[1] = NSShiftKeyMask;
+	_tapAndClickModifier[0] = NSEventModifierFlagOption;
+	_tapAndClickModifier[1] = NSEventModifierFlagShift;
     _tapAndClickButtonSpeed[0] = 0.0;
     _tapAndClickButtonSpeed[1] = 0.0;
     _tapAndClickTimeout[0] = 5.0;

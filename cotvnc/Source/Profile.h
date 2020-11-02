@@ -102,11 +102,11 @@ struct encoding {
 
     // emulation
 	EventFilterEmulationScenario _buttonEmulationScenario[2];
-	unsigned int _clickWhileHoldingModifier[2];
-	unsigned int _multiTapModifier[2];
+	NSEventModifierFlags _clickWhileHoldingModifier[2];
+	NSEventModifierFlags _multiTapModifier[2];
 	NSTimeInterval _multiTapDelay[2]; // 0 means double click interval
 	unsigned int _multiTapCount[2];
-	unsigned int _tapAndClickModifier[2];
+	NSEventModifierFlags _tapAndClickModifier[2];
 	NSTimeInterval _tapAndClickButtonSpeed[2]; // 0 means double click interval
 	NSTimeInterval _tapAndClickTimeout[2];
 
