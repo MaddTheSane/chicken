@@ -248,16 +248,16 @@
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		55E078E9254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AuthPrompt.xib; sourceTree = "<group>"; };
-		55E078EA254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ConnectionDialog.xib; sourceTree = "<group>"; };
+		550D8573254FEB2100E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AuthPrompt.strings; sourceTree = "<group>"; };
+		550D8574254FEB3D00E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ConnectionDialog.strings; sourceTree = "<group>"; };
+		550D8575254FEB5000E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ListenDialog.strings; sourceTree = "<group>"; };
+		550D8576254FEB5E00E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		550D8577254FEB6600E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ProfileManager.strings; sourceTree = "<group>"; };
+		550D8578254FEB7200E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OSX_RFBViewer.strings; sourceTree = "<group>"; };
+		550D8579254FEB7B00E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RFBConnection.strings; sourceTree = "<group>"; };
+		550D857A254FEB8500E06B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServerDisplay.strings; sourceTree = "<group>"; };
 		55E078EB254E792B00515948 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		55E078EC254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ListenDialog.xib; sourceTree = "<group>"; };
 		55E078ED254E792B00515948 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		55E078EE254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OSX_RFBViewer.xib; sourceTree = "<group>"; };
-		55E078EF254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
-		55E078F0254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProfileManager.xib; sourceTree = "<group>"; };
-		55E078F1254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RFBConnection.xib; sourceTree = "<group>"; };
-		55E078F2254E792B00515948 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ServerDisplay.xib; sourceTree = "<group>"; };
 		55E078F3254E793000515948 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/ConnectionDialog.xib; sourceTree = "<group>"; };
 		55E078F4254E793000515948 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55E078F5254E793000515948 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/ListenDialog.xib; sourceTree = "<group>"; };
@@ -1206,10 +1206,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541F22413D92700B6450B /* Base */,
-				55E078F2254E792B00515948 /* en */,
 				55E078FB254E793000515948 /* fr */,
 				55E07904254E793700515948 /* it */,
 				55E0790D254E793A00515948 /* ja */,
+				550D857A254FEB8500E06B3B /* en */,
 			);
 			name = ServerDisplay.xib;
 			sourceTree = "<group>";
@@ -1218,7 +1218,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541EB2413D92700B6450B /* Base */,
-				55E078E9254E792B00515948 /* en */,
+				550D8573254FEB2100E06B3B /* en */,
 			);
 			name = AuthPrompt.xib;
 			sourceTree = "<group>";
@@ -1238,10 +1238,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541ED2413D92700B6450B /* Base */,
-				55E078EC254E792B00515948 /* en */,
 				55E078F5254E793000515948 /* fr */,
 				55E078FE254E793700515948 /* it */,
 				55E07907254E793A00515948 /* ja */,
+				550D8575254FEB5000E06B3B /* en */,
 			);
 			name = ListenDialog.xib;
 			sourceTree = "<group>";
@@ -1250,10 +1250,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541EE2413D92700B6450B /* Base */,
-				55E078EF254E792B00515948 /* en */,
 				55E078F8254E793000515948 /* fr */,
 				55E07901254E793700515948 /* it */,
 				55E0790A254E793A00515948 /* ja */,
+				550D8576254FEB5E00E06B3B /* en */,
 			);
 			name = Preferences.xib;
 			sourceTree = "<group>";
@@ -1262,10 +1262,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541EC2413D92700B6450B /* Base */,
-				55E078EA254E792B00515948 /* en */,
 				55E078F3254E793000515948 /* fr */,
 				55E078FC254E793700515948 /* it */,
 				55E07905254E793A00515948 /* ja */,
+				550D8574254FEB3D00E06B3B /* en */,
 			);
 			name = ConnectionDialog.xib;
 			sourceTree = "<group>";
@@ -1274,10 +1274,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541EF2413D92700B6450B /* Base */,
-				55E078F0254E792B00515948 /* en */,
 				55E078F9254E793000515948 /* fr */,
 				55E07902254E793700515948 /* it */,
 				55E0790B254E793A00515948 /* ja */,
+				550D8577254FEB6600E06B3B /* en */,
 			);
 			name = ProfileManager.xib;
 			sourceTree = "<group>";
@@ -1297,10 +1297,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541F12413D92700B6450B /* Base */,
-				55E078F1254E792B00515948 /* en */,
 				55E078FA254E793000515948 /* fr */,
 				55E07903254E793700515948 /* it */,
 				55E0790C254E793A00515948 /* ja */,
+				550D8579254FEB7B00E06B3B /* en */,
 			);
 			name = RFBConnection.xib;
 			sourceTree = "<group>";
@@ -1309,10 +1309,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8AC541F02413D92700B6450B /* Base */,
-				55E078EE254E792B00515948 /* en */,
 				55E078F7254E793000515948 /* fr */,
 				55E07900254E793700515948 /* it */,
 				55E07909254E793A00515948 /* ja */,
+				550D8578254FEB7200E06B3B /* en */,
 			);
 			name = OSX_RFBViewer.xib;
 			sourceTree = "<group>";

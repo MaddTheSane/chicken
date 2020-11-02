@@ -267,7 +267,7 @@ Connections</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <popUpButtonCell key="cell" type="push" title="Non-Connection Window" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="2" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="105" id="143">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="menu"/>
                                                 <menu key="menu" title="OtherViews" id="109">
                                                     <items>
                                                         <menuItem title="Non-Connection Window" state="on" tag="2" id="105"/>
@@ -281,7 +281,7 @@ Connections</string>
                                             </connections>
                                         </popUpButton>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="102">
-                                            <rect key="frame" x="17" y="208" width="233" height="17"/>
+                                            <rect key="frame" x="17" y="207" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Keyboard equivalents for:" id="144">
                                                 <font key="font" metaFont="system"/>

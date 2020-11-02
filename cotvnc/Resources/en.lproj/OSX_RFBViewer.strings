@@ -1,0 +1,192 @@
+
+/* Class = "NSMenu"; title = "OSX_RFBViewer"; ObjectID = "29"; */
+"29.title" = "OSX_RFBViewer";
+
+/* Class = "NSMenuItem"; title = "Connection"; ObjectID = "52"; */
+"52.title" = "Connection";
+
+/* Class = "NSMenuItem"; title = "Open Connection…"; ObjectID = "53"; */
+"53.title" = "Open Connection…";
+
+/* Class = "NSMenu"; title = "Connection"; ObjectID = "61"; */
+"61.title" = "Connection";
+
+/* Class = "NSMenuItem"; title = "Set Connection Title…"; ObjectID = "165"; */
+"165.title" = "Set Connection Title…";
+
+/* Class = "NSWindow"; title = "About Chicken of the VNC"; ObjectID = "232"; */
+"232.title" = "About Chicken of the VNC";
+
+/* Class = "NSMenuItem"; title = "Get Connection Info…"; ObjectID = "315"; */
+"315.title" = "Get Connection Info…";
+
+/* Class = "NSMenuItem"; title = "Hide Chicken"; ObjectID = "611"; */
+"611.title" = "Hide Chicken";
+
+/* Class = "NSMenuItem"; title = "Chicken"; ObjectID = "612"; */
+"612.title" = "Chicken";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "613"; */
+"613.title" = "Services";
+
+/* Class = "NSMenu"; title = "Chicken"; ObjectID = "614"; */
+"614.title" = "Chicken";
+
+/* Class = "NSMenuItem"; title = "About Chicken…"; ObjectID = "615"; */
+"615.title" = "About Chicken…";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "616"; */
+"616.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "617"; */
+"617.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Quit Chicken"; ObjectID = "619"; */
+"619.title" = "Quit Chicken";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "620"; */
+"620.title" = "Preferences…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "621"; */
+"621.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Close Window"; ObjectID = "1295"; */
+"1295.title" = "Close Window";
+
+/* Class = "NSMenuItem"; title = "Connection Profiles…"; ObjectID = "1298"; */
+"1298.title" = "Connection Profiles…";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "1301"; */
+"1301.title" = "Stop Speaking";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "1302"; */
+"1302.title" = "Undo";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "1303"; */
+"1303.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "1304"; */
+"1304.title" = "Redo";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "1305"; */
+"1305.title" = "Speech";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "1307"; */
+"1307.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "1308"; */
+"1308.title" = "Speech";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "1309"; */
+"1309.title" = "Start Speaking";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "1310"; */
+"1310.title" = "Cut";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "1311"; */
+"1311.title" = "Select All";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "1312"; */
+"1312.title" = "Delete";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "1313"; */
+"1313.title" = "Paste";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "1314"; */
+"1314.title" = "Copy";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "1327"; */
+"1327.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Fullscreen Mode"; ObjectID = "1328"; */
+"1328.title" = "Fullscreen Mode";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "1329"; */
+"1329.title" = "Minimize";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "1330"; */
+"1330.title" = "Window";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "1331"; */
+"1331.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Use Bonjour"; ObjectID = "1361"; */
+"1361.title" = "Use Bonjour";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "1402"; */
+"1402.title" = "Help";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "1410"; */
+"1410.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Chicken Help"; ObjectID = "1452"; */
+"1452.title" = "Chicken Help";
+
+/* Class = "NSMenuItem"; title = "Listen for Server…"; ObjectID = "1454"; */
+"1454.title" = "Listen for Server…";
+
+/* Class = "NSMenuItem"; title = "Special Keys"; ObjectID = "1456"; */
+"1456.title" = "Special Keys";
+
+/* Class = "NSMenuItem"; title = "Send \"Pause\""; ObjectID = "1457"; */
+"1457.title" = "Send \"Pause\"";
+
+/* Class = "NSMenu"; title = "Special Keys"; ObjectID = "1458"; */
+"1458.title" = "Special Keys";
+
+/* Class = "NSMenuItem"; title = "Send \"Cmd-Option-Escape\""; ObjectID = "1459"; */
+"1459.title" = "Send \"Cmd-Option-Escape\"";
+
+/* Class = "NSMenuItem"; title = "Send \"Break\""; ObjectID = "1462"; */
+"1462.title" = "Send \"Break\"";
+
+/* Class = "NSMenuItem"; title = "Send \"Print\""; ObjectID = "1463"; */
+"1463.title" = "Send \"Print\"";
+
+/* Class = "NSMenuItem"; title = "Send \"Execute\""; ObjectID = "1464"; */
+"1464.title" = "Send \"Execute\"";
+
+/* Class = "NSMenuItem"; title = "Send \"Ctrl-Alt-Del\""; ObjectID = "1470"; */
+"1470.title" = "Send \"Ctrl-Alt-Del\"";
+
+/* Class = "NSMenuItem"; title = "Send \"Insert\""; ObjectID = "1473"; */
+"1473.title" = "Send \"Insert\"";
+
+/* Class = "NSMenuItem"; title = "Send \"Delete\""; ObjectID = "1474"; */
+"1474.title" = "Send \"Delete\"";
+
+/* Class = "NSMenuItem"; title = "New Connection…"; ObjectID = "1477"; */
+"1477.title" = "New Connection…";
+
+/* Class = "NSTextFieldCell"; title = "Chicken"; ObjectID = "1481"; */
+"1481.title" = "Chicken";
+
+/* Class = "NSTextFieldCell"; title = "?"; ObjectID = "1483"; */
+"1483.title" = "?";
+
+/* Class = "NSTextFieldCell"; title = "based on Chicken of the VNC by Jason Harris\nbased on VNCViewer by Helmut Maierhofer"; ObjectID = "1484"; */
+"1484.title" = "based on Chicken of the VNC by Jason Harris\nbased on VNCViewer by Helmut Maierhofer";
+
+/* Class = "NSTextFieldCell"; title = "Copyright 1998-2000 by Helmut Maierhofer\nCopyright 2002-2006 by Jason Harris"; ObjectID = "1485"; */
+"1485.title" = "Copyright 1998-2000 by Helmut Maierhofer\nCopyright 2002-2006 by Jason Harris";
+
+/* Class = "NSTextFieldCell"; title = "released under the GNU Public License\nsource code and support available at http://chicken.sourceforge.net/"; ObjectID = "1486"; */
+"1486.title" = "released under the GNU Public License\nsource code and support available at http://chicken.sourceforge.net/";
+
+/* Class = "NSTextFieldCell"; title = "Version"; ObjectID = "1487"; */
+"1487.title" = "Version";
+
+/* Class = "NSTextFieldCell"; title = "(support@geekspiff.com)\n(helmut.maierhofer@chello.at)\n"; ObjectID = "1488"; */
+"1488.title" = "(support@geekspiff.com)\n(helmut.maierhofer@chello.at)\n";
+
+/* Class = "NSMenuItem"; title = "Force Reconnect"; ObjectID = "1504"; */
+"1504.title" = "Force Reconnect";
+
+/* Class = "NSMenuItem"; title = "Refresh"; ObjectID = "1506"; */
+"1506.title" = "Refresh";
+
+/* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "1511"; */
+"1511.title" = "Check for Updates";
+
+/* Class = "NSMenuItem"; title = "Paste to Remote Clipboard"; ObjectID = "1513"; */
+"1513.title" = "Paste to Remote Clipboard";

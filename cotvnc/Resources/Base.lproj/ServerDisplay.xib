@@ -28,7 +28,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="6" userLabel="Connect" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -46,7 +46,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="65" translatesAutoresizingMaskIntoConstraints="NO" id="9">
-                                    <rect key="frame" x="26" y="17" width="69" height="13"/>
+                                    <rect key="frame" x="26" y="18" width="69" height="13"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Connecting..." id="114">
                                         <font key="font" metaFont="label"/>
                                         <color key="textColor" red="0.42934781309999998" green="0.42934781309999998" blue="0.42934781309999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -157,7 +157,7 @@
                                     </connections>
                                 </button>
                                 <button toolTip="Connect to the server now" verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14">
-                                    <rect key="frame" x="259" y="7" width="92" height="32"/>
+                                    <rect key="frame" x="259" y="8" width="92" height="32"/>
                                     <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="117">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -171,7 +171,7 @@ DQ
                                     </connections>
                                 </button>
                                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                    <rect key="frame" x="0.0" y="43" width="348" height="5"/>
+                                    <rect key="frame" x="0.0" y="44" width="348" height="5"/>
                                 </box>
                                 <textField toolTip="The password for the server to which you wish to connect" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7" customClass="NSSecureTextField">
                                     <rect key="frame" x="137" y="247" width="208" height="21"/>
@@ -197,7 +197,7 @@ DQ
                                     </connections>
                                 </button>
                                 <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                    <rect key="frame" x="6" y="16" width="16" height="15"/>
+                                    <rect key="frame" x="6" y="17" width="16" height="15"/>
                                 </progressIndicator>
                                 <button toolTip="Hide your menubar and Dock and use the entire screen." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92">
                                     <rect key="frame" x="135" y="121" width="212" height="18"/>
@@ -231,7 +231,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95">
-                                    <rect key="frame" x="3" y="15" width="85" height="17"/>
+                                    <rect key="frame" x="3" y="16" width="85" height="17"/>
                                     <buttonCell key="cell" type="check" title="Save Server" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="125">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
@@ -251,7 +251,7 @@ DQ
                                     </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="133">
-                                    <rect key="frame" x="137" y="58" width="208" height="22"/>
+                                    <rect key="frame" x="137" y="59" width="208" height="21"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="134">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -277,7 +277,6 @@ DQ
                                 <constraint firstItem="10" firstAttribute="centerY" secondItem="7" secondAttribute="centerY" id="0Jx-bH-5vo"/>
                                 <constraint firstItem="7" firstAttribute="leading" secondItem="20" secondAttribute="leading" id="1YC-7w-KLJ"/>
                                 <constraint firstItem="10" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="20" symbolic="YES" id="2P8-y6-5g8"/>
-                                <constraint firstItem="135" firstAttribute="baseline" secondItem="133" secondAttribute="baseline" id="2su-9b-QBI"/>
                                 <constraint firstItem="95" firstAttribute="top" secondItem="19" secondAttribute="bottom" constant="16" id="30b-4h-ZO8"/>
                                 <constraint firstItem="18" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="12" id="3Pl-13-DZO"/>
                                 <constraint firstItem="95" firstAttribute="leading" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="6" id="5jA-VH-QwF"/>

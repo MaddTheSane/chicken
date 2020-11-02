@@ -1,0 +1,12 @@
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "1"; */
+"1.title" = "Window";
+
+/* Class = "NSTextFieldCell"; title = "Enter SSH password:"; ObjectID = "5"; */
+"5.title" = "Enter SSH password:";
+
+/* Class = "NSButtonCell"; title = "Okay"; ObjectID = "11"; */
+"11.title" = "Okay";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "13"; */
+"13.title" = "Cancel";

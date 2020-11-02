@@ -1,0 +1,69 @@
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "75"; */
+"75.title" = "Preferences";
+
+/* Class = "NSMenuItem"; title = "Fullscreen Connection"; ObjectID = "79"; */
+"79.title" = "Fullscreen Connection";
+
+/* Class = "NSTabViewItem"; label = "Fullscreen"; ObjectID = "85"; */
+"85.label" = "Fullscreen";
+
+/* Class = "NSTabViewItem"; label = "Performance"; ObjectID = "86"; */
+"86.label" = "Performance";
+
+/* Class = "NSMenuItem"; title = "Windowed Connection"; ObjectID = "88"; */
+"88.title" = "Windowed Connection";
+
+/* Class = "NSTableColumn"; headerCell.title = "Shortcut"; ObjectID = "89"; */
+"89.headerCell.title" = "Shortcut";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "94"; */
+"94.headerCell.title" = "Description";
+
+/* Class = "NSTabViewItem"; label = "Keyboard"; ObjectID = "96"; */
+"96.label" = "Keyboard";
+
+/* Class = "NSMenuItem"; title = "Non-Connection Window"; ObjectID = "105"; */
+"105.title" = "Non-Connection Window";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "109"; */
+"109.title" = "OtherViews";
+
+/* Class = "NSButtonCell"; title = "Display scrollbars while in Fullscreen Mode"; ObjectID = "129"; */
+"129.title" = "Display scrollbars while in Fullscreen Mode";
+
+/* Class = "NSTextFieldCell"; title = "Autoscroll Speed"; ObjectID = "130"; */
+"130.title" = "Autoscroll Speed";
+
+/* Class = "NSTextFieldCell"; title = "Slow"; ObjectID = "131"; */
+"131.title" = "Slow";
+
+/* Class = "NSTextFieldCell"; title = "Fast"; ObjectID = "133"; */
+"133.title" = "Fast";
+
+/* Class = "NSButtonCell"; title = "Display warning before entering Fullscreen Mode"; ObjectID = "134"; */
+"134.title" = "Display warning before entering Fullscreen Mode";
+
+/* Class = "NSTextFieldCell"; title = "Updating as often as possible will produce the most responsive VNC session at the expense of heavy CPU usage and lots of network activity.  Only updating manually uses minimal CPU and produces minimal network activity, but the session is only refreshed when you explicitly request it using the \"Refresh Window\" command."; ObjectID = "136"; */
+"136.title" = "Updating as often as possible will produce the most responsive VNC session at the expense of heavy CPU usage and lots of network activity.  Only updating manually uses minimal CPU and produces minimal network activity, but the session is only refreshed when you explicitly request it using the \"Refresh Window\" command.";
+
+/* Class = "NSTextFieldCell"; title = "Only update manually"; ObjectID = "137"; */
+"137.title" = "Only update manually";
+
+/* Class = "NSTextFieldCell"; title = "All Other\nConnections"; ObjectID = "138"; */
+"138.title" = "All Other\nConnections";
+
+/* Class = "NSTextFieldCell"; title = "Update as often\nas possible"; ObjectID = "139"; */
+"139.title" = "Update as often\nas possible";
+
+/* Class = "NSTextFieldCell"; title = "Frontmost\nConnection"; ObjectID = "141"; */
+"141.title" = "Frontmost\nConnection";
+
+/* Class = "NSTextFieldCell"; title = "Enter a space to clear a key equivalent"; ObjectID = "142"; */
+"142.title" = "Enter a space to clear a key equivalent";
+
+/* Class = "NSTextFieldCell"; title = "Keyboard equivalents for:"; ObjectID = "144"; */
+"144.title" = "Keyboard equivalents for:";
+
+/* Class = "NSButtonCell"; title = "Restore Defaults"; ObjectID = "145"; */
+"145.title" = "Restore Defaults";

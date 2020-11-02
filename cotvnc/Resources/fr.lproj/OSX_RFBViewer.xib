@@ -26,9 +26,6 @@
                             </menuItem>
                             <menuItem title="Check for Updates" id="1512">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="1508" id="1513"/>
-                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="981">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
@@ -399,7 +396,6 @@ source code and support available at http://chicken.sourceforge.net/</string>
                 </subviews>
             </view>
         </window>
-        <customObject id="1508" customClass="SUUpdater"/>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="32" height="32"/>

@@ -1,0 +1,30 @@
+
+/* Class = "NSWindow"; title = "VNC Listen"; ObjectID = "6"; */
+"6.title" = "VNC Listen";
+
+/* Class = "NSMenuItem"; title = "default"; ObjectID = "10"; */
+"10.title" = "default";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "11"; */
+"11.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "31"; */
+"31.title" = "0";
+
+/* Class = "NSTextFieldCell"; title = "Profile:"; ObjectID = "33"; */
+"33.title" = "Profile:";
+
+/* Class = "NSTextFieldCell"; title = "Port:"; ObjectID = "34"; */
+"34.title" = "Port:";
+
+/* Class = "NSButtonCell"; title = "Localhost Only"; ObjectID = "35"; */
+"35.title" = "Localhost Only";
+
+/* Class = "NSButtonCell"; title = "Start"; ObjectID = "36"; */
+"36.title" = "Start";
+
+/* Class = "NSTextFieldCell"; title = "Connecting..."; ObjectID = "37"; */
+"37.title" = "Connecting...";
+
+/* Class = "NSButtonCell"; title = "Fullscreen display"; ObjectID = "39"; */
+"39.title" = "Fullscreen display";

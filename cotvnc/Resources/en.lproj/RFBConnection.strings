@@ -1,0 +1,57 @@
+
+/* Class = "NSWindow"; title = "RFBConnection"; ObjectID = "5"; */
+"5.title" = "RFBConnection";
+
+/* Class = "NSWindow"; title = "Set Title"; ObjectID = "15"; */
+"15.title" = "Set Title";
+
+/* Class = "NSWindow"; title = "Connection-Info"; ObjectID = "29"; */
+"29.title" = "Connection-Info";
+
+/* Class = "NSBox"; title = "Server-Info"; ObjectID = "32"; */
+"32.title" = "Server-Info";
+
+/* Class = "NSBox"; title = "Statistics"; ObjectID = "53"; */
+"53.title" = "Statistics";
+
+/* Class = "NSTextFieldCell"; title = "New Title:"; ObjectID = "69"; */
+"69.title" = "New Title:";
+
+/* Class = "NSButtonCell"; title = "Set"; ObjectID = "71"; */
+"71.title" = "Set";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "72"; */
+"72.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"; ObjectID = "73"; */
+"73.title" = "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n";
+
+/* Class = "NSTextFieldCell"; title = "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"; ObjectID = "74"; */
+"74.title" = "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89";
+
+/* Class = "NSWindow"; title = "Enter Password"; ObjectID = "88"; */
+"88.title" = "Enter Password";
+
+/* Class = "NSTextFieldCell"; title = "Enter password to retry:"; ObjectID = "93"; */
+"93.title" = "Enter password to retry:";
+
+/* Class = "NSButtonCell"; title = "Reconnect"; ObjectID = "96"; */
+"96.title" = "Reconnect";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "98"; */
+"98.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "Authentication Failed"; ObjectID = "112"; */
+"112.title" = "Authentication Failed";
+
+/* Class = "NSWindow"; title = "Reconnecting"; ObjectID = "115"; */
+"115.title" = "Reconnecting";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "123"; */
+"123.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "Reconnecting..."; ObjectID = "126"; */
+"126.title" = "Reconnecting...";
+
+/* Class = "NSButtonCell"; title = "Remember Password"; ObjectID = "136"; */
+"136.title" = "Remember Password";

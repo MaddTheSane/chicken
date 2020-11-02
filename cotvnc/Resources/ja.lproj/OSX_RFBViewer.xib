@@ -12,7 +12,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="OSX_RFBViewer" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
                 <menuItem title="Chicken" id="612">
@@ -26,9 +26,6 @@
                             </menuItem>
                             <menuItem title="Check for Updates" id="1498">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="1496" id="1499"/>
-                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="981">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
@@ -300,6 +297,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="139" y="154"/>
         </menu>
         <window title="Chicken について" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="about" animationBehavior="default" id="232" userLabel="Info" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
@@ -403,7 +401,6 @@ source code and support available at http://chicken.sourceforge.net</string>
                 <outlet property="mRendezvousMenuItem" destination="1361" id="1375"/>
             </connections>
         </customObject>
-        <customObject id="1496" customClass="SUUpdater"/>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="32" height="32"/>
