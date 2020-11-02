@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550D857F2550CB7B00E06B3B /* IServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 550D857E2550CB7B00E06B3B /* IServerData.m */; };
 		55E0790F254E7A1300515948 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E0790E254E7A1300515948 /* Media.xcassets */; };
 		55E07971254F78EB00515948 /* CotVNC.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55E07970254F78EB00515948 /* CotVNC.sdef */; };
 		7F7A93E505E71B5C00E20416 /* ByteBlockReader.h in Headers */ = {isa = PBXBuildFile; fileRef = F5DC719B033DB4A801A8010C /* ByteBlockReader.h */; };
@@ -259,6 +260,7 @@
 		550D857B2550C27400E06B3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ConnectionDialog.strings; sourceTree = "<group>"; };
 		550D857C2550C28800E06B3B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ConnectionDialog.strings; sourceTree = "<group>"; };
 		550D857D2550C29B00E06B3B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ConnectionDialog.strings; sourceTree = "<group>"; };
+		550D857E2550CB7B00E06B3B /* IServerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IServerData.m; sourceTree = "<group>"; };
 		55E078EB254E792B00515948 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55E078ED254E792B00515948 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55E078F4254E793000515948 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 			isa = PBXGroup;
 			children = (
 				7FC6DF2705C315C20028A970 /* IServerData.h */,
+				550D857E2550CB7B00E06B3B /* IServerData.m */,
 				DA1FD8C312D5100400632D78 /* PersistentServer.h */,
 				DA1FD8C412D5100400632D78 /* PersistentServer.m */,
 				7FFA8FE9062BA6330008D381 /* ServerBase.h */,
@@ -1193,6 +1196,7 @@
 				DABF109713E3476700558AE1 /* jquant1.c in Sources */,
 				DABF10A913E3479000558AE1 /* jerror.c in Sources */,
 				DABF111913E34A7600558AE1 /* jdsample.c in Sources */,
+				550D857F2550CB7B00E06B3B /* IServerData.m in Sources */,
 				DABF111E13E34A9000558AE1 /* jcomapi.c in Sources */,
 				DAA856D216B8717100A40AB5 /* DockConnection.m in Sources */,
 				DA22199A16BC615600410C5A /* CommandLineConnection.m in Sources */,

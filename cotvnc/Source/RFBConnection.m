@@ -62,7 +62,7 @@
 // jason added for Jaguar check
 + (void)initialize {
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithFloat: 0.0], @"FrameBufferUpdateSeconds", nil];
+	NSDictionary *dict = @{@"FrameBufferUpdateSeconds": @0.0};
 	
 	[standardUserDefaults registerDefaults: dict];
 }

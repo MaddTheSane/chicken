@@ -22,16 +22,17 @@
 #import <Foundation/Foundation.h>
 
 /** Implementers of IServerData will send this notification when a property has changed */
-#define ServerChangeMsg @"ServerChangeMsg"
+extern NSNotificationName const ServerChangeNotification;
+#define ServerChangeMsg ServerChangeNotification
 
-typedef enum
+typedef NS_ENUM(int, SUPPORT_TYPE)
 {
 	EDIT_ADDRESS,
 	EDIT_PORT,
 	EDIT_NAME,
 	EDIT_PASSWORD,
 	CONNECT,
-} SUPPORT_TYPE;
+};
 
 @class Profile;
 
@@ -49,13 +50,13 @@ typedef enum
 @property (readonly, copy) NSString *name;
 @property (readwrite, nonatomic, copy) NSString *host;
 @property (readwrite, copy) NSString *password;
-@property (readonly, nonatomic) bool rememberPassword;
+@property (readonly, nonatomic) BOOL rememberPassword;
 @property (readwrite) int port;
 @property (readwrite) bool shared;
 @property (readwrite) bool fullscreen;
 @property (readwrite) bool viewOnly;
 @property (readwrite, strong) Profile *profile;
-- (bool)addToServerListOnConnect;
+@property (readonly) bool addToServerListOnConnect;
 @property (readonly, copy) NSString *sshHost;
 @property (readonly) in_port_t sshPort;
 @property (readonly, copy) NSString *sshUser;
