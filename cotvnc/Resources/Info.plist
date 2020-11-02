@@ -5,9 +5,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
-	<string>Chicken</string>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
 	<string>Chicken version 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers.</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>CotVNC.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>net.sourceforge.chicken.help</string>
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -38,6 +42,8 @@
 	<string>2.2b3</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>NSMainNibFile</key>
