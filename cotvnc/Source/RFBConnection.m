@@ -637,14 +637,18 @@
     const char  *cStr = [str cStringUsingEncoding:NSISOLatin1StringEncoding];
 
     if (cStr == NULL) {
-        NSBeginAlertSheet(NSLocalizedString(@"PasteConversionHeader", nil), 
-                          NSLocalizedString(@"PasteAnyways", nil),
-                          NSLocalizedString(@"Cancel", nil), nil,
-                          [rfbView window], self,
-                          @selector(pasteConfirmation:returnCode:contextInfo:),
-						  nil, (void*)CFBridgingRetain(str), /* This retain is balanced by the
-                                              * release in pasteConfirmation: */
-                          NSLocalizedString(@"PasteConversionBody", nil));
+		NSAlert *alert = [[NSAlert alloc] init];
+		alert.messageText = NSLocalizedString(@"PasteConversionHeader", nil);
+		alert.informativeText = NSLocalizedString(@"PasteConversionBody", nil);
+		[alert addButtonWithTitle:NSLocalizedString(@"PasteAnyways", nil)];
+		[alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+		[alert beginSheetModalForWindow:[rfbView window] completionHandler:^(NSModalResponse returnCode) {
+			if (returnCode == NSAlertFirstButtonReturn) {
+				NSData  *data = [str dataUsingEncoding:NSISOLatin1StringEncoding
+								  allowLossyConversion:YES];
+				[self sendStringToServersClipboard:[data bytes] length:[data length]];
+			}
+		}];
     } else
         [self sendStringToServersClipboard:cStr length:strlen(cStr)];
 }
@@ -664,17 +668,6 @@
     memcpy((char *)(msg + 1), cStr, len);
     [self writeBytes:(unsigned char *)msg length:msgSz];
     free(msg);
-}
-
-- (void)pasteConfirmation:(NSWindow *)sheet returnCode:(NSModalResponse)code
-              contextInfo:(void *)var
-{
-	NSString *str = CFBridgingRelease(var);
-    if (code == NSAlertDefaultReturn) {
-        NSData  *data = [str dataUsingEncoding:NSISOLatin1StringEncoding
-                          allowLossyConversion:YES];
-        [self sendStringToServersClipboard:[data bytes] length:[data length]];
-    }
 }
 
 @synthesize eventFilter=_eventFilter;

@@ -20,27 +20,26 @@
 }
 
 	// Creation
-+ (id)sharedController;
+@property (class, readonly, strong) PrefController *sharedController;
 
 	// Settings
-- (BOOL)displayFullScreenWarning;
-- (void)setDisplayFullScreenWarning:(BOOL)warn;
-- (float)fullscreenAutoscrollIncrement;
-- (BOOL)fullscreenHasScrollbars;
-- (float)frontFrameBufferUpdateSeconds;
-- (float)otherFrameBufferUpdateSeconds;
-- (float)gammaCorrection;
+@property (nonatomic) BOOL displayFullScreenWarning;
+@property (nonatomic, readonly) CGFloat fullscreenAutoscrollIncrement;
+@property (nonatomic, readonly) BOOL fullscreenHasScrollbars;
+@property (nonatomic, readonly) NSTimeInterval frontFrameBufferUpdateSeconds;
+@property (nonatomic, readonly) NSTimeInterval otherFrameBufferUpdateSeconds;
+@property (nonatomic, readonly) CGFloat gammaCorrection;
 - (void)getLocalPixelFormat:(rfbPixelFormat*)pf;
 - (id)defaultFrameBufferClass;
-- (float)maxPossibleFrameBufferUpdateSeconds;
-- (BOOL)usesRendezvous;
-- (NSDictionary *)hostInfo;
+@property (nonatomic, readonly) NSTimeInterval maxPossibleFrameBufferUpdateSeconds;
+@property (nonatomic, readonly) BOOL usesRendezvous;
+@property (nonatomic, copy) NSDictionary *hostInfo;
 - (void)setHostInfo: (NSDictionary *)hostInfo;
-- (NSDictionary *)profileDict;
-- (NSDictionary *)defaultProfileDict;
+@property (nonatomic, copy) NSDictionary *profileDict;
+@property (nonatomic, readonly, copy) NSDictionary *defaultProfileDict;
 - (void)setProfileDict: (NSDictionary *)dict;
-- (BOOL)autoReconnect;
-- (NSTimeInterval)intervalBeforeReconnect;
+@property (nonatomic, readonly) BOOL autoReconnect;
+@property (nonatomic, readonly) NSTimeInterval intervalBeforeReconnect;
 
 	// Preferences Window
 - (void)showWindow;

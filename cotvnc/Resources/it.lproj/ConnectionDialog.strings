@@ -1,0 +1,45 @@
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "5"; */
+"5.title" = "Box";
+
+/* Class = "NSWindow"; title = "Accesso VNC"; ObjectID = "9"; */
+"9.title" = "Accesso VNC";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "13"; */
+"13.title" = "Box";
+
+/* Class = "NSTableColumn"; headerCell.title = "Servers"; ObjectID = "14"; */
+"14.headerCell.title" = "Servers";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "15"; */
+"15.title" = "Box";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Rimuovi il server selezionato"; ObjectID = "17"; */
+"17.ibShadowedToolTip" = "Rimuovi il server selezionato";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Rimuovi il gruppo selezionato"; ObjectID = "21"; */
+"21.ibShadowedToolTip" = "Rimuovi il gruppo selezionato";
+
+/* Class = "NSTableColumn"; headerCell.title = "Gruppi"; ObjectID = "22"; */
+"22.headerCell.title" = "Gruppi";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Aggiungi un nuovo gruppo"; ObjectID = "23"; */
+"23.ibShadowedToolTip" = "Aggiungi un nuovo gruppo";
+
+/* Class = "NSWindow"; title = "Panel"; ObjectID = "25"; */
+"25.title" = "Panel";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Aggiungi un nuovo server"; ObjectID = "27"; */
+"27.ibShadowedToolTip" = "Aggiungi un nuovo server";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "49"; */
+"49.title" = "-";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "50"; */
+"50.title" = "+";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "51"; */
+"51.title" = "-";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "52"; */
+"52.title" = "+";

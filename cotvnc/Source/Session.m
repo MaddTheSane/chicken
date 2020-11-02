@@ -168,7 +168,7 @@ enum {
             userInfo:nil repeats:NO];
 }
 
-- (void)connectionTerminatedSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+- (void)connectionTerminatedSheetDidEnd:(NSWindow *)sheet returnCode:(NSModalResponse)returnCode contextInfo:(void *)contextInfo
 {
 	/* One might reasonably argue that this should be handled by the connection manager. */
 	switch (returnCode) {
@@ -178,7 +178,7 @@ enum {
             [self beginReconnect];
             return;
 		default:
-			NSLog(@"Unknown alert returnvalue: %d", returnCode);
+			NSLog(@"Unknown alert returnvalue: %ld", (long)returnCode);
 			break;
 	}
     [[RFBConnectionManager sharedManager] removeConnection:self];
@@ -658,9 +658,7 @@ enum {
     [optionPanel makeKeyAndOrderFront:self];
 }
 
-- (BOOL)connectionIsFullscreen {
-	return _isFullscreen;
-}
+@synthesize connectionIsFullscreen=_isFullscreen;
 
 - (IBAction)toggleFullscreenMode: (id)sender
 {
@@ -695,7 +693,7 @@ enum {
 }
 
 - (void)connectionWillGoFullscreen:(NSAlert *)sheet
-                        returnCode:(int)returnCode
+                        returnCode:(NSModalResponse)returnCode
                        contextInfo:(void *)contextInfo
 {
 	int windowLevel;
@@ -721,7 +719,7 @@ enum {
 		[window setDelegate: nil];
         windowedWindow = window;
 		window = [[FullscreenWindow alloc] initWithContentRect:screenRect
-											styleMask:NSBorderlessWindowMask
+													 styleMask:NSWindowStyleMaskBorderless
 											backing:NSBackingStoreBuffered
 											defer:NO
 											screen:[NSScreen mainScreen]];
@@ -785,9 +783,7 @@ enum {
             if (keyStr) {
                 // If we can determine the fullscreen key combination, we include
                 // it in the message
-                [reason appendString: @"("];
-                [reason appendString: keyStr];
-                [reason appendString: @") "];
+                [reason appendFormat: @"(%@) ", keyStr];
                 [reason appendString: NSLocalizedString(@"FullscreenReason2", nil)];
             } else {
                 reason = [NSMutableString stringWithString:NSLocalizedString(@"FullscreenNoKey", nil)];
@@ -804,9 +800,9 @@ enum {
             [alert setShowsSuppressionButton:YES]; // only in 10.5+
         [alert addButtonWithTitle:NSLocalizedString(@"Fullscreen", nil)];
         [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
-        [alert beginSheetModalForWindow:window modalDelegate:self
-                         didEndSelector:@selector(connectionWillGoFullscreen:returnCode:contextInfo:)
-                            contextInfo:NULL];
+		[alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {
+			[self connectionWillGoFullscreen:alert returnCode:returnCode contextInfo:NULL];
+		}];
 	} else {
 		[self connectionWillGoFullscreen:nil returnCode:NSAlertFirstButtonReturn contextInfo:nil]; 
 	}
@@ -825,7 +821,7 @@ enum {
 	const CGFloat maxY = NSMaxY(scrollRect);
 	const CGFloat width = NSWidth(scrollRect);
 	const CGFloat height = NSHeight(scrollRect);
-	CGFloat scrollWidth = [NSScroller scrollerWidth];
+	CGFloat scrollWidth = [NSScroller scrollerWidthForControlSize:NSControlSizeRegular scrollerStyle:NSScrollerStyleLegacy];
 	NSRect aRect;
 
 	if ( ! [[PrefController sharedController] fullscreenHasScrollbars] )
@@ -943,7 +939,7 @@ enum {
 - (void)scrollFullscreenView: (NSTimer *)timer {
 	NSClipView *contentView = [scrollView contentView];
 	NSPoint origin = [contentView bounds].origin;
-	float autoscrollIncrement = [[PrefController sharedController] fullscreenAutoscrollIncrement];
+	CGFloat autoscrollIncrement = [[PrefController sharedController] fullscreenAutoscrollIncrement];
     NSPoint newOrigin = NSMakePoint(origin.x + _horizScrollFactor * autoscrollIncrement, origin.y + _vertScrollFactor * autoscrollIncrement);
 
     newOrigin = [contentView constrainScrollPoint: newOrigin];

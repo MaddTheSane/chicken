@@ -121,7 +121,7 @@ ConnectionWaiterDelegate>
 - (BOOL)hasKeyWindow;
 
 // Full-screen mode
-- (BOOL)connectionIsFullscreen;
+@property (readonly) BOOL connectionIsFullscreen;
 - (IBAction)toggleFullscreenMode: (id)sender;
 - (IBAction)makeConnectionWindowed: (id)sender;
 - (IBAction)makeConnectionFullscreen: (id)sender;

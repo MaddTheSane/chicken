@@ -1,0 +1,45 @@
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "5"; */
+"5.title" = "Box";
+
+/* Class = "NSWindow"; title = "VNC ログイン"; ObjectID = "9"; */
+"9.title" = "VNC ログイン";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "13"; */
+"13.title" = "Box";
+
+/* Class = "NSTableColumn"; headerCell.title = "サーバ"; ObjectID = "14"; */
+"14.headerCell.title" = "サーバ";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "15"; */
+"15.title" = "Box";
+
+/* Class = "NSButton"; ibShadowedToolTip = "選択されたサーバを削除します。"; ObjectID = "17"; */
+"17.ibShadowedToolTip" = "選択されたサーバを削除します。";
+
+/* Class = "NSButton"; ibShadowedToolTip = "選択されたグループを削除します。"; ObjectID = "21"; */
+"21.ibShadowedToolTip" = "選択されたグループを削除します。";
+
+/* Class = "NSTableColumn"; headerCell.title = "グループ"; ObjectID = "22"; */
+"22.headerCell.title" = "グループ";
+
+/* Class = "NSButton"; ibShadowedToolTip = "新規グループを追加"; ObjectID = "23"; */
+"23.ibShadowedToolTip" = "新規グループを追加";
+
+/* Class = "NSWindow"; title = "Panel"; ObjectID = "25"; */
+"25.title" = "Panel";
+
+/* Class = "NSButton"; ibShadowedToolTip = "新規サーバを追加"; ObjectID = "27"; */
+"27.ibShadowedToolTip" = "新規サーバを追加";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "49"; */
+"49.title" = "-";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "50"; */
+"50.title" = "+";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "51"; */
+"51.title" = "-";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "52"; */
+"52.title" = "+";

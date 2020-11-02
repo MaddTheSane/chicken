@@ -106,20 +106,20 @@ static int const kPrefsVersion = 0x00000002;
                                         forKey:kPrefs_FullscreenWarning_Key];
 }
 
-- (float)fullscreenAutoscrollIncrement
-{  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_AutoscrollIncrement_Key] floatValue];  }
+- (CGFloat)fullscreenAutoscrollIncrement
+{  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_AutoscrollIncrement_Key] doubleValue];  }
 
 
 - (BOOL)fullscreenHasScrollbars
 {  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_FullscreenScrollbars_Key] boolValue];  }
 
 
-- (float)frontFrameBufferUpdateSeconds
-{  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_FrontFrameBufferUpdateSeconds_Key] floatValue];  }
+- (NSTimeInterval)frontFrameBufferUpdateSeconds
+{  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_FrontFrameBufferUpdateSeconds_Key] doubleValue];  }
 
 
-- (float)otherFrameBufferUpdateSeconds
-{  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_OtherFrameBufferUpdateSeconds_Key] floatValue];  }
+- (NSTimeInterval)otherFrameBufferUpdateSeconds
+{  return [[[NSUserDefaults standardUserDefaults] objectForKey: kPrefs_OtherFrameBufferUpdateSeconds_Key] doubleValue];  }
 
 
 - (void)getLocalPixelFormat:(rfbPixelFormat*)pf
@@ -128,7 +128,7 @@ static int const kPrefsVersion = 0x00000002;
     [fbc getPixelFormat:pf];
 }
 
-- (float)gammaCorrection
+- (CGFloat)gammaCorrection
 {
 	// we won't need this method once we move to a sane way of drawing into our local buffer
 	return 1.1;
@@ -150,7 +150,7 @@ static int const kPrefsVersion = 0x00000002;
 	return [TrueColorFrameBuffer class];
 }
 
-- (float)maxPossibleFrameBufferUpdateSeconds;
+- (NSTimeInterval)maxPossibleFrameBufferUpdateSeconds;
 {
 	// this is a bit ugly - our window might not be loaded yet, so if it's not, hardcode the value, yick
 	if ( mWindow )
