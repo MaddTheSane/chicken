@@ -2,5 +2,5 @@
 
 //CFBundleName = "Chicken of the VNC";
 //CFBundleShortVersionString = "2.0b4";
-CFBundleGetInfoString = "Chicken version 2.2b2, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers.";
+CFBundleGetInfoString = "Chicken version 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers.";
 NSHumanReadableCopyright = "Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers.";

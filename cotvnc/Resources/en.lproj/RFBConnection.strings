@@ -51,7 +51,7 @@
 "123.title" = "Cancel";
 
 /* Class = "NSTextFieldCell"; title = "Reconnecting..."; ObjectID = "126"; */
-"126.title" = "Reconnecting...";
+"126.title" = "Reconnecting…";
 
 /* Class = "NSButtonCell"; title = "Remember Password"; ObjectID = "136"; */
 "136.title" = "Remember Password";

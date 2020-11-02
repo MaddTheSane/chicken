@@ -29,7 +29,7 @@
 
 // Profiles
 "defaultProfileName" = "Default Profile";
-"EditProfiles" = "Edit Connection Profiles...";
+"EditProfiles" = "Edit Connection Profiles…";
 
 // Couldn't connect
 "ConnectRefused" = "The server refused the connection";
@@ -101,7 +101,7 @@
 
 // Rendezvous
 "AddressResolveFailed" = "address resolve failed";
-"Resolving" = "resolving...";
+"Resolving" = "resolving…";
 
 // Connection Info
 "ConnectionStatistics" = "Bytes Received: %@\nBytes Represented: %@\nCompression: %.2f\nRectangles: %u\nEncodings:%@";
@@ -117,5 +117,5 @@
 "PasteAnyways" = "Paste Anyways";
 
 // Dock connections
-"ConnectTo" = "Connect to...";
-"ConnectingTo" = "Connecting to %@...";
+"ConnectTo" = "Connect to…";
+"ConnectingTo" = "Connecting to %@…";

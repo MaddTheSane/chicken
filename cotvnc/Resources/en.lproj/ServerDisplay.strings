@@ -42,7 +42,7 @@
 "113.title" = "Host:";
 
 /* Class = "NSTextFieldCell"; title = "Connecting..."; ObjectID = "114"; */
-"114.title" = "Connecting...";
+"114.title" = "Connecting…";
 
 /* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "115"; */
 "115.title" = "Password:";
