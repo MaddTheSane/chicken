@@ -1,0 +1,33 @@
+
+/* Class = "NSWindow"; title = "VNC リッスンモード"; ObjectID = "6"; */
+"6.title" = "VNC リッスンモード";
+
+/* Class = "NSMenuItem"; title = "デフォルト"; ObjectID = "10"; */
+"10.title" = "デフォルト";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "11"; */
+"11.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "31"; */
+"31.title" = "0";
+
+/* Class = "NSTextFieldCell"; title = "プロファイル："; ObjectID = "33"; */
+"33.title" = "プロファイル：";
+
+/* Class = "NSTextFieldCell"; title = "ポート番号："; ObjectID = "34"; */
+"34.title" = "ポート番号：";
+
+/* Class = "NSButtonCell"; title = "ローカルホストのみ"; ObjectID = "35"; */
+"35.title" = "ローカルホストのみ";
+
+/* Class = "NSButtonCell"; title = "開始"; ObjectID = "36"; */
+"36.title" = "開始";
+
+/* Class = "NSTextFieldCell"; title = "接続中..."; ObjectID = "37"; */
+"37.title" = "接続中...";
+
+/* Class = "NSButton"; ibShadowedToolTip = "メニューバーと Dock を隠して画面全体を使用します。"; ObjectID = "38"; */
+"38.ibShadowedToolTip" = "メニューバーと Dock を隠して画面全体を使用します。";
+
+/* Class = "NSButtonCell"; title = "フルスクリーン表示"; ObjectID = "39"; */
+"39.title" = "フルスクリーン表示";

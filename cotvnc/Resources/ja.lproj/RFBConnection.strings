@@ -1,0 +1,57 @@
+
+/* Class = "NSWindow"; title = "RFBConnection"; ObjectID = "5"; */
+"5.title" = "RFBConnection";
+
+/* Class = "NSWindow"; title = "タイトルを変更"; ObjectID = "15"; */
+"15.title" = "タイトルを変更";
+
+/* Class = "NSWindow"; title = "接続情報"; ObjectID = "29"; */
+"29.title" = "接続情報";
+
+/* Class = "NSBox"; title = "サーバ情報"; ObjectID = "32"; */
+"32.title" = "サーバ情報";
+
+/* Class = "NSBox"; title = "統計情報"; ObjectID = "53"; */
+"53.title" = "統計情報";
+
+/* Class = "NSTextFieldCell"; title = "新規タイトル："; ObjectID = "69"; */
+"69.title" = "新規タイトル：";
+
+/* Class = "NSButtonCell"; title = "変更"; ObjectID = "71"; */
+"71.title" = "変更";
+
+/* Class = "NSButtonCell"; title = "キャンセル"; ObjectID = "72"; */
+"72.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"; ObjectID = "73"; */
+"73.title" = "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n";
+
+/* Class = "NSTextFieldCell"; title = "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"; ObjectID = "74"; */
+"74.title" = "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89";
+
+/* Class = "NSWindow"; title = "Enter Password"; ObjectID = "109"; */
+"109.title" = "Enter Password";
+
+/* Class = "NSButtonCell"; title = "パスワードを保存する"; ObjectID = "119"; */
+"119.title" = "パスワードを保存する";
+
+/* Class = "NSButtonCell"; title = "キャンセル"; ObjectID = "120"; */
+"120.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "Enter password to retry:"; ObjectID = "121"; */
+"121.title" = "Enter password to retry:";
+
+/* Class = "NSTextFieldCell"; title = "認証に失敗しました"; ObjectID = "122"; */
+"122.title" = "認証に失敗しました";
+
+/* Class = "NSButtonCell"; title = "再接続"; ObjectID = "124"; */
+"124.title" = "再接続";
+
+/* Class = "NSWindow"; title = "Reconnecting"; ObjectID = "130"; */
+"130.title" = "Reconnecting";
+
+/* Class = "NSTextFieldCell"; title = "Reconnecting..."; ObjectID = "136"; */
+"136.title" = "Reconnecting...";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "138"; */
+"138.title" = "Cancel";

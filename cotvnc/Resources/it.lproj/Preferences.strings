@@ -1,0 +1,69 @@
+
+/* Class = "NSWindow"; title = "Preferenze"; ObjectID = "75"; */
+"75.title" = "Preferenze";
+
+/* Class = "NSMenuItem"; title = "Connessione Schermo Pieno"; ObjectID = "79"; */
+"79.title" = "Connessione Schermo Pieno";
+
+/* Class = "NSTabViewItem"; label = "Pieno Schermo"; ObjectID = "85"; */
+"85.label" = "Pieno Schermo";
+
+/* Class = "NSTabViewItem"; label = "Prestazione"; ObjectID = "86"; */
+"86.label" = "Prestazione";
+
+/* Class = "NSMenuItem"; title = "Connessione Con Finestra"; ObjectID = "88"; */
+"88.title" = "Connessione Con Finestra";
+
+/* Class = "NSTableColumn"; headerCell.title = "Scorciatoia"; ObjectID = "89"; */
+"89.headerCell.title" = "Scorciatoia";
+
+/* Class = "NSTableColumn"; headerCell.title = "Descrizione"; ObjectID = "94"; */
+"94.headerCell.title" = "Descrizione";
+
+/* Class = "NSTabViewItem"; label = "Tastiera"; ObjectID = "96"; */
+"96.label" = "Tastiera";
+
+/* Class = "NSMenuItem"; title = "Connessione Senza Finestra"; ObjectID = "105"; */
+"105.title" = "Connessione Senza Finestra";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "109"; */
+"109.title" = "OtherViews";
+
+/* Class = "NSButtonCell"; title = "Visualizza barre di scorrimento in modalità Pieno Schermo"; ObjectID = "129"; */
+"129.title" = "Visualizza barre di scorrimento in modalità Pieno Schermo";
+
+/* Class = "NSTextFieldCell"; title = "Velocità Scorrimento"; ObjectID = "130"; */
+"130.title" = "Velocità Scorrimento";
+
+/* Class = "NSTextFieldCell"; title = "Lenta"; ObjectID = "131"; */
+"131.title" = "Lenta";
+
+/* Class = "NSTextFieldCell"; title = "Veloce"; ObjectID = "133"; */
+"133.title" = "Veloce";
+
+/* Class = "NSButtonCell"; title = "Visalizza avviso prima di passare in modalità Pieno Schermo"; ObjectID = "134"; */
+"134.title" = "Visalizza avviso prima di passare in modalità Pieno Schermo";
+
+/* Class = "NSTextFieldCell"; title = "Aggiornando il più possibile produrrà una risposta veloce nella sessione VNC ma impegna il processore ed il traffico internet.  Solo se il refresh viene aggiornato manualmente (usando poi \"Aggiorna Finestra\") ci sarà un uso minimo del processore e più libertà nel scaricare e/o inviare dati."; ObjectID = "136"; */
+"136.title" = "Aggiornando il più possibile produrrà una risposta veloce nella sessione VNC ma impegna il processore ed il traffico internet.  Solo se il refresh viene aggiornato manualmente (usando poi \"Aggiorna Finestra\") ci sarà un uso minimo del processore e più libertà nel scaricare e/o inviare dati.";
+
+/* Class = "NSTextFieldCell"; title = "Aggiorna Manualmente"; ObjectID = "137"; */
+"137.title" = "Aggiorna Manualmente";
+
+/* Class = "NSTextFieldCell"; title = "Tutte le Altre Connessioni"; ObjectID = "138"; */
+"138.title" = "Tutte le Altre Connessioni";
+
+/* Class = "NSTextFieldCell"; title = "Aggiorna il più possibile"; ObjectID = "139"; */
+"139.title" = "Aggiorna il più possibile";
+
+/* Class = "NSTextFieldCell"; title = "Connessione\nin Primo Piano"; ObjectID = "141"; */
+"141.title" = "Connessione\nin Primo Piano";
+
+/* Class = "NSTextFieldCell"; title = "Inserisci spazio per pulire un tasto equivalente"; ObjectID = "142"; */
+"142.title" = "Inserisci spazio per pulire un tasto equivalente";
+
+/* Class = "NSTextFieldCell"; title = "Tastiera equivalente per:"; ObjectID = "144"; */
+"144.title" = "Tastiera equivalente per:";
+
+/* Class = "NSButtonCell"; title = "Rirpristina Stato Iniziale"; ObjectID = "145"; */
+"145.title" = "Rirpristina Stato Iniziale";

@@ -21,16 +21,18 @@
 #import <AppKit/AppKit.h>
 #import "rfbproto.h"
 
-/* A ByteReader is something which can receive data from the RFB connection. As
- * data comes in, it will be passed the readBytes:length: message. When it has
- * received enough data, it will send action to target. */
+/**
+ * A ByteReader is something which can receive data from the RFB connection. As
+ * data comes in, it will be passed the @c readBytes:length: message. When it has
+ * received enough data, it will send action to target.
+ */
 @interface ByteReader : NSObject
 {
     id		target;
     SEL		action;
 }
 
-- (id)initTarget:(id)aTarget action:(SEL)anAction;
+- (instancetype)initTarget:(id)aTarget action:(SEL)anAction;
 - (void)resetReader;
 - (void)setReader:(ByteReader*)aReader;
 - (unsigned)readBytes:(unsigned char*)theBytes length:(unsigned)aLength;

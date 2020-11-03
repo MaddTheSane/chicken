@@ -21,9 +21,6 @@
 #import "RFBConnectionManager.h"
 #import "ServerBase.h"
 
-/* This class manages a single dock-initiated connection while it's waiting to
- * complete. */
-
 @implementation DockConnection
 
 - (id)initWithServer:(id<IServerData>)server

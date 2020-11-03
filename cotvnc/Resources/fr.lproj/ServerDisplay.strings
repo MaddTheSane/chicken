@@ -1,0 +1,90 @@
+
+/* Class = "NSWindow"; title = "Connecter"; ObjectID = "6"; */
+"6.title" = "Connecter";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Le mot de passe du serveur auquel vous souhaitez vous connecter"; ObjectID = "7"; */
+"7.ibShadowedToolTip" = "Le mot de passe du serveur auquel vous souhaitez vous connecter";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Le mon ou l'adresse IP du serveur auquel vous souhaitez vous connecter. Vous pouvez spécifier un numéro de port optionnel, séparé par \" : \""; ObjectID = "11"; */
+"11.ibShadowedToolTip" = "Le mon ou l'adresse IP du serveur auquel vous souhaitez vous connecter. Vous pouvez spécifier un numéro de port optionnel, séparé par \" : \"";
+
+/* Class = "NSMenuItem"; title = "Défaut"; ObjectID = "13"; */
+"13.title" = "Défaut";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Se connecter au serveur maintenant"; ObjectID = "14"; */
+"14.ibShadowedToolTip" = "Se connecter au serveur maintenant";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Choisissez le profile de connection désiré"; ObjectID = "17"; */
+"17.ibShadowedToolTip" = "Choisissez le profile de connection désiré";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Le numéro d'affichage du serveur auquelvous souhaitez vous connecter"; ObjectID = "18"; */
+"18.ibShadowedToolTip" = "Le numéro d'affichage du serveur auquelvous souhaitez vous connecter";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Enregistrer ce mot de passe dans le trousseau pour le récupérer automatiquement la prochaine fois"; ObjectID = "20"; */
+"20.ibShadowedToolTip" = "Enregistrer ce mot de passe dans le trousseau pour le récupérer automatiquement la prochaine fois";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "21"; */
+"21.title" = "OtherViews";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
+"23.title" = "Box";
+
+/* Class = "NSButton"; ibShadowedToolTip = "D'autres clients peuvent se connecter au serveur en même temps que vous"; ObjectID = "26"; */
+"26.ibShadowedToolTip" = "D'autres clients peuvent se connecter au serveur en même temps que vous";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Cache la barre de menus et le Dock pour utiliser tout l'écran"; ObjectID = "92"; */
+"92.ibShadowedToolTip" = "Cache la barre de menus et le Dock pour utiliser tout l'écran";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Les actions clavier et souris ne seront pas transmises. Vous allez simplement observer"; ObjectID = "98"; */
+"98.ibShadowedToolTip" = "Les actions clavier et souris ne seront pas transmises. Vous allez simplement observer";
+
+/* Class = "NSTextFieldCell"; title = "Serveur:"; ObjectID = "113"; */
+"113.title" = "Serveur:";
+
+/* Class = "NSTextFieldCell"; title = "Connexion en cours..."; ObjectID = "114"; */
+"114.title" = "Connexion en cours...";
+
+/* Class = "NSTextFieldCell"; title = "Mot de passe:"; ObjectID = "115"; */
+"115.title" = "Mot de passe:";
+
+/* Class = "NSTextFieldCell"; placeholderString = "server address"; ObjectID = "116"; */
+"116.placeholderString" = "server address";
+
+/* Class = "NSButtonCell"; title = "Connecter"; ObjectID = "117"; */
+"117.title" = "Connecter";
+
+/* Class = "NSTextFieldCell"; title = "Affichage ou port:"; ObjectID = "118"; */
+"118.title" = "Affichage ou port:";
+
+/* Class = "NSTextFieldCell"; placeholderString = "0"; ObjectID = "120"; */
+"120.placeholderString" = "0";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "120"; */
+"120.title" = "0";
+
+/* Class = "NSButtonCell"; title = "Enregistrer le mot de passe"; ObjectID = "121"; */
+"121.title" = "Enregistrer le mot de passe";
+
+/* Class = "NSTextFieldCell"; title = "Profile :"; ObjectID = "122"; */
+"122.title" = "Profile :";
+
+/* Class = "NSButtonCell"; title = "Autres clients peuvent se connecter"; ObjectID = "123"; */
+"123.title" = "Autres clients peuvent se connecter";
+
+/* Class = "NSButtonCell"; title = "Plein écran"; ObjectID = "124"; */
+"124.title" = "Plein écran";
+
+/* Class = "NSButtonCell"; title = "Enregistrer le serveur"; ObjectID = "125"; */
+"125.title" = "Enregistrer le serveur";
+
+/* Class = "NSButtonCell"; title = "Observer seulement"; ObjectID = "126"; */
+"126.title" = "Observer seulement";
+
+/* Class = "NSTextFieldCell"; title = "Affichage 10 est port 5910"; ObjectID = "131"; */
+"131.title" = "Affichage 10 est port 5910";
+
+/* Class = "NSButtonCell"; title = "Tunnel over SSH"; ObjectID = "134"; */
+"134.title" = "Tunnel over SSH";
+
+/* Class = "NSTextFieldCell"; title = "SSH serveur:"; ObjectID = "138"; */
+"138.title" = "SSH serveur:";

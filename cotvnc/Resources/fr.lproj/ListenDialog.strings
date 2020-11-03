@@ -1,0 +1,33 @@
+
+/* Class = "NSWindow"; title = "Répondeur VNC"; ObjectID = "6"; */
+"6.title" = "Répondeur VNC";
+
+/* Class = "NSMenuItem"; title = "Profile par défaut"; ObjectID = "10"; */
+"10.title" = "Profile par défaut";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "11"; */
+"11.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "31"; */
+"31.title" = "0";
+
+/* Class = "NSTextFieldCell"; title = "Profile:"; ObjectID = "33"; */
+"33.title" = "Profile:";
+
+/* Class = "NSTextFieldCell"; title = "Port:"; ObjectID = "34"; */
+"34.title" = "Port:";
+
+/* Class = "NSButtonCell"; title = "Local Host Seulement"; ObjectID = "35"; */
+"35.title" = "Local Host Seulement";
+
+/* Class = "NSButtonCell"; title = "Démarrer"; ObjectID = "36"; */
+"36.title" = "Démarrer";
+
+/* Class = "NSTextFieldCell"; title = "Connexion en cours...\nandd eating lunc"; ObjectID = "37"; */
+"37.title" = "Connexion en cours...\nandd eating lunc";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Cache la barre de menus et le Dock pour utiliser tout l'écran"; ObjectID = "38"; */
+"38.ibShadowedToolTip" = "Cache la barre de menus et le Dock pour utiliser tout l'écran";
+
+/* Class = "NSButtonCell"; title = "Plein écran"; ObjectID = "39"; */
+"39.title" = "Plein écran";

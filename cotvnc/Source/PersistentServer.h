@@ -28,17 +28,16 @@
     BOOL        _rememberPassword;
 }
 
-- (id)init;
-- (id)initFromDictionary: (NSDictionary *)dict;
+- (id)init NS_DESIGNATED_INITIALIZER;
+- (id)initFromDictionary: (NSDictionary *)dict NS_DESIGNATED_INITIALIZER;
 
 - (NSMutableDictionary *)propertyDict;
 
-- (BOOL)rememberPassword;
-
+@property (nonatomic, readwrite) BOOL rememberPassword;
+@property (nonatomic, copy) NSString *name;
 - (void)setName: (NSString *)name;
-- (void)setRememberPassword: (BOOL)rememberPassword;
 
-- (NSString *)keychainServiceName;
-- (NSString *)saveName;
+@property (readonly, copy) NSString *keychainServiceName;
+@property (readonly, copy) NSString *saveName;
 
 @end

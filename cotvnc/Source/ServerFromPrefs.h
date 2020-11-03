@@ -24,21 +24,22 @@
 #import "IServerData.h"
 @class ServerDataManager;
 
-/* A server which is or can be stored in our preferences */
-@interface ServerFromPrefs : PersistentServer {
-}
+/*! A server which is or can be stored in our preferences */
+@interface ServerFromPrefs : PersistentServer
 
 + (id<IServerData>)createWithName:(NSString*)name;
 + (id<IServerData>)createWithHost:(NSString*)hostName preferenceDictionary:(NSDictionary*)prefDict;
 
-- (id)initWithHost:(NSString*)host preferenceDictionary:(NSDictionary*)prefDict;
-- (id)initWithName:(NSString *)name andDictionary:(NSDictionary *)dict;
+- (instancetype)initFromDictionary: (NSDictionary *)dict UNAVAILABLE_ATTRIBUTE;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithHost:(NSString*)host preferenceDictionary:(NSDictionary*)prefDict NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name andDictionary:(NSDictionary *)dict NS_DESIGNATED_INITIALIZER;
 
 /* @name Archiving and Unarchiving
  * Implements the NSCoding protocol for serialization
  */
 //@{
-- (id)initWithCoder:(NSCoder*)coder;
+- (id)initWithCoder:(NSCoder*)coder NS_DESIGNATED_INITIALIZER;
 //@}
 
 /** @name IServerData

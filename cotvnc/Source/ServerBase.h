@@ -41,7 +41,7 @@
     NSString  *_sshUser;
 }
 
-- (instancetype)init;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 - (bool)doYouSupport: (SUPPORT_TYPE)type;
 

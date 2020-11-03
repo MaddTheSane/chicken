@@ -1,0 +1,90 @@
+
+/* Class = "NSWindow"; title = "接続"; ObjectID = "6"; */
+"6.title" = "接続";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "接続先のサーバのパスワードを入力します。"; ObjectID = "7"; */
+"7.ibShadowedToolTip" = "接続先のサーバのパスワードを入力します。";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "接続先のサーバのホスト名または IP アドレスを入力します。ポート番号を指定するにはコロンに続けてポート番号を入力します。"; ObjectID = "11"; */
+"11.ibShadowedToolTip" = "接続先のサーバのホスト名または IP アドレスを入力します。ポート番号を指定するにはコロンに続けてポート番号を入力します。";
+
+/* Class = "NSMenuItem"; title = "デフォルト"; ObjectID = "13"; */
+"13.title" = "デフォルト";
+
+/* Class = "NSButton"; ibShadowedToolTip = "今すぐサーバに接続"; ObjectID = "14"; */
+"14.ibShadowedToolTip" = "今すぐサーバに接続";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "接続に使うプロファイルを選択します"; ObjectID = "17"; */
+"17.ibShadowedToolTip" = "接続に使うプロファイルを選択します";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "接続先のサーバのディスプレイ番号を入力します。"; ObjectID = "18"; */
+"18.ibShadowedToolTip" = "接続先のサーバのディスプレイ番号を入力します。";
+
+/* Class = "NSButton"; ibShadowedToolTip = "パスワードをキーチェーンに保存し、次回から自動ログインできるようにします。"; ObjectID = "20"; */
+"20.ibShadowedToolTip" = "パスワードをキーチェーンに保存し、次回から自動ログインできるようにします。";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "21"; */
+"21.title" = "OtherViews";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
+"23.title" = "Box";
+
+/* Class = "NSButton"; ibShadowedToolTip = "使用中にほかのクライアントがサーバへ接続できるようにします。"; ObjectID = "26"; */
+"26.ibShadowedToolTip" = "使用中にほかのクライアントがサーバへ接続できるようにします。";
+
+/* Class = "NSButton"; ibShadowedToolTip = "メニューバーと Dock を隠して画面全体を使用します。"; ObjectID = "92"; */
+"92.ibShadowedToolTip" = "メニューバーと Dock を隠して画面全体を使用します。";
+
+/* Class = "NSButton"; ibShadowedToolTip = "キーボードおよびマウスを操作してもサーバに送信しません。サーバの監視のみを行います。"; ObjectID = "98"; */
+"98.ibShadowedToolTip" = "キーボードおよびマウスを操作してもサーバに送信しません。サーバの監視のみを行います。";
+
+/* Class = "NSTextFieldCell"; title = "接続先："; ObjectID = "113"; */
+"113.title" = "接続先：";
+
+/* Class = "NSTextFieldCell"; title = "接続中..."; ObjectID = "114"; */
+"114.title" = "接続中...";
+
+/* Class = "NSTextFieldCell"; title = "パスワード："; ObjectID = "115"; */
+"115.title" = "パスワード：";
+
+/* Class = "NSTextFieldCell"; placeholderString = "サーバのアドレス"; ObjectID = "116"; */
+"116.placeholderString" = "サーバのアドレス";
+
+/* Class = "NSButtonCell"; title = "接続"; ObjectID = "117"; */
+"117.title" = "接続";
+
+/* Class = "NSTextFieldCell"; title = "ディスプレイ番号 or port："; ObjectID = "118"; */
+"118.title" = "ディスプレイ番号 or port：";
+
+/* Class = "NSTextFieldCell"; placeholderString = "0"; ObjectID = "120"; */
+"120.placeholderString" = "0";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "120"; */
+"120.title" = "0";
+
+/* Class = "NSButtonCell"; title = "パスワードを保存する"; ObjectID = "121"; */
+"121.title" = "パスワードを保存する";
+
+/* Class = "NSTextFieldCell"; title = "プロファイル："; ObjectID = "122"; */
+"122.title" = "プロファイル：";
+
+/* Class = "NSButtonCell"; title = "ほかのクライアントの接続を許可"; ObjectID = "123"; */
+"123.title" = "ほかのクライアントの接続を許可";
+
+/* Class = "NSButtonCell"; title = "フルスクリーン表示"; ObjectID = "124"; */
+"124.title" = "フルスクリーン表示";
+
+/* Class = "NSButtonCell"; title = "サーバを保存"; ObjectID = "125"; */
+"125.title" = "サーバを保存";
+
+/* Class = "NSButtonCell"; title = "表示のみ"; ObjectID = "126"; */
+"126.title" = "表示のみ";
+
+/* Class = "NSTextFieldCell"; title = "Display 10 is port 5910"; ObjectID = "131"; */
+"131.title" = "Display 10 is port 5910";
+
+/* Class = "NSButtonCell"; title = "Tunnel over SSH"; ObjectID = "136"; */
+"136.title" = "Tunnel over SSH";
+
+/* Class = "NSTextFieldCell"; title = "SSH host:"; ObjectID = "138"; */
+"138.title" = "SSH host:";

@@ -99,7 +99,10 @@
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                        <rect key="frame" x="279" y="13" width="61" height="32"/>
+                        <rect key="frame" x="268" y="13" width="72" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="C6Y-Lb-pYj"/>
+                        </constraints>
                         <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="71">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -112,7 +115,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                        <rect key="frame" x="197" y="13" width="82" height="32"/>
+                        <rect key="frame" x="186" y="13" width="82" height="32"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="72">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>

@@ -23,6 +23,7 @@
 #import "IServerData.h"
 #import "Profile.h"
 #import "ServerDataManager.h"
+#import "RFBConnection.h"
 
 #define RFB_NAME          @"Name"
 #define RFB_HOST		  @"Host"
@@ -43,6 +44,15 @@
 + (void)initialize
 {
 	[ServerFromPrefs setVersion:1];
+}
+
+- (instancetype)init
+{
+    if( self = [super init] )
+	{
+
+	}
+	return self;
 }
 
 /* This is used for loading the servers under some old preference scheme (before
@@ -75,7 +85,8 @@
     return self;
 }
 
-+ (id<IServerData>)createWithHost:(NSString*)hostName preferenceDictionary:(NSDictionary*)prefDict;
++ (id<IServerData>)createWithHost:(NSString*)hostName
+			 preferenceDictionary:(NSDictionary*)prefDict
 {
 	return [[ServerFromPrefs alloc] initWithHost:hostName preferenceDictionary:prefDict];
 }
@@ -97,9 +108,9 @@
 	if( self = [super init] )
 	{
         BOOL    havePort; // port's been specified in hostAndPort
-        _name =                  [[coder decodeObjectForKey:RFB_NAME] copy];
-        NSString *host =          [coder decodeObjectForKey:RFB_HOST];
-		havePort = [self setHostAndPort:[coder decodeObjectForKey:RFB_HOSTANDPORT]];
+        _name =                  [[coder decodeObjectOfClass:[NSString class] forKey:RFB_NAME] copy];
+        NSString *host =          [coder decodeObjectOfClass:[NSString class] forKey:RFB_HOST];
+		havePort = [self setHostAndPort:[coder decodeObjectOfClass:[NSString class] forKey:RFB_HOSTANDPORT]];
         [self setHost: host];
         _rememberPassword =       [coder decodeBoolForKey:RFB_REMEMBER];
 
@@ -117,7 +128,7 @@
                 [self setPort: display + PORT_BASE];
         }
 
-        [self setProfileName:     [coder decodeObjectForKey:RFB_LAST_PROFILE]];
+        [self setProfileName:     [coder decodeObjectOfClass:[NSString class] forKey:RFB_LAST_PROFILE]];
 		[self setShared:          [coder decodeBoolForKey:RFB_SHARED]];
 		[self setFullscreen:      [coder decodeBoolForKey:RFB_FULLSCREEN]];
 		[self setViewOnly:  	  [coder decodeBoolForKey:RFB_VIEWONLY]];

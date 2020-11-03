@@ -22,6 +22,10 @@
 @class AppDelegate;
 @protocol IServerData;
 
+/**
+ * This class manages a single dock-initiated connection while it's waiting to
+ * complete.
+*/
 @interface DockConnection : NSObject <ConnectionWaiterDelegate> {
     ConnectionWaiter    *waiter;
 }

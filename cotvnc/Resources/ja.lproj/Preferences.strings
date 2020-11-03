@@ -1,0 +1,69 @@
+
+/* Class = "NSWindow"; title = "環境設定"; ObjectID = "75"; */
+"75.title" = "環境設定";
+
+/* Class = "NSMenuItem"; title = "フルスクリーン時"; ObjectID = "79"; */
+"79.title" = "フルスクリーン時";
+
+/* Class = "NSTabViewItem"; label = "フルスクリーン"; ObjectID = "85"; */
+"85.label" = "フルスクリーン";
+
+/* Class = "NSTabViewItem"; label = "パフォーマンス"; ObjectID = "86"; */
+"86.label" = "パフォーマンス";
+
+/* Class = "NSMenuItem"; title = "接続中のとき"; ObjectID = "88"; */
+"88.title" = "接続中のとき";
+
+/* Class = "NSTableColumn"; headerCell.title = "ショートカット"; ObjectID = "89"; */
+"89.headerCell.title" = "ショートカット";
+
+/* Class = "NSTableColumn"; headerCell.title = "説明"; ObjectID = "94"; */
+"94.headerCell.title" = "説明";
+
+/* Class = "NSTabViewItem"; label = "キーボード"; ObjectID = "96"; */
+"96.label" = "キーボード";
+
+/* Class = "NSMenuItem"; title = "接続中のウインドウが無いとき"; ObjectID = "105"; */
+"105.title" = "接続中のウインドウが無いとき";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "109"; */
+"109.title" = "OtherViews";
+
+/* Class = "NSButtonCell"; title = "フルスクリーンモードのときスクロールバーを表示"; ObjectID = "129"; */
+"129.title" = "フルスクリーンモードのときスクロールバーを表示";
+
+/* Class = "NSTextFieldCell"; title = "オートスクロール速度"; ObjectID = "130"; */
+"130.title" = "オートスクロール速度";
+
+/* Class = "NSTextFieldCell"; title = "低速"; ObjectID = "131"; */
+"131.title" = "低速";
+
+/* Class = "NSTextFieldCell"; title = "高速"; ObjectID = "133"; */
+"133.title" = "高速";
+
+/* Class = "NSButtonCell"; title = "フルスクリーンモードに切り替えるとき警告を表示"; ObjectID = "134"; */
+"134.title" = "フルスクリーンモードに切り替えるとき警告を表示";
+
+/* Class = "NSTextFieldCell"; title = "\"できる限り頻繁に更新する\" ともっともレスポンスがよくなりますが、CPU やネットワークに高い負荷をかけます。\"手動で更新する\"と負荷を最小限に抑えることができますが、\"再描画\" コマンドを使用しないと画面が更新されません。"; ObjectID = "136"; */
+"136.title" = "\"できる限り頻繁に更新する\" ともっともレスポンスがよくなりますが、CPU やネットワークに高い負荷をかけます。\"手動で更新する\"と負荷を最小限に抑えることができますが、\"再描画\" コマンドを使用しないと画面が更新されません。";
+
+/* Class = "NSTextFieldCell"; title = "手動で更新する"; ObjectID = "137"; */
+"137.title" = "手動で更新する";
+
+/* Class = "NSTextFieldCell"; title = "その他の\nウインドウ"; ObjectID = "138"; */
+"138.title" = "その他の\nウインドウ";
+
+/* Class = "NSTextFieldCell"; title = "できる限り\n頻繁に更新する"; ObjectID = "139"; */
+"139.title" = "できる限り\n頻繁に更新する";
+
+/* Class = "NSTextFieldCell"; title = "最も手前の\nウインドウ"; ObjectID = "141"; */
+"141.title" = "最も手前の\nウインドウ";
+
+/* Class = "NSTextFieldCell"; title = "キー割り当てを解除するには space を入力します"; ObjectID = "142"; */
+"142.title" = "キー割り当てを解除するには space を入力します";
+
+/* Class = "NSTextFieldCell"; title = "キーの割り当て先："; ObjectID = "144"; */
+"144.title" = "キーの割り当て先：";
+
+/* Class = "NSButtonCell"; title = "初期値に戻す"; ObjectID = "145"; */
+"145.title" = "初期値に戻す";

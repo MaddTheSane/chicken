@@ -1,0 +1,306 @@
+
+/* Class = "NSWindow"; title = "プロファイル マネージャ"; ObjectID = "151"; */
+"151.title" = "プロファイル マネージャ";
+
+/* Class = "NSTabViewItem"; label = "エミュレーション"; ObjectID = "156"; */
+"156.label" = "エミュレーション";
+
+/* Class = "NSTabViewItem"; label = "エンコーディング"; ObjectID = "157"; */
+"157.label" = "エンコーディング";
+
+/* Class = "NSTableColumn"; headerCell.title = "プロファイル"; ObjectID = "159"; */
+"159.headerCell.title" = "プロファイル";
+
+/* Class = "NSTableColumn"; headerCell.title = "エンコーディング"; ObjectID = "169"; */
+"169.headerCell.title" = "エンコーディング";
+
+/* Class = "NSTabViewItem"; label = "修飾キー"; ObjectID = "197"; */
+"197.label" = "修飾キー";
+
+/* Class = "NSTabViewItem"; label = "カラー"; ObjectID = "199"; */
+"199.label" = "カラー";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "202"; */
+"202.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "204"; */
+"204.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Windows"; ObjectID = "206"; */
+"206.title" = "Windows";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "207"; */
+"207.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Alt (Command)"; ObjectID = "208"; */
+"208.title" = "Alt (Command)";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "209"; */
+"209.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "210"; */
+"210.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Meta (Option)"; ObjectID = "211"; */
+"211.title" = "Meta (Option)";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "212"; */
+"212.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Alt (Command)"; ObjectID = "215"; */
+"215.title" = "Alt (Command)";
+
+/* Class = "NSMenuItem"; title = "Meta (Option)"; ObjectID = "216"; */
+"216.title" = "Meta (Option)";
+
+/* Class = "NSMenuItem"; title = "Windows"; ObjectID = "218"; */
+"218.title" = "Windows";
+
+/* Class = "NSMenuItem"; title = "Meta (Option)"; ObjectID = "221"; */
+"221.title" = "Meta (Option)";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "223"; */
+"223.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "225"; */
+"225.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Alt (Command)"; ObjectID = "229"; */
+"229.title" = "Alt (Command)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "230"; */
+"230.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Windows"; ObjectID = "232"; */
+"232.title" = "Windows";
+
+/* Class = "NSButtonCell"; title = "256 色"; ObjectID = "236"; */
+"236.title" = "256 色";
+
+/* Class = "NSButtonCell"; title = "数千色"; ObjectID = "237"; */
+"237.title" = "数千色";
+
+/* Class = "NSButtonCell"; title = "数万色"; ObjectID = "238"; */
+"238.title" = "数万色";
+
+/* Class = "NSButtonCell"; title = "サーバの設定に従う"; ObjectID = "239"; */
+"239.title" = "サーバの設定に従う";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "320"; */
+"320.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Command"; ObjectID = "321"; */
+"321.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "322"; */
+"322.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "323"; */
+"323.title" = "Option";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "324"; */
+"324.title" = "Shift";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "327"; */
+"327.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "マルチタップ"; ObjectID = "328"; */
+"328.title" = "マルチタップ";
+
+/* Class = "NSMenuItem"; title = "タップとクリック"; ObjectID = "329"; */
+"329.title" = "タップとクリック";
+
+/* Class = "NSMenuItem"; title = "エミュレーションしない"; ObjectID = "330"; */
+"330.title" = "エミュレーションしない";
+
+/* Class = "NSMenuItem"; title = "修飾キーをクリック"; ObjectID = "331"; */
+"331.title" = "修飾キーをクリック";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "429"; */
+"429.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "タップとクリック"; ObjectID = "430"; */
+"430.title" = "タップとクリック";
+
+/* Class = "NSMenuItem"; title = "エミュレーションしない"; ObjectID = "431"; */
+"431.title" = "エミュレーションしない";
+
+/* Class = "NSMenuItem"; title = "マルチタップ"; ObjectID = "432"; */
+"432.title" = "マルチタップ";
+
+/* Class = "NSMenuItem"; title = "修飾キーをクリック"; ObjectID = "433"; */
+"433.title" = "修飾キーをクリック";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "451"; */
+"451.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "452"; */
+"452.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "453"; */
+"453.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Command"; ObjectID = "454"; */
+"454.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "455"; */
+"455.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "460"; */
+"460.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "461"; */
+"461.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "462"; */
+"462.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Command"; ObjectID = "463"; */
+"463.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "464"; */
+"464.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "466"; */
+"466.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "467"; */
+"467.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "468"; */
+"468.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Command"; ObjectID = "469"; */
+"469.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "470"; */
+"470.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "472"; */
+"472.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "473"; */
+"473.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "474"; */
+"474.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Command"; ObjectID = "475"; */
+"475.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "476"; */
+"476.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "478"; */
+"478.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift"; ObjectID = "479"; */
+"479.title" = "Shift";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "480"; */
+"480.title" = "Control";
+
+/* Class = "NSMenuItem"; title = "Command"; ObjectID = "481"; */
+"481.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "482"; */
+"482.title" = "Option";
+
+/* Class = "NSTextFieldCell"; title = "エミュレーションタイムアウト："; ObjectID = "510"; */
+"510.title" = "エミュレーションタイムアウト：";
+
+/* Class = "NSTextFieldCell"; title = "秒"; ObjectID = "511"; */
+"511.title" = "秒";
+
+/* Class = "NSTextFieldCell"; title = "修飾キー："; ObjectID = "513"; */
+"513.title" = "修飾キー：";
+
+/* Class = "NSTextFieldCell"; title = "タップ回数："; ObjectID = "515"; */
+"515.title" = "タップ回数：";
+
+/* Class = "NSTextFieldCell"; title = "修飾キー："; ObjectID = "516"; */
+"516.title" = "修飾キー：";
+
+/* Class = "NSTextFieldCell"; title = "エミュレーション無効"; ObjectID = "520"; */
+"520.title" = "エミュレーション無効";
+
+/* Class = "NSTextFieldCell"; title = "修飾キー："; ObjectID = "521"; */
+"521.title" = "修飾キー：";
+
+/* Class = "NSTextFieldCell"; title = "マウスの中ボタン："; ObjectID = "523"; */
+"523.title" = "マウスの中ボタン：";
+
+/* Class = "NSTextFieldCell"; title = "修飾キー："; ObjectID = "525"; */
+"525.title" = "修飾キー：";
+
+/* Class = "NSTextFieldCell"; title = "タップ回数："; ObjectID = "526"; */
+"526.title" = "タップ回数：";
+
+/* Class = "NSTextFieldCell"; title = "修飾キー："; ObjectID = "530"; */
+"530.title" = "修飾キー：";
+
+/* Class = "NSTextFieldCell"; title = "修飾キー："; ObjectID = "533"; */
+"533.title" = "修飾キー：";
+
+/* Class = "NSTextFieldCell"; title = "秒"; ObjectID = "534"; */
+"534.title" = "秒";
+
+/* Class = "NSTextFieldCell"; title = "エミュレーションタイムアウト："; ObjectID = "535"; */
+"535.title" = "エミュレーションタイムアウト：";
+
+/* Class = "NSTextFieldCell"; title = "エミュレーション無効"; ObjectID = "537"; */
+"537.title" = "エミュレーション無効";
+
+/* Class = "NSTextFieldCell"; title = "マウスの右ボタン："; ObjectID = "538"; */
+"538.title" = "マウスの右ボタン：";
+
+/* Class = "NSButtonCell"; title = "CopyRect エンコーディングを有効にする"; ObjectID = "540"; */
+"540.title" = "CopyRect エンコーディングを有効にする";
+
+/* Class = "NSTextFieldCell"; title = "エンコーディングをドラッグすると優先順位を変更できます。\nチェックボックスで使用するエンコーディングを指定します。"; ObjectID = "541"; */
+"541.title" = "エンコーディングをドラッグすると優先順位を変更できます。\nチェックボックスで使用するエンコーディングを指定します。";
+
+/* Class = "NSTextFieldCell"; title = "Option"; ObjectID = "543"; */
+"543.title" = "Option";
+
+/* Class = "NSTextFieldCell"; title = "Command"; ObjectID = "546"; */
+"546.title" = "Command";
+
+/* Class = "NSTextFieldCell"; title = "Control"; ObjectID = "549"; */
+"549.title" = "Control";
+
+/* Class = "NSTextFieldCell"; title = "ローカルキーボード"; ObjectID = "550"; */
+"550.title" = "ローカルキーボード";
+
+/* Class = "NSTextFieldCell"; title = "リモートキーボード"; ObjectID = "551"; */
+"551.title" = "リモートキーボード";
+
+/* Class = "NSTextFieldCell"; title = "より低い色解像度を指定するほどレスポンスは向上します。\nこれは必要な転送データ量が少なくなるためです。"; ObjectID = "552"; */
+"552.title" = "より低い色解像度を指定するほどレスポンスは向上します。\nこれは必要な転送データ量が少なくなるためです。";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "553"; */
+"553.title" = "+";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "554"; */
+"554.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "556"; */
+"556.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "none"; ObjectID = "563"; */
+"563.title" = "none";
+
+/* Class = "NSMenuItem"; title = "none"; ObjectID = "564"; */
+"564.title" = "none";
+
+/* Class = "NSMenuItem"; title = "none"; ObjectID = "565"; */
+"565.title" = "none";
+
+/* Class = "NSButtonCell"; title = "Enable JPEG Encoding (requires Tight)"; ObjectID = "568"; */
+"568.title" = "Enable JPEG Encoding (requires Tight)";
+
+/* Class = "NSMenuItem"; title = "none (local keymap)"; ObjectID = "575"; */
+"575.title" = "none (local keymap)";
+
+/* Class = "NSTextFieldCell"; title = "Tint remote display"; ObjectID = "577"; */
+"577.title" = "Tint remote display";

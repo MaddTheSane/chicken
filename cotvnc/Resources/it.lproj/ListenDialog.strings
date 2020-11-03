@@ -1,0 +1,33 @@
+
+/* Class = "NSWindow"; title = "Ascolto VNC"; ObjectID = "6"; */
+"6.title" = "Ascolto VNC";
+
+/* Class = "NSMenuItem"; title = "preimpostato"; ObjectID = "10"; */
+"10.title" = "preimpostato";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "11"; */
+"11.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "31"; */
+"31.title" = "0";
+
+/* Class = "NSTextFieldCell"; title = "Profilo:"; ObjectID = "33"; */
+"33.title" = "Profilo:";
+
+/* Class = "NSTextFieldCell"; title = "Porta:"; ObjectID = "34"; */
+"34.title" = "Porta:";
+
+/* Class = "NSButtonCell"; title = "Solo Cliente Locale"; ObjectID = "35"; */
+"35.title" = "Solo Cliente Locale";
+
+/* Class = "NSButtonCell"; title = "Inizia"; ObjectID = "36"; */
+"36.title" = "Inizia";
+
+/* Class = "NSTextFieldCell"; title = "Connetto..."; ObjectID = "37"; */
+"37.title" = "Connetto...";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Nascondi la barra del menù e Dock usando così lo Schermo Intero."; ObjectID = "38"; */
+"38.ibShadowedToolTip" = "Nascondi la barra del menù e Dock usando così lo Schermo Intero.";
+
+/* Class = "NSButtonCell"; title = "Pieno schermo"; ObjectID = "39"; */
+"39.title" = "Pieno schermo";

@@ -1,0 +1,192 @@
+
+/* Class = "NSMenu"; title = "OSX_RFBViewer"; ObjectID = "29"; */
+"29.title" = "OSX_RFBViewer";
+
+/* Class = "NSMenuItem"; title = "接続"; ObjectID = "52"; */
+"52.title" = "接続";
+
+/* Class = "NSMenuItem"; title = "接続…"; ObjectID = "53"; */
+"53.title" = "接続…";
+
+/* Class = "NSMenu"; title = "接続"; ObjectID = "61"; */
+"61.title" = "接続";
+
+/* Class = "NSMenuItem"; title = "タイトルを変更…"; ObjectID = "165"; */
+"165.title" = "タイトルを変更…";
+
+/* Class = "NSWindow"; title = "Chicken について"; ObjectID = "232"; */
+"232.title" = "Chicken について";
+
+/* Class = "NSMenuItem"; title = "接続情報を見る…"; ObjectID = "315"; */
+"315.title" = "接続情報を見る…";
+
+/* Class = "NSMenuItem"; title = "Chicken を隠す"; ObjectID = "611"; */
+"611.title" = "Chicken を隠す";
+
+/* Class = "NSMenuItem"; title = "Chicken"; ObjectID = "612"; */
+"612.title" = "Chicken";
+
+/* Class = "NSMenuItem"; title = "サービス"; ObjectID = "613"; */
+"613.title" = "サービス";
+
+/* Class = "NSMenu"; title = "Chicken"; ObjectID = "614"; */
+"614.title" = "Chicken";
+
+/* Class = "NSMenuItem"; title = "Chicken について…"; ObjectID = "615"; */
+"615.title" = "Chicken について…";
+
+/* Class = "NSMenuItem"; title = "ほかを隠す"; ObjectID = "616"; */
+"616.title" = "ほかを隠す";
+
+/* Class = "NSMenuItem"; title = "すべてを表示"; ObjectID = "617"; */
+"617.title" = "すべてを表示";
+
+/* Class = "NSMenuItem"; title = "Chicken を終了"; ObjectID = "619"; */
+"619.title" = "Chicken を終了";
+
+/* Class = "NSMenuItem"; title = "環境設定…"; ObjectID = "620"; */
+"620.title" = "環境設定…";
+
+/* Class = "NSMenu"; title = "サービス"; ObjectID = "621"; */
+"621.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "ウインドウを閉じる"; ObjectID = "1295"; */
+"1295.title" = "ウインドウを閉じる";
+
+/* Class = "NSMenuItem"; title = "プロファイル…"; ObjectID = "1298"; */
+"1298.title" = "プロファイル…";
+
+/* Class = "NSMenuItem"; title = "スピーチを停止"; ObjectID = "1301"; */
+"1301.title" = "スピーチを停止";
+
+/* Class = "NSMenuItem"; title = "取り消し"; ObjectID = "1302"; */
+"1302.title" = "取り消し";
+
+/* Class = "NSMenuItem"; title = "編集"; ObjectID = "1303"; */
+"1303.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "やり直し"; ObjectID = "1304"; */
+"1304.title" = "やり直し";
+
+/* Class = "NSMenu"; title = "スピーチ"; ObjectID = "1305"; */
+"1305.title" = "スピーチ";
+
+/* Class = "NSMenu"; title = "編集"; ObjectID = "1307"; */
+"1307.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "スピーチ"; ObjectID = "1308"; */
+"1308.title" = "スピーチ";
+
+/* Class = "NSMenuItem"; title = "スピーチを開始"; ObjectID = "1309"; */
+"1309.title" = "スピーチを開始";
+
+/* Class = "NSMenuItem"; title = "カット"; ObjectID = "1310"; */
+"1310.title" = "カット";
+
+/* Class = "NSMenuItem"; title = "すべてを選択"; ObjectID = "1311"; */
+"1311.title" = "すべてを選択";
+
+/* Class = "NSMenuItem"; title = "消去"; ObjectID = "1312"; */
+"1312.title" = "消去";
+
+/* Class = "NSMenuItem"; title = "ペースト"; ObjectID = "1313"; */
+"1313.title" = "ペースト";
+
+/* Class = "NSMenuItem"; title = "コピー"; ObjectID = "1314"; */
+"1314.title" = "コピー";
+
+/* Class = "NSMenuItem"; title = "すべてを手前に移動"; ObjectID = "1327"; */
+"1327.title" = "すべてを手前に移動";
+
+/* Class = "NSMenuItem"; title = "フルスクリーンモード"; ObjectID = "1328"; */
+"1328.title" = "フルスクリーンモード";
+
+/* Class = "NSMenuItem"; title = "しまう"; ObjectID = "1329"; */
+"1329.title" = "しまう";
+
+/* Class = "NSMenuItem"; title = "ウインドウ"; ObjectID = "1330"; */
+"1330.title" = "ウインドウ";
+
+/* Class = "NSMenu"; title = "ウインドウ"; ObjectID = "1331"; */
+"1331.title" = "ウインドウ";
+
+/* Class = "NSMenuItem"; title = "Bonjour を使用"; ObjectID = "1361"; */
+"1361.title" = "Bonjour を使用";
+
+/* Class = "NSMenuItem"; title = "ヘルプ"; ObjectID = "1402"; */
+"1402.title" = "ヘルプ";
+
+/* Class = "NSMenu"; title = "ヘルプ"; ObjectID = "1410"; */
+"1410.title" = "ヘルプ";
+
+/* Class = "NSMenuItem"; title = "Chicken ヘルプ"; ObjectID = "1452"; */
+"1452.title" = "Chicken ヘルプ";
+
+/* Class = "NSMenuItem"; title = "リッスンモード..."; ObjectID = "1454"; */
+"1454.title" = "リッスンモード...";
+
+/* Class = "NSMenuItem"; title = "特殊キー"; ObjectID = "1456"; */
+"1456.title" = "特殊キー";
+
+/* Class = "NSMenuItem"; title = "\"Pause\" を送信"; ObjectID = "1457"; */
+"1457.title" = "\"Pause\" を送信";
+
+/* Class = "NSMenu"; title = "特殊キー"; ObjectID = "1458"; */
+"1458.title" = "特殊キー";
+
+/* Class = "NSMenuItem"; title = "\"Cmd-Option-Escape\" を送信"; ObjectID = "1459"; */
+"1459.title" = "\"Cmd-Option-Escape\" を送信";
+
+/* Class = "NSMenuItem"; title = "\"Break\" を送信"; ObjectID = "1462"; */
+"1462.title" = "\"Break\" を送信";
+
+/* Class = "NSMenuItem"; title = "\"Print\" を送信"; ObjectID = "1463"; */
+"1463.title" = "\"Print\" を送信";
+
+/* Class = "NSMenuItem"; title = "\"Execute\" を送信"; ObjectID = "1464"; */
+"1464.title" = "\"Execute\" を送信";
+
+/* Class = "NSMenuItem"; title = "\"Ctrl-Alt-Del\" を送信"; ObjectID = "1470"; */
+"1470.title" = "\"Ctrl-Alt-Del\" を送信";
+
+/* Class = "NSMenuItem"; title = "\"Insert\" を送信"; ObjectID = "1473"; */
+"1473.title" = "\"Insert\" を送信";
+
+/* Class = "NSMenuItem"; title = "\"Delete\" を送信"; ObjectID = "1474"; */
+"1474.title" = "\"Delete\" を送信";
+
+/* Class = "NSMenuItem"; title = "新規接続..."; ObjectID = "1477"; */
+"1477.title" = "新規接続...";
+
+/* Class = "NSTextFieldCell"; title = "Chicken"; ObjectID = "1481"; */
+"1481.title" = "Chicken";
+
+/* Class = "NSTextFieldCell"; title = "?"; ObjectID = "1483"; */
+"1483.title" = "?";
+
+/* Class = "NSTextFieldCell"; title = "based on Chicken of the VNC by Jason Harris\nbased on VNCViewer by Helmut Maierhofer"; ObjectID = "1484"; */
+"1484.title" = "based on Chicken of the VNC by Jason Harris\nbased on VNCViewer by Helmut Maierhofer";
+
+/* Class = "NSTextFieldCell"; title = "Copyright 1998-2000 by Helmut Maierhofer\nCopyright 2002-2006 by Jason Harris"; ObjectID = "1485"; */
+"1485.title" = "Copyright 1998-2000 by Helmut Maierhofer\nCopyright 2002-2006 by Jason Harris";
+
+/* Class = "NSTextFieldCell"; title = "released under the GNU Public License\nsource code and support available at http://chicken.sourceforge.net"; ObjectID = "1486"; */
+"1486.title" = "released under the GNU Public License\nsource code and support available at http://chicken.sourceforge.net";
+
+/* Class = "NSTextFieldCell"; title = "Version"; ObjectID = "1487"; */
+"1487.title" = "Version";
+
+/* Class = "NSTextFieldCell"; title = "(support@geekspiff.com)\n(helmut.maierhofer@chello.at)\n"; ObjectID = "1488"; */
+"1488.title" = "(support@geekspiff.com)\n(helmut.maierhofer@chello.at)\n";
+
+/* Class = "NSMenuItem"; title = "Force Reconnect"; ObjectID = "1491"; */
+"1491.title" = "Force Reconnect";
+
+/* Class = "NSMenuItem"; title = "再描画"; ObjectID = "1494"; */
+"1494.title" = "再描画";
+
+/* Class = "NSMenuItem"; title = "Check for Updates"; ObjectID = "1498"; */
+"1498.title" = "Check for Updates";
+
+/* Class = "NSMenuItem"; title = "Paste to Remote Clipboard"; ObjectID = "1500"; */
+"1500.title" = "Paste to Remote Clipboard";

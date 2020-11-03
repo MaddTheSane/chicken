@@ -1,0 +1,306 @@
+
+/* Class = "NSWindow"; title = "Gestion des profiles"; ObjectID = "151"; */
+"151.title" = "Gestion des profiles";
+
+/* Class = "NSTabViewItem"; label = "Souris"; ObjectID = "156"; */
+"156.label" = "Souris";
+
+/* Class = "NSTabViewItem"; label = "Encodages"; ObjectID = "157"; */
+"157.label" = "Encodages";
+
+/* Class = "NSTableColumn"; headerCell.title = "Profiles"; ObjectID = "159"; */
+"159.headerCell.title" = "Profiles";
+
+/* Class = "NSTableColumn"; headerCell.title = "Encodage"; ObjectID = "169"; */
+"169.headerCell.title" = "Encodage";
+
+/* Class = "NSTabViewItem"; label = "Modificateurs"; ObjectID = "197"; */
+"197.label" = "Modificateurs";
+
+/* Class = "NSTabViewItem"; label = "Couleur"; ObjectID = "199"; */
+"199.label" = "Couleur";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "202"; */
+"202.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "204"; */
+"204.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Windows"; ObjectID = "206"; */
+"206.title" = "Windows";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "207"; */
+"207.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Alt (Commande)"; ObjectID = "208"; */
+"208.title" = "Alt (Commande)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "209"; */
+"209.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "210"; */
+"210.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Meta (Option)"; ObjectID = "211"; */
+"211.title" = "Meta (Option)";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "212"; */
+"212.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Alt (Commande)"; ObjectID = "215"; */
+"215.title" = "Alt (Commande)";
+
+/* Class = "NSMenuItem"; title = "Meta (Option)"; ObjectID = "216"; */
+"216.title" = "Meta (Option)";
+
+/* Class = "NSMenuItem"; title = "Windows"; ObjectID = "218"; */
+"218.title" = "Windows";
+
+/* Class = "NSMenuItem"; title = "Meta (Option)"; ObjectID = "221"; */
+"221.title" = "Meta (Option)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "223"; */
+"223.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "225"; */
+"225.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Alt (Commande)"; ObjectID = "229"; */
+"229.title" = "Alt (Commande)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "230"; */
+"230.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Windows"; ObjectID = "232"; */
+"232.title" = "Windows";
+
+/* Class = "NSButtonCell"; title = "256 Couleurs"; ObjectID = "236"; */
+"236.title" = "256 Couleurs";
+
+/* Class = "NSButtonCell"; title = "Milliers de Couleurs"; ObjectID = "237"; */
+"237.title" = "Milliers de Couleurs";
+
+/* Class = "NSButtonCell"; title = "Millions de Couleurs"; ObjectID = "238"; */
+"238.title" = "Millions de Couleurs";
+
+/* Class = "NSButtonCell"; title = "Laisser le serveur décider"; ObjectID = "239"; */
+"239.title" = "Laisser le serveur décider";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "320"; */
+"320.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Commande"; ObjectID = "321"; */
+"321.title" = "Commande";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "322"; */
+"322.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "323"; */
+"323.title" = "Option";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "324"; */
+"324.title" = "Shift (MAJ)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "327"; */
+"327.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Appui multiple"; ObjectID = "328"; */
+"328.title" = "Appui multiple";
+
+/* Class = "NSMenuItem"; title = "Appuyer et cliquer"; ObjectID = "329"; */
+"329.title" = "Appuyer et cliquer";
+
+/* Class = "NSMenuItem"; title = "Pas d'émulation"; ObjectID = "330"; */
+"330.title" = "Pas d'émulation";
+
+/* Class = "NSMenuItem"; title = "Clic droit"; ObjectID = "331"; */
+"331.title" = "Clic droit";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "429"; */
+"429.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Appuyer et cliquer"; ObjectID = "430"; */
+"430.title" = "Appuyer et cliquer";
+
+/* Class = "NSMenuItem"; title = "Pas d'émulation"; ObjectID = "431"; */
+"431.title" = "Pas d'émulation";
+
+/* Class = "NSMenuItem"; title = "Appui multiple"; ObjectID = "432"; */
+"432.title" = "Appui multiple";
+
+/* Class = "NSMenuItem"; title = "Clic droit"; ObjectID = "433"; */
+"433.title" = "Clic droit";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "451"; */
+"451.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "452"; */
+"452.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "453"; */
+"453.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Commande"; ObjectID = "454"; */
+"454.title" = "Commande";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "455"; */
+"455.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "460"; */
+"460.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "461"; */
+"461.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "462"; */
+"462.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Commande"; ObjectID = "463"; */
+"463.title" = "Commande";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "464"; */
+"464.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "466"; */
+"466.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "467"; */
+"467.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "468"; */
+"468.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Commande"; ObjectID = "469"; */
+"469.title" = "Commande";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "470"; */
+"470.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "472"; */
+"472.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "473"; */
+"473.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "474"; */
+"474.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Commande"; ObjectID = "475"; */
+"475.title" = "Commande";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "476"; */
+"476.title" = "Option";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "478"; */
+"478.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Shift (MAJ)"; ObjectID = "479"; */
+"479.title" = "Shift (MAJ)";
+
+/* Class = "NSMenuItem"; title = "Contrôle"; ObjectID = "480"; */
+"480.title" = "Contrôle";
+
+/* Class = "NSMenuItem"; title = "Commande"; ObjectID = "481"; */
+"481.title" = "Commande";
+
+/* Class = "NSMenuItem"; title = "Option"; ObjectID = "482"; */
+"482.title" = "Option";
+
+/* Class = "NSTextFieldCell"; title = "Timeout emulation:"; ObjectID = "510"; */
+"510.title" = "Timeout emulation:";
+
+/* Class = "NSTextFieldCell"; title = "Secondes"; ObjectID = "511"; */
+"511.title" = "Secondes";
+
+/* Class = "NSTextFieldCell"; title = "Touche de modification:"; ObjectID = "513"; */
+"513.title" = "Touche de modification:";
+
+/* Class = "NSTextFieldCell"; title = "Nombre d'appuis:"; ObjectID = "515"; */
+"515.title" = "Nombre d'appuis:";
+
+/* Class = "NSTextFieldCell"; title = "Touche de modification:"; ObjectID = "516"; */
+"516.title" = "Touche de modification:";
+
+/* Class = "NSTextFieldCell"; title = "Emulation désactivée"; ObjectID = "520"; */
+"520.title" = "Emulation désactivée";
+
+/* Class = "NSTextFieldCell"; title = "Touche de modification:"; ObjectID = "521"; */
+"521.title" = "Touche de modification:";
+
+/* Class = "NSTextFieldCell"; title = "Souris bouton central:"; ObjectID = "523"; */
+"523.title" = "Souris bouton central:";
+
+/* Class = "NSTextFieldCell"; title = "Touche de modification:"; ObjectID = "525"; */
+"525.title" = "Touche de modification:";
+
+/* Class = "NSTextFieldCell"; title = "Nombre d'appuis:"; ObjectID = "526"; */
+"526.title" = "Nombre d'appuis:";
+
+/* Class = "NSTextFieldCell"; title = "Touche de modification:"; ObjectID = "530"; */
+"530.title" = "Touche de modification:";
+
+/* Class = "NSTextFieldCell"; title = "Touche de modification:"; ObjectID = "533"; */
+"533.title" = "Touche de modification:";
+
+/* Class = "NSTextFieldCell"; title = "Secondes"; ObjectID = "534"; */
+"534.title" = "Secondes";
+
+/* Class = "NSTextFieldCell"; title = "Timeout emulation:"; ObjectID = "535"; */
+"535.title" = "Timeout emulation:";
+
+/* Class = "NSTextFieldCell"; title = "Emulation désactivée"; ObjectID = "537"; */
+"537.title" = "Emulation désactivée";
+
+/* Class = "NSTextFieldCell"; title = "Souris bouton droit :"; ObjectID = "538"; */
+"538.title" = "Souris bouton droit :";
+
+/* Class = "NSButtonCell"; title = "Activer encodage CopyRect"; ObjectID = "540"; */
+"540.title" = "Activer encodage CopyRect";
+
+/* Class = "NSTextFieldCell"; title = "Faites glisser les encodages pour modifier l'ordre de préférence. Utiliser la case à cocher pour désactiver des encodages spécifiques."; ObjectID = "541"; */
+"541.title" = "Faites glisser les encodages pour modifier l'ordre de préférence. Utiliser la case à cocher pour désactiver des encodages spécifiques.";
+
+/* Class = "NSTextFieldCell"; title = "Option"; ObjectID = "543"; */
+"543.title" = "Option";
+
+/* Class = "NSTextFieldCell"; title = "Commande"; ObjectID = "546"; */
+"546.title" = "Commande";
+
+/* Class = "NSTextFieldCell"; title = "Contrôle"; ObjectID = "549"; */
+"549.title" = "Contrôle";
+
+/* Class = "NSTextFieldCell"; title = "Clavier local"; ObjectID = "550"; */
+"550.title" = "Clavier local";
+
+/* Class = "NSTextFieldCell"; title = "Clavier distant"; ObjectID = "551"; */
+"551.title" = "Clavier distant";
+
+/* Class = "NSTextFieldCell"; title = "Vous pouvez augmenter la réactivité en diminuant le nombre de couleurs, moins de données devant être transmises."; ObjectID = "552"; */
+"552.title" = "Vous pouvez augmenter la réactivité en diminuant le nombre de couleurs, moins de données devant être transmises.";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "553"; */
+"553.title" = "+";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "554"; */
+"554.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "556"; */
+"556.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "rien"; ObjectID = "566"; */
+"566.title" = "rien";
+
+/* Class = "NSMenuItem"; title = "rien"; ObjectID = "567"; */
+"567.title" = "rien";
+
+/* Class = "NSMenuItem"; title = "rien"; ObjectID = "568"; */
+"568.title" = "rien";
+
+/* Class = "NSButtonCell"; title = "Activer encodage JPEG (requires Tight)"; ObjectID = "571"; */
+"571.title" = "Activer encodage JPEG (requires Tight)";
+
+/* Class = "NSMenuItem"; title = "rien (local keymap)"; ObjectID = "578"; */
+"578.title" = "rien (local keymap)";
+
+/* Class = "NSTextFieldCell"; title = "Tint remote display"; ObjectID = "580"; */
+"580.title" = "Tint remote display";

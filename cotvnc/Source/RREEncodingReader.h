@@ -21,11 +21,13 @@
 #import <AppKit/AppKit.h>
 #import "EncodingReader.h"
 
+@class ByteReader;
+
 @interface RREEncodingReader : EncodingReader
 {
-    id			numOfReader;
-    id			backPixReader;
-    id			subRectReader;
+    __kindof ByteReader		*numOfReader;
+    __kindof ByteReader		*backPixReader;
+    __kindof ByteReader		*subRectReader;
     CARD32		numOfSubRects;
 }
 

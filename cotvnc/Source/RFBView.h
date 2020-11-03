@@ -31,7 +31,7 @@
     BOOL            drawTint;
 }
 
-- (void)setFrameBuffer:(id)aBuffer;
+- (void)setFrameBuffer:(FrameBuffer*)aBuffer;
 @property (nonatomic, weak) RFBConnection *delegate;
 - (void)drawRect:(NSRect)aRect;
 

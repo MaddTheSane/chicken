@@ -1,0 +1,69 @@
+
+/* Class = "NSWindow"; title = "Préférences"; ObjectID = "75"; */
+"75.title" = "Préférences";
+
+/* Class = "NSMenuItem"; title = "Mode Plein Ecran"; ObjectID = "79"; */
+"79.title" = "Mode Plein Ecran";
+
+/* Class = "NSTabViewItem"; label = "Plein Ecran"; ObjectID = "85"; */
+"85.label" = "Plein Ecran";
+
+/* Class = "NSTabViewItem"; label = "Performances"; ObjectID = "86"; */
+"86.label" = "Performances";
+
+/* Class = "NSMenuItem"; title = "En Connexion"; ObjectID = "88"; */
+"88.title" = "En Connexion";
+
+/* Class = "NSTableColumn"; headerCell.title = "Raccourcis"; ObjectID = "89"; */
+"89.headerCell.title" = "Raccourcis";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "94"; */
+"94.headerCell.title" = "Description";
+
+/* Class = "NSTabViewItem"; label = "Clavier"; ObjectID = "96"; */
+"96.label" = "Clavier";
+
+/* Class = "NSMenuItem"; title = "Hors Connexion"; ObjectID = "105"; */
+"105.title" = "Hors Connexion";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "109"; */
+"109.title" = "OtherViews";
+
+/* Class = "NSButtonCell"; title = "Afficher des barres de défilement en mode plein écran"; ObjectID = "129"; */
+"129.title" = "Afficher des barres de défilement en mode plein écran";
+
+/* Class = "NSTextFieldCell"; title = "Lent"; ObjectID = "130"; */
+"130.title" = "Lent";
+
+/* Class = "NSTextFieldCell"; title = "Vitesse de défilement"; ObjectID = "132"; */
+"132.title" = "Vitesse de défilement";
+
+/* Class = "NSTextFieldCell"; title = "Rapide"; ObjectID = "133"; */
+"133.title" = "Rapide";
+
+/* Class = "NSButtonCell"; title = "Afficher un avertissement avant de passer en mode plein écran"; ObjectID = "134"; */
+"134.title" = "Afficher un avertissement avant de passer en mode plein écran";
+
+/* Class = "NSTextFieldCell"; title = "Rafraîchir aussi souvent que possible offrira la session la plus réactive, mais en consommant beaucoup de ressources processeur et en augmentant le trafic réseau. Rafraîchir manuellement uniquement consommera le moins de ressources processeur et produira le moins de trafic réseau, mais la session ne sera rafraîchie qu’en appelant explicitement la commande « Rafraîchir » du menu « Fenêtre »  "; ObjectID = "136"; */
+"136.title" = "Rafraîchir aussi souvent que possible offrira la session la plus réactive, mais en consommant beaucoup de ressources processeur et en augmentant le trafic réseau. Rafraîchir manuellement uniquement consommera le moins de ressources processeur et produira le moins de trafic réseau, mais la session ne sera rafraîchie qu’en appelant explicitement la commande « Rafraîchir » du menu « Fenêtre »  ";
+
+/* Class = "NSTextFieldCell"; title = "Rafraîchir manuellement uniquement  "; ObjectID = "137"; */
+"137.title" = "Rafraîchir manuellement uniquement  ";
+
+/* Class = "NSTextFieldCell"; title = "Autres\nConnexions"; ObjectID = "138"; */
+"138.title" = "Autres\nConnexions";
+
+/* Class = "NSTextFieldCell"; title = "Rafraîchir ausi\nsouvent que possible."; ObjectID = "139"; */
+"139.title" = "Rafraîchir ausi\nsouvent que possible.";
+
+/* Class = "NSTextFieldCell"; title = "Connexion\nau premier plan"; ObjectID = "141"; */
+"141.title" = "Connexion\nau premier plan";
+
+/* Class = "NSTextFieldCell"; title = "Entrez un espace pour supprimer un raccourci"; ObjectID = "142"; */
+"142.title" = "Entrez un espace pour supprimer un raccourci";
+
+/* Class = "NSTextFieldCell"; title = "Raccourcis clavier pour:"; ObjectID = "144"; */
+"144.title" = "Raccourcis clavier pour:";
+
+/* Class = "NSButtonCell"; title = "Valeurs par défaut"; ObjectID = "145"; */
+"145.title" = "Valeurs par défaut";

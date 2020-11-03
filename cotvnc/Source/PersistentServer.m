@@ -71,10 +71,7 @@
     return propertyDict;
 }
 
-- (NSString*)name
-{
-	return _name;
-}
+@synthesize name=_name;
 
 - (NSString *)password
 {
@@ -94,11 +91,7 @@
         return [super password];
 }
 
-
-- (BOOL)rememberPassword
-{
-	return _rememberPassword;
-}
+@synthesize rememberPassword=_rememberPassword;
 
 - (void)setName: (NSString*)name
 {

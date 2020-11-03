@@ -1,0 +1,57 @@
+
+/* Class = "NSWindow"; title = "RFBConnection"; ObjectID = "5"; */
+"5.title" = "RFBConnection";
+
+/* Class = "NSWindow"; title = "Changer le titre"; ObjectID = "15"; */
+"15.title" = "Changer le titre";
+
+/* Class = "NSWindow"; title = "Infos connexion"; ObjectID = "29"; */
+"29.title" = "Infos connexion";
+
+/* Class = "NSBox"; title = "Informations serveur"; ObjectID = "32"; */
+"32.title" = "Informations serveur";
+
+/* Class = "NSBox"; title = "Statistiques"; ObjectID = "53"; */
+"53.title" = "Statistiques";
+
+/* Class = "NSTextFieldCell"; title = "Nouveau titre :"; ObjectID = "70"; */
+"70.title" = "Nouveau titre :";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "72"; */
+"72.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Annuler"; ObjectID = "73"; */
+"73.title" = "Annuler";
+
+/* Class = "NSTextFieldCell"; title = "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"; ObjectID = "74"; */
+"74.title" = "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n";
+
+/* Class = "NSTextFieldCell"; title = "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"; ObjectID = "75"; */
+"75.title" = "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89";
+
+/* Class = "NSWindow"; title = "Enter Password"; ObjectID = "110"; */
+"110.title" = "Enter Password";
+
+/* Class = "NSButtonCell"; title = "Enregistrer le mot de passe"; ObjectID = "120"; */
+"120.title" = "Enregistrer le mot de passe";
+
+/* Class = "NSButtonCell"; title = "Annuler"; ObjectID = "121"; */
+"121.title" = "Annuler";
+
+/* Class = "NSTextFieldCell"; title = "Enter password to retry:"; ObjectID = "122"; */
+"122.title" = "Enter password to retry:";
+
+/* Class = "NSTextFieldCell"; title = "Echec de l'authentification"; ObjectID = "123"; */
+"123.title" = "Echec de l'authentification";
+
+/* Class = "NSButtonCell"; title = "Reconnecter"; ObjectID = "125"; */
+"125.title" = "Reconnecter";
+
+/* Class = "NSWindow"; title = "Reconnecting"; ObjectID = "141"; */
+"141.title" = "Reconnecting";
+
+/* Class = "NSTextFieldCell"; title = "Reconnexion en cours..."; ObjectID = "147"; */
+"147.title" = "Reconnexion en cours...";
+
+/* Class = "NSButtonCell"; title = "Annuler"; ObjectID = "149"; */
+"149.title" = "Annuler";
