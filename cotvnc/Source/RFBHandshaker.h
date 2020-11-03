@@ -23,14 +23,16 @@
 #import "vncauth.h"
 
 @class ServerInitMessage;
+@class RFBStringReader;
+@class RFBServerInitReader;
 
 @interface RFBHandshaker : NSObject
 {
-    RFBConnection   *connection;
-    id	connFailedReader;
-    id	challengeReader;
-    id	authResultReader;
-    id	serverInitReader;
+    RFBConnection   	*connection;
+    RFBStringReader		*connFailedReader;
+    __kindof ByteReader	*challengeReader;
+    __kindof ByteReader	*authResultReader;
+    RFBServerInitReader	*serverInitReader;
     BOOL    triedPassword;
     NSData  *vncAuthChallenge;
 }

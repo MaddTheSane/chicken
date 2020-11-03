@@ -9,7 +9,7 @@
 #import <AppKit/AppKit.h>
 
 
-// Jason added the FullscreenWindow so we can have a borderless window that responds to keyboard events
+//! Jason added the FullscreenWindow so we can have a borderless window that responds to keyboard events
 @interface FullscreenWindow : NSWindow
 
 @end

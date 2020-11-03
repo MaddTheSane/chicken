@@ -42,7 +42,7 @@
     [connection setReader:cursorReader];
 }
 
-/* Uses cursor data to set the current cursor. */
+/** Uses cursor data to set the current cursor. */
 - (void)setCursor:(NSData*)pixels
 {
     NSImage     *image = [self imageFromCursorData: pixels];
@@ -56,13 +56,15 @@
     [updater didRect: self];
 }
 
-/* Extracts an image, including alpha channel, from cursor data sent by the
+/**
+ * Extracts an image, including alpha channel, from cursor data sent by the
  * server.
  *
  * Note that this duplicates some of the functionality of the pixel decoding
  * routines from the FrameBuffer family of classes. However, it seems simpler
  * not to involve the full complexity of that section of code, especially since
- * we have to handle the mask at the same time. */
+ * we have to handle the mask at the same time.
+ */
 - (NSImage *)imageFromCursorData: (NSData *)pixels
 {
     NSBitmapImageRep    *bitmap;

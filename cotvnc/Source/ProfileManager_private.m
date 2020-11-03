@@ -94,7 +94,7 @@ typedef unsigned int NSUInteger;
 
 - (void)_updateForm
 {
-	int tag, value;
+	NSInteger tag, value;
 	
     Profile *profile = [self _currentProfile];
 	NSParameterAssert( profile != nil );
@@ -111,8 +111,8 @@ typedef unsigned int NSUInteger;
     tag = [profile multiTapModifierForButton:2];
 	[mMultiTapEmulationModifier2 selectItemAtIndex: [mMultiTapEmulationModifier2 indexOfItemWithTag: tag]];
     value = [profile multiTapCountForButton:2];
-	[mMultiTapEmulationCountStepper2 setIntValue: value];
-	[mMultiTapEmulationCountText2 setIntValue: value];
+	[mMultiTapEmulationCountStepper2 setIntegerValue: value];
+	[mMultiTapEmulationCountText2 setIntegerValue: value];
     tag = [profile tapAndClickModifierForButton:2];
 	[mTapAndClickEmulationModifier2 selectItemAtIndex: [mTapAndClickEmulationModifier2 indexOfItemWithTag: tag]];
     [mTapAndClickEmulationTimeout2 setDoubleValue: [profile tapAndClickTimeoutForButton:2]];
@@ -125,8 +125,8 @@ typedef unsigned int NSUInteger;
     tag = [profile multiTapModifierForButton:3];
 	[mMultiTapEmulationModifier3 selectItemAtIndex: [mMultiTapEmulationModifier3 indexOfItemWithTag: tag]];
     value = [profile multiTapDelayForButton:3];
-	[mMultiTapEmulationCountStepper3 setIntValue: value];
-	[mMultiTapEmulationCountText3 setIntValue: value];
+	[mMultiTapEmulationCountStepper3 setIntegerValue: value];
+	[mMultiTapEmulationCountText3 setIntegerValue: value];
     tag = [profile tapAndClickModifierForButton:3];
 	[mTapAndClickEmulationModifier3 selectItemAtIndex: [mTapAndClickEmulationModifier3 indexOfItemWithTag: tag]];
     [mTapAndClickEmulationTimeout3 setDoubleValue: [profile tapAndClickTimeoutForButton:3]];

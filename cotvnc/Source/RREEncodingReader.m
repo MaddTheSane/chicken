@@ -67,8 +67,8 @@
 
 - (void)drawRectangles:(NSData*)data
 {
-    unsigned char*	bytes = (unsigned char*)[data bytes];
-    unsigned char*	pixptr;
+    const unsigned char*	bytes = (const unsigned char*)[data bytes];
+    const unsigned char*	pixptr;
     rfbRectangle	subRect;
     NSRect		r;
     unsigned int	bpp = [frameBuffer bytesPerPixel];

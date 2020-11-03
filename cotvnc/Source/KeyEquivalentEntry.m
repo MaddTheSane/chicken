@@ -55,8 +55,7 @@
 }
 
 
-- (NSMenuItem *)menuItem
-{  return mMenuItem;  }
+@synthesize menuItem=mMenuItem;
 
 
 - (void)makeActive: (BOOL)active forKeyEquivalent: (KeyEquivalent *)keyEquivalent

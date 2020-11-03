@@ -109,7 +109,7 @@ typedef unsigned char	FrameBufferPaletteIndex;
 @end
 
 // macros to read from pointers to big-endian data to host format
-#ifdef __ppc__
+#ifdef __BIG_ENDIAN__
 #define PIX16BIG(v) (*(CARD16 *)(v))
 #define PIX32BIG(v) (*(CARD32 *)(v))
 #else
@@ -119,7 +119,7 @@ typedef unsigned char	FrameBufferPaletteIndex;
 #define PIX24BIG(v) (((v)[0] << 16) | ((v)[1] << 8) | (v)[2])
 
 // macros to read from pointers to little-endian data to host format
-#ifdef __i386__
+#ifdef __LITTLE_ENDIAN__
 #define PIX16LITTLE(v) (*(CARD16 *)(v))
 #define PIX32LITTLE(v) (*(CARD32 *)(v))
 #else

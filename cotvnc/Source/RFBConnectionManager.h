@@ -46,7 +46,7 @@
     BOOL lockedSelection;
 }
 
-+ (id)sharedManager;
+@property (class, readonly) RFBConnectionManager *sharedManager;
 
 @property (strong) IBOutlet NSBox *serverListBox;
 @property (strong) IBOutlet NSBox *serverGroupBox;

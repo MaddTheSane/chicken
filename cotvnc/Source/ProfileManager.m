@@ -159,7 +159,7 @@ static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry"
     [profile setMultiTapModifier:tag forButton:2];
     value = [mMultiTapEmulationCountStepper2 intValue];
     [profile setMultiTapCount:value forButton:2];
-    [mMultiTapEmulationCountText2 setIntValue: value];
+    [mMultiTapEmulationCountText2 setIntegerValue: value];
     tag = [[mTapAndClickEmulationModifier2 selectedItem] tag];
     [profile setTapAndClickModifier:tag forButton:2];
     [profile setTapAndClickTimeout:[mTapAndClickEmulationTimeout2 doubleValue]

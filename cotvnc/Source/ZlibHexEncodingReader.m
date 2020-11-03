@@ -105,7 +105,7 @@
             numOfSubRects = *ptr++;
             unsigned coloured = subEncodingMask & rfbHextileSubrectsColoured;
             unsigned length = (coloured ? bpp + 2 : 2) * numOfSubRects;
-            unsigned size = length + (ptr - buffer);
+            unsigned size = (unsigned)(length + (ptr - buffer));
 
             if (size > bufferSz) {
                 // buffer wasn't large enough

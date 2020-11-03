@@ -67,7 +67,7 @@
 }	
 
 
-+ (QueuedEvent *)modifierDownEventWithCharacter: (unsigned int)modifier
++ (QueuedEvent *)modifierDownEventWithCharacter: (NSEventModifierFlags)modifier
 									  timestamp: (NSTimeInterval)timestamp
 {
 	QueuedEvent *event = [[[self class] alloc] init];
@@ -79,7 +79,7 @@
 }	
 
 
-+ (QueuedEvent *)modifierUpEventWithCharacter: (unsigned int)modifier
++ (QueuedEvent *)modifierUpEventWithCharacter: (NSEventModifierFlags)modifier
 									timestamp: (NSTimeInterval)timestamp
 {
 	QueuedEvent *event = [[[self class] alloc] init];

@@ -93,10 +93,10 @@
  
 
 typedef NS_ENUM(NSInteger, EventFilterEmulationScenario) {
-	kNoMouseButtonEmulation, 
-	kClickWhileHoldingModifierEmulation, 
-	kMultiTapModifierEmulation, 
-	kTapModifierAndClickEmulation, 
+	kNoMouseButtonEmulation,
+	kClickWhileHoldingModifierEmulation,
+	kMultiTapModifierEmulation,
+	kTapModifierAndClickEmulation,
 } NS_SWIFT_NAME(EventFilter.EmulationScenario);
 
 
@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger, EventFilterEmulationScenario) {
 	
 	NSMutableSet *_pressedKeys;
 	unsigned int _pressedButtons;
-	unsigned int _pressedModifiers;
+	NSEventModifierFlags _pressedModifiers;
 	
     // emulation state
 	unsigned int _emulationButton;

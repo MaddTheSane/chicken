@@ -482,7 +482,7 @@
     lastMouseY = msg.y;
 }
 
-- (void)sendModifier:(unsigned int)m pressed: (BOOL)pressed
+- (void)sendModifier:(NSEventModifierFlags)m pressed: (BOOL)pressed
 {
 	/*NSString *modifierStr =nil;
 	switch (m)

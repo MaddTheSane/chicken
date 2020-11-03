@@ -25,8 +25,10 @@
 @class RFBHandshaker;
 @class RFBStringReader;
 
-/* This reads the intitial message from the server, which consists of a server
- * initiailization message. */
+/**
+ * This reads the intitial message from the server, which consists of a server
+ * initiailization message.
+ */
 @interface ServerInitMessage : NSObject
 {
     rfbServerInitMsg fixed;

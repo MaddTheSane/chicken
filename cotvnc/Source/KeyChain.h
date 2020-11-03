@@ -9,10 +9,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KeyChain : NSObject {
-}
+@interface KeyChain : NSObject
 
-+ (KeyChain*)defaultKeyChain;
+@property (class, readonly, strong) KeyChain *defaultKeyChain;
 
 - (BOOL)setGenericPassword:(NSString*)password forService:(NSString*)service account:(NSString*)account;
 - (NSString*)genericPasswordForService:(NSString*)service account:(NSString*)account;

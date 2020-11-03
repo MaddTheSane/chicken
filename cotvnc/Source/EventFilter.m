@@ -457,7 +457,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	[self _updateCapsLockStateIfNecessary];
 	NSInteger index, strLength = [string length];
 	NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-    unsigned oldModifiers = _pressedModifiers;
+    NSEventModifierFlags oldModifiers = _pressedModifiers;
 	BOOL shiftKeyDown = NO;
 	NSCharacterSet  *upper = [NSCharacterSet uppercaseLetterCharacterSet];
 	QueuedEvent *event;
@@ -624,7 +624,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 - (void)_sendModifierEvent: (QueuedEvent *)event
 {
-	unsigned int modifier = [event modifier];
+	NSEventModifierFlags modifier = [event modifier];
 	
 	if ( kQueuedModifierDownEvent == [event type] )
 	{
@@ -736,7 +736,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 - (unsigned int)handleClickWhileHoldingForButton: (unsigned int)button
 {
 	NSInteger eventCount = [_pendingEvents count];
-    unsigned    cwhModifier = [_profile clickWhileHoldingModifierForButton:button];
+    NSEventModifierFlags    cwhModifier = [_profile clickWhileHoldingModifierForButton:button];
 	if ( eventCount > 2 )
 		return 0;
 
@@ -837,7 +837,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 - (unsigned int)handleTapModifierAndClickForButton: (unsigned int)button
 {
-	NSInteger eventIndex, eventCount = [_pendingEvents count];
+	NSUInteger eventIndex, eventCount = [_pendingEvents count];
 	NSTimeInterval time1 = 0, time2;
     unsigned    emulModifier = [_profile tapAndClickModifierForButton:button];
 	
@@ -845,7 +845,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	{
 		QueuedEvent *event = [_pendingEvents objectAtIndex: eventIndex];
 		QueuedEventType eventType = [event type];
-		unsigned int modifier = [event modifier];
+		NSEventModifierFlags modifier = [event modifier];
 		
 		if ( 0 == eventIndex )
 		{

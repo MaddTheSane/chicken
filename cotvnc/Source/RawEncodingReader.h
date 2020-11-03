@@ -21,9 +21,11 @@
 #import <AppKit/AppKit.h>
 #import "EncodingReader.h"
 
+@class ByteBlockReader;
+
 @interface RawEncodingReader : EncodingReader
 {
-    id			pixelReader;
+    ByteBlockReader			*pixelReader;
 }
 
 @end

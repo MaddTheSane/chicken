@@ -12,7 +12,7 @@
 
 @interface KeyEquivalentPrefsController : NSObject
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= 1060
-<NSWindowDelegate>
+<NSWindowDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate>
 #endif
 {
 	IBOutlet NSPopUpButton *mConnectionType;

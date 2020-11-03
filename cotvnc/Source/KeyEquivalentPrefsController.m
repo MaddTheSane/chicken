@@ -55,7 +55,7 @@ static KeyEquivalentPrefsController *sharedController = nil;
 
 /* Recursive method to determine list of all menus which are expanded in the
  * current view. */
-- (void)getExpandedNames:(NSMutableSet *)expanded from:(NSDictionary *)obj
+- (void)getExpandedNames:(NSMutableSet<NSString*> *)expanded from:(NSDictionary *)obj
 {
     if (![mOutlineView isItemExpanded:obj])
         return;
@@ -71,7 +71,7 @@ static KeyEquivalentPrefsController *sharedController = nil;
 }
 
 /* Returns a list of all menu names which are currently viewed as expanded. */
-- (NSSet *)getAllExpandedNames
+- (NSSet<NSString*> *)getAllExpandedNames
 {
     NSMutableSet    *expanded = [[NSMutableSet alloc] init];
 
@@ -81,7 +81,7 @@ static KeyEquivalentPrefsController *sharedController = nil;
 }
 
 /* Recursive function for expanding all menus whose name is in expanded. */
-- (void)expandByName:(NSSet *)expanded from:(NSDictionary *)entry
+- (void)expandByName:(NSSet<NSString*> *)expanded from:(NSDictionary<NSString*,id> *)entry
 {
     if (![expanded member: [entry objectForKey:@"title"]])
         return;
@@ -89,19 +89,18 @@ static KeyEquivalentPrefsController *sharedController = nil;
     [mOutlineView expandItem:entry];
 
     NSEnumerator   *children = [[entry objectForKey:@"items"] objectEnumerator];
-    NSDictionary   *child;
 
-    while ((child = [children nextObject]) != nil)
+    for (NSDictionary *child in children) {
         [self expandByName:expanded from:child];
+    }
 }
 
 /* Expands all menus whose name is in expanded. */
-- (void)expandByName:(NSSet *)expanded
+- (void)expandByName:(NSSet<NSString*> *)expanded
 {
-    NSEnumerator    *en = [mSelectedScenario objectEnumerator];
-    NSDictionary    *obj;
-    while ((obj = [en nextObject]) != nil)
+    for (NSDictionary *obj in mSelectedScenario) {
         [self expandByName:expanded from:obj];
+    }
 }
 
 /* When the scenario's changed or the menus have changed, we rebuild the tree of
@@ -246,14 +245,14 @@ static KeyEquivalentPrefsController *sharedController = nil;
 #pragma mark NSOutlineView methods
 
 
-- (int)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
 	if (item == nil)
 		return [mSelectedScenario count];
 	return [[item objectForKey: @"items"] count];
 }
 
 
-- (id)outlineView:(NSOutlineView *)outlineView child:(int)index ofItem:(id)item {
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item {
 	if (item == nil)
 		return [mSelectedScenario objectAtIndex: index];
 	return [[item objectForKey: @"items"] objectAtIndex: index];

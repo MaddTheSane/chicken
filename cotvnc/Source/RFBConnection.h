@@ -123,7 +123,7 @@
 - (void)mouseClickedAt:(NSPoint)thePoint buttons:(unsigned int)mask;
 - (void)mouseAt:(NSPoint)thePoint buttons:(unsigned int)mask;
 - (void)sendKey:(unichar)key pressed:(BOOL)pressed;
-- (void)sendModifier:(unsigned int)m pressed:(BOOL)pressed;
+- (void)sendModifier:(NSEventModifierFlags)m pressed:(BOOL)pressed;
 - (void)sendKeyCode:(CARD32)key pressed:(BOOL)pressed;
 - (void)writeBytes:(unsigned char*)bytes length:(size_t)length;
 - (void)writeBufferedBytes:(unsigned char*)bytes length:(size_t)length;
@@ -131,8 +131,8 @@
 - (void)writeBuffer;
 
 @property (readonly, strong) Profile *profile;
-- (int) protocolMajorVersion;
-- (int) protocolMinorVersion;
+@property (readonly) int protocolMajorVersion;
+@property (readonly) int protocolMinorVersion;
 - (NSString*)password;
 - (BOOL)connectShared;
 @property (readonly) BOOL viewOnly;

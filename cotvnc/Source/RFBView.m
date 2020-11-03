@@ -25,16 +25,16 @@
 
 @implementation RFBView
 
-/* One-time initializer to read the cursors into memory. */
+/*! One-time initializer to read the cursors into memory. */
 + (NSCursor *)_cursorForName: (NSString *)name
 {
 	static NSDictionary *sMapping = nil;
-	if ( ! sMapping )
-	{
+    static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
 		NSBundle *mainBundle = [NSBundle mainBundle];
 		NSDictionary *entries = [NSDictionary dictionaryWithContentsOfFile: [mainBundle pathForResource: @"cursors" ofType: @"plist"]];
 		NSParameterAssert( entries != nil );
-		sMapping = [[NSMutableDictionary alloc] init];
+		NSMutableDictionary *mapping = [[NSMutableDictionary alloc] init];
 		
 		for (NSString *cursorName in entries )
 		{
@@ -47,9 +47,10 @@
 			NSPoint hotspot = {hotspotX, hotspotY};
 			
 			NSCursor *cursor = [[NSCursor alloc] initWithImage: image hotSpot: hotspot];
-			[(NSMutableDictionary *)sMapping setObject: cursor forKey: cursorName];
+			[mapping setObject: cursor forKey: cursorName];
 		}
-	}
+		sMapping = [mapping copy];
+	});
 	
 	return [sMapping objectForKey: name];
 }
@@ -94,6 +95,8 @@
         [[self window] invalidateCursorRectsForView: self];
 }
 
+@synthesize serverCursor=_serverCursor;
+
 - (void)setTint: (NSColor *)aTint
 {
     if (![tint isEqual:aTint]) {
@@ -102,6 +105,8 @@
         [self setNeedsDisplay:YES];
     }
 }
+
+@synthesize tint;
 
 - (void)setDelegate:(RFBConnection *)delegate
 {

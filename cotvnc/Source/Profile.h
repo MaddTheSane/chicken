@@ -140,11 +140,11 @@ struct encoding {
 - (void)getPixelFormat:(rfbPixelFormat*)format;
 @property (readonly) EventFilterEmulationScenario button2EmulationScenario;
 @property (readonly) EventFilterEmulationScenario button3EmulationScenario;
-- (unsigned int)clickWhileHoldingModifierForButton: (unsigned int)button;
-- (unsigned int)multiTapModifierForButton: (unsigned int)button;
+- (NSEventModifierFlags)clickWhileHoldingModifierForButton: (unsigned int)button;
+- (NSEventModifierFlags)multiTapModifierForButton: (unsigned int)button;
 - (NSTimeInterval)multiTapDelayForButton: (unsigned int)button;
 - (unsigned int)multiTapCountForButton: (unsigned int)button;
-- (unsigned int)tapAndClickModifierForButton: (unsigned int)button;
+- (NSEventModifierFlags)tapAndClickModifierForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickButtonSpeedForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickTimeoutForButton: (unsigned int)button;
 @property (readonly) BOOL interpretModifiersLocally;
@@ -155,18 +155,18 @@ struct encoding {
 
 - (void)setEmulationScenario:(EventFilterEmulationScenario)scenario
                    forButton:(unsigned)button;
-- (void)setClickWhileHoldingModifier:(unsigned)modifier
+- (void)setClickWhileHoldingModifier:(NSEventModifierFlags)modifier
                            forButton:(unsigned)button;
-- (void)setMultiTapModifier:(unsigned)modifier forButton:(unsigned)button;
+- (void)setMultiTapModifier:(NSEventModifierFlags)modifier forButton:(unsigned)button;
 - (void)setMultiTapCount: (unsigned)count forButton:(unsigned)button;
 - (void)setMultiTapDelay:(NSTimeInterval)delay forButton:(unsigned) button;
-- (void)setTapAndClickModifier:(unsigned)modifer forButton:(unsigned)button;
+- (void)setTapAndClickModifier:(NSEventModifierFlags)modifer forButton:(unsigned)button;
 - (void)setTapAndClickButtonSpeed:(NSTimeInterval)speed
                         forButton:(unsigned)button;
 - (void)setTapAndClickTimeout:(NSTimeInterval)timeout
                     forButton:(unsigned)button;
-- (void)setEncodingEnabled:(BOOL)enabled atIndex:(int)index;
-- (void)moveEncodingFrom:(int)src to:(int)dst;
+- (void)setEncodingEnabled:(BOOL)enabled atIndex:(NSInteger)index;
+- (void)moveEncodingFrom:(NSInteger)src to:(NSInteger)dst;
 - (void)setCopyRectEnabled:(BOOL)enabled;
 - (void)setJpegEncodingEnabled:(BOOL)enabled;
 - (void)setJpegLevel:(int)level;

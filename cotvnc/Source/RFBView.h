@@ -25,7 +25,7 @@
     __weak RFBConnection   *_delegate;
     EventFilter     *_eventFilter;
     NSCursor        *_modifierCursor;
-    NSCursor        *_serverCursor; // cursor sent by server, if any
+    NSCursor        *_serverCursor; //!< cursor sent by server, if any
     FrameBuffer     *fbuf;
     NSColor         *tint;
     BOOL            drawTint;
@@ -36,8 +36,11 @@
 - (void)drawRect:(NSRect)aRect;
 
 - (void)setCursorTo: (NSString *)name;
+//! cursor sent by server, if any.
+@property (nonatomic, strong, setter=setServerCursorTo:) NSCursor *serverCursor;
 - (void)setServerCursorTo: (NSCursor *)aCursor;
-- (void)setTint: (NSColor *)aTint;
+
+@property (nonatomic, strong) NSColor *tint;
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender;
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender;

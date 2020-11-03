@@ -25,10 +25,10 @@
 
 @interface RREEncodingReader : EncodingReader
 {
-    __kindof ByteReader		*numOfReader;
-    __kindof ByteReader		*backPixReader;
-    __kindof ByteReader		*subRectReader;
-    CARD32		numOfSubRects;
+    __kindof ByteReader	*numOfReader;
+    __kindof ByteReader	*backPixReader;
+    __kindof ByteReader	*subRectReader;
+    CARD32				numOfSubRects;
 }
 
 @end

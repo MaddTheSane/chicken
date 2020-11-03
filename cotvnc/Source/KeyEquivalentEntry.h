@@ -10,15 +10,18 @@
 @class KeyEquivalent;
 
 
-/* Encapsulates a menu item, which will be assigned to a key equivalence by
- * KeyEquivalentScenario. */
+/**
+ * Encapsulates a menu item, which will be assigned to a key equivalence by
+ * KeyEquivalentScenario.
+ */
 @interface KeyEquivalentEntry : NSObject {
-	NSMenuItem *mMenuItem;
+	__weak NSMenuItem *mMenuItem;
 }
 
-- (id)initWithTitle: (NSString *)title;
-- (id)initWithMenuItem: (NSMenuItem *)menuItem;
-- (NSMenuItem *)menuItem;
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithTitle: (NSString *)title NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithMenuItem: (NSMenuItem *)menuItem NS_DESIGNATED_INITIALIZER;
+@property (readonly, weak) NSMenuItem *menuItem;
 - (void)makeActive: (BOOL)active forKeyEquivalent: (KeyEquivalent *)keyEquivalent;
 - (BOOL)isEqualToEntry: (KeyEquivalentEntry *)x;
 

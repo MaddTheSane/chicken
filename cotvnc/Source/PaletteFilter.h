@@ -21,10 +21,12 @@
 #import <AppKit/AppKit.h>
 #import "FilterReader.h"
 
+@class ByteReader;
+
 @interface PaletteFilter : FilterReader
 {
-    id				numColorReader;
-    id				paletteReader;
+    __kindof ByteReader	*numColorReader;
+    __kindof ByteReader *paletteReader;
     int				numColors;
     int				palette[256*3];
     int*			src;

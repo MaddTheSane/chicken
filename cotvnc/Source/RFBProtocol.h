@@ -28,9 +28,11 @@
 @class FrameBuffer;
 @class RFBConnection;
 
-/* Handles processing data from the server once the connection is up and the
+/**
+ * Handles processing data from the server once the connection is up and the
  * protocol is established. It has instance variables which handle each message
- * type, except for rfbBell, which is handled internally. */
+ * type, except for rfbBell, which is handled internally.
+ */
 @interface RFBProtocol : NSObject
 {
     RFBConnection   *connection;

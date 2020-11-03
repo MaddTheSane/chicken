@@ -24,14 +24,16 @@
 #define TILE_SIZE	16
 
 @class ByteBlockReader;
+@class ByteReader;
+@class CARD8Reader;
 
 @interface HextileEncodingReader : EncodingReader
 {
-    id			subEncodingReader;
-    id			rawReader;
-    ByteBlockReader *tileHeaderReader;
-    id			subColorRectReader;
-    id			subRectReader;
+    CARD8Reader			*subEncodingReader;
+    ByteBlockReader		*rawReader;
+    ByteBlockReader		*tileHeaderReader;
+    ByteBlockReader		*subColorRectReader;
+    ByteBlockReader		*subRectReader;
     FrameBufferColor	background;
     FrameBufferColor	foreground;
     CARD8		numOfSubRects;

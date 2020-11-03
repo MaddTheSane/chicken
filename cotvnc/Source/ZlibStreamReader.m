@@ -45,8 +45,10 @@
     inflateEnd(&stream);
 }
 
-/* Sets the number of compressed bytes to read, and the maximum size that the
- * data will take up uncompressed. */
+/**
+ * Sets the number of compressed bytes to read, and the maximum size that the
+ * data will take up uncompressed.
+ */
 - (void)setCompressedSize: (unsigned)compr maxUncompressed: (unsigned)maxSize
 {
     bytesLeft = compr;
@@ -112,7 +114,7 @@
     return consume;
 }
 
-/* An error occurred in a zlib routine. */
+/** An error occurred in a zlib routine. */
 - (void)zlibError:(int)result tag:(NSString *)tag
 {
     NSString    *fmt = NSLocalizedString(tag, nil);

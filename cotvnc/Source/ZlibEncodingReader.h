@@ -11,10 +11,11 @@
 #import "EncodingReader.h"
 
 @class ZlibStreamReader;
+@class ByteReader;
 
 @interface ZlibEncodingReader : EncodingReader
 {
-	id				numBytesReader;
+	ByteReader			*numBytesReader;
     ZlibStreamReader    *zlibReader;
 }
 

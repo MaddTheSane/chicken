@@ -191,17 +191,17 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
         [self makeEnabledEncodings];
 		
         if ([info objectForKey:kProfile_Button2EmulationScenario_Key]) {
-            _buttonEmulationScenario[0] = (EventFilterEmulationScenario)[[info objectForKey: kProfile_Button2EmulationScenario_Key] intValue];
+            _buttonEmulationScenario[0] = (EventFilterEmulationScenario)[[info objectForKey: kProfile_Button2EmulationScenario_Key] integerValue];
             
-            _buttonEmulationScenario[1] = (EventFilterEmulationScenario)[[info objectForKey: kProfile_Button3EmulationScenario_Key] intValue];
+            _buttonEmulationScenario[1] = (EventFilterEmulationScenario)[[info objectForKey: kProfile_Button3EmulationScenario_Key] integerValue];
             
-            _clickWhileHoldingModifier[0] = [[info objectForKey: kProfile_ClickWhileHoldingModifierForButton2_Key] unsignedIntValue];
+            _clickWhileHoldingModifier[0] = [[info objectForKey: kProfile_ClickWhileHoldingModifierForButton2_Key] unsignedIntegerValue];
             
-            _clickWhileHoldingModifier[1] = [[info objectForKey: kProfile_ClickWhileHoldingModifierForButton3_Key] unsignedIntValue];
+            _clickWhileHoldingModifier[1] = [[info objectForKey: kProfile_ClickWhileHoldingModifierForButton3_Key] unsignedIntegerValue];
             
-            _multiTapModifier[0] = [[info objectForKey: kProfile_MultiTapModifierForButton2_Key] unsignedIntValue];
+            _multiTapModifier[0] = [[info objectForKey: kProfile_MultiTapModifierForButton2_Key] unsignedIntegerValue];
             
-            _multiTapModifier[1] = [[info objectForKey: kProfile_MultiTapModifierForButton3_Key] unsignedIntValue];
+            _multiTapModifier[1] = [[info objectForKey: kProfile_MultiTapModifierForButton3_Key] unsignedIntegerValue];
             
             _multiTapDelay[0] = (NSTimeInterval)[[info objectForKey: kProfile_MultiTapDelayForButton2_Key] doubleValue];
             
@@ -211,9 +211,9 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
             
             _multiTapCount[1] = [[info objectForKey: kProfile_MultiTapCountForButton3_Key] unsignedIntValue];
             
-            _tapAndClickModifier[0] = [[info objectForKey: kProfile_TapAndClickModifierForButton2_Key] unsignedIntValue];
+            _tapAndClickModifier[0] = [[info objectForKey: kProfile_TapAndClickModifierForButton2_Key] unsignedIntegerValue];
             
-            _tapAndClickModifier[1] = [[info objectForKey: kProfile_TapAndClickModifierForButton3_Key] unsignedIntValue];
+            _tapAndClickModifier[1] = [[info objectForKey: kProfile_TapAndClickModifierForButton3_Key] unsignedIntegerValue];
             
             _tapAndClickButtonSpeed[0] = (NSTimeInterval)[[info objectForKey: kProfile_TapAndClickButtonSpeedForButton2_Key] doubleValue];
             
@@ -372,13 +372,13 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
              forKey:kProfile_Button2EmulationScenario_Key];
     [dict setObject:@(_buttonEmulationScenario[1])
              forKey:kProfile_Button3EmulationScenario_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_clickWhileHoldingModifier[0]]
+    [dict setObject:@(_clickWhileHoldingModifier[0])
              forKey:kProfile_ClickWhileHoldingModifierForButton2_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_clickWhileHoldingModifier[1]]
+    [dict setObject:@(_clickWhileHoldingModifier[1])
              forKey:kProfile_ClickWhileHoldingModifierForButton3_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_multiTapModifier[0]]
+    [dict setObject:@(_multiTapModifier[0])
              forKey:kProfile_MultiTapModifierForButton2_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_multiTapModifier[1]]
+    [dict setObject:@(_multiTapModifier[1])
              forKey:kProfile_MultiTapModifierForButton3_Key];
     [dict setObject:[NSNumber numberWithDouble:_multiTapDelay[0]]
              forKey:kProfile_MultiTapDelayForButton2_Key];
@@ -388,9 +388,9 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
              forKey:kProfile_MultiTapCountForButton2_Key];
     [dict setObject:[NSNumber numberWithUnsignedInt:_multiTapCount[1]]
              forKey:kProfile_MultiTapCountForButton3_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_tapAndClickModifier[0]]
+    [dict setObject:@(_tapAndClickModifier[0])
              forKey:kProfile_TapAndClickModifierForButton2_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_tapAndClickModifier[1]]
+    [dict setObject:@(_tapAndClickModifier[1])
              forKey:kProfile_TapAndClickModifierForButton3_Key];
     [dict setObject:[NSNumber numberWithDouble:_tapAndClickButtonSpeed[0]]
              forKey:kProfile_TapAndClickButtonSpeedForButton2_Key];
@@ -532,13 +532,13 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 - (EventFilterEmulationScenario)button3EmulationScenario
 {  return _buttonEmulationScenario[ButtonNumberToArrayIndex(3)];  }
 
-- (unsigned int)clickWhileHoldingModifierForButton: (unsigned int)button
+- (NSEventModifierFlags)clickWhileHoldingModifierForButton: (unsigned int)button
 {
 	unsigned int buttonIndex = ButtonNumberToArrayIndex( button );
 	return _clickWhileHoldingModifier[buttonIndex];
 }
 
-- (unsigned int)multiTapModifierForButton: (unsigned int)button
+- (NSEventModifierFlags)multiTapModifierForButton: (unsigned int)button
 {
 	unsigned int buttonIndex = ButtonNumberToArrayIndex( button );
 	return _multiTapModifier[buttonIndex];
@@ -559,7 +559,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 	return _multiTapCount[buttonIndex];
 }
 
-- (unsigned int)tapAndClickModifierForButton: (unsigned int)button
+- (NSEventModifierFlags)tapAndClickModifierForButton: (unsigned int)button
 {
 	unsigned int buttonIndex = ButtonNumberToArrayIndex( button );
 	return _tapAndClickModifier[buttonIndex];
@@ -614,13 +614,13 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     _buttonEmulationScenario[index] = scenario;
 }
 
-- (void)setClickWhileHoldingModifier:(unsigned)modifier
+- (void)setClickWhileHoldingModifier:(NSEventModifierFlags)modifier
                            forButton:(unsigned)button
 {
     _clickWhileHoldingModifier[ButtonNumberToArrayIndex(button)] = modifier;
 }
 
-- (void)setMultiTapModifier:(unsigned)modifier forButton:(unsigned)button
+- (void)setMultiTapModifier:(NSEventModifierFlags)modifier forButton:(unsigned)button
 {
     _multiTapModifier[ButtonNumberToArrayIndex(button)] = modifier;
 }
@@ -636,7 +636,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     _multiTapDelay[index] = delay;
 }
 
-- (void)setTapAndClickModifier:(unsigned)modifier forButton:(unsigned)button
+- (void)setTapAndClickModifier:(NSEventModifierFlags)modifier forButton:(unsigned)button
 {
     _tapAndClickModifier[ButtonNumberToArrayIndex(button)] = modifier;
 }
@@ -654,19 +654,21 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     _tapAndClickTimeout[index] = timeout;
 }
 
-- (void)setEncodingEnabled:(BOOL)enabled atIndex:(int)index
+- (void)setEncodingEnabled:(BOOL)enabled atIndex:(NSInteger)index
 {
     if (index >= 0 && index < numEncodings)
         encodings[index].enabled = enabled;
     else
-        NSLog(@"Bad encoding index: %d", index);
+        NSLog(@"Bad encoding index: %ld", (long)index);
     [self makeEnabledEncodings];
 }
 
-/* Reorders the encodings so that the one at src is now at dst, and the relative
+/**
+ * Reorders the encodings so that the one at src is now at dst, and the relative
  * order of the others is unchanged. Note that the index dst is counted
- * including the encoding being at src. */
-- (void)moveEncodingFrom:(int)src to:(int)dst
+ * including the encoding being at src.
+ */
+- (void)moveEncodingFrom:(NSInteger)src to:(NSInteger)dst
 {
     struct encoding e = encodings[src];
     if (src > dst) 

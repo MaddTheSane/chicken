@@ -22,10 +22,12 @@
 
 @class RFBConnection;
 
-/* ZlibStreamReader processes zlib data from the server, inflating as the data
- * arrives. When done, it will message its target with an NSData containing the
+/**
+ * ZlibStreamReader processes zlib data from the server, inflating as the data
+ * arrives. When done, it will message its target with an @c NSData containing the
  * uncompressed data. The memory backing this object will be re-used, so it
- * should not be held for longer than the target call. */
+ * should not be held for longer than the target call.
+ */
 @interface ZlibStreamReader : ByteReader
 {
     unsigned char   *buffer;
