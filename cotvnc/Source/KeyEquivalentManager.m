@@ -18,9 +18,9 @@
 
 
 // Scenarios
-NSString *kNonConnectionWindowFrontmostScenario = @"NonConnectionWindowFrontmostScenario";
-NSString *kConnectionWindowFrontmostScenario = @"ConnectionWindowFrontmostScenario";
-NSString *kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
+NSString *const kNonConnectionWindowFrontmostScenario = @"NonConnectionWindowFrontmostScenario";
+NSString *const kConnectionWindowFrontmostScenario = @"ConnectionWindowFrontmostScenario";
+NSString *const kConnectionFullscreenScenario = @"ConnectionFullscreenScenario";
 
 @interface KeyEquivalentManager(Private)
 

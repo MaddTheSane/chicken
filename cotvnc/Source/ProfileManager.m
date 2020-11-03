@@ -25,7 +25,7 @@
 // --- Notifications --- //
 NSString * const ProfileAddDeleteNotification = @"ProfileAddedOrDeleted";
 
-static NSString *kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry";
+static NSString *const kProfileDragEntry = @"net.sourceforge.chicken.ProfileDragEntry";
 
 
 @implementation ProfileManager

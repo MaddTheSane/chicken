@@ -12,17 +12,17 @@
 
 
 // --- Preference Keys --- //
-NSString *kPrefs_FullscreenWarning_Key = @"DisplayFullscreenWarning";
-NSString *kPrefs_AutoscrollIncrement_Key = @"FullscreenAutoscrollIncrement";
-NSString *kPrefs_FullscreenScrollbars_Key = @"FullscreenScrollbars";
-NSString *kPrefs_UseRendezvous_Key = @"Rendezvous Setting";
-NSString *kPrefs_ConnectionProfiles_Key = @"ConnectProfiles";
-NSString *kPrefs_FrontFrameBufferUpdateSeconds_Key = @"FrontFrameBufferUpdateSeconds";
-NSString *kPrefs_OtherFrameBufferUpdateSeconds_Key = @"OtherFrameBufferUpdateSeconds";
-NSString *kPrefs_HostInfo_Key = @"HostPreferences";
-NSString *kPrefs_Version_Key = @"Version";
-NSString *kPrefs_AutoReconnect_Key = @"AutoReconnect";
-NSString *kPrefs_IntervalBeforeReconnect_Key = @"IntervalBeforeReconnect";
+NSString *const kPrefs_FullscreenWarning_Key = @"DisplayFullscreenWarning";
+NSString *const kPrefs_AutoscrollIncrement_Key = @"FullscreenAutoscrollIncrement";
+NSString *const kPrefs_FullscreenScrollbars_Key = @"FullscreenScrollbars";
+NSString *const kPrefs_UseRendezvous_Key = @"Rendezvous Setting";
+NSString *const kPrefs_ConnectionProfiles_Key = @"ConnectProfiles";
+NSString *const kPrefs_FrontFrameBufferUpdateSeconds_Key = @"FrontFrameBufferUpdateSeconds";
+NSString *const kPrefs_OtherFrameBufferUpdateSeconds_Key = @"OtherFrameBufferUpdateSeconds";
+NSString *const kPrefs_HostInfo_Key = @"HostPreferences";
+NSString *const kPrefs_Version_Key = @"Version";
+NSString *const kPrefs_AutoReconnect_Key = @"AutoReconnect";
+NSString *const kPrefs_IntervalBeforeReconnect_Key = @"IntervalBeforeReconnect";
 
 
 // Note: Preference Keys that start with "Listener"

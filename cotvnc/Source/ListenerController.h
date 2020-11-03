@@ -35,7 +35,7 @@
 	IBOutlet NSButton *actionBtn;
 	IBOutlet NSTextField *statusText;
 
-    NSFileHandle* listeningSockets[2]; // listening socket: IPv4 and IPv6
+    NSFileHandle* listeningSockets[2]; //!< listening socket: IPv4 and IPv6
     Profile* listeningProfile;
 
     NSMutableArray  *fileHandles;
@@ -43,7 +43,7 @@
     NSTimer         *resetErrorTimer;
 }
 
-+ (ListenerController*)sharedController;
+@property (class, readonly, strong) ListenerController *sharedController;
 
 - (IBAction)actionPressed:(id)sender;
 - (IBAction)valueChanged:(id)sender;
