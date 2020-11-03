@@ -292,15 +292,8 @@ static void ns_pixel(unsigned char* v, FrameBuffer *this, float* clr)
 }
 
 /* --------------------------------------------------------------------------------- */
-- (BOOL)bigEndian
-{
-    return isBig;
-}
-
-- (BOOL)serverIsBigEndian
-{
-    return serverIsBigEndian;
-}
+@synthesize bigEndian=isBig;
+@synthesize serverIsBigEndian;
 
 /* --------------------------------------------------------------------------------- */
 - (void)setServerMajorVersion: (int)major minorVersion: (int)minor
@@ -392,16 +385,10 @@ static void ns_pixel(unsigned char* v, FrameBuffer *this, float* clr)
 #endif
 
 /* --------------------------------------------------------------------------------- */
-- (NSSize)size
-{
-    return size;
-}
+@synthesize size;
 
 /* --------------------------------------------------------------------------------- */
-- (unsigned int)bytesPerPixel
-{
-    return bytesPerPixel;
-}
+@synthesize bytesPerPixel;
 
 - (unsigned int)tightBytesPerPixel
 {

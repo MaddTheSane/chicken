@@ -39,7 +39,7 @@ typedef unsigned char	FrameBufferPaletteIndex;
 {
     BOOL		isBig;
     NSSize		size;
-    int			bytesPerPixel;
+    unsigned int bytesPerPixel;
     unsigned    tightBytesPerPixel;
     
 @public
@@ -69,20 +69,20 @@ typedef unsigned char	FrameBufferPaletteIndex;
     BOOL            serverIsBigEndian;
 }
 
-+ (BOOL)bigEndian;
+@property (class, readonly, nonatomic) BOOL bigEndian;
 + (void)getPixelFormat:(rfbPixelFormat*)pf;
 
-- (id)initWithSize:(NSSize)aSize andFormat:(rfbPixelFormat*)theFormat;
-- (unsigned int)bytesPerPixel;
+- (instancetype)initWithSize:(NSSize)aSize andFormat:(rfbPixelFormat*)theFormat;
+@property (readonly) unsigned int bytesPerPixel;
 - (unsigned int)tightBytesPerPixel;
 - (void)setTightBytesPerPixelOverride: (unsigned int)count;
-- (BOOL)bigEndian;
-- (BOOL)serverIsBigEndian;
+@property (readonly) BOOL bigEndian;
+@property (readonly) BOOL serverIsBigEndian;
 - (void)setCurrentReaderIsTight: (BOOL)flag;
 - (void)setServerMajorVersion: (int)major minorVersion: (int)minor;
 - (NSColor*)nsColorFromPixel:(unsigned char*)pixValue;
 - (void)getRGB:(float*)rgb fromPixel:(unsigned char*)pixValue;
-- (NSSize)size;
+@property (readonly) NSSize size;
 - (void)setPixelFormat:(rfbPixelFormat*)theFormat;
 - (rfbPixelFormat *)pixelFormat;
 

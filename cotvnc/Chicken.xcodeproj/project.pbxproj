@@ -595,6 +595,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		550D85802550CD0E00E06B3B /* VNC */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC71AC033DB4A801A8010C /* d3des.c */,
+				F5DC71AD033DB4A801A8010C /* d3des.h */,
+				DA231DF512BD562100D3AD44 /* Keymap.h */,
+				F5DC71E3033DB4A801A8010C /* rfbproto.h */,
+				F5DC71F7033DB4A801A8010C /* vncauth.c */,
+				F5DC71F8033DB4A801A8010C /* vncauth.h */,
+			);
+			name = VNC;
+			sourceTree = "<group>";
+		};
 		7FB3EA1D0804E77F003757C9 /* AppleScript Processing */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +777,7 @@
 		F5DC7198033DB4A801A8010C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				550D85802550CD0E00E06B3B /* VNC */,
 				DA22199716BC615600410C5A /* CommandLineConnection.h */,
 				DA22199816BC615600410C5A /* CommandLineConnection.m */,
 				DA78379712DE159800F1893E /* SshWaiter.h */,
@@ -805,8 +819,6 @@
 				DA68E53111E7867500F23347 /* ConnectionWaiter.m */,
 				DA80A6ED11E27B430076CB0A /* CursorPseudoEncodingReader.h */,
 				DA80A6EE11E27B430076CB0A /* CursorPseudoEncodingReader.m */,
-				F5DC71AC033DB4A801A8010C /* d3des.c */,
-				F5DC71AD033DB4A801A8010C /* d3des.h */,
 				F5F2D5A603B3C93B01150DB1 /* debug.h */,
 				F5F2D5A703B3C93B01150DB1 /* debug.m */,
 				F5DC71B0033DB4A801A8010C /* EncodingReader.h */,
@@ -826,7 +838,6 @@
 				F5DC71BA033DB4A801A8010C /* GradientFilter.m */,
 				F5DC71BB033DB4A801A8010C /* GrayScaleFrameBuffer.h */,
 				F5DC71BC033DB4A801A8010C /* GrayScaleFrameBuffer.m */,
-				DA231DF512BD562100D3AD44 /* Keymap.h */,
 				F5DC71BD033DB4A801A8010C /* HextileEncodingReader.h */,
 				F5DC71BE033DB4A801A8010C /* HextileEncodingReader.m */,
 				F5DC71BF033DB4A801A8010C /* HighColorFrameBuffer.h */,
@@ -849,7 +860,6 @@
 				F5DC71DE033DB4A801A8010C /* RFBConnection.m */,
 				F5DC71E1033DB4A801A8010C /* RFBHandshaker.h */,
 				F5DC71E2033DB4A801A8010C /* RFBHandshaker.m */,
-				F5DC71E3033DB4A801A8010C /* rfbproto.h */,
 				F5DC71E4033DB4A801A8010C /* RFBProtocol.h */,
 				F5DC71E5033DB4A801A8010C /* RFBProtocol.m */,
 				F5DC71E6033DB4A801A8010C /* RFBServerInitReader.h */,
@@ -868,8 +878,6 @@
 				F5DC71F3033DB4A801A8010C /* TightEncodingReader.m */,
 				F5DC71F5033DB4A801A8010C /* TrueColorFrameBuffer.h */,
 				F5DC71F6033DB4A801A8010C /* TrueColorFrameBuffer.m */,
-				F5DC71F7033DB4A801A8010C /* vncauth.c */,
-				F5DC71F8033DB4A801A8010C /* vncauth.h */,
 				F5DC71F9033DB4A801A8010C /* VNCViewer_main.m */,
 				F5DC71FB033DB4A801A8010C /* ZipLengthReader.h */,
 				F5DC71FC033DB4A801A8010C /* ZipLengthReader.m */,
@@ -1392,6 +1400,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1433,6 +1442,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
