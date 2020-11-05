@@ -24,13 +24,13 @@
 @class FrameBufferUpdateReader;
 @class RFBConnection;
 
-/* This represents a reader for a single encoding type of rectangles. */
+/*! This represents a reader for a single encoding type of rectangles. */
 @interface EncodingReader : NSObject
 {
     FrameBufferUpdateReader *updater;
     RFBConnection           *connection;
-    NSRect                  frame; // rectangle into which we should write
-    FrameBuffer			    *frameBuffer;
+    NSRect                  frame; //!< rectangle into which we should write
+    __weak FrameBuffer		*frameBuffer;
 }
 
 - (id)initWithUpdater: (FrameBufferUpdateReader *)aUpdater

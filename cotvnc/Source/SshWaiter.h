@@ -27,8 +27,10 @@
 @class ServerBase;
 @class SshTunnel;
 
-/* This class waits for ssh to connect to a remote host and for a connection to
- * be made through the remote tunnel. */
+/**
+ * This class waits for ssh to connect to a remote host and for a connection to
+ * be made through the remote tunnel.
+ */
 @interface SshWaiter : ConnectionWaiter <AuthPromptDelegate>
 {
     SshTunnel       *tunnel;
@@ -37,12 +39,11 @@
     BOOL            tunnelHasFailed;
 }
 
-- (id)initWithServer:(id<IServerData>)aServer
-    delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind;
-- (id)initWithServer:(id<IServerData>)aServer
-            delegate:(id<ConnectionWaiterDelegate>)aDelegate
-              window:(NSWindow *)aWind sshTunnel:(SshTunnel *)aTunnel;
-- (void)dealloc;
+- (instancetype)initWithServer:(id<IServerData>)aServer
+                      delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind;
+- (instancetype)initWithServer:(id<IServerData>)aServer
+                      delegate:(id<ConnectionWaiterDelegate>)aDelegate
+                        window:(NSWindow *)aWind sshTunnel:(SshTunnel *)aTunnel;
 
 - (void)cancel;
 

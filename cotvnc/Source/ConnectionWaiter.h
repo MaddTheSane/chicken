@@ -75,7 +75,7 @@
 + (__kindof ConnectionWaiter *)waiterForServer:(id<IServerData>)aServer
                              delegate:(id<ConnectionWaiterDelegate>)aDelegate
                                window:(NSWindow *)aWind;
-- (id)initWithServer:(id<IServerData>)aServer
+- (instancetype)initWithServer:(id<IServerData>)aServer
     delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind;
 
 - (void)serverResolvedWithHost: (NSString *)host port: (int)port;

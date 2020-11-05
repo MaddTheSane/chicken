@@ -380,7 +380,7 @@
 		DAA856D016B8717100A40AB5 /* DockConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DockConnection.m; sourceTree = "<group>"; };
 		DAA91C8F1234319B000F1CCD /* DesktopNameEncodingReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesktopNameEncodingReader.h; sourceTree = "<group>"; };
 		DAA91C901234319B000F1CCD /* DesktopNameEncodingReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesktopNameEncodingReader.m; sourceTree = "<group>"; };
-		DAC8077D12FEC38400C4ADB6 /* ssh-helper.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "ssh-helper.sh"; path = "Resources/ssh-helper.sh"; sourceTree = SOURCE_ROOT; };
+		DAC8077D12FEC38400C4ADB6 /* ssh-helper.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "ssh-helper.sh"; sourceTree = "<group>"; };
 		DAD344B71304648200134E29 /* jaricom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jaricom.c; sourceTree = "<group>"; };
 		DAD344B91304648200134E29 /* jdarith.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdarith.c; sourceTree = "<group>"; };
 		DAD344BA1304648200134E29 /* jpegcomp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpegcomp.h; sourceTree = "<group>"; };
@@ -613,6 +613,54 @@
 			name = VNC;
 			sourceTree = "<group>";
 		};
+		5599EF1325538BD00021DC59 /* Byte Readers */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC719B033DB4A801A8010C /* ByteBlockReader.h */,
+				F5DC719C033DB4A801A8010C /* ByteBlockReader.m */,
+				F5DC719D033DB4A801A8010C /* ByteReader.h */,
+				F5DC719E033DB4A801A8010C /* ByteReader.m */,
+				F5DC71A3033DB4A801A8010C /* CARD8Reader.h */,
+				F5DC71A4033DB4A801A8010C /* CARD8Reader.m */,
+				F5DC719F033DB4A801A8010C /* CARD16Reader.h */,
+				F5DC71A0033DB4A801A8010C /* CARD16Reader.m */,
+				F5DC71A1033DB4A801A8010C /* CARD32Reader.h */,
+				F5DC71A2033DB4A801A8010C /* CARD32Reader.m */,
+				F5DC71FB033DB4A801A8010C /* ZipLengthReader.h */,
+				F5DC71FC033DB4A801A8010C /* ZipLengthReader.m */,
+				DA00481312CCF82E004E2C70 /* ZlibStreamReader.h */,
+				DA00481412CCF82E004E2C70 /* ZlibStreamReader.m */,
+			);
+			name = "Byte Readers";
+			sourceTree = "<group>";
+		};
+		5599EF1425538C6E0021DC59 /* Encoding Readers */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC71A7033DB4A801A8010C /* CopyRectangleEncodingReader.h */,
+				F5DC71A8033DB4A801A8010C /* CopyRectangleEncodingReader.m */,
+				F5DC71A9033DB4A801A8010C /* CoRREEncodingReader.h */,
+				F5DC71AA033DB4A801A8010C /* CoRREEncodingReader.m */,
+				F5DC71B0033DB4A801A8010C /* EncodingReader.h */,
+				F5DC71B1033DB4A801A8010C /* EncodingReader.m */,
+				F5DC71BD033DB4A801A8010C /* HextileEncodingReader.h */,
+				F5DC71BE033DB4A801A8010C /* HextileEncodingReader.m */,
+				F5DC71D9033DB4A801A8010C /* RawEncodingReader.h */,
+				F5DC71DA033DB4A801A8010C /* RawEncodingReader.m */,
+				F5DC71EC033DB4A801A8010C /* RREEncodingReader.h */,
+				F5DC71ED033DB4A801A8010C /* RREEncodingReader.m */,
+				F5DC71F2033DB4A801A8010C /* TightEncodingReader.h */,
+				F5DC71F3033DB4A801A8010C /* TightEncodingReader.m */,
+				F564F4B70392E07E01303550 /* ZlibEncodingReader.h */,
+				F564F4B60392E07E01303550 /* ZlibEncodingReader.m */,
+				F536C26603937E5301178D82 /* ZlibHexEncodingReader.h */,
+				F536C26703937E5301178D82 /* ZlibHexEncodingReader.m */,
+				F536C26803937E5301178D82 /* ZRLEEncodingReader.h */,
+				F536C26903937E5301178D82 /* ZRLEEncodingReader.m */,
+			);
+			name = "Encoding Readers";
+			sourceTree = "<group>";
+		};
 		7FB3EA1D0804E77F003757C9 /* AppleScript Processing */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,8 +841,6 @@
 				DAD6DEE012DCF37A001FD9D6 /* AuthPrompt.m */,
 				DA335CCD12DA4A6C00C70987 /* Session.h */,
 				DA335CCE12DA4A6C00C70987 /* Session.m */,
-				DA00481312CCF82E004E2C70 /* ZlibStreamReader.h */,
-				DA00481412CCF82E004E2C70 /* ZlibStreamReader.m */,
 				DAA91C8F1234319B000F1CCD /* DesktopNameEncodingReader.h */,
 				DAA91C901234319B000F1CCD /* DesktopNameEncodingReader.m */,
 				7FE7F82F06D8003200647AA1 /* Connection Management */,
@@ -803,30 +849,16 @@
 				7FD35C1706CC57FB00648090 /* Profiles */,
 				7FC6DF2405C315680028A970 /* Server Management */,
 				7FB3EA1D0804E77F003757C9 /* AppleScript Processing */,
+				5599EF1425538C6E0021DC59 /* Encoding Readers */,
+				5599EF1325538BD00021DC59 /* Byte Readers */,
 				E2F3A2E306D4483D005EB917 /* AppDelegate.h */,
 				E2F3A2E406D4483D005EB917 /* AppDelegate.m */,
-				F5DC719B033DB4A801A8010C /* ByteBlockReader.h */,
-				F5DC719C033DB4A801A8010C /* ByteBlockReader.m */,
-				F5DC719D033DB4A801A8010C /* ByteReader.h */,
-				F5DC719E033DB4A801A8010C /* ByteReader.m */,
-				F5DC719F033DB4A801A8010C /* CARD16Reader.h */,
-				F5DC71A0033DB4A801A8010C /* CARD16Reader.m */,
-				F5DC71A1033DB4A801A8010C /* CARD32Reader.h */,
-				F5DC71A2033DB4A801A8010C /* CARD32Reader.m */,
-				F5DC71A3033DB4A801A8010C /* CARD8Reader.h */,
-				F5DC71A4033DB4A801A8010C /* CARD8Reader.m */,
-				F5DC71A7033DB4A801A8010C /* CopyRectangleEncodingReader.h */,
-				F5DC71A8033DB4A801A8010C /* CopyRectangleEncodingReader.m */,
-				F5DC71A9033DB4A801A8010C /* CoRREEncodingReader.h */,
-				F5DC71AA033DB4A801A8010C /* CoRREEncodingReader.m */,
 				DA68E53011E7867500F23347 /* ConnectionWaiter.h */,
 				DA68E53111E7867500F23347 /* ConnectionWaiter.m */,
 				DA80A6ED11E27B430076CB0A /* CursorPseudoEncodingReader.h */,
 				DA80A6EE11E27B430076CB0A /* CursorPseudoEncodingReader.m */,
 				F5F2D5A603B3C93B01150DB1 /* debug.h */,
 				F5F2D5A703B3C93B01150DB1 /* debug.m */,
-				F5DC71B0033DB4A801A8010C /* EncodingReader.h */,
-				F5DC71B1033DB4A801A8010C /* EncodingReader.m */,
 				E291FA1308815A950061216E /* EventFilter.h */,
 				E291FA1408815A950061216E /* EventFilter.m */,
 				F5DC71B2033DB4A801A8010C /* FilterReader.h */,
@@ -842,8 +874,6 @@
 				F5DC71BA033DB4A801A8010C /* GradientFilter.m */,
 				F5DC71BB033DB4A801A8010C /* GrayScaleFrameBuffer.h */,
 				F5DC71BC033DB4A801A8010C /* GrayScaleFrameBuffer.m */,
-				F5DC71BD033DB4A801A8010C /* HextileEncodingReader.h */,
-				F5DC71BE033DB4A801A8010C /* HextileEncodingReader.m */,
 				F5DC71BF033DB4A801A8010C /* HighColorFrameBuffer.h */,
 				F5DC71C0033DB4A801A8010C /* HighColorFrameBuffer.m */,
 				E2F48D74040EDD2200BD55BA /* KeyChain.h */,
@@ -858,8 +888,6 @@
 				F5DC71D4033DB4A801A8010C /* PaletteFilter.m */,
 				E291FB21088168E20061216E /* QueuedEvent.h */,
 				E291FB22088168E20061216E /* QueuedEvent.m */,
-				F5DC71D9033DB4A801A8010C /* RawEncodingReader.h */,
-				F5DC71DA033DB4A801A8010C /* RawEncodingReader.m */,
 				F5DC71DD033DB4A801A8010C /* RFBConnection.h */,
 				F5DC71DE033DB4A801A8010C /* RFBConnection.m */,
 				F5DC71E1033DB4A801A8010C /* RFBHandshaker.h */,
@@ -872,25 +900,13 @@
 				F5DC71E9033DB4A801A8010C /* RFBStringReader.m */,
 				F5DC71EA033DB4A801A8010C /* RFBView.h */,
 				F5DC71EB033DB4A801A8010C /* RFBView.m */,
-				F5DC71EC033DB4A801A8010C /* RREEncodingReader.h */,
-				F5DC71ED033DB4A801A8010C /* RREEncodingReader.m */,
 				F5DC71EE033DB4A801A8010C /* ServerCutTextReader.h */,
 				F5DC71EF033DB4A801A8010C /* ServerCutTextReader.m */,
 				F5DC71F0033DB4A801A8010C /* SetColorMapEntriesReader.h */,
 				F5DC71F1033DB4A801A8010C /* SetColorMapEntriesReader.m */,
-				F5DC71F2033DB4A801A8010C /* TightEncodingReader.h */,
-				F5DC71F3033DB4A801A8010C /* TightEncodingReader.m */,
 				F5DC71F5033DB4A801A8010C /* TrueColorFrameBuffer.h */,
 				F5DC71F6033DB4A801A8010C /* TrueColorFrameBuffer.m */,
 				F5DC71F9033DB4A801A8010C /* VNCViewer_main.m */,
-				F5DC71FB033DB4A801A8010C /* ZipLengthReader.h */,
-				F5DC71FC033DB4A801A8010C /* ZipLengthReader.m */,
-				F564F4B70392E07E01303550 /* ZlibEncodingReader.h */,
-				F564F4B60392E07E01303550 /* ZlibEncodingReader.m */,
-				F536C26603937E5301178D82 /* ZlibHexEncodingReader.h */,
-				F536C26703937E5301178D82 /* ZlibHexEncodingReader.m */,
-				F536C26803937E5301178D82 /* ZRLEEncodingReader.h */,
-				F536C26903937E5301178D82 /* ZRLEEncodingReader.m */,
 				DAA856CF16B8717100A40AB5 /* DockConnection.h */,
 				DAA856D016B8717100A40AB5 /* DockConnection.m */,
 			);
