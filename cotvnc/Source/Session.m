@@ -172,9 +172,9 @@ enum {
 {
 	/* One might reasonably argue that this should be handled by the connection manager. */
 	switch (returnCode) {
-		case NSAlertDefaultReturn:
+		case NSAlertFirstButtonReturn:
 			break;
-		case NSAlertAlternateReturn:
+		case NSAlertSecondButtonReturn:
             [self beginReconnect];
             return;
 		default:
@@ -216,10 +216,15 @@ enum {
              * password sheet to show an error*/
             [NSApp endSheet:passwordSheet];
 
-            NSBeginAlertSheet(NSLocalizedString(@"ConnectionTerminated", nil),
-                    NSLocalizedString(@"Okay", nil), nil, nil, window, self,
-                    @selector(connectionTerminatedSheetDidEnd:returnCode:contextInfo:),
-                    nil, nil, @"%@", aReason);
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = NSLocalizedString(@"ConnectionTerminated", nil);
+            alert.informativeText = aReason;
+            [alert addButtonWithTitle:NSLocalizedString(@"Okay", nil)];
+            [alert beginSheetModalForWindow:window
+                          completionHandler:^(NSModalResponse returnCode) {
+                [self connectionTerminatedSheetDidEnd:self->window
+                                           returnCode:returnCode contextInfo:NULL];
+            }];
         }
     } else {
         if(aReason) {
@@ -238,7 +243,16 @@ enum {
 				NSString *header = NSLocalizedString( @"ConnectionTerminated", nil );
 				NSString *okayButton = NSLocalizedString( @"Okay", nil );
 				NSString *reconnectButton =  NSLocalizedString( @"Reconnect", nil );
-				NSBeginAlertSheet(header, okayButton, supportReconnect ? reconnectButton : nil, nil, window, self, @selector(connectionTerminatedSheetDidEnd:returnCode:contextInfo:), nil, nil, @"%@", aReason);
+                NSAlert *alert = [[NSAlert alloc] init];
+                alert.messageText = header;
+                alert.informativeText = aReason;
+                [alert addButtonWithTitle:okayButton];
+                if (supportReconnect) {
+                    [alert addButtonWithTitle:reconnectButton];
+                }
+                [alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {
+                    [self connectionTerminatedSheetDidEnd:self->window returnCode:returnCode contextInfo:NULL];
+                }];
 			}
         } else {
             [[RFBConnectionManager sharedManager] removeConnection:self];

@@ -789,14 +789,14 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	NSEnumerator *eventEnumerator = [_pendingEvents objectEnumerator];
 	QueuedEvent *event;
 	unsigned int validEvents = 0;
-    unsigned int    mtModifier = [_profile multiTapModifierForButton:button];
+    NSEventModifierFlags    mtModifier = [_profile multiTapModifierForButton:button];
 	
 	[self _resetMultiTapTimer: nil];
 
 	while ( event = [eventEnumerator nextObject] )
 	{
 		QueuedEventType eventType = [event type];
-		unsigned int modifier = [event modifier];
+		NSEventModifierFlags modifier = [event modifier];
 		
         if ( mtModifier != modifier )
 			return 0;
@@ -839,7 +839,7 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 {
 	NSUInteger eventIndex, eventCount = [_pendingEvents count];
 	NSTimeInterval time1 = 0, time2;
-    unsigned    emulModifier = [_profile tapAndClickModifierForButton:button];
+    NSEventModifierFlags    emulModifier = [_profile tapAndClickModifierForButton:button];
 	
 	for ( eventIndex = 0; eventIndex < eventCount; ++eventIndex )
 	{

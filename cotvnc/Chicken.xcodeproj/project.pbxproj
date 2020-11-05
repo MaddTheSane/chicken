@@ -661,6 +661,24 @@
 			name = "Encoding Readers";
 			sourceTree = "<group>";
 		};
+		5599EF152553A1680021DC59 /* Frame Buffer */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC71B4033DB4A801A8010C /* FrameBuffer.h */,
+				F5DC71B5033DB4A801A8010C /* FrameBuffer.m */,
+				F5DC71B6033DB4A801A8010C /* FrameBufferDrawing.h */,
+				F5DC71BB033DB4A801A8010C /* GrayScaleFrameBuffer.h */,
+				F5DC71BC033DB4A801A8010C /* GrayScaleFrameBuffer.m */,
+				F5DC71BF033DB4A801A8010C /* HighColorFrameBuffer.h */,
+				F5DC71C0033DB4A801A8010C /* HighColorFrameBuffer.m */,
+				F5DC71CE033DB4A801A8010C /* LowColorFrameBuffer.h */,
+				F5DC71CF033DB4A801A8010C /* LowColorFrameBuffer.m */,
+				F5DC71F5033DB4A801A8010C /* TrueColorFrameBuffer.h */,
+				F5DC71F6033DB4A801A8010C /* TrueColorFrameBuffer.m */,
+			);
+			name = "Frame Buffer";
+			sourceTree = "<group>";
+		};
 		7FB3EA1D0804E77F003757C9 /* AppleScript Processing */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,23 +881,15 @@
 				E291FA1408815A950061216E /* EventFilter.m */,
 				F5DC71B2033DB4A801A8010C /* FilterReader.h */,
 				F5DC71B3033DB4A801A8010C /* FilterReader.m */,
-				F5DC71B4033DB4A801A8010C /* FrameBuffer.h */,
-				F5DC71B5033DB4A801A8010C /* FrameBuffer.m */,
-				F5DC71B6033DB4A801A8010C /* FrameBufferDrawing.h */,
+				5599EF152553A1680021DC59 /* Frame Buffer */,
 				F5DC71B7033DB4A801A8010C /* FrameBufferUpdateReader.h */,
 				F5DC71B8033DB4A801A8010C /* FrameBufferUpdateReader.m */,
 				F5E4C9AA03416C2701A8010C /* FullscreenWindow.h */,
 				F5E4C9AB03416C2701A8010C /* FullscreenWindow.m */,
 				F5DC71B9033DB4A801A8010C /* GradientFilter.h */,
 				F5DC71BA033DB4A801A8010C /* GradientFilter.m */,
-				F5DC71BB033DB4A801A8010C /* GrayScaleFrameBuffer.h */,
-				F5DC71BC033DB4A801A8010C /* GrayScaleFrameBuffer.m */,
-				F5DC71BF033DB4A801A8010C /* HighColorFrameBuffer.h */,
-				F5DC71C0033DB4A801A8010C /* HighColorFrameBuffer.m */,
 				E2F48D74040EDD2200BD55BA /* KeyChain.h */,
 				E2F48D75040EDD2200BD55BA /* KeyChain.m */,
-				F5DC71CE033DB4A801A8010C /* LowColorFrameBuffer.h */,
-				F5DC71CF033DB4A801A8010C /* LowColorFrameBuffer.m */,
 				E2929DD307675DE800190669 /* MyApp.h */,
 				E2929DD407675DE800190669 /* MyApp.m */,
 				E2F3AD6F06D5E11D005EB917 /* NSObject_Chicken.h */,
@@ -904,8 +914,6 @@
 				F5DC71EF033DB4A801A8010C /* ServerCutTextReader.m */,
 				F5DC71F0033DB4A801A8010C /* SetColorMapEntriesReader.h */,
 				F5DC71F1033DB4A801A8010C /* SetColorMapEntriesReader.m */,
-				F5DC71F5033DB4A801A8010C /* TrueColorFrameBuffer.h */,
-				F5DC71F6033DB4A801A8010C /* TrueColorFrameBuffer.m */,
 				F5DC71F9033DB4A801A8010C /* VNCViewer_main.m */,
 				DAA856CF16B8717100A40AB5 /* DockConnection.h */,
 				DAA856D016B8717100A40AB5 /* DockConnection.m */,
