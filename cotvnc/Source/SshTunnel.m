@@ -208,10 +208,7 @@ static BOOL portUsed[TUNNEL_PORT_END - TUNNEL_PORT_START];
     [self cleanupFifos];
 }
 
-- (in_port_t)localPort
-{
-    return localPort;
-}
+@synthesize localPort;
 
 - (void)findPortForTunnel
 {

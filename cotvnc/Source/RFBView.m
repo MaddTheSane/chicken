@@ -65,6 +65,8 @@
     return YES;
 }
 
+@synthesize frameBuffer=fbuf;
+
 - (void)setFrameBuffer:(id)aBuffer;
 {
     NSRect f = [self frame];

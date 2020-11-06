@@ -32,34 +32,7 @@
 #define XK_MISCELLANY
 #include "keysymdef.h"
 
-#if MAC_OS_X_VERSION_MAX_ALLOWED < 1050
-@interface NSAlert(AvailableInLeopard)
-    - (void)setShowsSuppressionButton:(BOOL)flag;
-    - (NSButton *)suppressionButton;
-@end
-#endif
-
-/* Ah, the joy of supporting 4 different releases of the OS */
-#if MAC_OS_X_VERSION_MAX_ALLOWED < 1070
-#if MAC_OS_X_VERSION_MAX_ALLOWED < 1050
-#if __LP64__
-typedef long NSInteger;
-#else
-typedef int NSInteger;
-#endif
-#endif
-
-@interface NSScrollView(AvailableInLion)
-    - (void)setScrollerStyle:(NSInteger)newScrollerStyle;
-@end
-
-enum {
-    NSScrollerStyleLegacy = 0,
-    NSScrollerStyleOverlay = 1
-};
-#endif
-
-@interface Session(Private)
+@interface Session()
 
 - (void)startTimerForReconnectSheet;
 
@@ -94,8 +67,7 @@ enum {
 
     /* On 10.7 Lion, the overlay scrollbars don't reappear properly on hover.
      * So, for now, we're going to force legacy scrollbars. */
-    if ([scrollView respondsToSelector:@selector(setScrollerStyle:)])
-        [scrollView setScrollerStyle:NSScrollerStyleLegacy];
+    [scrollView setScrollerStyle:NSScrollerStyleLegacy];
 
     _connectionStartDate = [[NSDate alloc] init];
 
@@ -293,10 +265,9 @@ enum {
         [rememberNewPassword setState: [server_ rememberPassword]];
     else
         [rememberNewPassword setHidden:YES];
-    [NSApp beginSheet:passwordSheet modalForWindow:window
-           modalDelegate:self
-           didEndSelector:@selector(passwordEnteredFor:returnCode:contextInfo:)
-           contextInfo:nil];
+    [window beginSheet:passwordSheet completionHandler:^(NSModalResponse returnCode) {
+        [self passwordEnteredFor:self->window returnCode:returnCode contextInfo:NULL];
+    }];
 }
 
 /* User entered new password */
@@ -316,18 +287,18 @@ enum {
         [connection setPassword:password];
     else
         [self beginReconnect];
-    [NSApp endSheet:passwordSheet];
+    [window endSheet:passwordSheet];
 }
 
 /* User cancelled chance to enter new password */
 - (IBAction)dontReconnect:(id)sender
 {
-    [NSApp endSheet:passwordSheet];
+    [window endSheet:passwordSheet];
     [self connectionProblem];
     [self endSession];
 }
 
-- (void)passwordEnteredFor:(NSWindow *)wind returnCode:(int)retCode
+- (void)passwordEnteredFor:(NSWindow *)wind returnCode:(NSModalResponse)retCode
             contextInfo:(void *)info
 {
     [passwordSheet orderOut:self];
@@ -374,9 +345,11 @@ enum {
     horizontalScroll = verticalScroll = NO;
 
     maxviewsize = [NSScrollView frameSizeForContentSize:[rfbView frame].size
-                                  hasHorizontalScroller:horizontalScroll
-                                    hasVerticalScroller:verticalScroll
-                                             borderType:NSNoBorder];
+                                horizontalScrollerClass:horizontalScroll == NO ? nil : [NSScroller class]
+                                  verticalScrollerClass:verticalScroll == NO ? nil : [NSScroller class]
+                                             borderType:NSNoBorder
+                                            controlSize:NSControlSizeRegular
+                                          scrollerStyle:NSScrollerStyleLegacy];
     if (!_isFullscreen || usesFullscreenScrollers) {
         if(aSize.width < maxviewsize.width) {
             horizontalScroll = YES;
@@ -386,9 +359,11 @@ enum {
         }
     }
     maxviewsize = [NSScrollView frameSizeForContentSize:[rfbView frame].size
-                                  hasHorizontalScroller:horizontalScroll
-                                    hasVerticalScroller:verticalScroll
-                                             borderType:NSNoBorder];
+                                horizontalScrollerClass:horizontalScroll == NO ? nil : [NSScroller class]
+                                  verticalScrollerClass:verticalScroll == NO ? nil : [NSScroller class]
+                                             borderType:NSNoBorder
+                                            controlSize:NSControlSizeRegular
+                                          scrollerStyle:NSScrollerStyleLegacy];
     winframe = [window frame];
     winframe.size = maxviewsize;
     winframe = [NSWindow frameRectForContentRect:winframe styleMask:[window styleMask]];
@@ -405,7 +380,12 @@ enum {
 
 	screenRect = [[NSScreen mainScreen] visibleFrame];
     wf.origin.x = wf.origin.y = 0;
-    wf.size = [NSScrollView frameSizeForContentSize:_maxSize hasHorizontalScroller:NO hasVerticalScroller:NO borderType:NSNoBorder];
+    wf.size = [NSScrollView frameSizeForContentSize:_maxSize
+                                horizontalScrollerClass:nil
+                                  verticalScrollerClass:nil
+                                             borderType:NSNoBorder
+                                            controlSize:NSControlSizeRegular
+                                          scrollerStyle:NSScrollerStyleLegacy];
     wf = [NSWindow frameRectForContentRect:wf styleMask:[window styleMask]];
 	if (NSWidth(wf) > NSWidth(screenRect)) {
 		horizontalScroll = YES;
@@ -710,13 +690,11 @@ enum {
                         returnCode:(NSModalResponse)returnCode
                        contextInfo:(void *)contextInfo
 {
-	int windowLevel;
+	CGWindowLevel windowLevel;
 	NSRect screenRect;
 
-    if ([sheet respondsToSelector:@selector(suppressionButton)]) {
-        if ([[sheet suppressionButton] state]) // only in 10.5+
-            [[PrefController sharedController] setDisplayFullScreenWarning:NO];
-    }
+    if ([[sheet suppressionButton] state]) // only in 10.5+
+        [[PrefController sharedController] setDisplayFullScreenWarning:NO];
 
 	if (returnCode == NSAlertFirstButtonReturn) {
 		[[RFBConnectionManager sharedManager] makeAllConnectionsWindowed];
@@ -810,8 +788,7 @@ enum {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:header];
         [alert setInformativeText:reason];
-        if ([alert respondsToSelector:@selector(setShowsSuppressionButton:)])
-            [alert setShowsSuppressionButton:YES]; // only in 10.5+
+        [alert setShowsSuppressionButton:YES]; // only in 10.5+
         [alert addButtonWithTitle:NSLocalizedString(@"Fullscreen", nil)];
         [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
 		[alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {
@@ -929,7 +906,7 @@ enum {
         [self endFullscreenScrolling];
 }
 
-- (void)setFrameBufferUpdateSeconds: (float)seconds
+- (void)setFrameBufferUpdateSeconds: (NSTimeInterval)seconds
 {
     // miniaturized windows should keep update seconds set at maximum
     if (![window isMiniaturized])
@@ -971,10 +948,9 @@ enum {
 
 - (void)createReconnectSheet:(id)sender
 {
-    [NSApp beginSheet:_reconnectPanel modalForWindow:window
-           modalDelegate:self
-           didEndSelector:@selector(reconnectEnded:returnCode:contextInfo:)
-           contextInfo:nil];
+    [window beginSheet:_reconnectPanel completionHandler:^(NSModalResponse returnCode) {
+        [self reconnectEnded:self->window returnCode:returnCode contextInfo:NULL];
+    }];
     [_reconnectIndicator startAnimation:self];
 
     _reconnectSheetTimer = nil;
@@ -984,11 +960,11 @@ enum {
 {
     [_reconnectWaiter cancel];
     _reconnectWaiter = nil;
-    [NSApp endSheet:_reconnectPanel];
+    [window endSheet:_reconnectPanel];
     [self endSession];
 }
 
-- (void)reconnectEnded:(id)sender returnCode:(int)retCode
+- (void)reconnectEnded:(id)sender returnCode:(NSModalResponse)retCode
            contextInfo:(void *)info
 {
     [_reconnectPanel orderOut:self];
@@ -996,7 +972,7 @@ enum {
 
 - (void)connectionPrepareForSheet
 {
-    [NSApp endSheet:_reconnectPanel];
+    [window endSheet:_reconnectPanel];
     [_reconnectSheetTimer invalidate];
     _reconnectSheetTimer = nil;
 }
@@ -1015,7 +991,7 @@ enum {
 /* Reconnect attempt has succeeded */
 - (void)connectionSucceeded:(RFBConnection *)newConnection
 {
-    [NSApp endSheet:_reconnectPanel];
+    [window endSheet:_reconnectPanel];
     [_reconnectSheetTimer invalidate];
     _reconnectSheetTimer = nil;
 

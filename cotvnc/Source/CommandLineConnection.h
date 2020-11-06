@@ -19,7 +19,6 @@
 #import <Cocoa/Cocoa.h>
 #import "DockConnection.h"
 
-@interface CommandLineConnection : DockConnection {
-}
+@interface CommandLineConnection : DockConnection
 
 @end

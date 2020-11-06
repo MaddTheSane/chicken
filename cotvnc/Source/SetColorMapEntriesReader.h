@@ -23,19 +23,20 @@
 
 @class RFBProtocol;
 @class RFBConnection;
+@class ByteBlockReader;
 
 @interface SetColorMapEntriesReader : NSObject
 {
-    RFBProtocol *protocol;
+    RFBProtocol     *protocol;
     RFBConnection   *connection;
 
-    id		headerReader;
-    id		colorReader;
+    ByteBlockReader	*headerReader;
+    ByteBlockReader	*colorReader;
     CARD16	numberOfColors;
 }
 
-- (id)initWithProtocol: (RFBProtocol *)aProtocol
-            connection:(RFBConnection *)aConnection;
+- (instancetype)initWithProtocol:(RFBProtocol *)aProtocol
+                      connection:(RFBConnection *)aConnection;
 
 - (void)readMessage;
 

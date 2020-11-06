@@ -82,8 +82,7 @@ ConnectionWaiterDelegate>
 	NSTimer *_autoscrollTimer;
 }
 
-- (id)initWithConnection:(RFBConnection*)conn;
-- (void)dealloc;
+- (instancetype)initWithConnection:(RFBConnection*)conn;
 
 - (BOOL)viewOnly;
 
@@ -136,7 +135,7 @@ ConnectionWaiterDelegate>
 - (void)endFullscreenScrolling;
 - (void)scrollFullscreenView: (NSTimer *)timer;
 
-- (void)setFrameBufferUpdateSeconds: (float)seconds;
+- (void)setFrameBufferUpdateSeconds: (NSTimeInterval)seconds;
 
 // For reconnect
 - (void)createReconnectSheet:(id)sender;

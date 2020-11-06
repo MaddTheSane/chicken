@@ -832,7 +832,7 @@ static NSString* byteString(double d)
     [session mouseDragged:theEvent];
 }
 
-- (void)setFrameBufferUpdateSeconds: (float)seconds {
+- (void)setFrameBufferUpdateSeconds: (NSTimeInterval)seconds {
     int     hadManualUpdates = _hasManualFrameBufferUpdates;
 
 	_frameBufferUpdateSeconds = seconds;

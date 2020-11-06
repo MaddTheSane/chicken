@@ -70,7 +70,7 @@
     Profile *_profile;
 
 	NSTrackingRectTag _mouseMovedTrackingTag;
-	float _frameBufferUpdateSeconds; // how much to delay update requests
+	NSTimeInterval _frameBufferUpdateSeconds; // how much to delay update requests
 	NSTimer *_frameUpdateTimer; // timer for update request
     NSDate  *_lastUpdateRequestDate; // time of last update request
 
@@ -147,6 +147,6 @@
 - (void)removeMouseMovedTrackingRect;
 - (void)mouseDragged:(NSEvent *)theEvent;
 
-- (void)setFrameBufferUpdateSeconds: (float)seconds;
+- (void)setFrameBufferUpdateSeconds: (NSTimeInterval)seconds;
 
 @end

@@ -32,6 +32,7 @@
 }
 
 - (void)setFrameBuffer:(FrameBuffer*)aBuffer;
+@property (nonatomic, strong) FrameBuffer *frameBuffer;
 @property (nonatomic, weak) RFBConnection *delegate;
 - (void)drawRect:(NSRect)aRect;
 
