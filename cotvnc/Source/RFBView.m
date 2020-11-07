@@ -32,7 +32,7 @@
     static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		NSBundle *mainBundle = [NSBundle mainBundle];
-		NSDictionary *entries = [NSDictionary dictionaryWithContentsOfFile: [mainBundle pathForResource: @"cursors" ofType: @"plist"]];
+		NSDictionary *entries = [NSDictionary dictionaryWithContentsOfURL: [mainBundle URLForResource: @"cursors" withExtension: @"plist"]];
 		NSParameterAssert( entries != nil );
 		NSMutableDictionary *mapping = [[NSMutableDictionary alloc] init];
 		

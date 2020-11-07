@@ -53,13 +53,13 @@
 
 
 - (void)wakeup;
-- (BOOL)runFromCommandLine;
+@property (readonly, nonatomic) BOOL runFromCommandLine;
 - (void)runNormally;
 
-- (void)showNewConnectionDialog: (id)sender;
-- (void)showConnectionDialog: (id)sender;
+- (IBAction)showNewConnectionDialog: (id)sender;
+- (IBAction)showConnectionDialog: (id)sender;
 
-- (void)removeConnection:(id)aConnection;
+- (IBAction)removeConnection:(id)aConnection;
 - (void)cmdlineUsage;
 
 - (void)selectedHostChanged;
@@ -81,7 +81,7 @@
 
 - (void)serverListDidChange:(NSNotification*)notification;
 
-- (id<IServerData>)selectedServer;
+@property (readonly) id<IServerData> selectedServer;
 - (BOOL)selectServerByName:(NSString *)aName;
 
 - (void)useRendezvous:(BOOL)useRendezvous;

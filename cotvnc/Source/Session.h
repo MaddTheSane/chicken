@@ -26,11 +26,7 @@
 @class RFBView;
 @class SshTunnel;
 
-@interface Session : NSObject <
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= 1060
-NSNetServiceDelegate,NSWindowDelegate,
-#endif
-ConnectionWaiterDelegate>
+@interface Session : NSObject <NSNetServiceDelegate, NSWindowDelegate, ConnectionWaiterDelegate>
 {
     RFBConnection   *connection;
     IBOutlet RFBView *rfbView;
@@ -88,12 +84,11 @@ ConnectionWaiterDelegate>
 
 - (void)setSize:(NSSize)size;
 @property (copy, nonatomic) NSString *displayName;
-- (void)setDisplayName:(NSString *)aName;
 - (void)setupWindow;
 - (void)frameBufferUpdateComplete;
 - (void)resize:(NSSize)size;
 
-- (void)paste:(id)sender;
+- (IBAction)paste:(id)sender;
 - (IBAction)sendPasteboardToServer:(id)sender;
 - (void)terminateConnection:(NSString*)aReason;
 - (void)authenticationFailed:(NSString *)aReason;
@@ -101,8 +96,8 @@ ConnectionWaiterDelegate>
 - (IBAction)reconnectWithNewPassword:(id)sender;
 - (IBAction)dontReconnect:(id)sender;
 - (IBAction)forceReconnect:(id)sender;
-- (void)openNewTitlePanel:(id)sender;
-- (void)setNewTitle:(id)sender;
+- (IBAction)openNewTitlePanel:(id)sender;
+- (IBAction)setNewTitle:(id)sender;
 
 - (IBAction)requestFrameBufferUpdate:(id)sender;
 
@@ -115,7 +110,7 @@ ConnectionWaiterDelegate>
 - (void)windowDidResize:(NSNotification *)aNotification;
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize;
 
-- (void)openOptions:(id)sender;
+- (IBAction)openOptions:(id)sender;
 
 - (BOOL)hasKeyWindow;
 

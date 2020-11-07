@@ -26,6 +26,7 @@
 
 @end
 
+//TODO: remake!
 @interface AuthPrompt : NSObject {
     IBOutlet NSPanel        *panel;
     IBOutlet NSTextField    *passwordField;

@@ -118,14 +118,6 @@
 {  [[ProfileManager sharedManager] showWindow: nil];  }
 
 
-- (IBAction)showHelp: (id)sender
-{
-	[NSApp showHelp:sender];
-	return;
-	NSString *path = [[NSBundle mainBundle] pathForResource: @"index" ofType: @"html" inDirectory: @"help"];
-	[[NSWorkspace sharedWorkspace] openFile: path];
-}
-
 @synthesize fullScreenMenuItem;
 
 /* Dock menu-related selectors */

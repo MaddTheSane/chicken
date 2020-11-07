@@ -52,7 +52,7 @@
     [connection setReader:colorReader];
 }
 
-/* Dummy method: doesn't actually process the color map */
+/** Dummy method: doesn't actually process the color map */
 - (void)setColors:(NSData*)colors
 {
     [protocol messageReaderDone];

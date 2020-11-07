@@ -68,9 +68,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-/* Sends the list of supported encodings to the server. Note that it only
+/**
+ * Sends the list of supported encodings to the server. Note that it only
  * buffers the message, without actually writing it. It is assumed that a
- * subsequent message will be written without buffering. */
+ * subsequent message will be written without buffering.
+ */
 - (void)setEncodings
 {
     Profile* profile = [connection profile];
@@ -95,8 +97,10 @@
     [connection writeBuffer];
 }
 
-/* Sends the pixel format to the server. Note that it buffers without writing.
- * It is assumed that a later message will do a non-buffered write. */
+/**
+ * Sends the pixel format to the server. Note that it buffers without writing.
+ * It is assumed that a later message will do a non-buffered write.
+ */
 - (void)setPixelFormat:(rfbPixelFormat*)aFormat
 {
     Profile* profile = [connection profile];

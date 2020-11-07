@@ -61,7 +61,7 @@
     id<IServerData> server_;
     NSString        *password;
     RFBProtocol     *rfbProtocol;
-    CARD16  lastMouseX; // location of last mouse position we sent
+    CARD16  lastMouseX; //!< location of last mouse position we sent
     CARD16  lastMouseY;
     NSDate  *lastMouseMovement;
     unichar highSurrogate[2];
@@ -70,13 +70,13 @@
     Profile *_profile;
 
 	NSTrackingRectTag _mouseMovedTrackingTag;
-	NSTimeInterval _frameBufferUpdateSeconds; // how much to delay update requests
-	NSTimer *_frameUpdateTimer; // timer for update request
-    NSDate  *_lastUpdateRequestDate; // time of last update request
+	NSTimeInterval _frameBufferUpdateSeconds; //!< how much to delay update requests
+	NSTimer *_frameUpdateTimer; //!< timer for update request
+    NSDate  *_lastUpdateRequestDate; //!< time of last update request
 
-    BOOL isReceivingUpdate; // middle of receiving frame buffer update?
+    BOOL isReceivingUpdate; //!< middle of receiving frame buffer update?
 	BOOL _hasManualFrameBufferUpdates;
-    double    bytesReceived; // number of framebuffer update bytes received
+    double    bytesReceived; //!< number of framebuffer update bytes received
 	
 	int serverMajorVersion;
 	int serverMinorVersion;

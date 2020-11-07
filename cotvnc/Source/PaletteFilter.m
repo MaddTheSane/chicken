@@ -27,8 +27,8 @@
 
 @implementation PaletteFilter
 
-- (id)initWithTarget:(TightEncodingReader*)aTarget
-          andConnection: (RFBConnection *)aConnection
+- (instancetype)initWithTarget:(TightEncodingReader*)aTarget
+                 andConnection:(RFBConnection *)aConnection
 {
     if (self = [super initWithTarget:aTarget andConnection:aConnection]) {
 		numColorReader = [[CARD8Reader alloc] initTarget:self action:@selector(setColors:)];
@@ -58,7 +58,7 @@
     [connection setReader:numColorReader];
 }
 
-/* Just read the number of colors */
+/** Just read the number of colors */
 - (void)setColors:(NSNumber*)n
 {
     numColors = [n unsignedCharValue] + 1;
@@ -69,7 +69,7 @@
     [connection setReader:paletteReader];
 }
 
-/* Just read the palette */
+/** Just read the palette */
 - (void)setPalette:(NSData*)data
 {
 /*   {

@@ -471,12 +471,12 @@
     [self windowDidResize:nil]; // setup scroll bars if necessary
 }
 
-- (void)requestFrameBufferUpdate:(id)sender
+- (IBAction)requestFrameBufferUpdate:(id)sender
 {
     [connection requestFrameBufferUpdate:sender];
 }
 
-- (void)sendCmdOptEsc: (id)sender
+- (IBAction)sendCmdOptEsc: (id)sender
 {
     [connection sendKeyCode: XK_Alt_L pressed: YES];
     [connection sendKeyCode: XK_Meta_L pressed: YES];
@@ -487,7 +487,7 @@
     [connection writeBuffer];
 }
 
-- (void)sendCtrlAltDel: (id)sender
+- (IBAction)sendCtrlAltDel: (id)sender
 {
     [connection sendKeyCode: XK_Control_L pressed: YES];
     [connection sendKeyCode: XK_Alt_L pressed: YES];
@@ -498,49 +498,49 @@
     [connection writeBuffer];
 }
 
-- (void)sendPauseKeyCode: (id)sender
+- (IBAction)sendPauseKeyCode: (id)sender
 {
     [connection sendKeyCode: XK_Pause pressed: YES];
     [connection sendKeyCode: XK_Pause pressed: NO];
     [connection writeBuffer];
 }
 
-- (void)sendBreakKeyCode: (id)sender
+- (IBAction)sendBreakKeyCode: (id)sender
 {
     [connection sendKeyCode: XK_Break pressed: YES];
     [connection sendKeyCode: XK_Break pressed: NO];
     [connection writeBuffer];
 }
 
-- (void)sendPrintKeyCode: (id)sender
+- (IBAction)sendPrintKeyCode: (id)sender
 {
     [connection sendKeyCode: XK_Print pressed: YES];
     [connection sendKeyCode: XK_Print pressed: NO];
     [connection writeBuffer];
 }
 
-- (void)sendExecuteKeyCode: (id)sender
+- (IBAction)sendExecuteKeyCode: (id)sender
 {
     [connection sendKeyCode: XK_Execute pressed: YES];
     [connection sendKeyCode: XK_Execute pressed: NO];
     [connection writeBuffer];
 }
 
-- (void)sendInsertKeyCode: (id)sender
+- (IBAction)sendInsertKeyCode: (id)sender
 {
     [connection sendKeyCode: XK_Insert pressed: YES];
     [connection sendKeyCode: XK_Insert pressed: NO];
     [connection writeBuffer];
 }
 
-- (void)sendDeleteKeyCode: (id)sender
+- (IBAction)sendDeleteKeyCode: (id)sender
 {
     [connection sendKeyCode: XK_Delete pressed: YES];
     [connection sendKeyCode: XK_Delete pressed: NO];
     [connection writeBuffer];
 }
 
-- (void)paste:(id)sender
+- (IBAction)paste:(id)sender
 {
     [connection pasteFromPasteboard:[NSPasteboard generalPasteboard]];
 }

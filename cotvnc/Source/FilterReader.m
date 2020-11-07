@@ -35,7 +35,7 @@
 
 /**
  * Begin using filter. When it has read enough, it should call
- * <code>[target filterInitDone].</code> The default does this right
+ * <code>[target filterInitDone]</code>. The default does this right
  * away.
  */
 - (void)resetFilterForRect:(NSRect)rect

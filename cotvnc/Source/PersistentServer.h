@@ -22,7 +22,7 @@
 
 @class Profile;
 
-/* Implements a server for which we save settings and passwords. */
+/** Implements a server for which we save settings and passwords. */
 @interface PersistentServer : ServerBase {
     NSString    *_name;
     BOOL        _rememberPassword;

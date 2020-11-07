@@ -287,7 +287,7 @@
                         <items>
                             <menuItem title="Chicken Help" keyEquivalent="?" id="1452">
                                 <connections>
-                                    <action selector="showHelp:" target="1367" id="1453"/>
+                                    <action selector="showHelp:" target="-1" id="af2-lZ-HVg"/>
                                 </connections>
                             </menuItem>
                         </items>

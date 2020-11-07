@@ -24,7 +24,6 @@
 - (IBAction)showConnectionDialog: (id)sender;
 - (IBAction)showListenerDialog: (id)sender;
 - (IBAction)showProfileManager: (id)sender;
-- (IBAction)showHelp: (id)sender;
 
 @property (unsafe_unretained, getter=getFullScreenMenuItem) IBOutlet NSMenuItem *fullScreenMenuItem;
 - (NSMenuItem *)getFullScreenMenuItem;

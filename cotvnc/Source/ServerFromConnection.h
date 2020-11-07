@@ -21,10 +21,11 @@
 
 #import "ServerBase.h"
 
-/* Represents a server which initiated the connection, i.e. we were listening
- * for the connection. */
-@interface ServerFromConnection : ServerBase {
-}
+/**
+ * Represents a server which initiated the connection, i.e. we were listening
+ * for the connection.
+ */
+@interface ServerFromConnection : ServerBase
 
 //+ (id<IServerData>)createFromConnection:(NSFileHandle*)file;
 

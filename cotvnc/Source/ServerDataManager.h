@@ -36,10 +36,7 @@
  *  This is a singleton class. Always access the class through the @c sharedInstance
  *  function. Do not create an instance yourself.
  */
-@interface ServerDataManager : NSObject
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= 1060
-<NSNetServiceBrowserDelegate>
-#endif
+@interface ServerDataManager : NSObject <NSNetServiceBrowserDelegate>
 {
 	
 	NSMutableDictionary<NSString*,id<IServerData>>* mServers;

@@ -22,11 +22,13 @@
 #import "FilterReader.h"
 
 @class ByteReader;
+@class CARD8Reader;
+@class ByteBlockReader;
 
 @interface PaletteFilter : FilterReader
 {
-    __kindof ByteReader	*numColorReader;
-    __kindof ByteReader *paletteReader;
+    CARD8Reader	    *numColorReader;
+    ByteBlockReader *paletteReader;
     int				numColors;
     int				palette[256*3];
     int*			src;

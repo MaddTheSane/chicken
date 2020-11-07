@@ -39,9 +39,11 @@ extern NSString *encodingNames[];
 @class ZlibHexEncodingReader;
 @class ZRLEEncodingReader;
 
-/* Handles frame buffer update messages from the server, which form the crux of
+/**
+ * Handles frame buffer update messages from the server, which form the crux of
  * the RFB protocol. This message consists of a list of rectangles, and there is
- * an instance variable for each encoding of a rectangle. */
+ * an instance variable for each encoding of a rectangle.
+ */
 @interface FrameBufferUpdateReader : NSObject
 {
     ByteBlockReader	    *headerReader;
@@ -62,7 +64,7 @@ extern NSString *encodingNames[];
 
     RFBConnection   *connection;
     RFBProtocol     *protocol;
-    unsigned        bytesPerPixel;  // bytes per pixel in framebuffer
+    unsigned        bytesPerPixel;  //!< bytes per pixel in framebuffer
 
     CARD32 encoding;
     CARD16 numberOfRects;
@@ -84,7 +86,7 @@ extern NSString *encodingNames[];
 - (void)updateComplete;
 - (void)didRect:(EncodingReader*)aReader;
 
-- (NSString *)lastEncodingName; // encoding of last rectangle read
+- (NSString *)lastEncodingName; //!< encoding of last rectangle read
 - (NSString *)nameForEncoding:(CARD32)enc;
 
 - (double)rectanglesTransferred;

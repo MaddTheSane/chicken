@@ -112,8 +112,6 @@
 		7F7DE7D7080F39DF006BF1DF /* ServerStandAlone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7DE7D5080F39DF006BF1DF /* ServerStandAlone.m */; };
 		7FB3EA1B0804E758003757C9 /* URLHandlerCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F088F2805E1DA4800336456 /* URLHandlerCommand.h */; };
 		7FB3EA1C0804E75E003757C9 /* URLHandlerCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F088F2905E1DA4800336456 /* URLHandlerCommand.m */; };
-		7FB3EA8D0804ECDB003757C9 /* CotVNC.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0C9A705CDC9A0008E39DD /* CotVNC.scriptTerminology */; };
-		7FB3EA8E0804ECE0003757C9 /* CotVNC.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0C9A305CDBDCE008E39DD /* CotVNC.scriptSuite */; };
 		7FB6A8D1068AB5E3005E5E49 /* ServerFromRendezvous.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FC6DF6D05C31B0D0028A970 /* ServerFromRendezvous.h */; };
 		7FB6A8D2068AB5E7005E5E49 /* ServerFromRendezvous.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6DF6E05C31B0D0028A970 /* ServerFromRendezvous.m */; };
 		7FBB0A6A05F5BC9700F716C4 /* ServerDataViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBB0A6605F5BC9700F716C4 /* ServerDataViewController.h */; };
@@ -641,6 +639,8 @@
 				F5DC71A8033DB4A801A8010C /* CopyRectangleEncodingReader.m */,
 				F5DC71A9033DB4A801A8010C /* CoRREEncodingReader.h */,
 				F5DC71AA033DB4A801A8010C /* CoRREEncodingReader.m */,
+				DAA91C8F1234319B000F1CCD /* DesktopNameEncodingReader.h */,
+				DAA91C901234319B000F1CCD /* DesktopNameEncodingReader.m */,
 				F5DC71B0033DB4A801A8010C /* EncodingReader.h */,
 				F5DC71B1033DB4A801A8010C /* EncodingReader.m */,
 				F5DC71BD033DB4A801A8010C /* HextileEncodingReader.h */,
@@ -859,8 +859,6 @@
 				DAD6DEE012DCF37A001FD9D6 /* AuthPrompt.m */,
 				DA335CCD12DA4A6C00C70987 /* Session.h */,
 				DA335CCE12DA4A6C00C70987 /* Session.m */,
-				DAA91C8F1234319B000F1CCD /* DesktopNameEncodingReader.h */,
-				DAA91C901234319B000F1CCD /* DesktopNameEncodingReader.m */,
 				7FE7F82F06D8003200647AA1 /* Connection Management */,
 				7FE7F82E06D7FFC700647AA1 /* Preferences */,
 				E21FE439062B79940059585C /* KeyEquivalents */,
@@ -1094,8 +1092,6 @@
 				E2F3A99E06D4BFD8005EB917 /* ProfileManager.xib in Resources */,
 				E2CA651806DA451600B70BDF /* CotVNC.help in Resources */,
 				E2B083F90763AAC200CE24C1 /* ListenDialog.xib in Resources */,
-				7FB3EA8D0804ECDB003757C9 /* CotVNC.scriptTerminology in Resources */,
-				7FB3EA8E0804ECE0003757C9 /* CotVNC.scriptSuite in Resources */,
 				55E0790F254E7A1300515948 /* Media.xcassets in Resources */,
 				E291FAD5088161DA0061216E /* cursors.plist in Resources */,
 				DAFB492212944331008C6FC4 /* dsa_pub.pem in Resources */,

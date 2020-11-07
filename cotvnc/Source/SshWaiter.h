@@ -54,8 +54,4 @@
 - (void)sshFailedWithError:(NSString *)err;
 - (void)tunnelFailed:(NSString *)err;
 
-// implementation of AuthPromptDelegate
-- (void)authCancelled;
-- (void)authPasswordEntered:(NSString *)password;
-
 @end

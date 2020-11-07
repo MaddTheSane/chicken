@@ -31,11 +31,11 @@
     NSStringEncoding    encoding;
 }
 
-- (id)initTarget:(id)aTarget action:(SEL)anAction
-      connection: (RFBConnection *)aConnection;
-- (id)initTarget:(id)aTarget action:(SEL)anAction
-      connection: (RFBConnection *)aConnection
-        encoding:(NSStringEncoding)anEncoding;
+- (instancetype)initTarget:(id)aTarget action:(SEL)anAction
+                connection:(RFBConnection *)aConnection;
+- (instancetype)initTarget:(id)aTarget action:(SEL)anAction
+                connection:(RFBConnection *)aConnection
+                  encoding:(NSStringEncoding)anEncoding;
 
 - (void)readString;
 

@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-@interface URLHandlerCommand : NSScriptCommand {
-
-}
+@interface URLHandlerCommand : NSScriptCommand
 
 @end

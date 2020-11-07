@@ -25,10 +25,7 @@
 
 #define RFB_SAVED_RENDEZVOUS_SERVERS @"RFB_SAVED_RENDEZVOUS_SERVERS"
 
-@interface ServerFromRendezvous : PersistentServer
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= 1060
-<NSNetServiceDelegate>
-#endif
+@interface ServerFromRendezvous : PersistentServer <NSNetServiceDelegate>
 {
 	NSNetService* service_;
     id<ServerDelegate> delegate_;
@@ -36,12 +33,11 @@
 
 + (ServerFromRendezvous *)createWithNetService:(NSNetService*)service;
 
-- (id)initWithNetService:(NSNetService*)service;
-- (void)dealloc;
+- (instancetype)initWithNetService:(NSNetService*)service;
 
 - (bool)doYouSupport: (SUPPORT_TYPE)type;
 
-- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict;
+- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary<NSString *, NSNumber *> *)errorDict;
 - (void)netServiceDidResolveAddress:(NSNetService *)sender;
 
 @end

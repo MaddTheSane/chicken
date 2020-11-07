@@ -26,11 +26,10 @@ if (!(condition)) return [self scriptError: (errno) description: \
     return nil;
 }
 
-// Perform somewhat redundant checks here.
-// The NSScriptClassDescription should do this as well, but there may be
-// pathological cases where it is unable to do so, someone has modified
-// the script suite, etc.
-
+/// Perform somewhat redundant checks here.
+/// The @c NSScriptClassDescription should do this as well, but there may be
+/// pathological cases where it is unable to do so, someone has modified
+/// the script suite, etc.
 - (id)performDefaultImplementation
 {
 	[[RFBConnectionManager sharedManager] setLaunchedByURL:YES];

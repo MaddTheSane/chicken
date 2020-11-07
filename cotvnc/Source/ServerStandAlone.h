@@ -30,8 +30,6 @@
 @property (readonly, copy) NSString *name;
 - (NSString *)name;
 @property (readwrite) bool addToServerListOnConnect;
-- (bool)addToServerListOnConnect;
-- (void)setAddToServerListOnConnect: (bool)addToServerListOnConnect;
 
 - (bool)doYouSupport: (SUPPORT_TYPE)type;
 
