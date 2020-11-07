@@ -432,13 +432,13 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 
 - (void)queueModifierReleased: (NSEventModifierFlags)modifier timestamp: (NSTimeInterval)timestamp
 {
-    if ( kClickWhileHoldingModifierEmulation == [_profile button2EmulationScenario]
+    if ( EventFilterEmulationClickWhileHoldingModifier == [_profile button2EmulationScenario]
 		 && _clickWhileHoldingModifierStillDown[0] 
 		 && modifier == [_profile clickWhileHoldingModifierForButton:2] )
 	{
 		_clickWhileHoldingModifierStillDown[0] = NO;
 	}
-    if ( kClickWhileHoldingModifierEmulation == [_profile button3EmulationScenario]
+    if ( EventFilterEmulationClickWhileHoldingModifier == [_profile button3EmulationScenario]
 		 && _clickWhileHoldingModifierStillDown[1] 
 		 && modifier == [_profile clickWhileHoldingModifierForButton:3] )
 	{
@@ -520,15 +520,15 @@ ButtonNumberToRFBButtomMask( unsigned int buttonNumber )
 	unsigned int eventsToDelay = 0;
 	switch (scenario)
 	{
-		case kNoMouseButtonEmulation:
+		case EventFilterEmulationNoMouseButton:
 			break;
-		case kClickWhileHoldingModifierEmulation:
+		case EventFilterEmulationClickWhileHoldingModifier:
 			eventsToDelay = [self handleClickWhileHoldingForButton: button];
 			break;
-		case kMultiTapModifierEmulation:
+		case EventFilterEmulationMultiTapModifier:
 			eventsToDelay = [self handleMultiTapForButton: button];
 			break;
-		case kTapModifierAndClickEmulation:
+		case EventFilterEmulationTapModifierAndClick:
 			eventsToDelay = [self handleTapModifierAndClickForButton: button];
 			break;
 		default:

@@ -97,8 +97,8 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
 
 - (void)defaultEmulationScenarios
 {
-    _buttonEmulationScenario[0] = kNoMouseButtonEmulation;
-    _buttonEmulationScenario[1] = kClickWhileHoldingModifierEmulation;
+    _buttonEmulationScenario[0] = EventFilterEmulationNoMouseButton;
+    _buttonEmulationScenario[1] = EventFilterEmulationClickWhileHoldingModifier;
 	_clickWhileHoldingModifier[0] = NSEventModifierFlagControl;
 	_clickWhileHoldingModifier[1] = NSEventModifierFlagControl;
 	_multiTapModifier[0] = NSEventModifierFlagCommand;

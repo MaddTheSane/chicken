@@ -29,7 +29,7 @@
  *
  * Mouse button emulation can be triggered by the following scenarios:
  *
- *	- kClickWhileHoldingModifierEmulation
+ *	- EventFilterEmulationClickWhileHoldingModifier
  *		- Action:	a key down event of the emulation modifier occurs
  *		- Action:	a mouse down event occurs
  *		- Result:	the two pending events are removed from the queue and an emulated mouse down 
@@ -37,14 +37,14 @@
  *		- Action:	a mouse up event occurs
  *		- Result:	the event is removed from the queue and an emulated mouse up event is sent instead
  *
- *	- kMultiTapModifierEmulation
+ *	- EventFilterEmulationMultiTapModifier
  *		- Action:	a key down event of the emulation modifier occurs
  *		- Action:	a key up event of the emulation modifier occurs within the time limit
  *		- Action:	the above occurs as many times as the emulation setting requires
  *		- Result:	the pending events are removed from the queue and an emulated mouse down and 
  *					mouse up event are sent instead
  *
- *	- kTapModifierAndClickEmulation
+ *	- EventFilterEmulationTapModifierAndClick
  *		- Action:	a key down event of the emulation modifier occurs
  *		- Action:	a key up event of the emulation modifier occcurs within the time limit
  *		- Result:	the cursor is changed to show which mouse button will be emulated if mouse is clicked
@@ -93,10 +93,10 @@
  
 
 typedef NS_ENUM(NSInteger, EventFilterEmulationScenario) {
-	kNoMouseButtonEmulation,
-	kClickWhileHoldingModifierEmulation,
-	kMultiTapModifierEmulation,
-	kTapModifierAndClickEmulation,
+    EventFilterEmulationNoMouseButton,
+    EventFilterEmulationClickWhileHoldingModifier,
+    EventFilterEmulationMultiTapModifier,
+    EventFilterEmulationTapModifierAndClick,
 } NS_SWIFT_NAME(EventFilter.EmulationScenario);
 
 
