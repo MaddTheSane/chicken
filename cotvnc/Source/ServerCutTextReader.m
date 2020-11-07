@@ -54,8 +54,8 @@
     if (![connection viewOnly]) {
         NSPasteboard* pb = [NSPasteboard generalPasteboard];
 
-        [pb declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
-        [pb setString:aText forType:NSStringPboardType];
+        [pb declareTypes:@[NSPasteboardTypeString] owner:nil];
+        [pb setString:aText forType:NSPasteboardTypeString];
     }
     [protocol messageReaderDone];
 }

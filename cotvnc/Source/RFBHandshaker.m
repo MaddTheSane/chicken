@@ -25,7 +25,7 @@
 #import "ByteBlockReader.h"
 #import "RFBStringReader.h"
 
-/* This handles the handshaking messages from the server. */
+/** This handles the handshaking messages from the server. */
 @implementation RFBHandshaker
 
 - (id)initWithConnection: (RFBConnection *)aConnection;

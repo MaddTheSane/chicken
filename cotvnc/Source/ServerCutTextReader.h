@@ -22,16 +22,18 @@
 
 @class RFBConnection;
 @class RFBProtocol;
+@class ByteBlockReader;
+@class RFBStringReader;
 
 @interface ServerCutTextReader : NSObject
 {
     RFBConnection   *connection;
     RFBProtocol     *protocol;
-    id              dummyReader;
-    id              textReader;
+    ByteBlockReader *dummyReader;
+    RFBStringReader *textReader;
 }
 
-- (id)initWithProtocol: (RFBProtocol *)aProtocol connection: (RFBConnection *)aConnection;
+- (instancetype)initWithProtocol: (RFBProtocol *)aProtocol connection: (RFBConnection *)aConnection;
 
 - (void)readMessage;
 

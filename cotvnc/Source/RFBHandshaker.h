@@ -25,19 +25,20 @@
 @class ServerInitMessage;
 @class RFBStringReader;
 @class RFBServerInitReader;
+@class CARD32Reader;
 
 @interface RFBHandshaker : NSObject
 {
     RFBConnection   	*connection;
     RFBStringReader		*connFailedReader;
-    __kindof ByteReader	*challengeReader;
-    __kindof ByteReader	*authResultReader;
+    ByteBlockReader		*challengeReader;
+    CARD32Reader		*authResultReader;
     RFBServerInitReader	*serverInitReader;
     BOOL    triedPassword;
     NSData  *vncAuthChallenge;
 }
 
-- (id)initWithConnection: (RFBConnection *)aConnection;
+- (instancetype)initWithConnection: (RFBConnection *)aConnection;
 
 - (void)handshake;
 - (void)setServerInit: (ServerInitMessage *)serverMsg;

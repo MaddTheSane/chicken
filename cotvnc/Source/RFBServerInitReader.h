@@ -50,8 +50,8 @@
     ServerInitMessage*  msg;
 }
 
-- (id)initWithConnection: (RFBConnection *)aConnection
-          andHandshaker: (RFBHandshaker *)aHandshaker;
+- (instancetype)initWithConnection: (RFBConnection *)aConnection
+                     andHandshaker: (RFBHandshaker *)aHandshaker;
 - (void)readServerInit;
 
 @end
