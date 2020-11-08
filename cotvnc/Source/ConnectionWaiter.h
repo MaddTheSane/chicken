@@ -73,8 +73,8 @@
 };
 
 + (__kindof ConnectionWaiter *)waiterForServer:(id<IServerData>)aServer
-                             delegate:(id<ConnectionWaiterDelegate>)aDelegate
-                               window:(NSWindow *)aWind;
+                                      delegate:(id<ConnectionWaiterDelegate>)aDelegate
+                                        window:(NSWindow *)aWind;
 - (instancetype)initWithServer:(id<IServerData>)aServer
     delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind;
 
@@ -87,8 +87,8 @@
 
 - (void)cancel;
 
-- (void)connect: (id)unused;
-- (void)waitForDataOn:(int)sock;
+- (IBAction)connect: (id)unused;
+- (void)waitForDataOnSocket:(int)sock;
 - (void)finishConnection;
 - (void)connectionFailed: (NSString *)cause;
 - (void)serverClosed;

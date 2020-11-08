@@ -54,7 +54,7 @@ extern NSString * const ProfileAddDeleteNotification;
     IBOutlet NSButton *mEnableJpegEncoding;
     IBOutlet NSMatrix *mPixelFormatMatrix;
     IBOutlet NSColorWell *mTintColorWell;
-	int mEncodingDragRow;
+	NSInteger mEncodingDragRow;
 }
 
 	// Shared Instance

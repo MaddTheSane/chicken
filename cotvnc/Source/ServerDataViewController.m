@@ -35,13 +35,17 @@
 
 #define DISPLAY_MAX 50 // numbers >= this are interpreted as a port
 
-@implementation ServerDataViewController
+@implementation ServerDataViewController {
+    NSArray *topLevelObjects;
+}
 
 - (id)init
 {
 	if (self = [super init])
 	{
-		[NSBundle loadNibNamed:@"ServerDisplay.nib" owner:self];
+        NSArray *tlo;
+		[[NSBundle mainBundle] loadNibNamed:@"ServerDisplay" owner:self topLevelObjects:&tlo];
+        topLevelObjects = tlo;
 		
 		selfTerminate = NO;
 		removedSaveCheckbox = NO;

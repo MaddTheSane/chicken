@@ -311,10 +311,10 @@ static NSString *const kProfileDragEntry = @"net.sourceforge.chicken.ProfileDrag
 		NSPasteboard *pboard = [info draggingPasteboard];
 		if ( [pboard availableTypeFromArray: [NSArray arrayWithObject: kProfileDragEntry]] )
 		{
-			NSData *data = [pboard dataForType: kProfileDragEntry];
+			NSNumber *data = [pboard propertyListForType: kProfileDragEntry];
 			
 			Profile* profile = [self _currentProfile];
-            [profile moveEncodingFrom:*(int *)[data bytes] to:row];
+            [profile moveEncodingFrom:data.integerValue to:row];
 			
             [[ProfileDataManager sharedInstance] saveProfile:profile];
 			[mEncodingTableView reloadData];
@@ -329,12 +329,10 @@ static NSString *const kProfileDragEntry = @"net.sourceforge.chicken.ProfileDrag
 	if ( mEncodingTableView == tableView )
 	{
 		NSParameterAssert( [rowIndexes count] == 1 );
-		int rowIndex = rowIndexes.firstIndex;
+		NSInteger rowIndex = rowIndexes.firstIndex;
 		
-        NSData *data = [[NSData alloc] initWithBytes:&rowIndex
-                                              length:sizeof(int)];
 		[pboard declareTypes: @[kProfileDragEntry] owner: nil];
-		[pboard setData: data forType: kProfileDragEntry];
+		[pboard setPropertyList: @(rowIndex) forType: kProfileDragEntry];
 		
 		mEncodingDragRow = rowIndex;
 		

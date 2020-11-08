@@ -38,8 +38,8 @@
 
 - (void)setCursorTo: (NSString *)name;
 //! cursor sent by server, if any.
-@property (nonatomic, strong, setter=setServerCursorTo:) NSCursor *serverCursor;
-- (void)setServerCursorTo: (NSCursor *)aCursor;
+@property (nonatomic, strong, setter=setServerCursor:) NSCursor *serverCursor;
+- (void)setServerCursor: (NSCursor *)aCursor;
 
 @property (nonatomic, strong) NSColor *tint;
 

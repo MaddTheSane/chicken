@@ -206,7 +206,7 @@
 - (void)setCursor: (NSCursor *)aCursor
 {
     if (![server_ viewOnly])
-        [rfbView setServerCursorTo: aCursor];
+        [rfbView setServerCursor: aCursor];
 }
 
 - (void)terminateConnection:(NSString *)reason

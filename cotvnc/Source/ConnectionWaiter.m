@@ -81,8 +81,10 @@
 
 @synthesize errorStr;
 
-/* Cancels the connection attempt. This prevents any future messages to the
- * delegate. */
+/**
+ * Cancels the connection attempt. This prevents any future messages to the
+ * delegate.
+ */
 - (void)cancel
 {
     [lock lock];
@@ -95,7 +97,7 @@
     window = nil;
 }
 
-/* Attempts to connect to the server. */
+/** Attempts to connect to the server. */
 - (void)connect: (id)unused
 {
     int             error;
@@ -146,7 +148,7 @@
 
         if (connect(sock, res->ai_addr, res->ai_addrlen) == 0) {
             freeaddrinfo(res0);
-            [self waitForDataOn:sock];
+            [self waitForDataOnSocket:sock];
             return; 
         } else {
             [lock lock];
@@ -183,7 +185,7 @@
 	}
 }
 
-- (void)waitForDataOn:(int)sock
+- (void)waitForDataOnSocket:(int)sock
 {
     /* At this point, the socket has been connected successfully. Now we wait
      * for data from server. For example, if we're tunnelling over SSH, SSH will

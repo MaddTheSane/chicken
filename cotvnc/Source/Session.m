@@ -40,7 +40,9 @@
 
 @end
 
-@implementation Session
+@implementation Session {
+    NSArray *topLevelObjects;
+}
 
 - (id)initWithConnection:(RFBConnection *)aConnection
 {
@@ -54,7 +56,9 @@
 
     _isFullscreen = NO; // jason added for fullscreen display
 
-    [NSBundle loadNibNamed:@"RFBConnection.nib" owner:self];
+    NSArray *tlo = nil;
+    [[NSBundle mainBundle] loadNibNamed:@"RFBConnection" owner:self topLevelObjects:&tlo];
+    topLevelObjects = tlo;
     [rfbView registerForDraggedTypes:[NSArray arrayWithObjects:NSStringPboardType, NSFilenamesPboardType, nil]];
 
     password = [[connection password] copy];

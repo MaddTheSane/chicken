@@ -90,7 +90,7 @@
     [[self window] invalidateCursorRectsForView: self];
 }
 
-- (void)setServerCursorTo: (NSCursor *)aCursor
+- (void)setServerCursor: (NSCursor *)aCursor
 {
     _serverCursor = aCursor;
     if (!_modifierCursor)

@@ -384,9 +384,9 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
              forKey:kProfile_MultiTapDelayForButton2_Key];
     [dict setObject:[NSNumber numberWithDouble:_multiTapDelay[1]]
              forKey:kProfile_MultiTapDelayForButton3_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_multiTapCount[0]]
+    [dict setObject:@(_multiTapCount[0])
              forKey:kProfile_MultiTapCountForButton2_Key];
-    [dict setObject:[NSNumber numberWithUnsignedInt:_multiTapCount[1]]
+    [dict setObject:@(_multiTapCount[1])
              forKey:kProfile_MultiTapCountForButton3_Key];
     [dict setObject:@(_tapAndClickModifier[0])
              forKey:kProfile_TapAndClickModifierForButton2_Key];
@@ -401,7 +401,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     [dict setObject:[NSNumber numberWithDouble:_tapAndClickTimeout[1]]
              forKey:kProfile_TapAndClickTimeoutForButton3_Key];
 
-    [dict setObject:[NSNumber numberWithInt:pixelFormatIndex]
+    [dict setObject:@(pixelFormatIndex)
              forKey:kProfile_PixelFormat_Key];
     [dict setObject:[NSKeyedArchiver archivedDataWithRootObject:tintFront]
              forKey:kProfile_TintFront_Key];
@@ -553,7 +553,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
         return _multiTapDelay[buttonIndex];
 }
 
-- (unsigned int)multiTapCountForButton: (unsigned int)button
+- (NSInteger)multiTapCountForButton: (unsigned int)button
 {
 	unsigned int buttonIndex = ButtonNumberToArrayIndex( button );
 	return _multiTapCount[buttonIndex];
@@ -625,7 +625,7 @@ ButtonNumberToArrayIndex( unsigned int buttonNumber )
     _multiTapModifier[ButtonNumberToArrayIndex(button)] = modifier;
 }
 
-- (void)setMultiTapCount:(unsigned)count forButton:(unsigned)button
+- (void)setMultiTapCount:(NSInteger)count forButton:(unsigned)button
 {
     _multiTapCount[ButtonNumberToArrayIndex(button)] = count;
 }

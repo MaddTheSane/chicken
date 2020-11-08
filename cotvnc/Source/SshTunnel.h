@@ -42,7 +42,7 @@
     NSString    *sshHost;
 }
 
-- (id)initWithServer:(id<IServerData>)aServer delegate:(SshWaiter *)aDelegate;
+- (instancetype)initWithServer:(id<IServerData>)aServer delegate:(SshWaiter *)aDelegate;
 
 - (void)sshTunnelConnected;
 - (void)close;

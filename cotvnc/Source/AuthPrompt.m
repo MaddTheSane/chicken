@@ -19,46 +19,47 @@
 
 #import <AuthPrompt.h>
 
-@implementation AuthPrompt
+@implementation AuthPrompt {
+    __weak NSWindow *parentWindow;
+    NSArray *topLevelObjs;
+}
 
 - (id)initWithDelegate:(id<AuthPromptDelegate>)aDelegate
 {
     if (self = [super init]) {
         delegate = aDelegate;
-        [NSBundle loadNibNamed:@"AuthPrompt" owner:self];
+        NSArray *tlo;
+        [[NSBundle mainBundle] loadNibNamed:@"AuthPrompt" owner:self topLevelObjects:&tlo];
+        topLevelObjs = tlo;
     }
     return self;
 }
 
 - (void)runSheetOnWindow:(NSWindow *)window
 {
-    [NSApp beginSheet:panel modalForWindow:window modalDelegate:self
-        didEndSelector:@selector(passwordEnteredFor:returnCode:contextInfo:)
-        contextInfo:nil];
+    parentWindow = window;
+    [window beginSheet:panel completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertSecondButtonReturn) {
+            [self->delegate authCancelled];
+        }
+        [self->panel orderOut:self];
+    }];
 }
 
 - (void)stopSheet
 {
-    [NSApp endSheet:panel];
+    [parentWindow endSheet:panel returnCode:NSModalResponseAbort];
 }
 
 - (IBAction)enterPassword:(id)sender
 {
     [delegate authPasswordEntered:[passwordField stringValue]];
-    [NSApp endSheet:panel];
+    [parentWindow endSheet:panel returnCode:NSAlertFirstButtonReturn];
 }
 
 - (IBAction)cancel:(id)sender
 {
-    [NSApp endSheet:panel];
-    [delegate authCancelled];
-}
-
-- (IBAction)passwordEnteredFor:(NSWindow *)wind returnCode:(NSModalResponse)retCode
-    contextInfo:(void *)info
-{
-    [panel orderOut:self];
-    //[self autorelease];
+    [parentWindow endSheet:panel returnCode:NSAlertSecondButtonReturn];
 }
 
 @end

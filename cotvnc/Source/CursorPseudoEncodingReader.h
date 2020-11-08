@@ -14,14 +14,14 @@
 
 @interface CursorPseudoEncodingReader : EncodingReader {
 	ByteBlockReader *cursorReader;
-        // number of bytes per row of the mask
+    //! number of bytes per row of the mask
     unsigned int    bytesPerRow;
-        // number of bytes of pixels in the cursor data
+    //! number of bytes of pixels in the cursor data
     unsigned int    bytesPixels;
 }
 
-- (id)initWithUpdater: (FrameBufferUpdateReader *)aUpdater
-		   connection: (RFBConnection *)aConnection;
+- (instancetype)initWithUpdater: (FrameBufferUpdateReader *)aUpdater
+                     connection: (RFBConnection *)aConnection;
 
 - (void)readEncoding;
 - (void)setCursor:(NSData*)pixel;

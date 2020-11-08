@@ -159,7 +159,7 @@
 
 - (void)waitForData
 {
-    [self waitForDataOn:currentSock];
+    [self waitForDataOnSocket:currentSock];
 }
 
 /* The connection's been established and we have data waiting for us. Here, we

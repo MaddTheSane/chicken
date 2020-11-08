@@ -85,7 +85,7 @@ struct encoding {
 {
     NSString *name;
     BOOL isDefault;
-    int pixelFormatIndex;
+    NSInteger pixelFormatIndex;
 
     ModifierKeyIdentifier commandKeyPreference;
     ModifierKeyIdentifier altKeyPreference;
@@ -105,7 +105,7 @@ struct encoding {
 	NSEventModifierFlags _clickWhileHoldingModifier[2];
 	NSEventModifierFlags _multiTapModifier[2];
 	NSTimeInterval _multiTapDelay[2]; // 0 means double click interval
-	unsigned int _multiTapCount[2];
+	NSInteger _multiTapCount[2];
 	NSEventModifierFlags _tapAndClickModifier[2];
 	NSTimeInterval _tapAndClickButtonSpeed[2]; // 0 means double click interval
 	NSTimeInterval _tapAndClickTimeout[2];
@@ -130,7 +130,7 @@ struct encoding {
 @property ModifierKeyIdentifier altKeyPreference;
 @property ModifierKeyIdentifier shiftKeyPreference;
 @property ModifierKeyIdentifier controlKeyPreference;
-@property int pixelFormatIndex;
+@property NSInteger pixelFormatIndex;
 - (CARD16)numEnabledEncodingsIfViewOnly:(BOOL)viewOnly;
 - (CARD32)encodingAtIndex:(unsigned)index;
 @property (readonly) BOOL enableCopyRect;
@@ -143,7 +143,7 @@ struct encoding {
 - (NSEventModifierFlags)clickWhileHoldingModifierForButton: (unsigned int)button;
 - (NSEventModifierFlags)multiTapModifierForButton: (unsigned int)button;
 - (NSTimeInterval)multiTapDelayForButton: (unsigned int)button;
-- (unsigned int)multiTapCountForButton: (unsigned int)button;
+- (NSInteger)multiTapCountForButton: (unsigned int)button;
 - (NSEventModifierFlags)tapAndClickModifierForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickButtonSpeedForButton: (unsigned int)button;
 - (NSTimeInterval)tapAndClickTimeoutForButton: (unsigned int)button;
@@ -158,7 +158,7 @@ struct encoding {
 - (void)setClickWhileHoldingModifier:(NSEventModifierFlags)modifier
                            forButton:(unsigned)button;
 - (void)setMultiTapModifier:(NSEventModifierFlags)modifier forButton:(unsigned)button;
-- (void)setMultiTapCount: (unsigned)count forButton:(unsigned)button;
+- (void)setMultiTapCount: (NSInteger)count forButton:(unsigned)button;
 - (void)setMultiTapDelay:(NSTimeInterval)delay forButton:(unsigned) button;
 - (void)setTapAndClickModifier:(NSEventModifierFlags)modifer forButton:(unsigned)button;
 - (void)setTapAndClickButtonSpeed:(NSTimeInterval)speed
