@@ -76,8 +76,8 @@ NSString *const kPrefs_IntervalBeforeReconnect_Key = @"IntervalBeforeReconnect";
 					}
 					
 					encoding = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-						[NSNumber numberWithInt: gEncodingValues[encValue]],	kProfile_EncodingValue_Key, 
-						[NSNumber numberWithBool: enabled],						kProfile_EncodingEnabled_Key, 
+						@(gEncodingValues[encValue]),	kProfile_EncodingValue_Key, 
+						@(enabled),						kProfile_EncodingEnabled_Key, 
 						nil,													nil];
 				}
 				[newEncodings addObject: encoding];
@@ -87,10 +87,10 @@ NSString *const kPrefs_IntervalBeforeReconnect_Key = @"IntervalBeforeReconnect";
 			NSNumber *value;
 			value = [profile objectForKey: kProfile_PixelFormat_Key];
 			if ( ! value )
-				[profile setObject: [NSNumber numberWithInt: 0] forKey: kProfile_PixelFormat_Key];
+				[profile setObject: @0 forKey: kProfile_PixelFormat_Key];
 			value = [profile objectForKey: kProfile_EnableCopyrect_Key];
 			if ( ! value || ! [value isKindOfClass: [NSNumber class]] )
-				[profile setObject: [NSNumber numberWithBool: YES] forKey: kProfile_EnableCopyrect_Key];
+				[profile setObject: @YES forKey: kProfile_EnableCopyrect_Key];
 
 			[profile removeObjectForKey: @"EnabledEncodings"];
 		}
@@ -98,7 +98,7 @@ NSString *const kPrefs_IntervalBeforeReconnect_Key = @"IntervalBeforeReconnect";
 		id defaultProfile = [profiles objectForKey: @"default"];
 		if ( defaultProfile )
 		{
-			[defaultProfile setObject: [NSNumber numberWithBool: YES] forKey: kProfile_IsDefault_Key];
+			[defaultProfile setObject: @YES forKey: kProfile_IsDefault_Key];
 			NSString *name = NSLocalizedString(@"defaultProfileName", nil);
 			[profiles setObject: defaultProfile forKey: name];
 			[profiles removeObjectForKey: @"default"];
