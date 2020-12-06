@@ -40,10 +40,12 @@
 }
 
 - (instancetype)initWithServer:(id<IServerData>)aServer
-                      delegate:(id<ConnectionWaiterDelegate>)aDelegate window:(NSWindow *)aWind;
+                      delegate:(id<ConnectionWaiterDelegate>)aDelegate
+                        window:(NSWindow *)aWind;
 - (instancetype)initWithServer:(id<IServerData>)aServer
                       delegate:(id<ConnectionWaiterDelegate>)aDelegate
-                        window:(NSWindow *)aWind sshTunnel:(SshTunnel *)aTunnel;
+                        window:(NSWindow *)aWind
+                     sshTunnel:(SshTunnel *)aTunnel;
 
 - (void)cancel;
 

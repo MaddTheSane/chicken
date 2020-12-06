@@ -43,7 +43,7 @@
 	NSArray* mOrderedServerNames;
 
     ConnectionWaiter    *connectionWaiter;
-    BOOL lockedSelection;
+    NSInteger lockedSelection;
 }
 
 @property (class, readonly) RFBConnectionManager *sharedManager;
