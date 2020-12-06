@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,7 +33,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="472" y="412" width="390" height="375"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="5">
                 <rect key="frame" x="0.0" y="0.0" width="390" height="375"/>
@@ -46,7 +46,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="65" translatesAutoresizingMaskIntoConstraints="NO" id="9">
-                                    <rect key="frame" x="26" y="18" width="69" height="13"/>
+                                    <rect key="frame" x="26" y="11" width="69" height="13"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Connecting..." id="114">
                                         <font key="font" metaFont="label"/>
                                         <color key="textColor" red="0.42934781309999998" green="0.42934781309999998" blue="0.42934781309999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +54,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField toolTip="The host name or IP address of the server to which you wish to connect.  You can optionally append a port number with a colon." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                                    <rect key="frame" x="137" y="311" width="208" height="22"/>
+                                    <rect key="frame" x="128" y="311" width="217" height="22"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="server address" drawsBackground="YES" id="116">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -66,7 +66,7 @@
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="64" translatesAutoresizingMaskIntoConstraints="NO" id="10">
-                                    <rect key="frame" x="67" y="249" width="66" height="17"/>
+                                    <rect key="frame" x="58" y="249" width="66" height="17"/>
                                     <textFieldCell key="cell" alignment="right" title="Password:" id="115">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -74,7 +74,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="44" translatesAutoresizingMaskIntoConstraints="NO" id="25">
-                                    <rect key="frame" x="86" y="199" width="47" height="17"/>
+                                    <rect key="frame" x="77" y="199" width="47" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="tpX-jQ-N0d"/>
                                     </constraints>
@@ -85,7 +85,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="34" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                                    <rect key="frame" x="97" y="314" width="37" height="17"/>
+                                    <rect key="frame" x="88" y="314" width="37" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="zeX-9e-bso"/>
                                     </constraints>
@@ -96,7 +96,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField toolTip="The display number of the server to which you wish to connect" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                                    <rect key="frame" x="137" y="276" width="60" height="23"/>
+                                    <rect key="frame" x="128" y="276" width="60" height="23"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="YYV-2g-NQM"/>
                                     </constraints>
@@ -112,7 +112,7 @@
                                             <decimal key="minimum" value="0"/>
                                             <decimal key="maximum" value="99999"/>
                                         </numberFormatter>
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -122,7 +122,7 @@
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="101" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                                    <rect key="frame" x="37" y="280" width="97" height="16"/>
+                                    <rect key="frame" x="28" y="280" width="97" height="16"/>
                                     <textFieldCell key="cell" alignment="right" title="Display or port:" id="118">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -130,10 +130,10 @@
                                     </textFieldCell>
                                 </textField>
                                 <popUpButton toolTip="Select your desired connection profile." verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17">
-                                    <rect key="frame" x="135" y="193" width="213" height="26"/>
+                                    <rect key="frame" x="125" y="192" width="224" height="26"/>
                                     <popUpButtonCell key="cell" type="push" title="default" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="border" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="13" id="119">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="system"/>
                                         <menu key="menu" title="OtherViews" id="21">
                                             <items>
                                                 <menuItem title="default" state="on" id="13"/>
@@ -146,7 +146,7 @@
                                     </connections>
                                 </popUpButton>
                                 <button toolTip="Store this password in your Keychain for automatic retrieval next time." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                                    <rect key="frame" x="135" y="223" width="212" height="18"/>
+                                    <rect key="frame" x="126" y="223" width="219" height="17"/>
                                     <buttonCell key="cell" type="check" title="Remember Password" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="121">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -157,7 +157,7 @@
                                     </connections>
                                 </button>
                                 <button toolTip="Connect to the server now" verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14">
-                                    <rect key="frame" x="259" y="8" width="92" height="32"/>
+                                    <rect key="frame" x="266" y="1" width="86" height="32"/>
                                     <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="117">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -171,12 +171,12 @@ DQ
                                     </connections>
                                 </button>
                                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                    <rect key="frame" x="0.0" y="44" width="348" height="5"/>
+                                    <rect key="frame" x="0.0" y="36" width="348" height="5"/>
                                 </box>
                                 <textField toolTip="The password for the server to which you wish to connect" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7" customClass="NSSecureTextField">
-                                    <rect key="frame" x="137" y="247" width="208" height="21"/>
+                                    <rect key="frame" x="128" y="247" width="217" height="21"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="112">
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -186,7 +186,7 @@ DQ
                                     </connections>
                                 </textField>
                                 <button toolTip="Other clients can connect to the server at the same time as you." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26">
-                                    <rect key="frame" x="135" y="141" width="212" height="18"/>
+                                    <rect key="frame" x="126" y="138" width="206" height="18"/>
                                     <buttonCell key="cell" type="check" title="Allow other clients to connect" imagePosition="left" alignment="left" inset="2" id="123">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -197,10 +197,10 @@ DQ
                                     </connections>
                                 </button>
                                 <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                    <rect key="frame" x="6" y="17" width="16" height="15"/>
+                                    <rect key="frame" x="6" y="11" width="16" height="13"/>
                                 </progressIndicator>
                                 <button toolTip="Hide your menubar and Dock and use the entire screen." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92">
-                                    <rect key="frame" x="135" y="121" width="212" height="18"/>
+                                    <rect key="frame" x="126" y="116" width="135" height="18"/>
                                     <buttonCell key="cell" type="check" title="Fullscreen display" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="124">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -210,7 +210,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button toolTip="Keyboard and mouse events will not be sent to the server, you will only be observing." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98">
-                                    <rect key="frame" x="135" y="161" width="212" height="18"/>
+                                    <rect key="frame" x="126" y="160" width="85" height="18"/>
                                     <buttonCell key="cell" type="check" title="View only" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="126">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -220,7 +220,7 @@ DQ
                                     </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="127">
-                                    <rect key="frame" x="205" y="279" width="143" height="17"/>
+                                    <rect key="frame" x="196" y="279" width="152" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="44K-o1-jh2"/>
                                     </constraints>
@@ -231,7 +231,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95">
-                                    <rect key="frame" x="3" y="16" width="85" height="17"/>
+                                    <rect key="frame" x="5" y="12" width="84" height="11"/>
                                     <buttonCell key="cell" type="check" title="Save Server" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="125">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
@@ -241,7 +241,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="131">
-                                    <rect key="frame" x="135" y="86" width="212" height="18"/>
+                                    <rect key="frame" x="126" y="79" width="126" height="18"/>
                                     <buttonCell key="cell" type="check" title="Tunnel over SSH" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="132">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -251,7 +251,7 @@ DQ
                                     </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="133">
-                                    <rect key="frame" x="137" y="59" width="208" height="21"/>
+                                    <rect key="frame" x="128" y="51" width="217" height="21"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="134">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -262,7 +262,7 @@ DQ
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="135">
-                                    <rect key="frame" x="70" y="61" width="64" height="17"/>
+                                    <rect key="frame" x="61" y="53" width="64" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="5Yr-hT-12C"/>
                                     </constraints>
@@ -276,21 +276,24 @@ DQ
                             <constraints>
                                 <constraint firstItem="10" firstAttribute="centerY" secondItem="7" secondAttribute="centerY" id="0Jx-bH-5vo"/>
                                 <constraint firstItem="7" firstAttribute="leading" secondItem="20" secondAttribute="leading" id="1YC-7w-KLJ"/>
-                                <constraint firstItem="10" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="20" symbolic="YES" id="2P8-y6-5g8"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="92" secondAttribute="trailing" constant="16" symbolic="YES" id="1mU-qc-ZNf"/>
+                                <constraint firstItem="10" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="16" symbolic="YES" id="2P8-y6-5g8"/>
                                 <constraint firstItem="95" firstAttribute="top" secondItem="19" secondAttribute="bottom" constant="16" id="30b-4h-ZO8"/>
                                 <constraint firstItem="18" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="12" id="3Pl-13-DZO"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="98" secondAttribute="trailing" constant="16" symbolic="YES" id="45f-VQ-GeZ"/>
                                 <constraint firstItem="95" firstAttribute="leading" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="6" id="5jA-VH-QwF"/>
                                 <constraint firstItem="8" firstAttribute="trailing" secondItem="15" secondAttribute="trailing" id="6vP-Ra-9BE"/>
-                                <constraint firstItem="135" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="20" symbolic="YES" id="7Kx-fL-nYz"/>
+                                <constraint firstItem="135" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="16" symbolic="YES" id="7Kx-fL-nYz"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="26" secondAttribute="trailing" constant="16" symbolic="YES" id="8SP-WG-woQ"/>
                                 <constraint firstItem="25" firstAttribute="top" secondItem="10" secondAttribute="bottom" constant="33" id="8hq-wR-3Oe"/>
                                 <constraint firstItem="26" firstAttribute="leading" secondItem="92" secondAttribute="leading" id="A9Y-6a-alB"/>
                                 <constraint firstAttribute="trailing" secondItem="127" secondAttribute="trailing" constant="2" id="ADI-PX-pap"/>
                                 <constraint firstItem="92" firstAttribute="leading" secondItem="131" secondAttribute="leading" id="Ae2-hV-KcQ"/>
                                 <constraint firstItem="17" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="7" id="BcG-ve-77Y"/>
+                                <constraint firstAttribute="trailing" secondItem="133" secondAttribute="trailing" constant="3" id="C96-90-aXt"/>
                                 <constraint firstItem="20" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="D7E-sy-YiP"/>
-                                <constraint firstItem="92" firstAttribute="trailing" secondItem="131" secondAttribute="trailing" id="FDd-ad-kED"/>
                                 <constraint firstItem="14" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="95" secondAttribute="trailing" constant="8" symbolic="YES" id="Ijh-tq-aCN"/>
-                                <constraint firstItem="8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="20" symbolic="YES" id="Ik8-Ip-GWT"/>
+                                <constraint firstItem="8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="16" symbolic="YES" id="Ik8-Ip-GWT"/>
                                 <constraint firstAttribute="trailing" secondItem="11" secondAttribute="trailing" constant="3" id="J45-kV-BlZ"/>
                                 <constraint firstItem="15" firstAttribute="firstBaseline" secondItem="127" secondAttribute="firstBaseline" id="KuS-ob-Jaj"/>
                                 <constraint firstItem="19" firstAttribute="centerX" secondItem="yKP-pi-FzL" secondAttribute="centerX" id="Lxo-Jf-Y1W"/>
@@ -308,23 +311,22 @@ DQ
                                 <constraint firstItem="20" firstAttribute="centerX" secondItem="17" secondAttribute="centerX" id="WK5-5h-tkw"/>
                                 <constraint firstItem="25" firstAttribute="firstBaseline" secondItem="17" secondAttribute="firstBaseline" id="XQl-r9-pz1"/>
                                 <constraint firstItem="20" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="8" symbolic="YES" id="Xr6-Zg-uPu"/>
-                                <constraint firstItem="25" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="20" symbolic="YES" id="Y1V-CV-eOk"/>
-                                <constraint firstItem="15" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="20" symbolic="YES" id="YfY-xT-Cyo"/>
+                                <constraint firstItem="25" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="16" symbolic="YES" id="Y1V-CV-eOk"/>
+                                <constraint firstItem="15" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yKP-pi-FzL" secondAttribute="leading" constant="16" symbolic="YES" id="YfY-xT-Cyo"/>
                                 <constraint firstItem="98" firstAttribute="top" secondItem="17" secondAttribute="bottom" constant="19" id="Yn5-1P-Zfv"/>
                                 <constraint firstItem="131" firstAttribute="top" secondItem="92" secondAttribute="bottom" constant="21" id="Zc6-mt-ML1"/>
                                 <constraint firstItem="8" firstAttribute="firstBaseline" secondItem="11" secondAttribute="firstBaseline" id="Zqm-pe-avV"/>
-                                <constraint firstItem="98" firstAttribute="trailing" secondItem="26" secondAttribute="trailing" id="ZtY-i4-q1p"/>
                                 <constraint firstItem="14" firstAttribute="baseline" secondItem="9" secondAttribute="firstBaseline" id="anH-Kz-Bi2"/>
                                 <constraint firstItem="95" firstAttribute="leading" secondItem="27" secondAttribute="leading" id="cqj-wV-QOh"/>
                                 <constraint firstItem="98" firstAttribute="leading" secondItem="26" secondAttribute="leading" id="d8r-Y4-Snd"/>
                                 <constraint firstItem="11" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="dFI-Kc-6lJ"/>
                                 <constraint firstItem="11" firstAttribute="leading" secondItem="8" secondAttribute="trailing" constant="5" id="dw2-2g-gfW"/>
                                 <constraint firstItem="8" firstAttribute="baseline" secondItem="11" secondAttribute="baseline" id="e90-Lo-g28"/>
-                                <constraint firstItem="131" firstAttribute="trailing" secondItem="133" secondAttribute="trailing" id="eH4-rH-GTZ"/>
-                                <constraint firstItem="26" firstAttribute="trailing" secondItem="92" secondAttribute="trailing" id="eiJ-xh-gSA"/>
                                 <constraint firstItem="18" firstAttribute="baseline" secondItem="127" secondAttribute="baseline" id="fPs-cv-SvW"/>
                                 <constraint firstItem="133" firstAttribute="top" secondItem="131" secondAttribute="bottom" constant="8" symbolic="YES" id="fpG-zg-yL4"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="131" secondAttribute="trailing" constant="16" symbolic="YES" id="gf2-Lc-NnX"/>
                                 <constraint firstItem="10" firstAttribute="trailing" secondItem="25" secondAttribute="trailing" id="iLv-Q7-Vqo"/>
+                                <constraint firstItem="98" firstAttribute="leading" secondItem="17" secondAttribute="leading" id="iuW-xb-zUa"/>
                                 <constraint firstItem="9" firstAttribute="leading" secondItem="27" secondAttribute="trailing" constant="6" id="lP4-Bh-cf8"/>
                                 <constraint firstItem="15" firstAttribute="trailing" secondItem="135" secondAttribute="trailing" id="nlx-51-I6B"/>
                                 <constraint firstItem="26" firstAttribute="top" secondItem="98" secondAttribute="bottom" constant="6" symbolic="YES" id="oRA-BV-GI0"/>
@@ -340,7 +342,6 @@ DQ
                                 <constraint firstItem="14" firstAttribute="top" secondItem="19" secondAttribute="bottom" constant="10" id="xjR-bf-93F"/>
                                 <constraint firstItem="9" firstAttribute="baseline" secondItem="14" secondAttribute="firstBaseline" id="y7L-2j-sdw"/>
                                 <constraint firstItem="127" firstAttribute="leading" secondItem="18" secondAttribute="trailing" constant="10" id="zJN-17-AWL"/>
-                                <constraint firstItem="17" firstAttribute="trailing" secondItem="98" secondAttribute="trailing" id="zYI-lm-6hg"/>
                             </constraints>
                         </view>
                     </box>

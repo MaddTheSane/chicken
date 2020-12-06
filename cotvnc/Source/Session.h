@@ -35,19 +35,19 @@
     NSString        *password;
     SshTunnel       *sshTunnel;
 
-    id      scrollView;
-    id      newTitleField;
+    IBOutlet NSScrollView *scrollView;
+    IBOutlet NSTextField *newTitleField;
     IBOutlet NSPanel *newTitlePanel;
     NSString    *titleString;
-    id      statisticField;
+    IBOutlet NSTextField *statisticField;
 
     NSSize _maxSize;
 
     BOOL	horizontalScroll;
     BOOL	verticalScroll;
 
-    id optionPanel;
-    id infoField;
+    IBOutlet NSPanel *optionPanel;
+    IBOutlet NSTextField *infoField;
 
     NSString *realDisplayName;
     NSString *host;
