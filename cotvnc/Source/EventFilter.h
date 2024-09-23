@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 @class Profile;
 @class RFBConnection, RFBView;
+@class QueuedEvent;
 
 /*
  * Philosophy:  The EventFilter sits between an NSResponder and an object that sends
@@ -105,7 +106,7 @@ typedef NS_ENUM(NSInteger, EventFilterEmulationScenario) {
 	Profile *_profile;
 	__weak RFBView *_view;
 	
-	NSMutableArray *_pendingEvents;
+	NSMutableArray<QueuedEvent*> *_pendingEvents;
 	NSEventModifierFlags _queuedModifiers;
 	BOOL _watchEventForCapsLock;
 	BOOL _viewOnly;
@@ -124,10 +125,6 @@ typedef NS_ENUM(NSInteger, EventFilterEmulationScenario) {
 // Talking to the server
 @property (nonatomic, weak) RFBConnection *connection;
 @property (weak) RFBView *view;
-- (RFBConnection *)connection;
-- (void)setConnection: (RFBConnection *)connection;
-- (RFBView *)view;
-- (void)setView: (RFBView *)view;
 
 // Local Mouse Events
 - (void)mouseDown: (NSEvent *)theEvent;

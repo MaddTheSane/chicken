@@ -78,7 +78,7 @@ const unsigned int gEncodingValues[NUMENCODINGS] = {
 
 
 static NSTimeInterval
-DoubleClickInterval()
+DoubleClickInterval(void)
 {
 	SInt16 ticks = LMGetKeyThresh();
 	return (NSTimeInterval)ticks * 1.0/60.0;

@@ -87,7 +87,7 @@
                         </textFieldCell>
                     </textField>
                     <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                        <rect key="frame" x="164" y="117" width="116" height="17"/>
+                        <rect key="frame" x="164" y="117" width="116" height="18"/>
                         <buttonCell key="cell" type="check" title="Localhost Only" imagePosition="left" alignment="left" inset="2" id="35">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -131,17 +131,15 @@ DQ
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="20" symbolic="YES" id="0lz-Yh-sfK"/>
                     <constraint firstItem="15" firstAttribute="leading" secondItem="8" secondAttribute="trailing" constant="30" id="3Mw-KY-PqT"/>
-                    <constraint firstItem="8" firstAttribute="baseline" secondItem="14" secondAttribute="firstBaseline" id="5md-qx-zn9"/>
-                    <constraint firstItem="14" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="5pq-EV-5dM"/>
+                    <constraint firstItem="8" firstAttribute="firstBaseline" secondItem="14" secondAttribute="firstBaseline" id="5md-qx-zn9"/>
                     <constraint firstItem="8" firstAttribute="leading" secondItem="14" secondAttribute="trailing" constant="7" id="AIN-iC-Fcs"/>
                     <constraint firstItem="12" firstAttribute="top" secondItem="8" secondAttribute="bottom" constant="7" id="BDT-x0-noA"/>
                     <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" constant="20" symbolic="YES" id="Fry-tU-gtV"/>
                     <constraint firstItem="19" firstAttribute="centerY" secondItem="18" secondAttribute="centerY" id="GUm-uC-wW4"/>
                     <constraint firstItem="14" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" id="GkN-ec-i0J"/>
-                    <constraint firstAttribute="trailing" secondItem="12" secondAttribute="trailing" constant="61" id="IAw-Ta-SY4"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="12" secondAttribute="trailing" constant="61" id="IAw-Ta-SY4"/>
                     <constraint firstItem="8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="KhA-tj-vO9"/>
-                    <constraint firstItem="8" firstAttribute="centerY" secondItem="15" secondAttribute="centerY" id="O2C-0g-8ML"/>
-                    <constraint firstItem="14" firstAttribute="baseline" secondItem="15" secondAttribute="firstBaseline" id="O7h-6d-vY6"/>
+                    <constraint firstItem="14" firstAttribute="firstBaseline" secondItem="15" secondAttribute="firstBaseline" id="O7h-6d-vY6"/>
                     <constraint firstItem="14" firstAttribute="trailing" secondItem="13" secondAttribute="trailing" id="Xzx-ee-7dX"/>
                     <constraint firstItem="38" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="76" id="abL-d1-uUU"/>
                     <constraint firstItem="13" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" id="acO-I4-dIm"/>

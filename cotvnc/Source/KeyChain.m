@@ -43,9 +43,9 @@ static KeyChain* defaultKeyChain = nil;
         itemref = [self _genericPasswordReferenceForService:service
                         account:account];
 
-        if (itemref)
+        if (itemref) {
             ret = SecKeychainItemModifyContent(itemref, NULL, strlen(pass), pass);
-        else {
+        } else {
             const char  *serv = [service UTF8String];
             const char  *acc = [account UTF8String];
             ret = SecKeychainAddGenericPassword(NULL, strlen(serv), serv,

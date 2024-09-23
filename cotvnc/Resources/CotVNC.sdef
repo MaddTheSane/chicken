@@ -155,6 +155,7 @@
 	</suite>
 	<suite name="URLHandler commands" code="CVnC" description="Commands to handle a URL">
 		<command name="get URL" code="GURLGURL" description="Open a URL">
+            <cocoa class="URLHandlerCommand"/>
 			<direct-parameter type="specifier" description="the object for the command"/>
 		</command>
 	</suite>

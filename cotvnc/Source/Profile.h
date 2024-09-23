@@ -74,7 +74,7 @@ extern NSNotificationName const ProfileEncodingsChangedNotification;
 
 // Encodings
 #define NUMENCODINGS					8
-extern const unsigned int gEncodingValues[];
+extern const unsigned int gEncodingValues[NUMENCODINGS];
 
 struct encoding {
     CARD32  encoding;
@@ -115,7 +115,7 @@ struct encoding {
 }
 
 - (instancetype)init;
-- (instancetype)initWithDictionary:(NSDictionary*)d name: (NSString *)name;
+- (instancetype)initWithDictionary:(NSDictionary<NSString*,id>*)d name: (NSString *)name;
 - (instancetype)initWithProfile: (Profile *)profile andName: (NSString *)aName;
 - (void)makeEnabledEncodings;
 - (NSDictionary *)dictionary;

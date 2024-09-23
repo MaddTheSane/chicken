@@ -951,6 +951,7 @@
       }
     },
     "listenStop" : {
+      "comment" : "Listener",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1037,6 +1038,7 @@
       }
     },
     "no" : {
+      "comment" : "Common String",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1180,6 +1182,12 @@
     "Okay" : {
       "comment" : "Common Strings",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okay"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
