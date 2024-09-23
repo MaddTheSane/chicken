@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,7 +25,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="386" y="407" width="544" height="370"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <value key="minSize" type="size" width="509" height="370"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="544" height="370"/>
@@ -54,7 +54,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="444" y="449" width="392" height="306"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="28">
                 <rect key="frame" x="0.0" y="0.0" width="392" height="306"/>
@@ -79,7 +79,7 @@
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                 <tableColumns>
-                                                    <tableColumn width="148" minWidth="40" maxWidth="1000" id="14">
+                                                    <tableColumn width="119" minWidth="40" maxWidth="1000" id="14">
                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Servers">
                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,29 +114,29 @@
                                 </scrollView>
                                 <button toolTip="Remove the selected server" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                                     <rect key="frame" x="18" y="3" width="18" height="18"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="18" id="PbD-Ui-kFH"/>
-                                        <constraint firstAttribute="width" constant="18" id="exB-xZ-Tlq"/>
-                                    </constraints>
-                                    <buttonCell key="cell" type="square" title="-" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="49">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="49">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="label"/>
                                         <string key="keyEquivalent"></string>
                                     </buttonCell>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="PbD-Ui-kFH"/>
+                                        <constraint firstAttribute="width" constant="18" id="exB-xZ-Tlq"/>
+                                    </constraints>
                                     <connections>
                                         <action selector="deleteSelectedServer:" target="-2" id="39"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Add a new server" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                     <rect key="frame" x="1" y="3" width="18" height="18"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="left" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" id="50">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="label"/>
+                                    </buttonCell>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="Gij-n8-QNE"/>
                                         <constraint firstAttribute="width" constant="18" id="HzT-JB-fdH"/>
                                     </constraints>
-                                    <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="left" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" id="50">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="label"/>
-                                    </buttonCell>
                                     <connections>
                                         <action selector="addServer:" target="-2" id="38"/>
                                     </connections>
@@ -174,7 +174,7 @@
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                 <tableColumns>
-                                                    <tableColumn editable="NO" width="148.06399536132812" minWidth="50.563999176025391" maxWidth="1000" id="22">
+                                                    <tableColumn editable="NO" width="119" minWidth="50.563999176025391" maxWidth="1000" id="22">
                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Groups">
                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,26 +209,26 @@
                                 </scrollView>
                                 <button toolTip="Remove the selected group" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                     <rect key="frame" x="18" y="3" width="18" height="18"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="18" id="DJi-XR-N5f"/>
-                                        <constraint firstAttribute="width" constant="18" id="NYG-eg-8g5"/>
-                                    </constraints>
-                                    <buttonCell key="cell" type="square" title="-" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="51">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="51">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="label"/>
                                         <string key="keyEquivalent"></string>
                                     </buttonCell>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="DJi-XR-N5f"/>
+                                        <constraint firstAttribute="width" constant="18" id="NYG-eg-8g5"/>
+                                    </constraints>
                                 </button>
                                 <button toolTip="Add a new group" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                                     <rect key="frame" x="1" y="3" width="18" height="18"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="52">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="label"/>
+                                    </buttonCell>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="Br1-0d-lMB"/>
                                         <constraint firstAttribute="width" constant="18" id="JMJ-FO-Dha"/>
                                     </constraints>
-                                    <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="52">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="label"/>
-                                    </buttonCell>
                                 </button>
                             </subviews>
                             <constraints>
@@ -260,7 +260,7 @@
         </window>
     </objects>
     <resources>
-        <image name="NSAddTemplate" width="14" height="13"/>
-        <image name="NSRemoveTemplate" width="14" height="4"/>
+        <image name="NSAddTemplate" width="18" height="17"/>
+        <image name="NSRemoveTemplate" width="18" height="5"/>
     </resources>
 </document>

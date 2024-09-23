@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,7 +32,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="2" y="422" width="454" height="385"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <value key="minSize" type="size" width="176.357" height="5"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="454" height="385"/>
@@ -73,13 +73,13 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="463" y="599" width="354" height="101"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <value key="minSize" type="size" width="133.06100000000001" height="5"/>
-            <view key="contentView" misplaced="YES" id="16">
-                <rect key="frame" x="0.0" y="0.0" width="354" height="101"/>
+            <view key="contentView" id="16">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="67" translatesAutoresizingMaskIntoConstraints="NO" id="17">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="67" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                         <rect key="frame" x="18" y="51" width="69" height="16"/>
                         <textFieldCell key="cell" alignment="center" title="New Title:" id="69">
                             <font key="font" metaFont="system"/>
@@ -87,7 +87,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="18">
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                         <rect key="frame" x="93" y="48" width="241" height="21"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="70">
                             <font key="font" metaFont="system"/>
@@ -98,11 +98,8 @@
                             <action selector="performClick:" target="19" id="23"/>
                         </connections>
                     </textField>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                         <rect key="frame" x="267" y="13" width="74" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="C6Y-Lb-pYj"/>
-                        </constraints>
                         <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="71">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -110,11 +107,14 @@
 DQ
 </string>
                         </buttonCell>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="C6Y-Lb-pYj"/>
+                        </constraints>
                         <connections>
                             <action selector="setNewTitle:" target="-2" id="28"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                         <rect key="frame" x="193" y="13" width="76" height="32"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="72">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -145,7 +145,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="496" y="385" width="288" height="304"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <value key="minSize" type="size" width="185.791" height="5"/>
             <view key="contentView" id="30">
                 <rect key="frame" x="0.0" y="0.0" width="288" height="304"/>
@@ -155,12 +155,11 @@ DQ
                         <rect key="frame" x="17" y="132" width="254" height="165"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="CnB-OU-SQa">
-                            <rect key="frame" x="3" y="3" width="248" height="147"/>
+                            <rect key="frame" x="4" y="5" width="246" height="145"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="236" translatesAutoresizingMaskIntoConstraints="NO" id="31">
+                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="236" translatesAutoresizingMaskIntoConstraints="NO" id="31">
                                     <rect key="frame" x="5" y="5" width="240" height="135"/>
-                                    <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" alignment="left" id="73">
                                         <font key="font" metaFont="system" size="10"/>
                                         <string key="title">VNC-Protocol Version: 3.3
@@ -178,6 +177,12 @@ Protocol Parameters
                                     </textFieldCell>
                                 </textField>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="31" firstAttribute="leading" secondItem="CnB-OU-SQa" secondAttribute="leading" constant="7" id="6rX-bT-Jro"/>
+                                <constraint firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="3" id="8Rx-Be-r3P"/>
+                                <constraint firstItem="31" firstAttribute="top" secondItem="CnB-OU-SQa" secondAttribute="top" constant="5" id="YOW-7a-mcA"/>
+                                <constraint firstItem="31" firstAttribute="centerY" secondItem="CnB-OU-SQa" secondAttribute="centerY" id="jCx-9X-Ngx"/>
+                            </constraints>
                         </view>
                         <font key="titleFont" metaFont="smallSystemBold"/>
                     </box>
@@ -185,12 +190,11 @@ Protocol Parameters
                         <rect key="frame" x="17" y="16" width="254" height="112"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="8KZ-ZM-8gl">
-                            <rect key="frame" x="3" y="3" width="248" height="94"/>
+                            <rect key="frame" x="4" y="5" width="246" height="92"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="227" translatesAutoresizingMaskIntoConstraints="NO" id="52">
+                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="227" translatesAutoresizingMaskIntoConstraints="NO" id="52">
                                     <rect key="frame" x="5" y="7" width="231" height="82"/>
-                                    <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" alignment="left" id="74">
                                         <font key="font" metaFont="system" size="10"/>
                                         <string key="title">Bytes Transferred: 0
@@ -202,6 +206,12 @@ Rectangles: 89</string>
                                     </textFieldCell>
                                 </textField>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="52" firstAttribute="leading" secondItem="8KZ-ZM-8gl" secondAttribute="leading" constant="7" id="6lZ-cQ-0kl"/>
+                                <constraint firstItem="52" firstAttribute="top" secondItem="8KZ-ZM-8gl" secondAttribute="top" constant="3" id="Avo-u7-twO"/>
+                                <constraint firstAttribute="trailing" secondItem="52" secondAttribute="trailing" constant="12" id="Wml-5h-CC0"/>
+                                <constraint firstAttribute="bottom" secondItem="52" secondAttribute="bottom" constant="7" id="g6o-tH-rW5"/>
+                            </constraints>
                         </view>
                         <font key="titleFont" metaFont="smallSystemBold"/>
                     </box>
@@ -213,12 +223,12 @@ Rectangles: 89</string>
             <windowStyleMask key="styleMask" titled="YES" documentModal="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="230" y="348" width="410" height="157"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
-            <view key="contentView" misplaced="YES" id="89">
-                <rect key="frame" x="0.0" y="0.0" width="410" height="157"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+            <view key="contentView" id="89">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="171"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92">
+                    <textField focusRingType="none" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92">
                         <rect key="frame" x="49" y="87" width="150" height="16"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Enter password to retry:" id="93">
                             <font key="font" metaFont="system"/>
@@ -226,7 +236,7 @@ Rectangles: 89</string>
                             <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="95">
                         <rect key="frame" x="298" y="13" width="99" height="32"/>
                         <buttonCell key="cell" type="push" title="Reconnect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="96">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -239,7 +249,7 @@ DQ
                             <action selector="reconnectWithNewPassword:" target="-2" id="103"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="97">
                         <rect key="frame" x="224" y="13" width="76" height="32"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="98">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -252,7 +262,7 @@ Gw
                             <action selector="dontReconnect:" target="-2" id="104"/>
                         </connections>
                     </button>
-                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="105">
+                    <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="105">
                         <rect key="frame" x="205" y="84" width="185" height="21"/>
                         <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="106">
                             <font key="font" metaFont="system"/>
@@ -263,7 +273,7 @@ Gw
                             </allowedInputSourceLocales>
                         </secureTextFieldCell>
                     </secureTextField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="108">
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="108">
                         <rect key="frame" x="18" y="113" width="319" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="315" id="caj-x8-Dh6"/>
@@ -274,7 +284,7 @@ Gw
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="111">
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="111">
                         <rect key="frame" x="17" y="135" width="376" height="16"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Authentication Failed" id="112">
                             <font key="font" metaFont="systemBold"/>
@@ -604,12 +614,12 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" documentModal="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="230" y="422" width="407" height="119"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <view key="contentView" id="116">
                 <rect key="frame" x="0.0" y="0.0" width="407" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="122">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="122">
                         <rect key="frame" x="318" y="14" width="76" height="32"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="123">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -621,7 +631,7 @@ Gw
                             <action selector="reconnectCancelled:" target="-2" id="133"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="119">
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="119">
                         <rect key="frame" x="100" y="83" width="238" height="16"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reconnecting..." id="126">
                             <font key="font" metaFont="systemBold"/>
@@ -920,7 +930,7 @@ Gw
                             <constraint firstAttribute="width" constant="16" id="ctK-aG-iYh"/>
                         </constraints>
                     </progressIndicator>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="144">
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="144">
                         <rect key="frame" x="100" y="58" width="290" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="M8L-Fd-VWz"/>
@@ -937,7 +947,7 @@ Gw
                             <constraint firstAttribute="height" constant="64" id="Cjh-8E-Mrg"/>
                             <constraint firstAttribute="width" constant="64" id="Kad-vs-4Mq"/>
                         </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="149"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="149"/>
                     </imageView>
                 </subviews>
                 <constraints>

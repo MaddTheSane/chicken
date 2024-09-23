@@ -241,6 +241,23 @@
         }
       }
     },
+    "98.ibShadowedToolTip" : {
+      "comment" : "Class = \"NSSlider\"; ibShadowedToolTip = \"Scrolling speed 1\"; ObjectID = \"98\";",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scrolling speed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Vitesse de défilement"
+          }
+        }
+      }
+    },
     "105.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Non-Connection Window\"; ObjectID = \"105\";",
       "extractionState" : "extracted_with_value",
@@ -371,6 +388,12 @@
             "value" : "Slow"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lent"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -389,9 +412,15 @@
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Vitesse de défilement\"; ObjectID = \"132\";",
       "extractionState" : "manual",
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Scrolling speed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Vitesse de défilement"
           }
         }
@@ -500,7 +529,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rafraîchir manuellement uniquement  "
+            "value" : "Rafraîchir manuellement uniquement"
           }
         },
         "it" : {

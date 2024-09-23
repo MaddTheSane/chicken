@@ -333,7 +333,7 @@
     },
     "49.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"-\"; ObjectID = \"49\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -363,7 +363,7 @@
     },
     "50.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"+\"; ObjectID = \"50\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -393,7 +393,7 @@
     },
     "51.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"-\"; ObjectID = \"51\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -423,7 +423,7 @@
     },
     "52.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"+\"; ObjectID = \"52\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

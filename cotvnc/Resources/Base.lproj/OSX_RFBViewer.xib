@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -300,33 +300,33 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="358" y="593" width="565" height="196"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
             <value key="minSize" type="size" width="246.94399999999999" height="6"/>
             <view key="contentView" id="231">
                 <rect key="frame" x="0.0" y="0.0" width="565" height="196"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="261" translatesAutoresizingMaskIntoConstraints="NO" id="225">
-                        <rect key="frame" x="124" y="137" width="265" height="39"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="261" translatesAutoresizingMaskIntoConstraints="NO" id="225">
+                        <rect key="frame" x="124" y="142" width="113" height="34"/>
                         <textFieldCell key="cell" alignment="left" title="Chicken" id="1481">
                             <font key="font" size="28" name="Helvetica-Bold"/>
                             <color key="textColor" red="0.70980399999999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="228">
-                        <rect key="frame" x="59" y="13" width="154" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="228">
+                        <rect key="frame" x="58" y="13" width="54" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="wQ5-co-B2n"/>
+                        </constraints>
                         <textFieldCell key="cell" alignment="left" title="?" id="1483">
                             <font key="font" size="10" name="Helvetica"/>
                             <color key="textColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="229">
-                        <rect key="frame" x="126" y="99" width="271" height="30"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="229">
+                        <rect key="frame" x="126" y="95" width="249" height="39"/>
                         <textFieldCell key="cell" selectable="YES" alignment="left" id="1484">
                             <font key="font" size="12" name="Helvetica"/>
                             <string key="title">based on Chicken of the VNC by Jason Harris
@@ -335,9 +335,8 @@ based on VNCViewer by Helmut Maierhofer</string>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="230">
-                        <rect key="frame" x="342" y="20" width="203" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="230">
+                        <rect key="frame" x="349" y="20" width="196" height="26"/>
                         <textFieldCell key="cell" selectable="YES" alignment="right" id="1485">
                             <font key="font" size="10" name="Helvetica"/>
                             <string key="title">Copyright 1998-2000 by Helmut Maierhofer
@@ -346,18 +345,18 @@ Copyright 2002-2006 by Jason Harris</string>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="227">
+                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="227">
                         <rect key="frame" x="20" y="80" width="96" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1482"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="3V1-Zv-MNd"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="1482"/>
                     </imageView>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="909">
+                    <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="909">
                         <rect key="frame" x="12" y="52" width="541" height="5"/>
-                        <autoresizingMask key="autoresizingMask"/>
                     </box>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="330" translatesAutoresizingMaskIntoConstraints="NO" id="911">
-                        <rect key="frame" x="125" y="63" width="334" height="28"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="330" translatesAutoresizingMaskIntoConstraints="NO" id="911">
+                        <rect key="frame" x="125" y="63" width="305" height="24"/>
                         <textFieldCell key="cell" selectable="YES" alignment="left" id="1486">
                             <font key="font" size="10" name="Helvetica"/>
                             <string key="title">released under the GNU Public License
@@ -366,18 +365,19 @@ source code and support available at http://chicken.sourceforge.net/</string>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="35" translatesAutoresizingMaskIntoConstraints="NO" id="1366">
-                        <rect key="frame" x="20" y="20" width="39" height="10"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="35" translatesAutoresizingMaskIntoConstraints="NO" id="1366">
+                        <rect key="frame" x="20" y="20" width="38" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="sRs-As-mCj"/>
+                        </constraints>
                         <textFieldCell key="cell" alignment="left" title="Version" id="1487">
                             <font key="font" size="10" name="Helvetica"/>
                             <color key="textColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="1479">
-                        <rect key="frame" x="376" y="99" width="169" height="30"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="1479">
+                        <rect key="frame" x="379" y="95" width="166" height="39"/>
                         <textFieldCell key="cell" selectable="YES" alignment="right" id="1488">
                             <font key="font" size="12" name="Helvetica"/>
                             <string key="title">(support@geekspiff.com)
@@ -388,6 +388,36 @@ source code and support available at http://chicken.sourceforge.net/</string>
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="1479" firstAttribute="trailing" secondItem="230" secondAttribute="trailing" id="2qM-B1-YVi"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="911" secondAttribute="trailing" constant="20" symbolic="YES" id="7Kk-9c-LfI"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="225" secondAttribute="trailing" constant="20" symbolic="YES" id="9QY-r1-EZM"/>
+                    <constraint firstItem="229" firstAttribute="baseline" secondItem="1479" secondAttribute="baseline" id="9tl-aR-toi"/>
+                    <constraint firstAttribute="bottom" secondItem="1366" secondAttribute="bottom" constant="20" symbolic="YES" id="9z5-8j-S2U"/>
+                    <constraint firstItem="230" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="228" secondAttribute="trailing" constant="8" symbolic="YES" id="Euz-xk-UGU"/>
+                    <constraint firstItem="911" firstAttribute="leading" secondItem="227" secondAttribute="trailing" constant="11" id="H0k-BB-SRG"/>
+                    <constraint firstItem="229" firstAttribute="top" secondItem="225" secondAttribute="bottom" constant="8" symbolic="YES" id="Ic9-6N-8RV"/>
+                    <constraint firstItem="909" firstAttribute="top" secondItem="227" secondAttribute="bottom" constant="25" id="Jpp-kB-bXa"/>
+                    <constraint firstAttribute="trailing" secondItem="909" secondAttribute="trailing" constant="12" symbolic="YES" id="LAP-N4-dmg"/>
+                    <constraint firstItem="909" firstAttribute="leading" secondItem="231" secondAttribute="leading" constant="12" symbolic="YES" id="M96-OJ-dCf"/>
+                    <constraint firstItem="1366" firstAttribute="top" secondItem="909" secondAttribute="bottom" constant="24" id="Mot-Ad-E7N"/>
+                    <constraint firstItem="909" firstAttribute="top" secondItem="911" secondAttribute="bottom" constant="8" symbolic="YES" id="Qd3-DV-hOf"/>
+                    <constraint firstItem="225" firstAttribute="leading" secondItem="227" secondAttribute="trailing" constant="10" id="Sum-wn-2Rs"/>
+                    <constraint firstItem="230" firstAttribute="top" secondItem="909" secondAttribute="bottom" constant="8" symbolic="YES" id="TkA-GM-1RI"/>
+                    <constraint firstItem="229" firstAttribute="leading" secondItem="227" secondAttribute="trailing" constant="12" id="VUf-va-Bce"/>
+                    <constraint firstItem="1366" firstAttribute="firstBaseline" secondItem="228" secondAttribute="firstBaseline" id="Wvf-5A-oaf"/>
+                    <constraint firstAttribute="trailing" secondItem="1479" secondAttribute="trailing" constant="22" id="a2i-Y0-PWI"/>
+                    <constraint firstItem="228" firstAttribute="leading" secondItem="1366" secondAttribute="trailing" constant="4" id="b9e-fq-f9w"/>
+                    <constraint firstAttribute="bottom" secondItem="228" secondAttribute="bottom" constant="13" id="dhh-Fk-Tnx"/>
+                    <constraint firstItem="1479" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="229" secondAttribute="trailing" constant="8" symbolic="YES" id="jW2-2r-eK0"/>
+                    <constraint firstItem="227" firstAttribute="leading" secondItem="231" secondAttribute="leading" constant="20" symbolic="YES" id="kID-bT-e0x"/>
+                    <constraint firstItem="227" firstAttribute="top" secondItem="231" secondAttribute="top" constant="20" symbolic="YES" id="l3x-zY-Sib"/>
+                    <constraint firstItem="229" firstAttribute="firstBaseline" secondItem="1479" secondAttribute="firstBaseline" id="lQn-BG-A5r"/>
+                    <constraint firstItem="911" firstAttribute="top" secondItem="229" secondAttribute="bottom" constant="8" symbolic="YES" id="oxl-aP-IEc"/>
+                    <constraint firstItem="1366" firstAttribute="baseline" secondItem="230" secondAttribute="baseline" id="rUL-Lo-kr7"/>
+                    <constraint firstItem="1366" firstAttribute="leading" secondItem="231" secondAttribute="leading" constant="22" id="u8G-Qc-T0z"/>
+                    <constraint firstItem="227" firstAttribute="top" secondItem="225" secondAttribute="top" id="zlY-gs-MC0"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="139" y="147"/>
         </window>
