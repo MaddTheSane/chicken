@@ -1,0 +1,683 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "5.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"RFBConnection\"; ObjectID = \"5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "RFBConnection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RFBConnection"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RFBConnection"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RFBConnection"
+          }
+        }
+      }
+    },
+    "15.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Set Title\"; ObjectID = \"15\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Set Title"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changer le titre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazione Titolo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイトルを変更"
+          }
+        }
+      }
+    },
+    "29.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Connection-Info\"; ObjectID = \"29\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Connection-Info"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Infos connexion"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info-Connessione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続情報"
+          }
+        }
+      }
+    },
+    "32.title" : {
+      "comment" : "Class = \"NSBox\"; title = \"Server-Info\"; ObjectID = \"32\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Server-Info"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations serveur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni Server"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サーバ情報"
+          }
+        }
+      }
+    },
+    "53.title" : {
+      "comment" : "Class = \"NSBox\"; title = \"Statistics\"; ObjectID = \"53\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Statistics"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiques"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiche"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "統計情報"
+          }
+        }
+      }
+    },
+    "69.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"New Title:\"; ObjectID = \"69\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New Title:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuovo Titolo:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規タイトル："
+          }
+        }
+      }
+    },
+    "70.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Nouveau titre :\"; ObjectID = \"70\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau titre :"
+          }
+        }
+      }
+    },
+    "71.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Set\"; ObjectID = \"71\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Set"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更"
+          }
+        }
+      }
+    },
+    "72.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Cancel\"; ObjectID = \"72\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "73.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"VNC-Protocol Version: 3.3\\nVNC-Screensize: 1024x768\\nProtocol Parameters\\n\\tBits Per Pixel: 16\\n\\tDepth: 16\\n\\tByteorder: little-endian\\n\\tTruecolor: yes\\n\\tmaxValues (r/g/b): 255/255/255\\n\\tshift (r/g/b): 12/8/4\\n\"; ObjectID = \"73\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"
+          }
+        }
+      }
+    },
+    "74.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Bytes Transferred: 0\\nBytes Represented: 0\\nCompression: 1 : 50\\nRectangles: 89\"; ObjectID = \"74\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VNC-Protocol Version: 3.3\nVNC-Screensize: 1024x768\nProtocol Parameters\n\tBits Per Pixel: 16\n\tDepth: 16\n\tByteorder: little-endian\n\tTruecolor: yes\n\tmaxValues (r/g/b): 255/255/255\n\tshift (r/g/b): 12/8/4\n"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"
+          }
+        }
+      }
+    },
+    "75.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Bytes Transferred: 0\\nBytes Represented: 0\\nCompression: 1 : 50\\nRectangles: 89\"; ObjectID = \"75\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bytes Transferred: 0\nBytes Represented: 0\nCompression: 1 : 50\nRectangles: 89"
+          }
+        }
+      }
+    },
+    "88.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Enter Password\"; ObjectID = \"88\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enter Password"
+          }
+        }
+      }
+    },
+    "93.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Enter password to retry:\"; ObjectID = \"93\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enter password to retry:"
+          }
+        }
+      }
+    },
+    "96.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Reconnect\"; ObjectID = \"96\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reconnect"
+          }
+        }
+      }
+    },
+    "98.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Cancel\"; ObjectID = \"98\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "109.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Enter Password\"; ObjectID = \"109\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Password"
+          }
+        }
+      }
+    },
+    "110.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Enter Password\"; ObjectID = \"110\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Password"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Password"
+          }
+        }
+      }
+    },
+    "112.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Authentication Failed\"; ObjectID = \"112\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Authentication Failed"
+          }
+        }
+      }
+    },
+    "115.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Reconnecting\"; ObjectID = \"115\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reconnecting"
+          }
+        }
+      }
+    },
+    "119.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"パスワードを保存する\"; ObjectID = \"119\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パスワードを保存する"
+          }
+        }
+      }
+    },
+    "120.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"キャンセル\"; ObjectID = \"120\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer le mot de passe"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ricorda la Password"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "121.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Enter password to retry:\"; ObjectID = \"121\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter password to retry:"
+          }
+        }
+      }
+    },
+    "122.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"認証に失敗しました\"; ObjectID = \"122\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter password to retry:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter password to retry:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "認証に失敗しました"
+          }
+        }
+      }
+    },
+    "123.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Cancel\"; ObjectID = \"123\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Echec de l'authentification"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autenticazione Fallita"
+          }
+        }
+      }
+    },
+    "124.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"再接続\"; ObjectID = \"124\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再接続"
+          }
+        }
+      }
+    },
+    "125.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Reconnecter\"; ObjectID = \"125\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnecter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnetti"
+          }
+        }
+      }
+    },
+    "126.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Reconnecting...\"; ObjectID = \"126\";",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnecting…"
+          }
+        }
+      }
+    },
+    "130.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Reconnecting\"; ObjectID = \"130\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnecting"
+          }
+        }
+      }
+    },
+    "131.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Reconnecting\"; ObjectID = \"131\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnecting"
+          }
+        }
+      }
+    },
+    "136.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Remember Password\"; ObjectID = \"136\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remember Password"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnecting..."
+          }
+        }
+      }
+    },
+    "137.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Riconnetto...\"; ObjectID = \"137\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riconnetto..."
+          }
+        }
+      }
+    },
+    "138.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Cancel\"; ObjectID = \"138\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "139.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Annulla\"; ObjectID = \"139\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        }
+      }
+    },
+    "141.title" : {
+      "comment" : "Class = \"NSWindow\"; title = \"Reconnecting\"; ObjectID = \"141\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnecting"
+          }
+        }
+      }
+    },
+    "147.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Reconnexion en cours...\"; ObjectID = \"147\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnexion en cours..."
+          }
+        }
+      }
+    },
+    "149.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Annuler\"; ObjectID = \"149\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

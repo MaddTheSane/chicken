@@ -1,0 +1,77 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleGetInfoString" : {
+      "comment" : "CFBundleShortVersionString = \"2.1b1\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Chicken version 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chicken version 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers\nTraduction française par Pascal Frey"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chicken versione 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chicken version 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers."
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Chicken"
+          }
+        }
+      }
+    },
+    "NSHumanReadableCopyright" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers\nTraduction française par Pascal Frey"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

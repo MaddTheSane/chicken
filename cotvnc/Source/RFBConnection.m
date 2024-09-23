@@ -753,11 +753,8 @@
 
 - (NSString *)infoString
 {
-    NSString    *endian;
-    NSString    *trueColor;
-
-    endian = NSLocalizedString([frameBuffer serverIsBigEndian] ?  @"big-endian" : @"little-endian", nil);
-    trueColor = NSLocalizedString(frameBuffer->pixelFormat.trueColour ? @"yes" : @"no", nil);
+    NSString *endian = [frameBuffer serverIsBigEndian] ? NSLocalizedString(@"big-endian", nil) : NSLocalizedString(@"little-endian", nil);
+    NSString *trueColor = frameBuffer->pixelFormat.trueColour ? NSLocalizedString(@"yes", nil) : NSLocalizedString(@"no", nil);
 
     return
         [NSString stringWithFormat: NSLocalizedString(@"ServerInfo", nil),

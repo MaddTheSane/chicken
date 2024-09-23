@@ -25,7 +25,7 @@
                                               connection:connection];
 		inflateResult = inflateInit(&encodedStream);
 		if(inflateResult != Z_OK) {
-            NSString *fmt = NSLocalizedString(@"ZlibInflateErr", nil);
+            NSString *fmt = NSLocalizedString(@"ZlibInflateError", nil);
 			[connection terminateConnection:[NSString stringWithFormat:fmt, encodedStream.msg]];
 		}
 	}

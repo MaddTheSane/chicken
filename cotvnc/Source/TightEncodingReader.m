@@ -217,11 +217,11 @@ static void JpegSetSrcManager(j_decompress_ptr cinfo, CARD8* compressedData, int
         if(error != Z_OK) {
             NSString *err;
             if(stream->msg != NULL) {
-                NSString *fmt =NSLocalizedString(@"TightInflateInitErrMsg",nil);
+                NSString *fmt =NSLocalizedString(@"TightInflateInitErrorWith",nil);
                 err = [NSString stringWithFormat:fmt, stream->msg];
                 [connection terminateConnection:[NSString stringWithFormat:fmt, stream->msg]];
             } else {
-                err = NSLocalizedString(@"TightInflateInitErr", nil);
+                err = NSLocalizedString(@"TightInflateInitError", nil);
             }
             [connection terminateConnection:err];
             return;
