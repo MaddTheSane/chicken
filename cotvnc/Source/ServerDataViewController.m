@@ -101,9 +101,9 @@
 	
     [connectionWaiter cancel];
     [connectionWaiter release];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 	[super dealloc];
-		
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setServer:(id<IServerData>)server

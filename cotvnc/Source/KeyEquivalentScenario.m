@@ -80,7 +80,7 @@
  * i.e. from the NIB file. */
 - (id)initFromMainMenu
 {
-    if ([self init] != nil) {
+    if (self = [self init]) {
         NSMenu *mainMenu = [NSApp mainMenu];
         [self loadKeyEquivalentsFromMenu: mainMenu];
     }

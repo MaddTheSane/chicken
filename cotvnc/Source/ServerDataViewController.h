@@ -23,6 +23,8 @@
 #import <Cocoa/Cocoa.h>
 #import "ConnectionWaiter.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol IServerData;
 @protocol ConnectionDelegate;
 @class RFBConnection;
@@ -63,22 +65,22 @@
 
 - (instancetype)initWithReleaseOnCloseOrConnect;
 
-@property (nonatomic, retain) id<IServerData> server;
+@property (nonatomic, retain, nullable) id<IServerData> server;
 
-- (IBAction)passwordChanged:(id)sender;
-- (IBAction)rememberPwdChanged:(id)sender;
-- (IBAction)profileSelectionChanged:(id)sender;
-- (IBAction)fullscreenChanged:(id)sender;
-- (IBAction)sharedChanged:(id)sender;
-- (IBAction)viewOnlyChanged:(id)sender;
-- (IBAction)useSshTunnelChanged:(id)sender;
-- (IBAction)sshHostChanged:(id)sender;
-- (IBAction)addServerChanged:(id)sender;
+- (IBAction)passwordChanged:(nullable id)sender;
+- (IBAction)rememberPwdChanged:(nullable id)sender;
+- (IBAction)profileSelectionChanged:(nullable id)sender;
+- (IBAction)fullscreenChanged:(nullable id)sender;
+- (IBAction)sharedChanged:(nullable id)sender;
+- (IBAction)viewOnlyChanged:(nullable id)sender;
+- (IBAction)useSshTunnelChanged:(nullable id)sender;
+- (IBAction)sshHostChanged:(nullable id)sender;
+- (IBAction)addServerChanged:(nullable id)sender;
 
-- (IBAction)showProfileManager:(id)sender;
+- (IBAction)showProfileManager:(nullable id)sender;
 
-- (IBAction)connectToServer:(id)sender;
-- (IBAction)cancelConnect: (id)sender;
+- (IBAction)connectToServer:(nullable id)sender;
+- (IBAction)cancelConnect: (nullable id)sender;
 
 - (void)connectionSucceeded: (RFBConnection *)theConnection;
 - (void)connectionFailed;
@@ -86,11 +88,11 @@
 
 - (void)disableControls;
 
-@property (assign) IBOutlet NSBox *box;
+@property (assign, nullable) IBOutlet NSBox *box;
 
-- (void)updateView:(id)notification;
-- (void)updateProfileView:(id)notification;
-- (void)setProfilePopupToProfile: (Profile *)profileName;
+- (void)updateView:(nullable id)notification;
+- (void)updateProfileView:(nullable id)notification;
+- (void)setProfilePopupToProfile: (nullable Profile *)profileName;
 
 - (void)loadProfileIntoView;
 
@@ -98,3 +100,5 @@
 - (void)setSuperController:(RFBConnectionManager *)aSuperController;
 
 @end
+
+NS_ASSUME_NONNULL_END

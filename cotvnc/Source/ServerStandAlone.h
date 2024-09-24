@@ -23,9 +23,13 @@
 #import "ServerBase.h"
 #import "IServerData.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ServerStandAlone : ServerBase {
 	bool mAddToServerListOnConnect;
 }
+
+- (instancetype)init;
 
 @property (readonly, copy) NSString *name;
 - (NSString *)name;
@@ -34,3 +38,5 @@
 - (bool)doYouSupport: (SUPPORT_TYPE)type;
 
 @end
+
+NS_ASSUME_NONNULL_END

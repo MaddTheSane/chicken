@@ -1,6 +1,18 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Chicken"
+          }
+        }
+      }
+    },
     "CFBundleGetInfoString" : {
       "comment" : "CFBundleShortVersionString = \"2.1b1\";",
       "extractionState" : "extracted_with_value",
