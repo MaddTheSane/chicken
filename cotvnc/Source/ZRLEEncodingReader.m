@@ -36,7 +36,7 @@
     const unsigned char *data = [nsData bytes];
     NSInteger            length = [nsData length];
 	
-	// hack around UltraVN‚ 1.0.1, Chicken Bug #1351494
+	// hack around UltraVNÃ‡ 1.0.1, Chicken Bug #1351494
 	if ( 4 == cPixelSize )
 	{
 		[frameBuffer setTightBytesPerPixelOverride: 3];
